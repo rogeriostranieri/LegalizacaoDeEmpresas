@@ -76,8 +76,8 @@ Partial Class FrmAlvara
         Dim HistoricoLabel As System.Windows.Forms.Label
         Dim BombeiroSituacaoLabel As System.Windows.Forms.Label
         Dim EndCidadeLabel1 As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAlvara))
         Dim EndEstadoLabel1 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAlvara))
         Me.PrinceDBDataSet = New PrinceSistemas.PrinceDBDataSet()
         Me.LaudosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LaudosTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.LaudosTableAdapter()
@@ -254,9 +254,11 @@ Partial Class FrmAlvara
         Me.Label19 = New System.Windows.Forms.Label()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
-        Me.BtnData1 = New System.Windows.Forms.Button()
-        Me.EndCidadeLabel2 = New System.Windows.Forms.Label()
         Me.EndEstadoLabel2 = New System.Windows.Forms.Label()
+        Me.EndCidadeLabel2 = New System.Windows.Forms.Label()
+        Me.BtnData1 = New System.Windows.Forms.Button()
+        Me.Button26 = New System.Windows.Forms.Button()
+        Me.Button27 = New System.Windows.Forms.Button()
         RazaoSocialLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         BombeirosSituacaoLabel = New System.Windows.Forms.Label()
@@ -382,7 +384,7 @@ Partial Class FrmAlvara
         'BombeiroDataProvisorioLabel
         '
         BombeiroDataProvisorioLabel.AutoSize = True
-        BombeiroDataProvisorioLabel.Location = New System.Drawing.Point(90, 150)
+        BombeiroDataProvisorioLabel.Location = New System.Drawing.Point(42, 149)
         BombeiroDataProvisorioLabel.Name = "BombeiroDataProvisorioLabel"
         BombeiroDataProvisorioLabel.Size = New System.Drawing.Size(115, 13)
         BombeiroDataProvisorioLabel.TabIndex = 1
@@ -391,7 +393,7 @@ Partial Class FrmAlvara
         'BombeiroNProcessoLabel
         '
         BombeiroNProcessoLabel.AutoSize = True
-        BombeiroNProcessoLabel.Location = New System.Drawing.Point(11, 22)
+        BombeiroNProcessoLabel.Location = New System.Drawing.Point(23, 22)
         BombeiroNProcessoLabel.Name = "BombeiroNProcessoLabel"
         BombeiroNProcessoLabel.Size = New System.Drawing.Size(54, 13)
         BombeiroNProcessoLabel.TabIndex = 3
@@ -833,6 +835,15 @@ Partial Class FrmAlvara
         EndCidadeLabel1.TabIndex = 75
         EndCidadeLabel1.Text = "Cidade:"
         '
+        'EndEstadoLabel1
+        '
+        EndEstadoLabel1.AutoSize = True
+        EndEstadoLabel1.Location = New System.Drawing.Point(261, 123)
+        EndEstadoLabel1.Name = "EndEstadoLabel1"
+        EndEstadoLabel1.Size = New System.Drawing.Size(43, 13)
+        EndEstadoLabel1.TabIndex = 76
+        EndEstadoLabel1.Text = "Estado:"
+        '
         'PrinceDBDataSet
         '
         Me.PrinceDBDataSet.DataSetName = "PrinceDBDataSet"
@@ -1225,6 +1236,8 @@ Partial Class FrmAlvara
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button27)
+        Me.GroupBox2.Controls.Add(Me.Button26)
         Me.GroupBox2.Controls.Add(Me.BtnProcotBomb)
         Me.GroupBox2.Controls.Add(Me.Button11)
         Me.GroupBox2.Controls.Add(Me.Label3)
@@ -1233,9 +1246,9 @@ Partial Class FrmAlvara
         Me.GroupBox2.Controls.Add(Me.BombeiroNProcessoMaskedTextBox)
         Me.GroupBox2.Controls.Add(BombeiroNProcessoLabel)
         Me.GroupBox2.Controls.Add(Me.BombeiroDataPedProcessoMaskedTextBox)
-        Me.GroupBox2.Location = New System.Drawing.Point(300, 13)
+        Me.GroupBox2.Location = New System.Drawing.Point(239, 13)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(214, 161)
+        Me.GroupBox2.Size = New System.Drawing.Size(275, 161)
         Me.GroupBox2.TabIndex = 13
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Corpo de Bombeiros ( PrevFogo )"
@@ -1244,7 +1257,7 @@ Partial Class FrmAlvara
         '
         Me.BtnProcotBomb.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.fundo_azul
         Me.BtnProcotBomb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnProcotBomb.Location = New System.Drawing.Point(9, 73)
+        Me.BtnProcotBomb.Location = New System.Drawing.Point(196, 73)
         Me.BtnProcotBomb.Name = "BtnProcotBomb"
         Me.BtnProcotBomb.Size = New System.Drawing.Size(69, 35)
         Me.BtnProcotBomb.TabIndex = 79
@@ -1254,7 +1267,7 @@ Partial Class FrmAlvara
         'Button11
         '
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button11.Location = New System.Drawing.Point(84, 131)
+        Me.Button11.Location = New System.Drawing.Point(64, 131)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(123, 23)
         Me.Button11.TabIndex = 52
@@ -1264,7 +1277,7 @@ Partial Class FrmAlvara
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(59, 49)
+        Me.Label3.Location = New System.Drawing.Point(5, 49)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(73, 13)
         Me.Label3.TabIndex = 7
@@ -1273,7 +1286,7 @@ Partial Class FrmAlvara
         'Button10
         '
         Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button10.Location = New System.Drawing.Point(84, 102)
+        Me.Button10.Location = New System.Drawing.Point(64, 102)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(123, 23)
         Me.Button10.TabIndex = 51
@@ -1283,7 +1296,7 @@ Partial Class FrmAlvara
         'Button9
         '
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button9.Location = New System.Drawing.Point(84, 73)
+        Me.Button9.Location = New System.Drawing.Point(64, 73)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(123, 23)
         Me.Button9.TabIndex = 50
@@ -1293,7 +1306,7 @@ Partial Class FrmAlvara
         'BombeiroNProcessoMaskedTextBox
         '
         Me.BombeiroNProcessoMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "BombeiroNProcesso", True))
-        Me.BombeiroNProcessoMaskedTextBox.Location = New System.Drawing.Point(71, 19)
+        Me.BombeiroNProcessoMaskedTextBox.Location = New System.Drawing.Point(83, 19)
         Me.BombeiroNProcessoMaskedTextBox.Mask = "0.0.00.00.0000000000-00"
         Me.BombeiroNProcessoMaskedTextBox.Name = "BombeiroNProcessoMaskedTextBox"
         Me.BombeiroNProcessoMaskedTextBox.Size = New System.Drawing.Size(136, 20)
@@ -1302,7 +1315,7 @@ Partial Class FrmAlvara
         'BombeiroDataPedProcessoMaskedTextBox
         '
         Me.BombeiroDataPedProcessoMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "BombeiroDataPedProcesso", True))
-        Me.BombeiroDataPedProcessoMaskedTextBox.Location = New System.Drawing.Point(138, 45)
+        Me.BombeiroDataPedProcessoMaskedTextBox.Location = New System.Drawing.Point(84, 45)
         Me.BombeiroDataPedProcessoMaskedTextBox.Mask = "00/00/0000"
         Me.BombeiroDataPedProcessoMaskedTextBox.Name = "BombeiroDataPedProcessoMaskedTextBox"
         Me.BombeiroDataPedProcessoMaskedTextBox.Size = New System.Drawing.Size(69, 20)
@@ -1312,7 +1325,7 @@ Partial Class FrmAlvara
         'BombeiroDataProvisorioMaskedTextBox
         '
         Me.BombeiroDataProvisorioMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "BombeiroDataProvisorio", True))
-        Me.BombeiroDataProvisorioMaskedTextBox.Location = New System.Drawing.Point(211, 147)
+        Me.BombeiroDataProvisorioMaskedTextBox.Location = New System.Drawing.Point(163, 146)
         Me.BombeiroDataProvisorioMaskedTextBox.Mask = "00/00/0000"
         Me.BombeiroDataProvisorioMaskedTextBox.Name = "BombeiroDataProvisorioMaskedTextBox"
         Me.BombeiroDataProvisorioMaskedTextBox.Size = New System.Drawing.Size(70, 20)
@@ -1324,7 +1337,7 @@ Partial Class FrmAlvara
         Me.BombeiroExigenciaRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "BombeiroExigencia", True))
         Me.BombeiroExigenciaRichTextBox.Location = New System.Drawing.Point(14, 29)
         Me.BombeiroExigenciaRichTextBox.Name = "BombeiroExigenciaRichTextBox"
-        Me.BombeiroExigenciaRichTextBox.Size = New System.Drawing.Size(267, 88)
+        Me.BombeiroExigenciaRichTextBox.Size = New System.Drawing.Size(219, 88)
         Me.BombeiroExigenciaRichTextBox.TabIndex = 1
         Me.BombeiroExigenciaRichTextBox.Text = ""
         '
@@ -2758,6 +2771,22 @@ Partial Class FrmAlvara
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "GroupBox9"
         '
+        'EndEstadoLabel2
+        '
+        Me.EndEstadoLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "EndEstado", True))
+        Me.EndEstadoLabel2.Location = New System.Drawing.Point(302, 123)
+        Me.EndEstadoLabel2.Name = "EndEstadoLabel2"
+        Me.EndEstadoLabel2.Size = New System.Drawing.Size(182, 13)
+        Me.EndEstadoLabel2.TabIndex = 77
+        '
+        'EndCidadeLabel2
+        '
+        Me.EndCidadeLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "EndCidade", True))
+        Me.EndCidadeLabel2.Location = New System.Drawing.Point(303, 110)
+        Me.EndCidadeLabel2.Name = "EndCidadeLabel2"
+        Me.EndCidadeLabel2.Size = New System.Drawing.Size(181, 13)
+        Me.EndCidadeLabel2.TabIndex = 76
+        '
         'BtnData1
         '
         Me.BtnData1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
@@ -2768,30 +2797,29 @@ Partial Class FrmAlvara
         Me.BtnData1.Text = "Agora"
         Me.BtnData1.UseVisualStyleBackColor = True
         '
-        'EndCidadeLabel2
+        'Button26
         '
-        Me.EndCidadeLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "EndCidade", True))
-        Me.EndCidadeLabel2.Location = New System.Drawing.Point(303, 110)
-        Me.EndCidadeLabel2.Name = "EndCidadeLabel2"
-        Me.EndCidadeLabel2.Size = New System.Drawing.Size(181, 13)
-        Me.EndCidadeLabel2.TabIndex = 76
+        Me.Button26.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button26.Location = New System.Drawing.Point(159, 45)
+        Me.Button26.Name = "Button26"
+        Me.Button26.Size = New System.Drawing.Size(43, 21)
+        Me.Button26.TabIndex = 80
+        Me.Button26.Text = "Agora"
+        Me.Button26.UseVisualStyleBackColor = True
         '
-        'EndEstadoLabel1
+        'Button27
         '
-        EndEstadoLabel1.AutoSize = True
-        EndEstadoLabel1.Location = New System.Drawing.Point(261, 123)
-        EndEstadoLabel1.Name = "EndEstadoLabel1"
-        EndEstadoLabel1.Size = New System.Drawing.Size(43, 13)
-        EndEstadoLabel1.TabIndex = 76
-        EndEstadoLabel1.Text = "Estado:"
-        '
-        'EndEstadoLabel2
-        '
-        Me.EndEstadoLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "EndEstado", True))
-        Me.EndEstadoLabel2.Location = New System.Drawing.Point(302, 123)
-        Me.EndEstadoLabel2.Name = "EndEstadoLabel2"
-        Me.EndEstadoLabel2.Size = New System.Drawing.Size(182, 13)
-        Me.EndEstadoLabel2.TabIndex = 77
+        Me.Button27.BackColor = System.Drawing.Color.Transparent
+        Me.Button27.BackgroundImage = CType(resources.GetObject("Button27.BackgroundImage"), System.Drawing.Image)
+        Me.Button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button27.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button27.Location = New System.Drawing.Point(224, 18)
+        Me.Button27.Name = "Button27"
+        Me.Button27.Size = New System.Drawing.Size(46, 22)
+        Me.Button27.TabIndex = 81
+        Me.Button27.Text = "Copiar"
+        Me.Button27.UseVisualStyleBackColor = False
         '
         'FrmAlvara
         '
@@ -3059,4 +3087,6 @@ Partial Class FrmAlvara
     Friend WithEvents BtnData1 As Button
     Friend WithEvents EndCidadeLabel2 As Label
     Friend WithEvents EndEstadoLabel2 As Label
+    Friend WithEvents Button26 As Button
+    Friend WithEvents Button27 As Button
 End Class

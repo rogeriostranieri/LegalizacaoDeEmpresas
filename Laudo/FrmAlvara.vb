@@ -942,4 +942,16 @@ Public Class FrmAlvara
     Private Sub BtnData1_Click(sender As Object, e As EventArgs) Handles BtnData1.Click
         AvisarDiaMaskedTextBox.Text = DateTime.Now.ToString()
     End Sub
+
+    Private Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
+        BombeiroDataPedProcessoMaskedTextBox.Text = DateTime.Now.ToString()
+
+    End Sub
+
+    Private Sub Button27_Click(sender As Object, e As EventArgs) Handles Button27.Click
+        Dim Processo As String = BombeiroNProcessoMaskedTextBox.Text
+        'CNPJ = CNPJ.Replace("/", ",").Replace(".", "-")
+        Clipboard.SetText(Processo.Replace("/", "").Replace(",", "").Replace("-", "").Replace(".", "")) ''
+
+    End Sub
 End Class
