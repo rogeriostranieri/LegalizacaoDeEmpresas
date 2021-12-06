@@ -329,9 +329,6 @@ Public Class FrmAlvara
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
 
 
-
-
-
         If ModeloSistemaComboBox.Text = "Alvará Antigo" Then
             'tirar espaço do textbox laudo
             NlaudoTextBox.Text = NlaudoTextBox.Text.Replace(" ", "")
@@ -369,14 +366,30 @@ Public Class FrmAlvara
 
         ElseIf ModeloSistemaComboBox.Text = "Junta Comercial" Then
 
-            System.Diagnostics.Process.Start("https://www.empresafacil.pr.gov.br/sigfacil/processo/acompanhar/co_protocolo/" + NlaudoTextBox.Text)
+            Select Case EndEstadoLabel2.Text.Trim()
+                Case "PR"
+                    System.Diagnostics.Process.Start("https://www.empresafacil.pr.gov.br/sigfacil/processo/acompanhar/co_protocolo/" + NlaudoTextBox.Text)
+                Case "SC"
+                    System.Diagnostics.Process.Start("http://regin.jucesc.sc.gov.br/requerimentoUniversal/Viabilidades.aspx")
+                Case ""
+                    TabAlvara.SelectTab(0)
+                    TabControl2.SelectTab(1)
+                    If EndEstadoTextBox.Text = "" Then
+                        MessageBox.Show("Preencher o endereço completo e salvar para atualizar o formulário", "Prince Ajuda")
+                    Else
+                        MessageBox.Show("Estado Não cadastrado, favor contatar o administrador do sistema", "Prince Ajuda")
 
+                    End If
+
+
+            End Select
 
         Else
 
             MessageBox.Show("Sem sistema para consulta", "Prince Sistemas - Alerta")
 
         End If
+
 
     End Sub
 

@@ -77,6 +77,7 @@ Partial Class FrmAlvara
         Dim BombeiroSituacaoLabel As System.Windows.Forms.Label
         Dim EndCidadeLabel1 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAlvara))
+        Dim EndEstadoLabel1 As System.Windows.Forms.Label
         Me.PrinceDBDataSet = New PrinceSistemas.PrinceDBDataSet()
         Me.LaudosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LaudosTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.LaudosTableAdapter()
@@ -169,7 +170,6 @@ Partial Class FrmAlvara
         Me.Label5 = New System.Windows.Forms.Label()
         Me.SituacaoComboBox = New System.Windows.Forms.ComboBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.EndCidadeLabel2 = New System.Windows.Forms.Label()
         Me.NlaudoLabel = New System.Windows.Forms.Label()
         Me.BtnBombVer = New System.Windows.Forms.Button()
         Me.BombeiroSituacaoComboBox = New System.Windows.Forms.ComboBox()
@@ -255,6 +255,8 @@ Partial Class FrmAlvara
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.BtnData1 = New System.Windows.Forms.Button()
+        Me.EndCidadeLabel2 = New System.Windows.Forms.Label()
+        Me.EndEstadoLabel2 = New System.Windows.Forms.Label()
         RazaoSocialLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         BombeirosSituacaoLabel = New System.Windows.Forms.Label()
@@ -308,6 +310,7 @@ Partial Class FrmAlvara
         HistoricoLabel = New System.Windows.Forms.Label()
         BombeiroSituacaoLabel = New System.Windows.Forms.Label()
         EndCidadeLabel1 = New System.Windows.Forms.Label()
+        EndEstadoLabel1 = New System.Windows.Forms.Label()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LaudosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LaudosBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -824,7 +827,7 @@ Partial Class FrmAlvara
         'EndCidadeLabel1
         '
         EndCidadeLabel1.AutoSize = True
-        EndCidadeLabel1.Location = New System.Drawing.Point(36, 71)
+        EndCidadeLabel1.Location = New System.Drawing.Point(261, 110)
         EndCidadeLabel1.Name = "EndCidadeLabel1"
         EndCidadeLabel1.Size = New System.Drawing.Size(43, 13)
         EndCidadeLabel1.TabIndex = 75
@@ -1804,8 +1807,6 @@ Partial Class FrmAlvara
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox4.Controls.Add(Me.EndCidadeLabel2)
-        Me.GroupBox4.Controls.Add(EndCidadeLabel1)
         Me.GroupBox4.Controls.Add(Me.NlaudoLabel)
         Me.GroupBox4.Controls.Add(Me.BtnBombVer)
         Me.GroupBox4.Controls.Add(BombeiroSituacaoLabel)
@@ -1824,15 +1825,6 @@ Partial Class FrmAlvara
         Me.GroupBox4.TabIndex = 55
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "CENTRAL DE LAUDOS E ALVARÁS"
-        '
-        'EndCidadeLabel2
-        '
-        Me.EndCidadeLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "EndCidade", True))
-        Me.EndCidadeLabel2.Location = New System.Drawing.Point(78, 71)
-        Me.EndCidadeLabel2.Name = "EndCidadeLabel2"
-        Me.EndCidadeLabel2.Size = New System.Drawing.Size(181, 13)
-        Me.EndCidadeLabel2.TabIndex = 76
-        Me.EndCidadeLabel2.Text = "--"
         '
         'NlaudoLabel
         '
@@ -2739,6 +2731,10 @@ Partial Class FrmAlvara
         'GroupBox9
         '
         Me.GroupBox9.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox9.Controls.Add(EndEstadoLabel1)
+        Me.GroupBox9.Controls.Add(Me.EndEstadoLabel2)
+        Me.GroupBox9.Controls.Add(Me.EndCidadeLabel2)
+        Me.GroupBox9.Controls.Add(EndCidadeLabel1)
         Me.GroupBox9.Controls.Add(Me.BtnData1)
         Me.GroupBox9.Controls.Add(Me.LembreteCheckBox)
         Me.GroupBox9.Controls.Add(Me.CMCLabel)
@@ -2757,7 +2753,7 @@ Partial Class FrmAlvara
         Me.GroupBox9.Controls.Add(Me.RazaoSocialTextBox)
         Me.GroupBox9.Location = New System.Drawing.Point(3, 32)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(504, 153)
+        Me.GroupBox9.Size = New System.Drawing.Size(494, 153)
         Me.GroupBox9.TabIndex = 78
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "GroupBox9"
@@ -2771,6 +2767,31 @@ Partial Class FrmAlvara
         Me.BtnData1.TabIndex = 76
         Me.BtnData1.Text = "Agora"
         Me.BtnData1.UseVisualStyleBackColor = True
+        '
+        'EndCidadeLabel2
+        '
+        Me.EndCidadeLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "EndCidade", True))
+        Me.EndCidadeLabel2.Location = New System.Drawing.Point(303, 110)
+        Me.EndCidadeLabel2.Name = "EndCidadeLabel2"
+        Me.EndCidadeLabel2.Size = New System.Drawing.Size(181, 13)
+        Me.EndCidadeLabel2.TabIndex = 76
+        '
+        'EndEstadoLabel1
+        '
+        EndEstadoLabel1.AutoSize = True
+        EndEstadoLabel1.Location = New System.Drawing.Point(261, 123)
+        EndEstadoLabel1.Name = "EndEstadoLabel1"
+        EndEstadoLabel1.Size = New System.Drawing.Size(43, 13)
+        EndEstadoLabel1.TabIndex = 76
+        EndEstadoLabel1.Text = "Estado:"
+        '
+        'EndEstadoLabel2
+        '
+        Me.EndEstadoLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "EndEstado", True))
+        Me.EndEstadoLabel2.Location = New System.Drawing.Point(302, 123)
+        Me.EndEstadoLabel2.Name = "EndEstadoLabel2"
+        Me.EndEstadoLabel2.Size = New System.Drawing.Size(182, 13)
+        Me.EndEstadoLabel2.TabIndex = 77
         '
         'FrmAlvara
         '
@@ -3033,8 +3054,9 @@ Partial Class FrmAlvara
     Friend WithEvents GroupBoxProcesso As GroupBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents NlaudoLabel As Label
-    Friend WithEvents EndCidadeLabel2 As Label
     Friend WithEvents BtnNovoProtocolo As Button
     Friend WithEvents BtnProcotBomb As Button
     Friend WithEvents BtnData1 As Button
+    Friend WithEvents EndCidadeLabel2 As Label
+    Friend WithEvents EndEstadoLabel2 As Label
 End Class
