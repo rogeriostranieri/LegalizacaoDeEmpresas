@@ -61,22 +61,34 @@ Public Class Legalizacao
                 Me.EmpresasTableAdapter.Fill(Me.PrinceDBDataSet.Empresas)
 
             ElseIf result = DialogResult.Yes Then
+
+
                 Try
+
                     'Salva alterações
                     Me.Validate()
                     Me.EmpresasBindingSource.EndEdit()
                     Me.EmpresasTableAdapter.Update(Me.PrinceDBDataSet.Empresas)
 
-                    'Modifica bloqueando td novamente
-                    BtnEditar.Text = "Editar"
-                    BtnExcluir.Enabled = True
-                    GroupBox2.Enabled = False
-                    GroupBox10.Enabled = False
+
+                    If BtnEditar.Text = "Editar" Then
+                        Editar()
+
+                    ElseIf BtnEditar.Text = "Cancelar" Then
+                        'Modifica bloqueando td novamente
+                        ' BtnEditar.Text = "Editar"
+                        ' BtnExcluir.Enabled = True
+                        ' GroupBox2.Enabled = False
+                        ' GroupBox10.Enabled = False
+                        Editar()
+                    End If
+
 
                     Dim NomeEmpresa As String = RazaoSocialTextBox.Text
                     ComboBoxBuscaEmpresa.Text = NomeEmpresa
                     ComboBoxBuscaEmpresa.Focus()
                     RazaoSocialTextBox.Focus()
+
 
 
                 Catch exc As Exception
@@ -134,13 +146,20 @@ Public Class Legalizacao
         ' Me.ResumeLayout()
 
         'comendo do EDITAR
-        BtnEditar.Text = "Editar"
-        GroupBox2.Enabled = False
-        GroupBox10.Enabled = False
+        'Editar()
+
+        BtnEditar.Text = "Cancelar"
+        Editar()
+        'GroupBox2.Enabled = False
+        'GroupBox10.Enabled = False
+        'BtnAlteracao.Enabled = False
 
         'chama combobox status
         ModCombobox.ComboboxLegalizacao()
         ModCombobox.ComboboxLegalizacaoProcesso()
+
+
+
     End Sub
 
 
@@ -201,20 +220,95 @@ Public Class Legalizacao
     Private Sub StatusMudar()
 
         Select Case StatusComboBox.Text'.Trim()
-            Case "Finalizado"
-                StatusComboBox.BackColor = System.Drawing.Color.Green
-                StatusComboBox.ForeColor = System.Drawing.Color.White
-                AvisarDiaMaskedTextBox.Text = ""
-                PictureBox1.Image = My.Resources.check
 
-                If ProcessoComboBox.Text = "Baixa" Then
-                    PictureBox2.Image = My.Resources.fechadaempresa
+            Case "Finalizado"
+                If SistemaExternoComboBox.Text = "Não" Then
+                    If MsgBox("Foi alterado no seu Sistema Particular?", MsgBoxStyle.YesNo, "Notificação") = MsgBoxResult.Yes Then
+                        'StatusComboBox.BackColor = System.Drawing.Color.Green
+                        ' StatusComboBox.ForeColor = System.Drawing.Color.White
+                        'AvisarDiaMaskedTextBox.Text = ""
+                        ' PictureBox1.Image = My.Resources.check
+
+                        If ProcessoComboBox.Text = "Baixa" Then
+                            StatusComboBox.BackColor = System.Drawing.Color.Green
+                            StatusComboBox.ForeColor = System.Drawing.Color.White
+                            AvisarDiaMaskedTextBox.Text = ""
+                            PictureBox1.Image = My.Resources.check
+                            PictureBox2.Image = My.Resources.fechadaempresa
+                            SistemaExternoComboBox.SelectedItem = "Sim"
+
+                        ElseIf ProcessoComboBox.Text = "Finalizado" Then
+                            StatusComboBox.BackColor = System.Drawing.Color.Green
+                            StatusComboBox.ForeColor = System.Drawing.Color.White
+                            AvisarDiaMaskedTextBox.Text = ""
+                            PictureBox1.Image = My.Resources.check
+                            PictureBox2.Image = My.Resources.ABERTURA_DE_EMPRESA
+                            SistemaExternoComboBox.SelectedItem = "Sim"
+
+                        Else
+
+                            StatusComboBox.BackColor = System.Drawing.Color.Green
+                            StatusComboBox.ForeColor = System.Drawing.Color.White
+                            AvisarDiaMaskedTextBox.Text = ""
+                            PictureBox1.Image = My.Resources.check
+                            PictureBox2.Image = My.Resources.ABERTURA_DE_EMPRESA
+                            SistemaExternoComboBox.SelectedItem = "Sim"
+
+                        End If
+                    Else
+                        StatusComboBox.Text = "Pêndencia Sistema Externo"
+                        StatusComboBox.BackColor = System.Drawing.Color.Red
+                        StatusComboBox.ForeColor = System.Drawing.Color.Black
+                        ' AvisarDiaMaskedTextBox.Text = ""
+                        PictureBox1.Image = My.Resources.check
+                        PictureBox2.Image = Nothing
+                        ' SistemaExternoComboBox.SelectedText = "Não"
+                    End If
+                ElseIf SistemaExternoComboBox.Text = "Sim" Then
+
+                    If ProcessoComboBox.Text = "Baixa" Then
+                        StatusComboBox.BackColor = System.Drawing.Color.Green
+                        StatusComboBox.ForeColor = System.Drawing.Color.White
+
+                        PictureBox1.Image = My.Resources.check
+                        PictureBox2.Image = My.Resources.fechadaempresa
+                        SistemaExternoComboBox.SelectedItem = "Sim"
+
+                    ElseIf ProcessoComboBox.Text = "Finalizado" Then
+                        StatusComboBox.BackColor = System.Drawing.Color.Green
+                        StatusComboBox.ForeColor = System.Drawing.Color.White
+                        AvisarDiaMaskedTextBox.Text = ""
+                        PictureBox1.Image = My.Resources.check
+                        PictureBox2.Image = My.Resources.ABERTURA_DE_EMPRESA
+                        SistemaExternoComboBox.SelectedItem = "Sim"
+
+                    Else
+                        StatusComboBox.BackColor = System.Drawing.Color.Green
+                        StatusComboBox.ForeColor = System.Drawing.Color.White
+                        AvisarDiaMaskedTextBox.Text = ""
+                        PictureBox1.Image = My.Resources.check
+                        PictureBox2.Image = My.Resources.ABERTURA_DE_EMPRESA
+                        SistemaExternoComboBox.SelectedItem = "Sim"
+
+                    End If
 
                 Else
-                    PictureBox2.Image = My.Resources.ABERTURA_DE_EMPRESA
-
+                    'Antigo codigo
+                    StatusComboBox.BackColor = System.Drawing.Color.Green
+                    StatusComboBox.ForeColor = System.Drawing.Color.White
+                    AvisarDiaMaskedTextBox.Text = ""
+                    PictureBox1.Image = My.Resources.check
                 End If
 
+
+
+            Case "Pêndencia Sistema Externo"
+                StatusComboBox.BackColor = System.Drawing.Color.Red
+                StatusComboBox.ForeColor = System.Drawing.Color.Black
+                ' AvisarDiaMaskedTextBox.Text = ""
+                PictureBox1.Image = My.Resources.check
+                PictureBox2.Image = Nothing
+               ' SistemaExternoComboBox.SelectedText = "Não"
 
             Case "Paralisado"
                 StatusComboBox.BackColor = System.Drawing.Color.Red
@@ -265,6 +359,7 @@ Public Class Legalizacao
                 StatusComboBox.ForeColor = System.Drawing.Color.Black
                 PictureBox2.Image = My.Resources.empresa_facil
                 PictureBox1.Image = My.Resources.emandamento
+
                 '//////////////////////////////////////////////
                 ' FIM
                 '//////////////////////////////////////////////
@@ -697,29 +792,61 @@ Precisa do Protocolo de Viabilidade da Junta Comercial", "Prince Ajuda")
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles BtnNovo.Click
-        If MsgBox(" Deseja criar um novo registro?", MsgBoxStyle.YesNo, "Novo") = MsgBoxResult.Yes Then
-            Me.Validate()
-            Me.EmpresasBindingSource.AddNew()
-            'unchek lembrete
+        If BtnEditar.Text = "Editar" Then
 
-            LembreteCheckBox.CheckState = CheckState.Unchecked
-            PrioridadeCheckBox.CheckState = CheckState.Unchecked
+            If MsgBox(" Deseja criar um novo registro?", MsgBoxStyle.YesNo, "Novo") = MsgBoxResult.Yes Then
+                Me.Validate()
+                Me.EmpresasBindingSource.AddNew()
+                'unchek lembrete
 
-            'Cadastro
-            TipoDeEmpresaComboBox.SelectedIndex = -1
-            PorteDaEmpresaComboBox.SelectedIndex = -1
-            RegimeFederalComboBox.SelectedIndex = -1
-            NaturezaJuridicaComboBox.SelectedIndex = -1
+                LembreteCheckBox.CheckState = CheckState.Unchecked
+                PrioridadeCheckBox.CheckState = CheckState.Unchecked
 
-            'procedimentos
-            StatusComboBox.SelectedIndex = -1
-            ProcessoComboBox.SelectedIndex = -1
+                'Cadastro
+                TipoDeEmpresaComboBox.SelectedIndex = -1
+                PorteDaEmpresaComboBox.SelectedIndex = -1
+                RegimeFederalComboBox.SelectedIndex = -1
+                NaturezaJuridicaComboBox.SelectedIndex = -1
 
-            Editar()
-        Else
+                'procedimentos
+                'StatusComboBox.SelectedIndex = -1
+                StatusComboBox.SelectedText = "Não Iniciado"
+                ProcessoComboBox.SelectedIndex = -1
+                SistemaExternoComboBox.SelectedText = "Não"
+                EmpCriadoMaskedTextBox.Text = DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString()
+                AvisarDiaMaskedTextBox.Text = DateTime.Now.ToString()
+                Editar()
+            Else
+
+            End If
+
+        ElseIf BtnEditar.Text = "Cancelar" Then
+            If MsgBox(" Deseja criar um novo registro?", MsgBoxStyle.YesNo, "Novo") = MsgBoxResult.Yes Then
+                Me.Validate()
+                Me.EmpresasBindingSource.AddNew()
+                'unchek lembrete
+
+                LembreteCheckBox.CheckState = CheckState.Unchecked
+                PrioridadeCheckBox.CheckState = CheckState.Unchecked
+
+                'Cadastro
+                TipoDeEmpresaComboBox.SelectedIndex = -1
+                PorteDaEmpresaComboBox.SelectedIndex = -1
+                RegimeFederalComboBox.SelectedIndex = -1
+                NaturezaJuridicaComboBox.SelectedIndex = -1
+
+                'procedimentos
+                'StatusComboBox.SelectedIndex = -1
+                StatusComboBox.SelectedText = "Não Iniciado"
+                ProcessoComboBox.SelectedIndex = -1
+                SistemaExternoComboBox.SelectedText = "Não"
+                EmpCriadoMaskedTextBox.Text = DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString()
+                AvisarDiaMaskedTextBox.Text = DateTime.Now.ToString()
+            Else
+
+            End If
 
         End If
-
     End Sub
 
     Private Sub Button17_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
@@ -1176,6 +1303,10 @@ Protocolo RedeSim= " & G & ".
                 StatusComboBox.SelectedIndex = -1
                 ProcessoComboBox.SelectedIndex = -1
 
+                'Preencher data
+                EmpCriadoMaskedTextBox.Text = DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString()
+                AvisarDiaMaskedTextBox.Text = DateTime.Now.ToString()
+
             Catch ex As System.InvalidCastException
                 MessageBox.Show("ERRO", "Prince Avisa")
 
@@ -1323,6 +1454,8 @@ Protocolo RedeSim= " & G & ".
 
             BtnExcluir.Enabled = False
 
+            BtnAlteracao.Enabled = True
+
         ElseIf BtnEditar.Text = "Cancelar" Then
 
             BtnEditar.Text = "Editar"
@@ -1336,6 +1469,7 @@ Protocolo RedeSim= " & G & ".
             RazaoSocialTextBox.Focus()
 
             BtnExcluir.Enabled = True
+            BtnAlteracao.Enabled = False
         End If
     End Sub
 
@@ -1451,5 +1585,67 @@ Protocolo RedeSim= " & G & ".
 
     Private Sub CnaeSimples_Click(sender As Object, e As EventArgs) Handles CnaeSimples.Click
         System.Diagnostics.Process.Start("https://www.contabeis.com.br/ferramentas/simples-nacional/")
+    End Sub
+
+    Private Sub BtnData1_Click(sender As Object, e As EventArgs) Handles BtnData1.Click
+        AvisarDiaMaskedTextBox.Text = DateTime.Now.ToString()
+    End Sub
+
+    Private Sub BtnData2_Click(sender As Object, e As EventArgs) Handles BtnData2.Click
+        DataProtJuntaComercialMaskedTextBox.Text = DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString()
+    End Sub
+
+    Private Sub BtnData3_Click(sender As Object, e As EventArgs) Handles BtnData3.Click
+        ProtJuntaFinalMaskedTextBox.Text = DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString()
+    End Sub
+
+    Private Sub BtnData4_Click(sender As Object, e As EventArgs) Handles BtnData4.Click
+        DataProtREDESIMMaskedTextBox.Text = DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString()
+    End Sub
+
+    Private Sub BtnConsultaeProcessoEstado_Click(sender As Object, e As EventArgs) Handles BtnConsultaeProcessoEstado.Click
+
+        If Trim(IEeProcNumTextBox.Text) = "" Then
+            MsgBox("abrindo site para solicitação...", MsgBoxStyle.Information, "Prince Sistemas Informa!")
+            System.Diagnostics.Process.Start("https://www.eprotocolo.pr.gov.br/spiweb/telaInicial.do?action=iniciarProcesso")
+
+        Else
+            System.Diagnostics.Process.Start("https://www.eprotocolo.pr.gov.br/spiweb/consultarProtocoloDigital.do?action=pesquisar&numeroProtocolo=" + IEeProcNumTextBox.Text)
+
+
+        End If
+    End Sub
+
+    Private Sub IEeProcNumTextBox_TextChanged(sender As Object, e As EventArgs) Handles IEeProcNumTextBox.TextChanged
+        If Trim(IEeProcNumTextBox.Text) = "" Then
+            BtnConsultaeProcessoEstado.Text = "Solicitar"
+
+        Else
+            BtnConsultaeProcessoEstado.Text = "Consultar"
+
+        End If
+    End Sub
+
+
+    Private Sub AjudaSimples()
+        MessageBox.Show(" 2.8. A ME ou a EPP que iniciar sua atividade em outro mês que não o de janeiro poderá optar pelo Simples Nacional?
+Após efetuar a inscrição no CNPJ, bem como obter as suas inscrições municipal e estadual, caso exigível (ver Pergunta 2.11), se quiser que a opção pelo Simples Nacional produza efeitos retroativos à abertura do CNPJ, a ME ou a EPP precisa observar ao mesmo tempo dois prazos para solicitá-la:
+-> até 30 dias contados do último deferimento de inscrição (seja a estadual ou a municipal), e 
+-> para empresas com data de abertura constante no CNPJ:
+   *o até 31 de dezembro de 2020: até 180 dias contados da inscrição no CNPJ; ou 
+   *o a partir de 1º de janeiro de 2021: até 60 dias contados da inscrição no CNPJ.
+
+    Observações:
+ Os prazos não são somados. Ou seja, não existe um prazo de 210 dias contados da inscrição no CNPJ para empresas abertas até 2020, nem um
+prazo de 90 dias para empresas abertas a partir de 2021.
+ A inscrição municipal é sempre exigível. A inscrição estadual é exigida para a empresa que exerça atividades sujeitas ao ICMS 
+
+    Após o fim desse prazo para opção como empresa em início de atividade, a opção somente será possível no mês de janeiro do ano-calendário seguinte, produzindo efeitos a partir desse mês e não mais desde a abertura do CNPJ
+
+(Base normativa: art. 2º, IV, art. 6º, § 5º, I, da Resolução CGSN nº 140, de 2018; art. 5º da Resolução CGSN nº 150, de 2019; art. 2º da Resolução CGSN nº 155, de 2020.) ", "Prince Ajuda")
+    End Sub
+    Private Sub LinkLabel17_LinkClicked_1(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel17.LinkClicked
+        AjudaSimples()
+
     End Sub
 End Class

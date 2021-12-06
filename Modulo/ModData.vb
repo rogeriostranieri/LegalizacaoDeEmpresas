@@ -12,7 +12,7 @@ Module ModData
     ' Dim agora As Date = agoradll
     'Dim Data As String = Datadll
 
-    Private ReadOnly Data As String = "01/03/2021"
+    Private ReadOnly Data As String = "20/12/2021"
 
     Private ReadOnly agora As Date = Now
     Dim firstDate As String
@@ -83,8 +83,6 @@ Fone/Whats = 0 44 9 8809-1766")
         'firstDate = Data
         firstDate = Data
         secondDate = CDate(firstDate)
-
-
 
         AboutBox.Vencimento.Text = "Expira em " & DateDiff(DateInterval.Day, agora, secondDate) & " dias restantes" 'vence.vence
     End Sub

@@ -31,6 +31,7 @@ Partial Class Avisos
         Me.LaudosDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn59 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BombeiroSituacao = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmpresasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmpresasTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.EmpresasTableAdapter()
         Me.EmpresasDataGridView = New System.Windows.Forms.DataGridView()
@@ -93,12 +94,12 @@ Partial Class Avisos
         Me.LaudosDataGridView.AllowUserToDeleteRows = False
         Me.LaudosDataGridView.AutoGenerateColumns = False
         Me.LaudosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.LaudosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn59})
+        Me.LaudosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn59, Me.BombeiroSituacao})
         Me.LaudosDataGridView.DataSource = Me.LaudosBindingSource
         Me.LaudosDataGridView.Location = New System.Drawing.Point(5, 279)
         Me.LaudosDataGridView.Name = "LaudosDataGridView"
         Me.LaudosDataGridView.ReadOnly = True
-        Me.LaudosDataGridView.Size = New System.Drawing.Size(515, 146)
+        Me.LaudosDataGridView.Size = New System.Drawing.Size(544, 146)
         Me.LaudosDataGridView.TabIndex = 3
         '
         'DataGridViewTextBoxColumn2
@@ -115,7 +116,15 @@ Partial Class Avisos
         Me.DataGridViewTextBoxColumn59.HeaderText = "Situação"
         Me.DataGridViewTextBoxColumn59.Name = "DataGridViewTextBoxColumn59"
         Me.DataGridViewTextBoxColumn59.ReadOnly = True
-        Me.DataGridViewTextBoxColumn59.Width = 160
+        Me.DataGridViewTextBoxColumn59.Width = 130
+        '
+        'BombeiroSituacao
+        '
+        Me.BombeiroSituacao.DataPropertyName = "BombeiroSituacao"
+        Me.BombeiroSituacao.HeaderText = "Bombeiro"
+        Me.BombeiroSituacao.Name = "BombeiroSituacao"
+        Me.BombeiroSituacao.ReadOnly = True
+        Me.BombeiroSituacao.Width = 130
         '
         'EmpresasBindingSource
         '
@@ -137,7 +146,7 @@ Partial Class Avisos
         Me.EmpresasDataGridView.Location = New System.Drawing.Point(5, 108)
         Me.EmpresasDataGridView.Name = "EmpresasDataGridView"
         Me.EmpresasDataGridView.ReadOnly = True
-        Me.EmpresasDataGridView.Size = New System.Drawing.Size(515, 146)
+        Me.EmpresasDataGridView.Size = New System.Drawing.Size(544, 146)
         Me.EmpresasDataGridView.TabIndex = 3
         '
         'DataGridViewTextBoxColumn68
@@ -166,7 +175,7 @@ Partial Class Avisos
         '
         'MaskedTextBox1
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(386, 85)
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(415, 86)
         Me.MaskedTextBox1.Mask = "00/00/0000"
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
         Me.MaskedTextBox1.Size = New System.Drawing.Size(70, 20)
@@ -177,7 +186,7 @@ Partial Class Avisos
         '
         Me.Button1.BackColor = System.Drawing.Color.White
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(462, 84)
+        Me.Button1.Location = New System.Drawing.Point(491, 85)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(58, 21)
         Me.Button1.TabIndex = 5
@@ -223,9 +232,9 @@ Partial Class Avisos
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox2.Image = Global.PrinceSistemas.My.Resources.Resources.fechar2
-        Me.PictureBox2.Location = New System.Drawing.Point(404, -3)
+        Me.PictureBox2.Location = New System.Drawing.Point(427, 1)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(116, 51)
+        Me.PictureBox2.Size = New System.Drawing.Size(134, 60)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 14
         Me.PictureBox2.TabStop = False
@@ -236,7 +245,7 @@ Partial Class Avisos
         Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox3.Image = Global.PrinceSistemas.My.Resources.Resources.refresh_512
-        Me.PictureBox3.Location = New System.Drawing.Point(345, 76)
+        Me.PictureBox3.Location = New System.Drawing.Point(374, 77)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(35, 29)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -248,7 +257,7 @@ Partial Class Avisos
         Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox4.Image = Global.PrinceSistemas.My.Resources.Resources.lembrete
-        Me.PictureBox4.Location = New System.Drawing.Point(231, 12)
+        Me.PictureBox4.Location = New System.Drawing.Point(241, 10)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(53, 51)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -260,7 +269,7 @@ Partial Class Avisos
         Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(302, 12)
+        Me.PictureBox5.Location = New System.Drawing.Point(312, 10)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(53, 51)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -272,8 +281,8 @@ Partial Class Avisos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.madeira
-        Me.ClientSize = New System.Drawing.Size(527, 437)
+        Me.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.aviso
+        Me.ClientSize = New System.Drawing.Size(561, 437)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox3)
@@ -321,12 +330,13 @@ Partial Class Avisos
     Friend WithEvents DataGridViewTextBoxColumn68 As DataGridViewTextBoxColumn
     Friend WithEvents Processo As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn89 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn59 As DataGridViewTextBoxColumn
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn59 As DataGridViewTextBoxColumn
+    Friend WithEvents BombeiroSituacao As DataGridViewTextBoxColumn
 End Class

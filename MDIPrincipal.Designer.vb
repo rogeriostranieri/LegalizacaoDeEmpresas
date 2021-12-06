@@ -39,7 +39,6 @@ Partial Class MDIPrincipal
         Me.ContatosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProtocoladosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegimeFederalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.AlvarásProtocoladosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VencimentoAlvaráToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,6 +46,9 @@ Partial Class MDIPrincipal
         Me.PrevFogoBombeiroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatóriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpresasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoDeEmpresasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegimeFederalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NovasEmpresasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.AlvarásLaudosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -66,6 +68,7 @@ Partial Class MDIPrincipal
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.PadrãoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.NoiteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NovoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
@@ -179,7 +182,7 @@ Partial Class MDIPrincipal
         '
         'ConsultaToolStripMenuItem
         '
-        Me.ConsultaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProtocoladosToolStripMenuItem, Me.RegimeFederalToolStripMenuItem, Me.ToolStripSeparator6, Me.AlvarásProtocoladosToolStripMenuItem, Me.VencimentoAlvaráToolStripMenuItem, Me.ControleLigaçãoLaudosToolStripMenuItem, Me.PrevFogoBombeiroToolStripMenuItem})
+        Me.ConsultaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProtocoladosToolStripMenuItem, Me.ToolStripSeparator6, Me.AlvarásProtocoladosToolStripMenuItem, Me.VencimentoAlvaráToolStripMenuItem, Me.ControleLigaçãoLaudosToolStripMenuItem, Me.PrevFogoBombeiroToolStripMenuItem})
         Me.ConsultaToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.ConsultaToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White
         Me.ConsultaToolStripMenuItem.Name = "ConsultaToolStripMenuItem"
@@ -194,12 +197,6 @@ Partial Class MDIPrincipal
         Me.ProtocoladosToolStripMenuItem.Name = "ProtocoladosToolStripMenuItem"
         Me.ProtocoladosToolStripMenuItem.Size = New System.Drawing.Size(221, 22)
         Me.ProtocoladosToolStripMenuItem.Text = "Empresas Protocoladas"
-        '
-        'RegimeFederalToolStripMenuItem
-        '
-        Me.RegimeFederalToolStripMenuItem.Name = "RegimeFederalToolStripMenuItem"
-        Me.RegimeFederalToolStripMenuItem.Size = New System.Drawing.Size(221, 22)
-        Me.RegimeFederalToolStripMenuItem.Text = "Regime Federal"
         '
         'ToolStripSeparator6
         '
@@ -236,7 +233,7 @@ Partial Class MDIPrincipal
         '
         'RelatóriosToolStripMenuItem
         '
-        Me.RelatóriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpresasToolStripMenuItem1, Me.ToolStripSeparator2, Me.AlvarásLaudosToolStripMenuItem})
+        Me.RelatóriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpresasToolStripMenuItem1, Me.TipoDeEmpresasToolStripMenuItem, Me.RegimeFederalToolStripMenuItem, Me.NovasEmpresasToolStripMenuItem, Me.ToolStripSeparator2, Me.AlvarásLaudosToolStripMenuItem})
         Me.RelatóriosToolStripMenuItem.Name = "RelatóriosToolStripMenuItem"
         Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(80, 21)
         Me.RelatóriosToolStripMenuItem.Text = "Relatórios"
@@ -244,18 +241,36 @@ Partial Class MDIPrincipal
         'EmpresasToolStripMenuItem1
         '
         Me.EmpresasToolStripMenuItem1.Name = "EmpresasToolStripMenuItem1"
-        Me.EmpresasToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.EmpresasToolStripMenuItem1.Size = New System.Drawing.Size(187, 22)
         Me.EmpresasToolStripMenuItem1.Text = "Empresas"
+        '
+        'TipoDeEmpresasToolStripMenuItem
+        '
+        Me.TipoDeEmpresasToolStripMenuItem.Name = "TipoDeEmpresasToolStripMenuItem"
+        Me.TipoDeEmpresasToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.TipoDeEmpresasToolStripMenuItem.Text = "Tipo de Empresas"
+        '
+        'RegimeFederalToolStripMenuItem
+        '
+        Me.RegimeFederalToolStripMenuItem.Name = "RegimeFederalToolStripMenuItem"
+        Me.RegimeFederalToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.RegimeFederalToolStripMenuItem.Text = "Regime Federal"
+        '
+        'NovasEmpresasToolStripMenuItem
+        '
+        Me.NovasEmpresasToolStripMenuItem.Name = "NovasEmpresasToolStripMenuItem"
+        Me.NovasEmpresasToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.NovasEmpresasToolStripMenuItem.Text = "Data de Aberturas"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(184, 6)
         '
         'AlvarásLaudosToolStripMenuItem
         '
         Me.AlvarásLaudosToolStripMenuItem.Name = "AlvarásLaudosToolStripMenuItem"
-        Me.AlvarásLaudosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AlvarásLaudosToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
         Me.AlvarásLaudosToolStripMenuItem.Text = "Alvarás/Laudos"
         '
         'AgendaToolStripMenuItem
@@ -375,7 +390,7 @@ Partial Class MDIPrincipal
         '
         Me.ToolStripDropDownButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PadrãoToolStripMenuItem1, Me.NoiteToolStripMenuItem1})
+        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PadrãoToolStripMenuItem1, Me.NoiteToolStripMenuItem1, Me.NovoToolStripMenuItem})
         Me.ToolStripDropDownButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
         Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -395,6 +410,12 @@ Partial Class MDIPrincipal
         Me.NoiteToolStripMenuItem1.Name = "NoiteToolStripMenuItem1"
         Me.NoiteToolStripMenuItem1.Size = New System.Drawing.Size(112, 22)
         Me.NoiteToolStripMenuItem1.Text = "Noite"
+        '
+        'NovoToolStripMenuItem
+        '
+        Me.NovoToolStripMenuItem.Name = "NovoToolStripMenuItem"
+        Me.NovoToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.NovoToolStripMenuItem.Text = "Novo *"
         '
         'StatusStrip
         '
@@ -474,11 +495,14 @@ Partial Class MDIPrincipal
     Friend WithEvents EmpresasToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents AlvarásLaudosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RegimeFederalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AlvarásProtocoladosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
     Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
     Friend WithEvents PadrãoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents NoiteToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents PrevFogoBombeiroToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TipoDeEmpresasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NovoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NovasEmpresasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RegimeFederalToolStripMenuItem As ToolStripMenuItem
 End Class

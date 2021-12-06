@@ -60,7 +60,7 @@
         'Legalizacao.StatusComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "Status", True))
         Legalizacao.StatusComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System
         Legalizacao.StatusComboBox.FormattingEnabled = True
-        Legalizacao.StatusComboBox.Items.AddRange(New Object() {"Não Iniciado", "Em Andamento", "Aguardando Cliente", "Aguardando Pagamento das Taxas", "Junta Comercial - Prefeitura: EM ANÁLISE", "Junta Comercial - Busca de Nome", "Junta Comercial - Aguardando Atualização", "Junta Comercial - Protocolado", "Receita Federal - DBE", "Receita Federal - e-Processo", "Receita Estadual - Em Andamento", "Receita Estadual - Protocolado", "Simples Nacional - Em Andamento", "Simples Nacional - Protocolado", "Prefeitura/Alvará - Em Andamento", "Finalizado", "Paralisado", "Cancelado", "Saiu do Escritório"})
+        Legalizacao.StatusComboBox.Items.AddRange(New Object() {"Não Iniciado", "Em Andamento", "Aguardando Cliente", "Aguardando Pagamento das Taxas", "Junta Comercial - Prefeitura: EM ANÁLISE", "Junta Comercial - Busca de Nome", "Junta Comercial - Aguardando Atualização", "Junta Comercial - Protocolado", "Receita Federal - DBE", "Receita Federal - e-Processo", "Receita Estadual - Em Andamento", "Receita Estadual - Protocolado", "Simples Nacional - Em Andamento", "Simples Nacional - Protocolado", "Prefeitura/Alvará - Em Andamento", "Finalizado", "Paralisado", "Cancelado", "Saiu do Escritório", "Pêndencia Sistema Externo"})
         'Legalizacao.StatusComboBox.Location = New System.Drawing.Point(421, 14)
         'Legalizacao.StatusComboBox.Name = "StatusComboBox"
         'Legalizacao.StatusComboBox.Size = New System.Drawing.Size(207, 21)
@@ -97,7 +97,7 @@
         'RelatorioEmpresas.StatusComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "Status", True))
         RelatorioEmpresas.StatusComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System
         RelatorioEmpresas.StatusComboBox.FormattingEnabled = True
-        RelatorioEmpresas.StatusComboBox.Items.AddRange(New Object() {"Não Iniciado", "Em Andamento", "Aguardando Cliente", "Aguardando Pagamento das Taxas", "Junta Comercial - Prefeitura: EM ANÁLISE", "Junta Comercial - Busca de Nome", "Junta Comercial - Aguardando Atualização", "Junta Comercial - Protocolado", "Receita Federal - DBE", "Receita Federal - e-Processo", "Receita Estadual - Em Andamento", "Receita Estadual - Protocolado", "Simples Nacional - Em Andamento", "Simples Nacional - Protocolado", "Prefeitura/Alvará - Em Andamento", "Finalizado", "Paralisado", "Cancelado", "Saiu do Escritório"})
+        RelatorioEmpresas.StatusComboBox.Items.AddRange(New Object() {"Não Iniciado", "Em Andamento", "Aguardando Cliente", "Aguardando Pagamento das Taxas", "Junta Comercial - Prefeitura: EM ANÁLISE", "Junta Comercial - Busca de Nome", "Junta Comercial - Aguardando Atualização", "Junta Comercial - Protocolado", "Receita Federal - DBE", "Receita Federal - e-Processo", "Receita Estadual - Em Andamento", "Receita Estadual - Protocolado", "Simples Nacional - Em Andamento", "Simples Nacional - Protocolado", "Prefeitura/Alvará - Em Andamento", "Finalizado", "Paralisado", "Cancelado", "Saiu do Escritório", "Pêndencia Sistema Externo"})
         'RelatorioEmpresas.StatusComboBox.Location = New System.Drawing.Point(421, 14)
         'RelatorioEmpresas.StatusComboBox.Name = "StatusComboBox"
         'RelatorioEmpresas.StatusComboBox.Size = New System.Drawing.Size(207, 21)

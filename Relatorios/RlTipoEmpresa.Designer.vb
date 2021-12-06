@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class RelatorioEmpresas
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class RlTipoEmpresa
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,31 +20,27 @@ Partial Class RelatorioEmpresas
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RelatorioEmpresas))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RlTipoEmpresa))
         Me.PrinceDBDataSet = New PrinceSistemas.PrinceDBDataSet()
         Me.EmpresasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmpresasTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.EmpresasTableAdapter()
         Me.TableAdapterManager = New PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager()
         Me.EmpresasDataGridView = New System.Windows.Forms.DataGridView()
-        Me.BbtnPrint = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn58 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StatusComboBox = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.BbtnPrint = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-        Me.ProcessoComboBox = New System.Windows.Forms.ComboBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Processo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NireData = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,57 +80,62 @@ Partial Class RelatorioEmpresas
         Me.EmpresasDataGridView.AllowUserToDeleteRows = False
         Me.EmpresasDataGridView.AutoGenerateColumns = False
         Me.EmpresasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.EmpresasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn22, Me.Processo, Me.NireData})
+        Me.EmpresasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn58})
         Me.EmpresasDataGridView.DataSource = Me.EmpresasBindingSource
-        Me.EmpresasDataGridView.Location = New System.Drawing.Point(6, 128)
+        Me.EmpresasDataGridView.Location = New System.Drawing.Point(25, 84)
         Me.EmpresasDataGridView.Name = "EmpresasDataGridView"
         Me.EmpresasDataGridView.ReadOnly = True
-        Me.EmpresasDataGridView.Size = New System.Drawing.Size(659, 263)
+        Me.EmpresasDataGridView.Size = New System.Drawing.Size(732, 220)
         Me.EmpresasDataGridView.TabIndex = 1
         '
-        'BbtnPrint
+        'DataGridViewTextBoxColumn2
         '
-        Me.BbtnPrint.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BbtnPrint.Location = New System.Drawing.Point(481, 91)
-        Me.BbtnPrint.Name = "BbtnPrint"
-        Me.BbtnPrint.Size = New System.Drawing.Size(89, 34)
-        Me.BbtnPrint.TabIndex = 19
-        Me.BbtnPrint.Text = "Imprimir"
-        Me.BbtnPrint.UseVisualStyleBackColor = True
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "RazaoSocial"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "RazaoSocial"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 250
         '
-        'Button2
+        'DataGridViewTextBoxColumn3
         '
-        Me.Button2.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(576, 91)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(89, 34)
-        Me.Button2.TabIndex = 18
-        Me.Button2.Text = "Atualizar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "CNPJ"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "CNPJ"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 150
+        '
+        'DataGridViewTextBoxColumn58
+        '
+        Me.DataGridViewTextBoxColumn58.DataPropertyName = "TipoDeEmpresa"
+        Me.DataGridViewTextBoxColumn58.HeaderText = "TipoDeEmpresa"
+        Me.DataGridViewTextBoxColumn58.Name = "DataGridViewTextBoxColumn58"
+        Me.DataGridViewTextBoxColumn58.ReadOnly = True
+        Me.DataGridViewTextBoxColumn58.Width = 250
         '
         'StatusComboBox
         '
         Me.StatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.StatusComboBox.FormattingEnabled = True
-        Me.StatusComboBox.Location = New System.Drawing.Point(62, 61)
+        Me.StatusComboBox.Items.AddRange(New Object() {"Sociedade Empresária Limitada ( Ltda. )", "Empresa Individual de Responsabilidade Limitada ( Eireli )", "Empresa individual ( RE )", "Microempreendedor Indivual ( MEI )", "Sociedade Anônima (SA)", "Sociedade Simples"})
+        Me.StatusComboBox.Location = New System.Drawing.Point(78, 58)
         Me.StatusComboBox.Name = "StatusComboBox"
-        Me.StatusComboBox.Size = New System.Drawing.Size(172, 21)
+        Me.StatusComboBox.Size = New System.Drawing.Size(251, 21)
         Me.StatusComboBox.TabIndex = 31
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(240, 61)
+        Me.Button1.Location = New System.Drawing.Point(335, 58)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(57, 24)
         Me.Button1.TabIndex = 30
-        Me.Button1.Text = "Filtrar"
+        Me.Button1.Text = "Buscar"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 67)
+        Me.Label1.Location = New System.Drawing.Point(28, 64)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(52, 13)
         Me.Label1.TabIndex = 32
@@ -145,11 +146,15 @@ Partial Class RelatorioEmpresas
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Monotype Corsiva", 21.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Blue
-        Me.Label3.Location = New System.Drawing.Point(214, 9)
+        Me.Label3.Location = New System.Drawing.Point(243, 9)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(243, 36)
+        Me.Label3.Size = New System.Drawing.Size(319, 36)
         Me.Label3.TabIndex = 29
-        Me.Label3.Text = "Relatório de Empresas"
+        Me.Label3.Text = "Relatório - Tipos de Empresas"
+        '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.UseEXDialog = True
         '
         'PrintPreviewDialog1
         '
@@ -161,95 +166,43 @@ Partial Class RelatorioEmpresas
         Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
         Me.PrintPreviewDialog1.Visible = False
         '
+        'BbtnPrint
+        '
+        Me.BbtnPrint.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BbtnPrint.Location = New System.Drawing.Point(573, 310)
+        Me.BbtnPrint.Name = "BbtnPrint"
+        Me.BbtnPrint.Size = New System.Drawing.Size(89, 34)
+        Me.BbtnPrint.TabIndex = 34
+        Me.BbtnPrint.Text = "Imprimir"
+        Me.BbtnPrint.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(668, 310)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(89, 34)
+        Me.Button2.TabIndex = 33
+        Me.Button2.Text = "Atualizar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'PrintDocument1
         '
         '
-        'ProcessoComboBox
-        '
-        Me.ProcessoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ProcessoComboBox.FormattingEnabled = True
-        Me.ProcessoComboBox.Location = New System.Drawing.Point(62, 88)
-        Me.ProcessoComboBox.Name = "ProcessoComboBox"
-        Me.ProcessoComboBox.Size = New System.Drawing.Size(112, 21)
-        Me.ProcessoComboBox.TabIndex = 34
-        '
-        'Button3
-        '
-        Me.Button3.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(180, 85)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(57, 24)
-        Me.Button3.TabIndex = 33
-        Me.Button3.Text = "Filtrar"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(33, 91)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(31, 13)
-        Me.Label2.TabIndex = 35
-        Me.Label2.Text = "Tipo:"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "RazaoSocial"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Razão Social"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 200
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "CNPJ"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "CNPJ"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 120
-        '
-        'DataGridViewTextBoxColumn22
-        '
-        Me.DataGridViewTextBoxColumn22.DataPropertyName = "Status"
-        Me.DataGridViewTextBoxColumn22.HeaderText = "Status"
-        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
-        Me.DataGridViewTextBoxColumn22.ReadOnly = True
-        '
-        'Processo
-        '
-        Me.Processo.DataPropertyName = "Processo"
-        Me.Processo.HeaderText = "Processo"
-        Me.Processo.Name = "Processo"
-        Me.Processo.ReadOnly = True
-        Me.Processo.Width = 80
-        '
-        'NireData
-        '
-        Me.NireData.DataPropertyName = "NireData"
-        Me.NireData.HeaderText = "Data Abertura"
-        Me.NireData.Name = "NireData"
-        Me.NireData.ReadOnly = True
-        '
-        'RelatorioEmpresas
+        'RlTipoEmpresa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(674, 397)
-        Me.Controls.Add(Me.ProcessoComboBox)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Label2)
+        Me.ClientSize = New System.Drawing.Size(783, 347)
+        Me.Controls.Add(Me.BbtnPrint)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.StatusComboBox)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.BbtnPrint)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.EmpresasDataGridView)
-        Me.KeyPreview = True
-        Me.Name = "RelatorioEmpresas"
-        Me.ShowIcon = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Relatório Geral Empresas"
+        Me.Name = "RlTipoEmpresa"
+        Me.Text = "Relatório - Tipo de Empresas"
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresasDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -263,20 +216,16 @@ Partial Class RelatorioEmpresas
     Friend WithEvents EmpresasTableAdapter As PrinceDBDataSetTableAdapters.EmpresasTableAdapter
     Friend WithEvents TableAdapterManager As PrinceDBDataSetTableAdapters.TableAdapterManager
     Friend WithEvents EmpresasDataGridView As DataGridView
-    Friend WithEvents BbtnPrint As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn58 As DataGridViewTextBoxColumn
     Friend WithEvents StatusComboBox As ComboBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
+    Friend WithEvents BbtnPrint As Button
+    Friend WithEvents Button2 As Button
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
-    Friend WithEvents ProcessoComboBox As ComboBox
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Label2 As Label
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
-    Friend WithEvents Processo As DataGridViewTextBoxColumn
-    Friend WithEvents NireData As DataGridViewTextBoxColumn
 End Class

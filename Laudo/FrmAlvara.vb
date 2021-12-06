@@ -657,10 +657,19 @@ Public Class FrmAlvara
         TabControl2.SelectTab(4)
         CNPJRequerenteMaskedTextBox.Text = CNPJMaskedTextBox.Text
         EndRequerenteTextBox.Text = EnderecoTextBox.Text & ", Nº: " & EndNumTextBox.Text & ", " & EndCompTextBox.Text & ", " & EndBairroTextBox.Text & ", CEP: " & EndCEPMaskedTextBox.Text & ", " & EndCidadeTextBox.Text & "-" & EndEstadoTextBox.Text
-        FoneRequerenteTextBox.Text = TelefoneMaskedTextBox.Text
+        'FoneRequerenteTextBox.Text = TelefoneMaskedTextBox.Text
         'EmailRequerenteTextBox.Text = "legalizacaobetel@gmail.com"
-        Contador.Show() ' pégando apenas o 1 cadastro
-        EmailRequerenteTextBox.Text = Contador.EmailTextBox.Text
+
+        If Trim(FoneRequerenteTextBox.Text) = "" Then
+            Contador.Show() ' pégando apenas o 1 cadastro
+            FoneRequerenteTextBox.Text = Contador.TelefoneMaskedTextBox.Text
+        End If
+
+        If Trim(EmailRequerenteTextBox.Text) = "" Then
+            Contador.Show() ' pégando apenas o 1 cadastro
+            EmailRequerenteTextBox.Text = Contador.EmailTextBox.Text
+        End If
+
         Contador.Close()
 
     End Sub
@@ -786,8 +795,22 @@ Public Class FrmAlvara
             ModCon.Historico()
             ' ModCon.Atualizadadadoslaudo()
 
+        ElseIf System.Windows.Forms.DialogResult.No Then
+            If MessageBox.Show("Tem certeza que deseja limpar os dados do andamento geral?", "Prince Sistemas", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = System.Windows.Forms.DialogResult.Yes Then
+                'Limpando as BOX
+                NlaudoTextBox.Text = ""
+                ModeloSistemaComboBox.Text = ""
+                NaturezaDoPedidoRichTextBox.Text = ""
+
+                DataEntradaMaskedTextBox.Text = ""
+                ProtocoloTipoTextBox.Text = ""
+                ProtocoloNTextBox.Text = ""
+                ProtocoloAnoTextBox.Text = ""
+                ProtocoloSenhaTextBox.Text = ""
+            Else
+            End If
+
         Else
-            'ModCon.Atualizadadadoslaudo()
 
         End If
 
@@ -850,6 +873,10 @@ Public Class FrmAlvara
             NlaudoLabel.Visible = True
             NlaudoTextBox.Visible = True
             Button7.Visible = True
+        ElseIf ModeloSistemaComboBox.Text = "Alvará Manual" Then
+            NlaudoLabel.Visible = True
+            NlaudoTextBox.Visible = True
+            Button7.Visible = False
         Else
             NlaudoLabel.Visible = False
             NlaudoTextBox.Visible = False
@@ -857,5 +884,49 @@ Public Class FrmAlvara
 
         End If
 
+    End Sub
+
+    Private Sub BtnNovoProtocolo_Click(sender As Object, e As EventArgs) Handles BtnNovoProtocolo.Click
+        If MessageBox.Show("Deseja salvar o protocolo no histórico?", "Prince Sistemas", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = System.Windows.Forms.DialogResult.Yes Then
+            ModCon.SalvaProtocolo()
+            ' ModCon.Atualizadadadoslaudo()
+        ElseIf System.Windows.Forms.DialogResult.No Then
+            If MessageBox.Show("Tem certeza que deseja limpar o protocolo?", "Prince Sistemas", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = System.Windows.Forms.DialogResult.Yes Then
+                'Limpando as BOX
+                DataEntradaMaskedTextBox.Text = ""
+                ProtocoloTipoTextBox.Text = ""
+                ProtocoloNTextBox.Text = ""
+                ProtocoloAnoTextBox.Text = ""
+                ProtocoloSenhaTextBox.Text = ""
+            Else
+            End If
+
+        Else
+
+        End If
+
+    End Sub
+
+    Private Sub BtnProcotBomb_Click(sender As Object, e As EventArgs) Handles BtnProcotBomb.Click
+        If MessageBox.Show("Deseja salvar o protocolo no histórico?", "Prince Sistemas", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = System.Windows.Forms.DialogResult.Yes Then
+            ModCon.SalvaProtocolBomb()
+
+            ' ModCon.Atualizadadadoslaudo()
+        ElseIf System.Windows.Forms.DialogResult.No Then
+            If MessageBox.Show("Tem certeza que deseja limpar o protocolo?", "Prince Sistemas", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = System.Windows.Forms.DialogResult.Yes Then
+                'Limpando as BOX
+                BombeiroNProcessoMaskedTextBox.Text = ""
+                BombeiroDataPedProcessoMaskedTextBox.Text = ""
+
+            Else
+            End If
+
+        Else
+
+        End If
+    End Sub
+
+    Private Sub BtnData1_Click(sender As Object, e As EventArgs) Handles BtnData1.Click
+        AvisarDiaMaskedTextBox.Text = DateTime.Now.ToString()
     End Sub
 End Class

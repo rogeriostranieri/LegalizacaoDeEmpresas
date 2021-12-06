@@ -40,7 +40,7 @@ Public Class MDIPrincipal
         Me.WindowState = FormWindowState.Maximized
 
         'fundo padrao inicial
-        Me.BackgroundImage = My.Resources.FundoNovo
+        Me.BackgroundImage = My.Resources._1
 
 
 
@@ -605,6 +605,49 @@ Public Class MDIPrincipal
 
             FrmBombeiro.MdiParent = Me
             FrmBombeiro.Show()
+
+        End If
+    End Sub
+
+    Private Sub TipoDeEmpresasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TipoDeEmpresasToolStripMenuItem.Click
+        If Application.OpenForms.OfType(Of RlTipoEmpresa)().Count() > 0 Then
+
+            RlTipoEmpresa.Focus()
+            RlTipoEmpresa.Close()
+            RlTipoEmpresa.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            RlTipoEmpresa.Show()
+
+
+        Else
+
+            RlTipoEmpresa.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            RlTipoEmpresa.Show()
+
+        End If
+    End Sub
+
+    Private Sub NovoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NovoToolStripMenuItem.Click
+        Me.BackgroundImage = My.Resources._1
+        Me.Refresh()
+    End Sub
+
+    Private Sub NovasEmpresasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NovasEmpresasToolStripMenuItem.Click
+        If Application.OpenForms.OfType(Of RelEmpresasDatas)().Count() > 0 Then
+
+            RelEmpresasDatas.Focus()
+            RelEmpresasDatas.Close()
+            RelEmpresasDatas.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            RelEmpresasDatas.Show()
+
+
+        Else
+
+            RelEmpresasDatas.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            RelEmpresasDatas.Show()
 
         End If
     End Sub

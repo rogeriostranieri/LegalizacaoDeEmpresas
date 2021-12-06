@@ -45,7 +45,7 @@ Partial Class Login
         Me.UsernameLabel.BackColor = System.Drawing.Color.Transparent
         Me.UsernameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsernameLabel.ForeColor = System.Drawing.Color.White
-        Me.UsernameLabel.Location = New System.Drawing.Point(49, 112)
+        Me.UsernameLabel.Location = New System.Drawing.Point(150, 98)
         Me.UsernameLabel.Name = "UsernameLabel"
         Me.UsernameLabel.Size = New System.Drawing.Size(129, 23)
         Me.UsernameLabel.TabIndex = 0
@@ -57,7 +57,7 @@ Partial Class Login
         Me.PasswordLabel.BackColor = System.Drawing.Color.Transparent
         Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PasswordLabel.ForeColor = System.Drawing.Color.White
-        Me.PasswordLabel.Location = New System.Drawing.Point(248, 112)
+        Me.PasswordLabel.Location = New System.Drawing.Point(149, 142)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(129, 23)
         Me.PasswordLabel.TabIndex = 2
@@ -67,7 +67,7 @@ Partial Class Login
         'txtUsername
         '
         Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsername.Location = New System.Drawing.Point(51, 132)
+        Me.txtUsername.Location = New System.Drawing.Point(152, 118)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(127, 21)
         Me.txtUsername.TabIndex = 1
@@ -75,7 +75,7 @@ Partial Class Login
         'txtPassword
         '
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(250, 132)
+        Me.txtPassword.Location = New System.Drawing.Point(151, 162)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(127, 21)
@@ -83,7 +83,7 @@ Partial Class Login
         '
         'OK
         '
-        Me.OK.BackColor = System.Drawing.Color.Red
+        Me.OK.BackColor = System.Drawing.Color.Green
         Me.OK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.OK.Location = New System.Drawing.Point(133, 218)
         Me.OK.Name = "OK"
@@ -109,11 +109,11 @@ Partial Class Login
         Me.Button1.BackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(383, 12)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(42, 23)
+        Me.Button1.Size = New System.Drawing.Size(47, 26)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Ajuda"
         Me.Button1.UseVisualStyleBackColor = False
@@ -135,7 +135,7 @@ Partial Class Login
         Me.AcceptButton = Me.OK
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.fundo4
+        Me.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.login
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(426, 276)

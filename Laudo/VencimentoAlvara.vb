@@ -18,19 +18,37 @@ Class VencimentoAlvara
 
 
 
+        ' antigo e funciona
+        'LaudosBindingSource.Filter = "BombeiroDataProvisorio <> '0' OR ViabilidadeDataProvisorio <> '0' OR AmbientalDataProvisorio <> '0' OR SanitarioDataProvisorio <> '0' OR SetranDataProvisorio <> '0' "
 
-        ' LaudosBindingSource.Filter = "BombeiroDataProvisorio like '" & FilterA & "%' "
+        'LaudosBindingSource.Filter = "BombeiroDataProvisorio <> '' OR ViabilidadeDataProvisorio <> '' OR AmbientalDataProvisorio <> '' OR SanitarioDataProvisorio <> '' OR SetranDataProvisorio <> '' "
 
-        ' LaudosBindingSource.Filter = "ViabilidadeDataProvisorio like '" & FilterA & "%' "
+        ' esteja em andamento e finalizado 
 
-        'LaudosBindingSource.Filter = "AmbientalDataProvisorio like '" & FilterA & "%' "
+        LaudosBindingSource.Filter = "
+BombeiroDataProvisorio <> '0' 
+OR ViabilidadeDataProvisorio <> '0' 
+OR AmbientalDataProvisorio <> '0' 
+OR SanitarioDataProvisorio <> '0' 
+OR SetranDataProvisorio <> '0' 
 
-        'LaudosBindingSource.Filter = "SanitarioDataProvisorio like '" & FilterA & "%' "
+OR BombeiroDataProvisorio <> '' 
+OR ViabilidadeDataProvisorio <> '' 
+OR AmbientalDataProvisorio <> '' 
+OR SanitarioDataProvisorio <> '' 
+OR SetranDataProvisorio <> '' 
 
-        ' LaudosBindingSource.Filter = "SetranDataProvisorio like '" & FilterA & "%' "
-        LaudosBindingSource.Filter = "BombeiroDataProvisorio <> '0' OR ViabilidadeDataProvisorio <> '0' OR AmbientalDataProvisorio <> '0' OR SanitarioDataProvisorio <> '0' OR SetranDataProvisorio <> '0' "
-
-
+OR BombeiroDataProvisorio = 'Finalizado Definitivo' 
+OR BombeiroDataProvisorio = 'Finalizado Provisório'
+OR ViabilidadeDataProvisorio = 'Finalizado Definitivo' 
+OR ViabilidadeDataProvisorio = 'Finalizado Provisório'
+OR AmbientalDataProvisorio = 'Finalizado Definitivo'  
+OR AmbientalDataProvisorio = 'Finalizado Provisório' 
+OR SanitarioDataProvisorio = 'Finalizado Definitivo'  
+OR SanitarioDataProvisorio = 'Finalizado Provisório' 
+OR SetranDataProvisorio = 'Finalizado Definitivo'  
+OR SetranDataProvisorio = 'Finalizado Provisório' 
+"
 
     End Sub
 

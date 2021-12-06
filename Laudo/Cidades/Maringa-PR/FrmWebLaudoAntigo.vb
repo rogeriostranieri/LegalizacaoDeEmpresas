@@ -35,9 +35,11 @@
         WebBrowser1.Document.GetElementById("lote").SetAttribute("value", FrmAlvara.EndDataTextBox.Text)
         WebBrowser1.Document.GetElementById("cad_imobiliario").SetAttribute("value", FrmAlvara.CadImobTextBox.Text)
         WebBrowser1.Document.GetElementById("bairro").SetAttribute("value", FrmAlvara.EndBairroTextBox.Text)
-        WebBrowser1.Document.GetElementById("telefone").SetAttribute("value", FrmAlvara.TelefoneMaskedTextBox.Text)
+        WebBrowser1.Document.GetElementById("telefone").SetAttribute("value", FrmAlvara.FoneRequerenteTextBox.Text)
         WebBrowser1.Document.GetElementById("resp_tec").SetAttribute("value", FrmAlvara.ResptecnicoTextBox.Text)
         WebBrowser1.Document.GetElementById("cons_classe").SetAttribute("value", FrmAlvara.ResptecnicoNumeroTextBox.Text)
+
+        WebBrowser1.Document.GetElementById("obs").SetAttribute("value", FrmAlvara.NaturezaDoPedidoOBSRichTextBox.Text)
 
         WebBrowser1.Document.GetElementById("ramo").SetAttribute("value", FrmAlvara.RamodeatividadeRichTextBox.Text)
         'WebBrowser1.Document.GetElementById("obs").SetAttribute("value", FrmAlvara.RazaoSocialTextBox.Text)
@@ -122,9 +124,11 @@
         WebBrowser1.Document.GetElementById("lote").SetAttribute("value", FrmAlvara.EndDataTextBox.Text)
         WebBrowser1.Document.GetElementById("cad_imobiliario").SetAttribute("value", FrmAlvara.CadImobTextBox.Text)
         WebBrowser1.Document.GetElementById("bairro").SetAttribute("value", FrmAlvara.EndBairroTextBox.Text)
-        WebBrowser1.Document.GetElementById("telefone").SetAttribute("value", FrmAlvara.TelefoneMaskedTextBox.Text)
+        WebBrowser1.Document.GetElementById("telefone").SetAttribute("value", FrmAlvara.FoneRequerenteTextBox.Text)
         WebBrowser1.Document.GetElementById("resp_tec").SetAttribute("value", FrmAlvara.ResptecnicoTextBox.Text)
         WebBrowser1.Document.GetElementById("cons_classe").SetAttribute("value", FrmAlvara.ResptecnicoNumeroTextBox.Text)
+
+        WebBrowser1.Document.GetElementById("obs").SetAttribute("value", FrmAlvara.NaturezaDoPedidoOBSRichTextBox.Text)
 
         WebBrowser1.Document.GetElementById("ramo").SetAttribute("value", FrmAlvara.RamodeatividadeRichTextBox.Text)
         'WebBrowser1.Document.GetElementById("obs").SetAttribute("value", FrmAlvara.RazaoSocialTextBox.Text)

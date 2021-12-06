@@ -53,6 +53,7 @@ Partial Class VbAvisoPrincipal
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.CNAETableAdapter = Nothing
         Me.TableAdapterManager.ContadorTableAdapter = Nothing
+        Me.TableAdapterManager.ContatosTableAdapter = Nothing
         Me.TableAdapterManager.EmpresasTableAdapter = Nothing
         Me.TableAdapterManager.LaudosTableAdapter = Me.LaudosTableAdapter
         Me.TableAdapterManager.LoginTableAdapter = Nothing
@@ -76,7 +77,7 @@ Partial Class VbAvisoPrincipal
         '
         Me.Button2.BackColor = System.Drawing.Color.White
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(462, 444)
+        Me.Button2.Location = New System.Drawing.Point(491, 447)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(58, 21)
         Me.Button2.TabIndex = 19
@@ -85,7 +86,7 @@ Partial Class VbAvisoPrincipal
         '
         'MaskedTextBox2
         '
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(386, 445)
+        Me.MaskedTextBox2.Location = New System.Drawing.Point(415, 448)
         Me.MaskedTextBox2.Mask = "00/00/0000"
         Me.MaskedTextBox2.Name = "MaskedTextBox2"
         Me.MaskedTextBox2.Size = New System.Drawing.Size(70, 20)
@@ -103,7 +104,7 @@ Partial Class VbAvisoPrincipal
         Me.LaudosDataGridView1.Location = New System.Drawing.Point(5, 471)
         Me.LaudosDataGridView1.Name = "LaudosDataGridView1"
         Me.LaudosDataGridView1.ReadOnly = True
-        Me.LaudosDataGridView1.Size = New System.Drawing.Size(515, 115)
+        Me.LaudosDataGridView1.Size = New System.Drawing.Size(544, 115)
         Me.LaudosDataGridView1.TabIndex = 20
         '
         'DataGridViewTextBoxColumn2
@@ -117,7 +118,7 @@ Partial Class VbAvisoPrincipal
         'VbAvisoPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(523, 593)
+        Me.ClientSize = New System.Drawing.Size(553, 593)
         Me.Controls.Add(Me.LaudosDataGridView1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.MaskedTextBox2)

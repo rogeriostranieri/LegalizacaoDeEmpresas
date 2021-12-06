@@ -111,7 +111,7 @@ Adicionar Novo Registro em Laudos/Alvará?", MsgBoxStyle.YesNoCancel, "Prince Si
                                     FrmAlvara.EndBairroTextBox.Text = Legalizacao.EndBairroTextBox.Text
                                     FrmAlvara.EndCidadeTextBox.Text = Legalizacao.EndCidadeTextBox.Text
                                     FrmAlvara.EndEstadoTextBox.Text = Legalizacao.EndEstadoTextBox.Text
-                                    FrmAlvara.TelefoneMaskedTextBox.Text = Legalizacao.EmpTel1TextBox.Text
+
                                     FrmAlvara.AreaTextBox.Text = Legalizacao.AreaTextBox.Text
                                     FrmAlvara.Area2TextBox.Text = Legalizacao.Area2TextBox.Text
                                     FrmAlvara.CadImobTextBox.Text = Legalizacao.CadImobTextBox.Text
@@ -126,7 +126,8 @@ Adicionar Novo Registro em Laudos/Alvará?", MsgBoxStyle.YesNoCancel, "Prince Si
                                     FrmAlvara.RequerenteTextBox.Text = Legalizacao.NomeResponsavelTextBox.Text
                                     FrmAlvara.CPFRequerenteMaskedTextBox.Text = Legalizacao.CPFResponsavelMaskedTextBox.Text
                                     FrmAlvara.RGRequerenteTextBox.Text = Legalizacao.RespRGTextBox.Text
-
+                                    FrmAlvara.FoneRequerenteTextBox.Text = Legalizacao.EmpTel1TextBox.Text
+                                    FrmAlvara.EmailRequerenteTextBox.Text = Legalizacao.EmpEmailTextBox.Text
 
 
 
@@ -397,7 +398,7 @@ Verifique se o CNPJ do Alvará, são iguais ao do CNPJ do Cadastro Empresas!")
             FrmAlvara.EndBairroTextBox.Text = Legalizacao.EndBairroTextBox.Text
             FrmAlvara.EndCidadeTextBox.Text = Legalizacao.EndCidadeTextBox.Text
             FrmAlvara.EndEstadoTextBox.Text = Legalizacao.EndEstadoTextBox.Text
-            FrmAlvara.TelefoneMaskedTextBox.Text = Legalizacao.EmpTel1TextBox.Text
+
             FrmAlvara.AreaTextBox.Text = Legalizacao.AreaTextBox.Text
             FrmAlvara.Area2TextBox.Text = Legalizacao.Area2TextBox.Text
             FrmAlvara.CadImobTextBox.Text = Legalizacao.CadImobTextBox.Text
@@ -412,6 +413,8 @@ Verifique se o CNPJ do Alvará, são iguais ao do CNPJ do Cadastro Empresas!")
             FrmAlvara.RequerenteTextBox.Text = Legalizacao.NomeResponsavelTextBox.Text
             FrmAlvara.CPFRequerenteMaskedTextBox.Text = Legalizacao.CPFResponsavelMaskedTextBox.Text
             FrmAlvara.RGRequerenteTextBox.Text = Legalizacao.RespRGTextBox.Text
+            FrmAlvara.FoneRequerenteTextBox.Text = Legalizacao.EmpTel1TextBox.Text
+            FrmAlvara.EmailRequerenteTextBox.Text = Legalizacao.EmpEmailTextBox.Text
 
 
 
@@ -536,6 +539,80 @@ Protocolo: Data " & D & "; Tipo:" & E & ", Número:" & F & ", Ano:" & G & ", Sen
 
         End Try
 
+
+    End Sub
+
+
+    Sub SalvaProtocolo()
+        Try
+            'protocolo
+            Dim D = FrmAlvara.DataEntradaMaskedTextBox.Text.ToString()
+            Dim E = FrmAlvara.ProtocoloTipoTextBox.Text.ToString()
+            Dim F = FrmAlvara.ProtocoloNTextBox.Text.ToString()
+            Dim G = FrmAlvara.ProtocoloAnoTextBox.Text.ToString()
+            Dim H = FrmAlvara.ProtocoloSenhaTextBox.Text.ToString()
+
+            'abrir histórico
+            FrmAlvara.TabAlvara.SelectTab(4)
+
+
+            'Salvar
+            FrmAlvara.HistoricoRichTextBox.SelectedText &=
+    "Protocolo: Data " & D & "; Tipo:" & E & ", Número:" & F & ", Ano:" & G & ", Senha:" & H & ".
+
+//-----------------//-----------------//-----------------//-----------------//
+"
+
+            'Limpando as BOX
+            FrmAlvara.DataEntradaMaskedTextBox.Text = ""
+            FrmAlvara.ProtocoloTipoTextBox.Text = ""
+            FrmAlvara.ProtocoloNTextBox.Text = ""
+            FrmAlvara.ProtocoloAnoTextBox.Text = ""
+            FrmAlvara.ProtocoloSenhaTextBox.Text = ""
+
+            'menssagem box
+            MessageBox.Show("Protocolo Salvo no Histórico", "Prince Avisa")
+            FrmAlvara.TabAlvara.SelectTab(4)
+
+        Catch ex As System.InvalidCastException
+            MessageBox.Show("ERRO", "Prince Avisa")
+
+        End Try
+
+    End Sub
+
+
+    Sub SalvaProtocolBomb()
+        Try
+            'protocolo
+            Dim A = FrmAlvara.BombeiroNProcessoMaskedTextBox.Text.ToString()
+            Dim B = FrmAlvara.BombeiroDataPedProcessoMaskedTextBox.Text.ToString()
+
+
+            'abrir histórico
+            FrmAlvara.TabAlvara.SelectTab(4)
+
+
+            'Salvar
+            FrmAlvara.HistoricoRichTextBox.SelectedText &=
+    "Protocolo do Bombeiro: " & A & "; Data da solicitação:" & B & ".
+
+//-----------------//-----------------//-----------------//-----------------//
+"
+
+            'Limpando as BOX
+            FrmAlvara.BombeiroNProcessoMaskedTextBox.Text = ""
+            FrmAlvara.BombeiroDataPedProcessoMaskedTextBox.Text = ""
+
+
+            'menssagem box
+            MessageBox.Show("Protocolo Salvo no Histórico", "Prince Avisa")
+            FrmAlvara.TabAlvara.SelectTab(4)
+
+        Catch ex As System.InvalidCastException
+            MessageBox.Show("ERRO", "Prince Avisa")
+
+        End Try
 
     End Sub
 End Module

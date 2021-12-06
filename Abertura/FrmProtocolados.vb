@@ -6,7 +6,7 @@
         Me.EmpresasTableAdapter.Fill(Me.PrinceDBDataSet.Empresas)
 
 
-        EmpresasBindingSource.Filter = "Status = 'Junta Comercial - Protocolado' OR Status = 'Receita Federal - DBE' OR Status = 'Receita Estadual - Protocolado' OR Status = 'Simples Nacional - Protocolado' OR Status = 'Receita Federal - e-Processo'" ' 
+        EmpresasBindingSource.Filter = "Status = 'Junta Comercial - Protocolado' OR Status = 'Receita Federal - DBE' OR Status = 'Receita Estadual - Protocolado' OR Status = 'Simples Nacional - Protocolado' OR Status = 'Receita Federal - e-Processo' OR Status = 'Pêndencia Sistema Externo' "
 
 
     End Sub

@@ -58,7 +58,6 @@ Partial Class FrmAlvara
         Dim EndEstadoLabel As System.Windows.Forms.Label
         Dim EndBairroLabel As System.Windows.Forms.Label
         Dim EndCompLabel As System.Windows.Forms.Label
-        Dim TelefoneLabel As System.Windows.Forms.Label
         Dim EndNumLabel As System.Windows.Forms.Label
         Dim EnderecoLabel As System.Windows.Forms.Label
         Dim EndCEPLabel As System.Windows.Forms.Label
@@ -117,6 +116,7 @@ Partial Class FrmAlvara
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BtnProcotBomb = New System.Windows.Forms.Button()
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button10 = New System.Windows.Forms.Button()
@@ -194,7 +194,6 @@ Partial Class FrmAlvara
         Me.EndBairroTextBox = New System.Windows.Forms.TextBox()
         Me.EndCidadeTextBox = New System.Windows.Forms.TextBox()
         Me.EndEstadoTextBox = New System.Windows.Forms.TextBox()
-        Me.TelefoneMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         Me.EndCEPMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         Me.Button22 = New System.Windows.Forms.Button()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
@@ -222,6 +221,7 @@ Partial Class FrmAlvara
         Me.TabPage14 = New System.Windows.Forms.TabPage()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.TabPage15 = New System.Windows.Forms.TabPage()
+        Me.BtnNovoProtocolo = New System.Windows.Forms.Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.GroupBoxProcesso = New System.Windows.Forms.GroupBox()
         Me.ProtocoloSenhaTextBox = New System.Windows.Forms.TextBox()
@@ -254,6 +254,7 @@ Partial Class FrmAlvara
         Me.Label19 = New System.Windows.Forms.Label()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.BtnData1 = New System.Windows.Forms.Button()
         RazaoSocialLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         BombeirosSituacaoLabel = New System.Windows.Forms.Label()
@@ -289,7 +290,6 @@ Partial Class FrmAlvara
         EndEstadoLabel = New System.Windows.Forms.Label()
         EndBairroLabel = New System.Windows.Forms.Label()
         EndCompLabel = New System.Windows.Forms.Label()
-        TelefoneLabel = New System.Windows.Forms.Label()
         EndNumLabel = New System.Windows.Forms.Label()
         EnderecoLabel = New System.Windows.Forms.Label()
         EndCEPLabel = New System.Windows.Forms.Label()
@@ -667,15 +667,6 @@ Partial Class FrmAlvara
         EndCompLabel.Size = New System.Drawing.Size(74, 13)
         EndCompLabel.TabIndex = 9
         EndCompLabel.Text = "Complemento:"
-        '
-        'TelefoneLabel
-        '
-        TelefoneLabel.AutoSize = True
-        TelefoneLabel.Location = New System.Drawing.Point(369, 156)
-        TelefoneLabel.Name = "TelefoneLabel"
-        TelefoneLabel.Size = New System.Drawing.Size(52, 13)
-        TelefoneLabel.TabIndex = 25
-        TelefoneLabel.Text = "Telefone:"
         '
         'EndNumLabel
         '
@@ -1231,6 +1222,7 @@ Partial Class FrmAlvara
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.BtnProcotBomb)
         Me.GroupBox2.Controls.Add(Me.Button11)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Button10)
@@ -1244,6 +1236,17 @@ Partial Class FrmAlvara
         Me.GroupBox2.TabIndex = 13
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Corpo de Bombeiros ( PrevFogo )"
+        '
+        'BtnProcotBomb
+        '
+        Me.BtnProcotBomb.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.fundo_azul
+        Me.BtnProcotBomb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnProcotBomb.Location = New System.Drawing.Point(9, 73)
+        Me.BtnProcotBomb.Name = "BtnProcotBomb"
+        Me.BtnProcotBomb.Size = New System.Drawing.Size(69, 35)
+        Me.BtnProcotBomb.TabIndex = 79
+        Me.BtnProcotBomb.Text = "Novo Protocolo"
+        Me.BtnProcotBomb.UseVisualStyleBackColor = True
         '
         'Button11
         '
@@ -1554,7 +1557,7 @@ Partial Class FrmAlvara
         '
         Me.LembreteCheckBox.BackColor = System.Drawing.Color.Transparent
         Me.LembreteCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.LaudosBindingSource, "Lembrete", True))
-        Me.LembreteCheckBox.Location = New System.Drawing.Point(156, 112)
+        Me.LembreteCheckBox.Location = New System.Drawing.Point(84, 135)
         Me.LembreteCheckBox.Name = "LembreteCheckBox"
         Me.LembreteCheckBox.Size = New System.Drawing.Size(71, 19)
         Me.LembreteCheckBox.TabIndex = 37
@@ -1857,7 +1860,7 @@ Partial Class FrmAlvara
         '
         Me.BombeiroSituacaoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "BombeiroSituacao", True))
         Me.BombeiroSituacaoComboBox.FormattingEnabled = True
-        Me.BombeiroSituacaoComboBox.Items.AddRange(New Object() {"Não Necessita", "------ PrevFogo ------", "Não solicitado", "Aguardando Pagamento", "Em Andamento", "Junto com Laudo", "Não Liberado", "Finalizado Definitivo", "Finalizado Provisório", "Cancelado", "Paralizado", "Baixa em Andamento", "Baixado", "-", "---- Prefeitura/Laudo ----", "Não Iniciado", "Aguardando Pagamento", "Encaminhado p/ Vistoria", "Em Andamento", "Em Exigências", "Liberado", "Baixa em Andamento", "Baixado", "-"})
+        Me.BombeiroSituacaoComboBox.Items.AddRange(New Object() {"Não Necessita", "------ PrevFogo ------", "Não solicitado", "Aguardando Pagamento", "Em Andamento", "Junto com Laudo", "Não Liberado", "Finalizado Definitivo", "Finalizado Provisório", "Cancelado", "Paralisado", "Baixa em Andamento", "Baixado", "-", "---- Prefeitura/Laudo ----", "Não Iniciado", "Aguardando Pagamento", "Encaminhado p/ Vistoria", "Em Andamento", "Em Exigências", "Liberado", "Baixa em Andamento", "Baixado", "-"})
         Me.BombeiroSituacaoComboBox.Location = New System.Drawing.Point(117, 87)
         Me.BombeiroSituacaoComboBox.Name = "BombeiroSituacaoComboBox"
         Me.BombeiroSituacaoComboBox.Size = New System.Drawing.Size(142, 21)
@@ -1921,7 +1924,7 @@ Partial Class FrmAlvara
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Size = New System.Drawing.Size(549, 207)
         Me.TabPage6.TabIndex = 4
-        Me.TabPage6.Text = "Geral"
+        Me.TabPage6.Text = "Observação"
         Me.TabPage6.UseVisualStyleBackColor = True
         '
         'NaturezaDoPedidoOBSRichTextBox
@@ -1960,8 +1963,6 @@ Partial Class FrmAlvara
         Me.TabPage7.Controls.Add(EndCEPLabel)
         Me.TabPage7.Controls.Add(EnderecoLabel)
         Me.TabPage7.Controls.Add(EndNumLabel)
-        Me.TabPage7.Controls.Add(TelefoneLabel)
-        Me.TabPage7.Controls.Add(Me.TelefoneMaskedTextBox)
         Me.TabPage7.Controls.Add(EndCompLabel)
         Me.TabPage7.Controls.Add(EndBairroLabel)
         Me.TabPage7.Controls.Add(Me.EndCEPMaskedTextBox)
@@ -2088,14 +2089,6 @@ Partial Class FrmAlvara
         Me.EndEstadoTextBox.Name = "EndEstadoTextBox"
         Me.EndEstadoTextBox.Size = New System.Drawing.Size(38, 20)
         Me.EndEstadoTextBox.TabIndex = 19
-        '
-        'TelefoneMaskedTextBox
-        '
-        Me.TelefoneMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "Telefone", True))
-        Me.TelefoneMaskedTextBox.Location = New System.Drawing.Point(427, 153)
-        Me.TelefoneMaskedTextBox.Name = "TelefoneMaskedTextBox"
-        Me.TelefoneMaskedTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.TelefoneMaskedTextBox.TabIndex = 26
         '
         'EndCEPMaskedTextBox
         '
@@ -2367,7 +2360,7 @@ Partial Class FrmAlvara
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button6.Location = New System.Drawing.Point(23, 22)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(93, 52)
+        Me.Button6.Size = New System.Drawing.Size(155, 52)
         Me.Button6.TabIndex = 41
         Me.Button6.Text = "Procedimento da Prefeitura"
         Me.Button6.UseVisualStyleBackColor = False
@@ -2375,6 +2368,7 @@ Partial Class FrmAlvara
         'TabPage15
         '
         Me.TabPage15.AutoScroll = True
+        Me.TabPage15.Controls.Add(Me.BtnNovoProtocolo)
         Me.TabPage15.Controls.Add(Me.PictureBox3)
         Me.TabPage15.Controls.Add(Me.GroupBoxProcesso)
         Me.TabPage15.Controls.Add(Me.DataEntradaMaskedTextBox)
@@ -2386,6 +2380,17 @@ Partial Class FrmAlvara
         Me.TabPage15.TabIndex = 3
         Me.TabPage15.Text = "Protocolo"
         Me.TabPage15.UseVisualStyleBackColor = True
+        '
+        'BtnNovoProtocolo
+        '
+        Me.BtnNovoProtocolo.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.fundo_azul
+        Me.BtnNovoProtocolo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnNovoProtocolo.Location = New System.Drawing.Point(651, 62)
+        Me.BtnNovoProtocolo.Name = "BtnNovoProtocolo"
+        Me.BtnNovoProtocolo.Size = New System.Drawing.Size(69, 35)
+        Me.BtnNovoProtocolo.TabIndex = 78
+        Me.BtnNovoProtocolo.Text = "Novo Protocolo"
+        Me.BtnNovoProtocolo.UseVisualStyleBackColor = True
         '
         'PictureBox3
         '
@@ -2734,6 +2739,7 @@ Partial Class FrmAlvara
         'GroupBox9
         '
         Me.GroupBox9.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox9.Controls.Add(Me.BtnData1)
         Me.GroupBox9.Controls.Add(Me.LembreteCheckBox)
         Me.GroupBox9.Controls.Add(Me.CMCLabel)
         Me.GroupBox9.Controls.Add(AvisarDiaLabel)
@@ -2755,6 +2761,16 @@ Partial Class FrmAlvara
         Me.GroupBox9.TabIndex = 78
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "GroupBox9"
+        '
+        'BtnData1
+        '
+        Me.BtnData1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnData1.Location = New System.Drawing.Point(156, 111)
+        Me.BtnData1.Name = "BtnData1"
+        Me.BtnData1.Size = New System.Drawing.Size(43, 21)
+        Me.BtnData1.TabIndex = 76
+        Me.BtnData1.Text = "Agora"
+        Me.BtnData1.UseVisualStyleBackColor = True
         '
         'FrmAlvara
         '
@@ -2976,7 +2992,6 @@ Partial Class FrmAlvara
     Friend WithEvents EndBairroTextBox As TextBox
     Friend WithEvents EndCidadeTextBox As TextBox
     Friend WithEvents EndEstadoTextBox As TextBox
-    Friend WithEvents TelefoneMaskedTextBox As MaskedTextBox
     Friend WithEvents EndCEPMaskedTextBox As MaskedTextBox
     Friend WithEvents Button22 As Button
     Friend WithEvents TabPage8 As TabPage
@@ -3019,4 +3034,7 @@ Partial Class FrmAlvara
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents NlaudoLabel As Label
     Friend WithEvents EndCidadeLabel2 As Label
+    Friend WithEvents BtnNovoProtocolo As Button
+    Friend WithEvents BtnProcotBomb As Button
+    Friend WithEvents BtnData1 As Button
 End Class
