@@ -260,6 +260,7 @@
         If MsgBox("Foi copiado corretamente?", MsgBoxStyle.YesNo, "Salvar") = MsgBoxResult.Yes Then
             FrmAlvara.SituacaoComboBox.Text = "Aguardando Pagamento"
             Me.Focus()
+            Me.Close()
         Else
 
             MsgBox("Copiar no campo específico no Menu onde foi solicitado o alvará e clicar após em 'Exportar Nº. do Laudo'", MsgBoxStyle.Information, "Prince Sistemas Informa!")
