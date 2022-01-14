@@ -281,7 +281,6 @@ Partial Class Avisos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.aviso
         Me.ClientSize = New System.Drawing.Size(561, 437)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.PictureBox4)

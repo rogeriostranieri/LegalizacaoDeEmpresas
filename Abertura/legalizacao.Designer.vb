@@ -150,6 +150,13 @@ Partial Class Legalizacao
         Me.RespRGTextBox = New System.Windows.Forms.TextBox()
         Me.TituloeleitorTextBox = New System.Windows.Forms.TextBox()
         Me.CPFResponsavelMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
+        Me.TabPage19 = New System.Windows.Forms.TabPage()
+        Me.BtnLimparSocio = New System.Windows.Forms.Button()
+        Me.BtnLimparSocios = New System.Windows.Forms.Button()
+        Me.LblQuantidadeSocios = New System.Windows.Forms.Label()
+        Me.QuantidadeSociosTextBox = New System.Windows.Forms.TextBox()
+        Me.BtnAdicionarSocio = New System.Windows.Forms.Button()
+        Me.DadosSociosRichTextBox = New System.Windows.Forms.RichTextBox()
         Me.TabPage13 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CnaeSimples = New System.Windows.Forms.Button()
@@ -269,6 +276,7 @@ Partial Class Legalizacao
         Me.Button11 = New System.Windows.Forms.Button()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.GroupBox13 = New System.Windows.Forms.GroupBox()
+        Me.BtnCopiaDataDeNasc = New System.Windows.Forms.Button()
         Me.Button35 = New System.Windows.Forms.Button()
         Me.Button34 = New System.Windows.Forms.Button()
         Me.Button37 = New System.Windows.Forms.Button()
@@ -355,6 +363,7 @@ Partial Class Legalizacao
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBoxBuscaProtocolo = New System.Windows.Forms.ComboBox()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.NovaRazaoSocialLabel = New System.Windows.Forms.Label()
         Me.PictureBoxSistemaExterno = New System.Windows.Forms.PictureBox()
         Me.BtnData1 = New System.Windows.Forms.Button()
         Me.LabelConsolidar = New System.Windows.Forms.Label()
@@ -365,7 +374,6 @@ Partial Class Legalizacao
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.NovaRazaoSocialLabel = New System.Windows.Forms.Label()
         NomeFantasiaLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         StatusLabel = New System.Windows.Forms.Label()
@@ -458,6 +466,7 @@ Partial Class Legalizacao
         Me.TabPage10.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage12.SuspendLayout()
+        Me.TabPage19.SuspendLayout()
         Me.TabPage13.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TabPage14.SuspendLayout()
@@ -826,7 +835,7 @@ Partial Class Legalizacao
         'CodigoSimplesLabel
         '
         CodigoSimplesLabel.AutoSize = True
-        CodigoSimplesLabel.Location = New System.Drawing.Point(104, 19)
+        CodigoSimplesLabel.Location = New System.Drawing.Point(104, 10)
         CodigoSimplesLabel.Name = "CodigoSimplesLabel"
         CodigoSimplesLabel.Size = New System.Drawing.Size(97, 13)
         CodigoSimplesLabel.TabIndex = 32
@@ -961,7 +970,7 @@ Partial Class Legalizacao
         'DataSimplesLabel
         '
         DataSimplesLabel.AutoSize = True
-        DataSimplesLabel.Location = New System.Drawing.Point(88, 95)
+        DataSimplesLabel.Location = New System.Drawing.Point(88, 79)
         DataSimplesLabel.Name = "DataSimplesLabel"
         DataSimplesLabel.Size = New System.Drawing.Size(113, 13)
         DataSimplesLabel.TabIndex = 49
@@ -970,7 +979,7 @@ Partial Class Legalizacao
         'DataUltdefSimplesLabel
         '
         DataUltdefSimplesLabel.AutoSize = True
-        DataUltdefSimplesLabel.Location = New System.Drawing.Point(6, 44)
+        DataUltdefSimplesLabel.Location = New System.Drawing.Point(6, 32)
         DataUltdefSimplesLabel.Name = "DataUltdefSimplesLabel"
         DataUltdefSimplesLabel.Size = New System.Drawing.Size(196, 13)
         DataUltdefSimplesLabel.TabIndex = 51
@@ -979,7 +988,7 @@ Partial Class Legalizacao
         'OrgãoPedSimplesLabel
         '
         OrgãoPedSimplesLabel.AutoSize = True
-        OrgãoPedSimplesLabel.Location = New System.Drawing.Point(69, 71)
+        OrgãoPedSimplesLabel.Location = New System.Drawing.Point(69, 57)
         OrgãoPedSimplesLabel.Name = "OrgãoPedSimplesLabel"
         OrgãoPedSimplesLabel.Size = New System.Drawing.Size(133, 13)
         OrgãoPedSimplesLabel.TabIndex = 52
@@ -1486,6 +1495,7 @@ Partial Class Legalizacao
         'TabControl2
         '
         Me.TabControl2.Controls.Add(Me.TabPage12)
+        Me.TabControl2.Controls.Add(Me.TabPage19)
         Me.TabControl2.Controls.Add(Me.TabPage13)
         Me.TabControl2.Controls.Add(Me.TabPage14)
         Me.TabControl2.Controls.Add(Me.TabPage15)
@@ -1680,6 +1690,79 @@ Partial Class Legalizacao
         Me.CPFResponsavelMaskedTextBox.Name = "CPFResponsavelMaskedTextBox"
         Me.CPFResponsavelMaskedTextBox.Size = New System.Drawing.Size(85, 20)
         Me.CPFResponsavelMaskedTextBox.TabIndex = 35
+        '
+        'TabPage19
+        '
+        Me.TabPage19.AutoScroll = True
+        Me.TabPage19.Controls.Add(Me.BtnLimparSocio)
+        Me.TabPage19.Controls.Add(Me.BtnLimparSocios)
+        Me.TabPage19.Controls.Add(Me.LblQuantidadeSocios)
+        Me.TabPage19.Controls.Add(Me.QuantidadeSociosTextBox)
+        Me.TabPage19.Controls.Add(Me.BtnAdicionarSocio)
+        Me.TabPage19.Controls.Add(Me.DadosSociosRichTextBox)
+        Me.TabPage19.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage19.Name = "TabPage19"
+        Me.TabPage19.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage19.Size = New System.Drawing.Size(564, 179)
+        Me.TabPage19.TabIndex = 6
+        Me.TabPage19.Text = "Dados dos Sócios"
+        Me.TabPage19.UseVisualStyleBackColor = True
+        '
+        'BtnLimparSocio
+        '
+        Me.BtnLimparSocio.Location = New System.Drawing.Point(519, 150)
+        Me.BtnLimparSocio.Name = "BtnLimparSocio"
+        Me.BtnLimparSocio.Size = New System.Drawing.Size(35, 23)
+        Me.BtnLimparSocio.TabIndex = 6
+        Me.BtnLimparSocio.Text = "-1"
+        Me.BtnLimparSocio.UseVisualStyleBackColor = True
+        '
+        'BtnLimparSocios
+        '
+        Me.BtnLimparSocios.ForeColor = System.Drawing.Color.Crimson
+        Me.BtnLimparSocios.Location = New System.Drawing.Point(475, 82)
+        Me.BtnLimparSocios.Name = "BtnLimparSocios"
+        Me.BtnLimparSocios.Size = New System.Drawing.Size(75, 23)
+        Me.BtnLimparSocios.TabIndex = 5
+        Me.BtnLimparSocios.Text = "Limpar Tudo"
+        Me.BtnLimparSocios.UseVisualStyleBackColor = True
+        '
+        'LblQuantidadeSocios
+        '
+        Me.LblQuantidadeSocios.AutoSize = True
+        Me.LblQuantidadeSocios.Location = New System.Drawing.Point(465, 131)
+        Me.LblQuantidadeSocios.Name = "LblQuantidadeSocios"
+        Me.LblQuantidadeSocios.Size = New System.Drawing.Size(88, 13)
+        Me.LblQuantidadeSocios.TabIndex = 4
+        Me.LblQuantidadeSocios.Text = "Total Cadastrado"
+        '
+        'QuantidadeSociosTextBox
+        '
+        Me.QuantidadeSociosTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "QuantidadeSocios", True))
+        Me.QuantidadeSociosTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.QuantidadeSociosTextBox.Location = New System.Drawing.Point(471, 150)
+        Me.QuantidadeSociosTextBox.Name = "QuantidadeSociosTextBox"
+        Me.QuantidadeSociosTextBox.ReadOnly = True
+        Me.QuantidadeSociosTextBox.Size = New System.Drawing.Size(39, 22)
+        Me.QuantidadeSociosTextBox.TabIndex = 3
+        '
+        'BtnAdicionarSocio
+        '
+        Me.BtnAdicionarSocio.Location = New System.Drawing.Point(473, 11)
+        Me.BtnAdicionarSocio.Name = "BtnAdicionarSocio"
+        Me.BtnAdicionarSocio.Size = New System.Drawing.Size(75, 48)
+        Me.BtnAdicionarSocio.TabIndex = 2
+        Me.BtnAdicionarSocio.Text = "Adicionar Sócio(a)"
+        Me.BtnAdicionarSocio.UseVisualStyleBackColor = True
+        '
+        'DadosSociosRichTextBox
+        '
+        Me.DadosSociosRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "DadosSocios", True))
+        Me.DadosSociosRichTextBox.Location = New System.Drawing.Point(8, 11)
+        Me.DadosSociosRichTextBox.Name = "DadosSociosRichTextBox"
+        Me.DadosSociosRichTextBox.Size = New System.Drawing.Size(457, 162)
+        Me.DadosSociosRichTextBox.TabIndex = 1
+        Me.DadosSociosRichTextBox.Text = ""
         '
         'TabPage13
         '
@@ -2950,16 +3033,27 @@ Partial Class Legalizacao
         '
         'GroupBox13
         '
+        Me.GroupBox13.Controls.Add(Me.BtnCopiaDataDeNasc)
         Me.GroupBox13.Controls.Add(Me.Button35)
         Me.GroupBox13.Controls.Add(Me.Button34)
         Me.GroupBox13.Controls.Add(Me.Button37)
         Me.GroupBox13.Controls.Add(Me.Button36)
-        Me.GroupBox13.Location = New System.Drawing.Point(165, 135)
+        Me.GroupBox13.Location = New System.Drawing.Point(165, 102)
         Me.GroupBox13.Name = "GroupBox13"
-        Me.GroupBox13.Size = New System.Drawing.Size(172, 92)
+        Me.GroupBox13.Size = New System.Drawing.Size(200, 131)
         Me.GroupBox13.TabIndex = 54
         Me.GroupBox13.TabStop = False
         Me.GroupBox13.Text = "Copia rápida"
+        '
+        'BtnCopiaDataDeNasc
+        '
+        Me.BtnCopiaDataDeNasc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCopiaDataDeNasc.Location = New System.Drawing.Point(4, 100)
+        Me.BtnCopiaDataDeNasc.Name = "BtnCopiaDataDeNasc"
+        Me.BtnCopiaDataDeNasc.Size = New System.Drawing.Size(114, 25)
+        Me.BtnCopiaDataDeNasc.TabIndex = 55
+        Me.BtnCopiaDataDeNasc.Text = "Data de Nascimento"
+        Me.BtnCopiaDataDeNasc.UseVisualStyleBackColor = True
         '
         'Button35
         '
@@ -2984,9 +3078,9 @@ Partial Class Legalizacao
         'Button37
         '
         Me.Button37.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button37.Location = New System.Drawing.Point(4, 46)
+        Me.Button37.Location = New System.Drawing.Point(4, 43)
         Me.Button37.Name = "Button37"
-        Me.Button37.Size = New System.Drawing.Size(76, 41)
+        Me.Button37.Size = New System.Drawing.Size(114, 25)
         Me.Button37.TabIndex = 51
         Me.Button37.Text = "Título de Eleitor"
         Me.Button37.UseVisualStyleBackColor = True
@@ -2994,11 +3088,11 @@ Partial Class Legalizacao
         'Button36
         '
         Me.Button36.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button36.Location = New System.Drawing.Point(82, 46)
+        Me.Button36.Location = New System.Drawing.Point(4, 72)
         Me.Button36.Name = "Button36"
-        Me.Button36.Size = New System.Drawing.Size(84, 41)
+        Me.Button36.Size = New System.Drawing.Size(114, 25)
         Me.Button36.TabIndex = 48
-        Me.Button36.Text = "Código do Simpes"
+        Me.Button36.Text = "Código do Simples"
         Me.Button36.UseVisualStyleBackColor = True
         '
         'OrgãoPedSimplesComboBox
@@ -3008,7 +3102,7 @@ Partial Class Legalizacao
         Me.OrgãoPedSimplesComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "OrgãoPedSimples", True))
         Me.OrgãoPedSimplesComboBox.FormattingEnabled = True
         Me.OrgãoPedSimplesComboBox.Items.AddRange(New Object() {"Estadual", "Municipal"})
-        Me.OrgãoPedSimplesComboBox.Location = New System.Drawing.Point(202, 66)
+        Me.OrgãoPedSimplesComboBox.Location = New System.Drawing.Point(202, 52)
         Me.OrgãoPedSimplesComboBox.Name = "OrgãoPedSimplesComboBox"
         Me.OrgãoPedSimplesComboBox.Size = New System.Drawing.Size(81, 21)
         Me.OrgãoPedSimplesComboBox.TabIndex = 53
@@ -3016,7 +3110,7 @@ Partial Class Legalizacao
         'DataUltdefSimplesMaskedTextBox
         '
         Me.DataUltdefSimplesMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "DataUltdefSimples", True))
-        Me.DataUltdefSimplesMaskedTextBox.Location = New System.Drawing.Point(202, 41)
+        Me.DataUltdefSimplesMaskedTextBox.Location = New System.Drawing.Point(202, 29)
         Me.DataUltdefSimplesMaskedTextBox.Mask = "00/00/0000"
         Me.DataUltdefSimplesMaskedTextBox.Name = "DataUltdefSimplesMaskedTextBox"
         Me.DataUltdefSimplesMaskedTextBox.Size = New System.Drawing.Size(65, 20)
@@ -3026,7 +3120,7 @@ Partial Class Legalizacao
         'DataSimplesMaskedTextBox
         '
         Me.DataSimplesMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "DataSimples", True))
-        Me.DataSimplesMaskedTextBox.Location = New System.Drawing.Point(202, 92)
+        Me.DataSimplesMaskedTextBox.Location = New System.Drawing.Point(202, 76)
         Me.DataSimplesMaskedTextBox.Mask = "00/00/0000"
         Me.DataSimplesMaskedTextBox.Name = "DataSimplesMaskedTextBox"
         Me.DataSimplesMaskedTextBox.Size = New System.Drawing.Size(65, 20)
@@ -3170,7 +3264,7 @@ Partial Class Legalizacao
         'CodigoSimplesTextBox
         '
         Me.CodigoSimplesTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "CodigoSimples", True))
-        Me.CodigoSimplesTextBox.Location = New System.Drawing.Point(201, 15)
+        Me.CodigoSimplesTextBox.Location = New System.Drawing.Point(201, 6)
         Me.CodigoSimplesTextBox.Name = "CodigoSimplesTextBox"
         Me.CodigoSimplesTextBox.Size = New System.Drawing.Size(103, 20)
         Me.CodigoSimplesTextBox.TabIndex = 33
@@ -3874,6 +3968,15 @@ Partial Class Legalizacao
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "Procedimentos"
         '
+        'NovaRazaoSocialLabel
+        '
+        Me.NovaRazaoSocialLabel.AutoSize = True
+        Me.NovaRazaoSocialLabel.Location = New System.Drawing.Point(178, 117)
+        Me.NovaRazaoSocialLabel.Name = "NovaRazaoSocialLabel"
+        Me.NovaRazaoSocialLabel.Size = New System.Drawing.Size(139, 13)
+        Me.NovaRazaoSocialLabel.TabIndex = 67
+        Me.NovaRazaoSocialLabel.Text = "Alteração de Razão Social :"
+        '
         'PictureBoxSistemaExterno
         '
         Me.PictureBoxSistemaExterno.Location = New System.Drawing.Point(379, 40)
@@ -3972,15 +4075,6 @@ Partial Class Legalizacao
         Me.PictureBox5.TabIndex = 44
         Me.PictureBox5.TabStop = False
         '
-        'NovaRazaoSocialLabel
-        '
-        Me.NovaRazaoSocialLabel.AutoSize = True
-        Me.NovaRazaoSocialLabel.Location = New System.Drawing.Point(178, 117)
-        Me.NovaRazaoSocialLabel.Name = "NovaRazaoSocialLabel"
-        Me.NovaRazaoSocialLabel.Size = New System.Drawing.Size(139, 13)
-        Me.NovaRazaoSocialLabel.TabIndex = 67
-        Me.NovaRazaoSocialLabel.Text = "Alteração de Razão Social :"
-        '
         'Legalizacao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4017,6 +4111,8 @@ Partial Class Legalizacao
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage12.ResumeLayout(False)
         Me.TabPage12.PerformLayout()
+        Me.TabPage19.ResumeLayout(False)
+        Me.TabPage19.PerformLayout()
         Me.TabPage13.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -4343,4 +4439,12 @@ Partial Class Legalizacao
     Friend WithEvents LinkLabel17 As LinkLabel
     Friend WithEvents PictureBoxSistemaExterno As PictureBox
     Friend WithEvents NovaRazaoSocialLabel As Label
+    Friend WithEvents TabPage19 As TabPage
+    Friend WithEvents DadosSociosRichTextBox As RichTextBox
+    Friend WithEvents BtnAdicionarSocio As Button
+    Friend WithEvents QuantidadeSociosTextBox As TextBox
+    Friend WithEvents LblQuantidadeSocios As Label
+    Friend WithEvents BtnLimparSocio As Button
+    Friend WithEvents BtnLimparSocios As Button
+    Friend WithEvents BtnCopiaDataDeNasc As Button
 End Class

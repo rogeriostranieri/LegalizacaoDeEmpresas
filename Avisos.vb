@@ -52,6 +52,7 @@ Public Class Avisos
         ' Define o texto da ToolTip para o Button, TextBox, Checkbox e Label
         toolTip1.SetToolTip(Me.PictureBox4, "Clique para ver os Lembretes")
         toolTip1.SetToolTip(Me.PictureBox5, "Clique para ver as Prioridades")
+        toolTip1.SetToolTip(Me.PictureBox3, "Clique para Atualizar os Dados")
 
         'FIM DO CODIGO .........................
 

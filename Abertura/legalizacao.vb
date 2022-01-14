@@ -1165,6 +1165,25 @@ Caso o contrato não esteja em sua forma digital (antigo), recomenda-se:
 
 
     End Sub
+    Private Sub BtnCopiaDataDeNasc_Click(sender As Object, e As EventArgs) Handles BtnCopiaDataDeNasc.Click
+
+        TabControle.SelectTab(1)
+        TabControl2.SelectTab(0)
+        If Trim(RespDataNascMaskedTextBox.Text) = "" Then
+
+            MsgBox("O Campo Data de Nascimento está vazio!", MsgBoxStyle.Information, "Prince Sistemas Informa!")
+            TabControle.SelectTab(5)
+        Else
+
+            Dim DATANASC As String = RespDataNascMaskedTextBox.Text
+
+            Clipboard.SetText(DATANASC.Replace("/", "").Replace(",", "").Replace("-", "").Replace(".", ""))
+            TabControle.SelectTab(5)
+        End If
+
+
+    End Sub
+
 
     Private Sub Button37_Click(sender As Object, e As EventArgs) Handles Button37.Click
 
@@ -1683,6 +1702,54 @@ prazo de 90 dias para empresas abertas a partir de 2021.
             Me.RegimeFederalComboBox.ForeColor = Color.White
 
 
+        End If
+    End Sub
+
+    Private Sub BtnAdicionarSocio_Click(sender As Object, e As EventArgs) Handles BtnAdicionarSocio.Click
+        If QuantidadeSociosTextBox.Text = "" Then
+            QuantidadeSociosTextBox.Text = "1"
+        Else
+            QuantidadeSociosTextBox.Text = QuantidadeSociosTextBox.Text + 1
+        End If
+
+        DadosSociosRichTextBox.SelectedText &=
+" Sócio Nº " & QuantidadeSociosTextBox.Text & "  //////////////////////////////////////////////////////////
+
+Nome Completo =
+Solteiro(a)? =
+Data de nascimento =
+. . . Endereço residencial . . .
+Rua =
+Nº =
+Bairro =
+CEP = 
+Cidade/Estado =
+RG =
+Orgão Emissor/Estado = 
+CPF = 
+
+////////////////////////////////////////////////
+"
+
+    End Sub
+
+    Private Sub BtnLimparSocio_Click(sender As Object, e As EventArgs) Handles BtnLimparSocio.Click
+        If QuantidadeSociosTextBox.Text = "" Then
+            QuantidadeSociosTextBox.Text = "0"
+        Else
+            QuantidadeSociosTextBox.Text = QuantidadeSociosTextBox.Text - 1
+
+        End If
+
+        If QuantidadeSociosTextBox.Text < "0" Then
+            QuantidadeSociosTextBox.Text = "0"
+        End If
+    End Sub
+
+    Private Sub BtnLimparSocios_Click(sender As Object, e As EventArgs) Handles BtnLimparSocios.Click
+        If MsgBox("Deseja limpar todos Sócios?", MsgBoxStyle.YesNo, "Salvar") = MsgBoxResult.Yes Then
+            DadosSociosRichTextBox.Text = ""
+            QuantidadeSociosTextBox.Text = "0"
         End If
     End Sub
 
