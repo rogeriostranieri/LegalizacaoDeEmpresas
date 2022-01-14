@@ -122,6 +122,9 @@
     <Compile Include="Abertura\FrmProtocolados.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Abertura\MudaCorTexto.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="AboutBox.Designer.vb">
       <DependentUpon>AboutBox.vb</DependentUpon>
     </Compile>

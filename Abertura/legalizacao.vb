@@ -33,9 +33,9 @@ Public Class Legalizacao
     Private Sub Salvar()
 
         Dim changedRecords As System.Data.DataTable
-            ' changedRecords = PrinceDBDataSet.Telefones.GetChanges()
-            Me.EmpresasBindingSource.EndEdit()
-            changedRecords = PrinceDBDataSet.Empresas.GetChanges()
+        ' changedRecords = PrinceDBDataSet.Telefones.GetChanges()
+        Me.EmpresasBindingSource.EndEdit()
+        changedRecords = PrinceDBDataSet.Empresas.GetChanges()
 
 
         If Not (changedRecords Is Nothing) AndAlso (changedRecords.Rows.Count > 0) Then
@@ -121,69 +121,37 @@ Public Class Legalizacao
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Me.SuspendLayout()
-
-        ' Application.DoEvents()
 
 
 
         Try
-
-
-            ' My.Application.DoEvents()
 
             'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.Naturezajuridica'. Você pode movê-la ou removê-la conforme necessário.
             Me.NaturezajuridicaTableAdapter.Fill(Me.PrinceDBDataSet.Naturezajuridica)
             'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.Empresas'. Você pode movê-la ou removê-la conforme necessário.
             Me.EmpresasTableAdapter.Fill(Me.PrinceDBDataSet.Empresas)
 
+            BtnEditar.Text = "Cancelar"
+            Editar()
+
+            'chama combobox status
+            ModCombobox.ComboboxLegalizacao()
+            ModCombobox.ComboboxLegalizacaoProcesso()
+
+            'Ficar focado no campo busca
+            Me.ComboBoxBuscaEmpresa.Focus()
+
         Finally
 
-
+            'nao faz nada
 
         End Try
-
-        ' Me.ResumeLayout()
-
-        'comendo do EDITAR
-        'Editar()
-
-        BtnEditar.Text = "Cancelar"
-        Editar()
-        'GroupBox2.Enabled = False
-        'GroupBox10.Enabled = False
-        'BtnAlteracao.Enabled = False
-
-        'chama combobox status
-        ModCombobox.ComboboxLegalizacao()
-        ModCombobox.ComboboxLegalizacaoProcesso()
-
-
 
     End Sub
 
 
 
     Private Sub ProcessoMudar()
-        If ProcessoComboBox.Text = "Alteração" Then
-            NAlteracaoComboBox.Visible = True
-            NAlteracaoLabel.Visible = True
-            AltConsolidadaComboBox.Visible = True
-            LabelConsolidar.Visible = True
-            LinkLabel9.Visible = True
-            GroupBox5.Visible = True
-
-
-        Else
-            NAlteracaoComboBox.Visible = False
-            NAlteracaoLabel.Visible = False
-            AltConsolidadaComboBox.Visible = False
-            LabelConsolidar.Visible = False
-            LinkLabel9.Visible = False
-            GroupBox5.Visible = False
-
-        End If
-
         If ProcessoComboBox.Text = "Abertura" Then
             'MotivoRichTextBox.Visible = False
             ' MotivoLabel.Visible = False
@@ -193,6 +161,21 @@ Public Class Legalizacao
             LabelConsolidar.Visible = False
             LinkLabel9.Visible = False
             GroupBox5.Visible = False
+
+            NovaRazaoSocialLabel.Visible = False
+            NovaRazaoSocialComboBox.Visible = False
+
+        ElseIf ProcessoComboBox.Text = "Alteração" Then
+            NAlteracaoComboBox.Visible = True
+            NAlteracaoLabel.Visible = True
+            AltConsolidadaComboBox.Visible = True
+            LabelConsolidar.Visible = True
+            LinkLabel9.Visible = True
+            GroupBox5.Visible = True
+
+
+            NovaRazaoSocialLabel.Visible = True
+            NovaRazaoSocialComboBox.Visible = True
 
 
         ElseIf ProcessoComboBox.Text = "Baixa" Then
@@ -205,6 +188,9 @@ Public Class Legalizacao
             LinkLabel9.Visible = False
             GroupBox5.Visible = True
 
+            NovaRazaoSocialLabel.Visible = False
+            NovaRazaoSocialComboBox.Visible = False
+
 
         Else
             'MotivoRichTextBox.Visible = True
@@ -215,6 +201,9 @@ Public Class Legalizacao
             LabelConsolidar.Visible = True
             LinkLabel9.Visible = True
 
+            NovaRazaoSocialLabel.Visible = True
+            NovaRazaoSocialComboBox.Visible = True
+
         End If
     End Sub
     Private Sub StatusMudar()
@@ -224,11 +213,6 @@ Public Class Legalizacao
             Case "Finalizado"
                 If SistemaExternoComboBox.Text = "Não" Then
                     If MsgBox("Foi alterado no seu Sistema Particular?", MsgBoxStyle.YesNo, "Notificação") = MsgBoxResult.Yes Then
-                        'StatusComboBox.BackColor = System.Drawing.Color.Green
-                        ' StatusComboBox.ForeColor = System.Drawing.Color.White
-                        'AvisarDiaMaskedTextBox.Text = ""
-                        ' PictureBox1.Image = My.Resources.check
-
                         If ProcessoComboBox.Text = "Baixa" Then
                             StatusComboBox.BackColor = System.Drawing.Color.Green
                             StatusComboBox.ForeColor = System.Drawing.Color.White
@@ -236,6 +220,7 @@ Public Class Legalizacao
                             PictureBox1.Image = My.Resources.check
                             PictureBox2.Image = My.Resources.fechadaempresa
                             SistemaExternoComboBox.SelectedItem = "Sim"
+
 
                         ElseIf ProcessoComboBox.Text = "Finalizado" Then
                             StatusComboBox.BackColor = System.Drawing.Color.Green
@@ -360,9 +345,6 @@ Public Class Legalizacao
                 PictureBox2.Image = My.Resources.empresa_facil
                 PictureBox1.Image = My.Resources.emandamento
 
-                '//////////////////////////////////////////////
-                ' FIM
-                '//////////////////////////////////////////////
 
             Case "Receita Federal - DBE"
                 StatusComboBox.BackColor = System.Drawing.Color.White
@@ -375,6 +357,8 @@ Public Class Legalizacao
                 StatusComboBox.ForeColor = System.Drawing.Color.Black
                 PictureBox2.Image = My.Resources.governo2019_400x173px
                 PictureBox1.Image = My.Resources.emandamento
+
+
 
             Case "Receita Estadual - Em Andamento"
                 StatusComboBox.BackColor = System.Drawing.Color.White
@@ -808,6 +792,10 @@ Precisa do Protocolo de Viabilidade da Junta Comercial", "Prince Ajuda")
                 RegimeFederalComboBox.SelectedIndex = -1
                 NaturezaJuridicaComboBox.SelectedIndex = -1
 
+                'que faltou
+                RegimeFederalComboBox.SelectedText = "Pendência"
+
+
                 'procedimentos
                 'StatusComboBox.SelectedIndex = -1
                 StatusComboBox.SelectedText = "Não Iniciado"
@@ -834,6 +822,10 @@ Precisa do Protocolo de Viabilidade da Junta Comercial", "Prince Ajuda")
                 PorteDaEmpresaComboBox.SelectedIndex = -1
                 RegimeFederalComboBox.SelectedIndex = -1
                 NaturezaJuridicaComboBox.SelectedIndex = -1
+
+                'que faltou
+                RegimeFederalComboBox.SelectedText = "Pendência"
+
 
                 'procedimentos
                 'StatusComboBox.SelectedIndex = -1
@@ -1240,7 +1232,7 @@ Caso o contrato não esteja em sua forma digital (antigo), recomenda-se:
             TabControle.SelectTab(2)
             TabControle.SelectTab(3)
             TabControle.SelectTab(4)
-             TabControle.SelectTab(7)
+            TabControle.SelectTab(7)
 
 
 
@@ -1314,7 +1306,7 @@ Protocolo RedeSim= " & G & ".
 
         Else
 
-            End If
+        End If
 
 
     End Sub
@@ -1492,7 +1484,7 @@ Protocolo RedeSim= " & G & ".
                 'PictureBox6.Image = My.Resources.V
                 ' Else
                 RazaoSocialLabel.ForeColor = System.Drawing.Color.Red
-                    PictureBox6.Image = My.Resources._Stop
+                PictureBox6.Image = My.Resources._Stop
                 ' End If
                 LabelNovaRazaoFinal.Visible = True
                 NovaRazaoSocialFinalTextBox.Visible = True
@@ -1502,7 +1494,7 @@ Protocolo RedeSim= " & G & ".
             Case "Alteração"
 
                 RazaoSocialLabel.ForeColor = System.Drawing.Color.Red
-                PictureBox6.Image = My.Resources._Stop
+                PictureBox6.Image = My.Resources.refresh_512
 
                 LabelNovaRazaoFinal.Visible = True
                 NovaRazaoSocialFinalTextBox.Visible = True
@@ -1648,4 +1640,51 @@ prazo de 90 dias para empresas abertas a partir de 2021.
         AjudaSimples()
 
     End Sub
+
+    Private Sub StatusComboBox_TextUpdate(sender As Object, e As EventArgs) Handles StatusComboBox.TextUpdate
+        If StatusComboBox.Text = "Junta Comercial - Protocolado" Then
+
+            MessageBox.Show("Cadastrar no Sistema e informar os funcionários sobre a finalização da Junta Comercial", "ATENÇÃO")
+
+        End If
+    End Sub
+
+    Private Sub SistemaExternoComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SistemaExternoComboBox.SelectedIndexChanged
+        SistemaExternoComboBox.Font = New Font(SistemaExternoComboBox.Font, FontStyle.Bold)
+
+
+        If Me.SistemaExternoComboBox.Text = "Sim" Then
+            Me.SistemaExternoComboBox.BackColor = Color.Green
+            'Me.SistemaExternoComboBox.Font = Ita
+            Me.SistemaExternoComboBox.ForeColor = Color.White
+            PictureBoxSistemaExterno.Image = My.Resources.check
+
+
+        End If
+        If Me.SistemaExternoComboBox.Text = "Não" Then
+            Me.SistemaExternoComboBox.BackColor = Color.Red
+            ' Me.SistemaExternoComboBox.Font = Bold
+            Me.SistemaExternoComboBox.ForeColor = Color.White
+            PictureBoxSistemaExterno.Image = My.Resources.Cancel
+
+        End If
+    End Sub
+
+    Private Sub RegimeFederalComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RegimeFederalComboBox.SelectedIndexChanged
+        RegimeFederalComboBox.Font = New Font(RegimeFederalComboBox.Font, FontStyle.Bold)
+
+        If Me.RegimeFederalComboBox.Text = "Pendência" Then
+            Me.RegimeFederalComboBox.BackColor = Color.Yellow
+            Me.RegimeFederalComboBox.ForeColor = Color.Black
+
+
+        Else
+            RegimeFederalComboBox.BackColor = Color.Green
+            Me.RegimeFederalComboBox.ForeColor = Color.White
+
+
+        End If
+    End Sub
+
+
 End Class

@@ -99,7 +99,6 @@ Partial Class Legalizacao
         Dim NovaRazaoSocial1Label As System.Windows.Forms.Label
         Dim NovaRazaoSocial2Label As System.Windows.Forms.Label
         Dim NovaRazaoSocial3Label As System.Windows.Forms.Label
-        Dim NovaRazaoSocialLabel As System.Windows.Forms.Label
         Dim AvisarDiaLabel As System.Windows.Forms.Label
         Dim NomeFantasiaLabel1 As System.Windows.Forms.Label
         Dim RespPaiLabel As System.Windows.Forms.Label
@@ -279,6 +278,7 @@ Partial Class Legalizacao
         Me.DataSimplesMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         Me.ObsSimplesRichTextBox = New System.Windows.Forms.RichTextBox()
         Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.LinkLabel17 = New System.Windows.Forms.LinkLabel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.txtDataASomar = New System.Windows.Forms.TextBox()
@@ -325,7 +325,6 @@ Partial Class Legalizacao
         Me.EmpCriadoMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.SistemaExternoComboBox = New System.Windows.Forms.ComboBox()
         Me.RazaoSocialLabel = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Button43 = New System.Windows.Forms.Button()
@@ -335,6 +334,7 @@ Partial Class Legalizacao
         Me.TipoDeEmpresaComboBox = New System.Windows.Forms.ComboBox()
         Me.PorteDaEmpresaComboBox = New System.Windows.Forms.ComboBox()
         Me.RegimeFederalComboBox = New System.Windows.Forms.ComboBox()
+        Me.SistemaExternoComboBox = New System.Windows.Forms.ComboBox()
         Me.Button42 = New System.Windows.Forms.Button()
         Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
         Me.NAlteracaoLabel = New System.Windows.Forms.Label()
@@ -355,6 +355,7 @@ Partial Class Legalizacao
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBoxBuscaProtocolo = New System.Windows.Forms.ComboBox()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.PictureBoxSistemaExterno = New System.Windows.Forms.PictureBox()
         Me.BtnData1 = New System.Windows.Forms.Button()
         Me.LabelConsolidar = New System.Windows.Forms.Label()
         Me.AltConsolidadaComboBox = New System.Windows.Forms.ComboBox()
@@ -364,7 +365,7 @@ Partial Class Legalizacao
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.LinkLabel17 = New System.Windows.Forms.LinkLabel()
+        Me.NovaRazaoSocialLabel = New System.Windows.Forms.Label()
         NomeFantasiaLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         StatusLabel = New System.Windows.Forms.Label()
@@ -441,7 +442,6 @@ Partial Class Legalizacao
         NovaRazaoSocial1Label = New System.Windows.Forms.Label()
         NovaRazaoSocial2Label = New System.Windows.Forms.Label()
         NovaRazaoSocial3Label = New System.Windows.Forms.Label()
-        NovaRazaoSocialLabel = New System.Windows.Forms.Label()
         AvisarDiaLabel = New System.Windows.Forms.Label()
         NomeFantasiaLabel1 = New System.Windows.Forms.Label()
         RespPaiLabel = New System.Windows.Forms.Label()
@@ -492,6 +492,7 @@ Partial Class Legalizacao
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox9.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
+        CType(Me.PictureBoxSistemaExterno, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1182,15 +1183,6 @@ Partial Class Legalizacao
         NovaRazaoSocial3Label.TabIndex = 4
         NovaRazaoSocial3Label.Text = "Razão Social Opção 3:"
         '
-        'NovaRazaoSocialLabel
-        '
-        NovaRazaoSocialLabel.AutoSize = True
-        NovaRazaoSocialLabel.Location = New System.Drawing.Point(178, 117)
-        NovaRazaoSocialLabel.Name = "NovaRazaoSocialLabel"
-        NovaRazaoSocialLabel.Size = New System.Drawing.Size(76, 13)
-        NovaRazaoSocialLabel.TabIndex = 6
-        NovaRazaoSocialLabel.Text = "Razão Social :"
-        '
         'AvisarDiaLabel
         '
         AvisarDiaLabel.AutoSize = True
@@ -1248,11 +1240,11 @@ Partial Class Legalizacao
         'SistemaExternoLabel
         '
         SistemaExternoLabel.AutoSize = True
-        SistemaExternoLabel.Location = New System.Drawing.Point(416, 126)
+        SistemaExternoLabel.Location = New System.Drawing.Point(409, 43)
         SistemaExternoLabel.Name = "SistemaExternoLabel"
-        SistemaExternoLabel.Size = New System.Drawing.Size(153, 13)
+        SistemaExternoLabel.Size = New System.Drawing.Size(159, 13)
         SistemaExternoLabel.TabIndex = 64
-        SistemaExternoLabel.Text = "Atualizado no Sistema Externo:"
+        SistemaExternoLabel.Text = "Atualização no Sistema Externo:"
         '
         'EmpresasBindingNavigator
         '
@@ -3066,6 +3058,16 @@ Partial Class Legalizacao
         Me.GroupBox11.TabStop = False
         Me.GroupBox11.Text = "Prazo máximo do Simples Nacional"
         '
+        'LinkLabel17
+        '
+        Me.LinkLabel17.AutoSize = True
+        Me.LinkLabel17.Location = New System.Drawing.Point(183, 53)
+        Me.LinkLabel17.Name = "LinkLabel17"
+        Me.LinkLabel17.Size = New System.Drawing.Size(34, 13)
+        Me.LinkLabel17.TabIndex = 55
+        Me.LinkLabel17.TabStop = True
+        Me.LinkLabel17.Text = "Ajuda"
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -3320,9 +3322,9 @@ Partial Class Legalizacao
         Me.NovaRazaoSocialComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "NovaRazaoSocial", True))
         Me.NovaRazaoSocialComboBox.FormattingEnabled = True
         Me.NovaRazaoSocialComboBox.Items.AddRange(New Object() {"Abertura", "Alteração", "Não Altera"})
-        Me.NovaRazaoSocialComboBox.Location = New System.Drawing.Point(254, 114)
+        Me.NovaRazaoSocialComboBox.Location = New System.Drawing.Point(314, 114)
         Me.NovaRazaoSocialComboBox.Name = "NovaRazaoSocialComboBox"
-        Me.NovaRazaoSocialComboBox.Size = New System.Drawing.Size(91, 21)
+        Me.NovaRazaoSocialComboBox.Size = New System.Drawing.Size(61, 21)
         Me.NovaRazaoSocialComboBox.TabIndex = 7
         '
         'AvisarDiaMaskedTextBox
@@ -3501,8 +3503,6 @@ Partial Class Legalizacao
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.NaturezaJuridicaComboBox)
-        Me.GroupBox2.Controls.Add(Me.SistemaExternoComboBox)
-        Me.GroupBox2.Controls.Add(SistemaExternoLabel)
         Me.GroupBox2.Controls.Add(Me.RazaoSocialLabel)
         Me.GroupBox2.Controls.Add(Me.PictureBox6)
         Me.GroupBox2.Controls.Add(Me.Button43)
@@ -3530,16 +3530,6 @@ Partial Class Legalizacao
         Me.GroupBox2.Size = New System.Drawing.Size(678, 165)
         Me.GroupBox2.TabIndex = 22
         Me.GroupBox2.TabStop = False
-        '
-        'SistemaExternoComboBox
-        '
-        Me.SistemaExternoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "SistemaExterno", True))
-        Me.SistemaExternoComboBox.FormattingEnabled = True
-        Me.SistemaExternoComboBox.Items.AddRange(New Object() {"Sim", "Não"})
-        Me.SistemaExternoComboBox.Location = New System.Drawing.Point(567, 123)
-        Me.SistemaExternoComboBox.Name = "SistemaExternoComboBox"
-        Me.SistemaExternoComboBox.Size = New System.Drawing.Size(61, 21)
-        Me.SistemaExternoComboBox.TabIndex = 65
         '
         'RazaoSocialLabel
         '
@@ -3632,6 +3622,16 @@ Partial Class Legalizacao
         Me.RegimeFederalComboBox.Name = "RegimeFederalComboBox"
         Me.RegimeFederalComboBox.Size = New System.Drawing.Size(121, 21)
         Me.RegimeFederalComboBox.TabIndex = 28
+        '
+        'SistemaExternoComboBox
+        '
+        Me.SistemaExternoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "SistemaExterno", True))
+        Me.SistemaExternoComboBox.FormattingEnabled = True
+        Me.SistemaExternoComboBox.Items.AddRange(New Object() {"Sim", "Não"})
+        Me.SistemaExternoComboBox.Location = New System.Drawing.Point(566, 40)
+        Me.SistemaExternoComboBox.Name = "SistemaExternoComboBox"
+        Me.SistemaExternoComboBox.Size = New System.Drawing.Size(61, 21)
+        Me.SistemaExternoComboBox.TabIndex = 65
         '
         'Button42
         '
@@ -3842,12 +3842,15 @@ Partial Class Legalizacao
         '
         Me.GroupBox10.AutoSize = True
         Me.GroupBox10.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox10.Controls.Add(Me.BtnData1)
-        Me.GroupBox10.Controls.Add(Me.LabelConsolidar)
-        Me.GroupBox10.Controls.Add(Me.AltConsolidadaComboBox)
         Me.GroupBox10.Controls.Add(Me.NovaRazaoSocialComboBox)
+        Me.GroupBox10.Controls.Add(Me.NovaRazaoSocialLabel)
+        Me.GroupBox10.Controls.Add(Me.PictureBoxSistemaExterno)
+        Me.GroupBox10.Controls.Add(Me.BtnData1)
+        Me.GroupBox10.Controls.Add(Me.SistemaExternoComboBox)
+        Me.GroupBox10.Controls.Add(Me.LabelConsolidar)
+        Me.GroupBox10.Controls.Add(SistemaExternoLabel)
+        Me.GroupBox10.Controls.Add(Me.AltConsolidadaComboBox)
         Me.GroupBox10.Controls.Add(Me.BtnVerEventos)
-        Me.GroupBox10.Controls.Add(NovaRazaoSocialLabel)
         Me.GroupBox10.Controls.Add(Me.PictureBox2)
         Me.GroupBox10.Controls.Add(Me.LembreteCheckBox)
         Me.GroupBox10.Controls.Add(Me.PrioridadeCheckBox)
@@ -3870,6 +3873,15 @@ Partial Class Legalizacao
         Me.GroupBox10.TabIndex = 37
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "Procedimentos"
+        '
+        'PictureBoxSistemaExterno
+        '
+        Me.PictureBoxSistemaExterno.Location = New System.Drawing.Point(379, 40)
+        Me.PictureBoxSistemaExterno.Name = "PictureBoxSistemaExterno"
+        Me.PictureBoxSistemaExterno.Size = New System.Drawing.Size(24, 19)
+        Me.PictureBoxSistemaExterno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBoxSistemaExterno.TabIndex = 66
+        Me.PictureBoxSistemaExterno.TabStop = False
         '
         'BtnData1
         '
@@ -3912,7 +3924,7 @@ Partial Class Legalizacao
         '
         'PictureBox2
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(506, 41)
+        Me.PictureBox2.Location = New System.Drawing.Point(503, 65)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(122, 72)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3960,15 +3972,14 @@ Partial Class Legalizacao
         Me.PictureBox5.TabIndex = 44
         Me.PictureBox5.TabStop = False
         '
-        'LinkLabel17
+        'NovaRazaoSocialLabel
         '
-        Me.LinkLabel17.AutoSize = True
-        Me.LinkLabel17.Location = New System.Drawing.Point(183, 53)
-        Me.LinkLabel17.Name = "LinkLabel17"
-        Me.LinkLabel17.Size = New System.Drawing.Size(34, 13)
-        Me.LinkLabel17.TabIndex = 55
-        Me.LinkLabel17.TabStop = True
-        Me.LinkLabel17.Text = "Ajuda"
+        Me.NovaRazaoSocialLabel.AutoSize = True
+        Me.NovaRazaoSocialLabel.Location = New System.Drawing.Point(178, 117)
+        Me.NovaRazaoSocialLabel.Name = "NovaRazaoSocialLabel"
+        Me.NovaRazaoSocialLabel.Size = New System.Drawing.Size(139, 13)
+        Me.NovaRazaoSocialLabel.TabIndex = 67
+        Me.NovaRazaoSocialLabel.Text = "Alteração de Razão Social :"
         '
         'Legalizacao
         '
@@ -4063,6 +4074,7 @@ Partial Class Legalizacao
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox10.ResumeLayout(False)
         Me.GroupBox10.PerformLayout()
+        CType(Me.PictureBoxSistemaExterno, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4329,4 +4341,6 @@ Partial Class Legalizacao
     Friend WithEvents BtnData4 As Button
     Friend WithEvents BtnConsultaeProcessoEstado As Button
     Friend WithEvents LinkLabel17 As LinkLabel
+    Friend WithEvents PictureBoxSistemaExterno As PictureBox
+    Friend WithEvents NovaRazaoSocialLabel As Label
 End Class
