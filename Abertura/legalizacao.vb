@@ -972,6 +972,13 @@ Caso o contrato não esteja em sua forma digital (antigo), recomenda-se:
         Else
             'não faz nd
         End If
+
+        If ProcessoComboBox.Text = "Abertura" Then
+            SistemaExternoLabel.Text = "Cadastro no Sistema Externo:"
+        Else
+            SistemaExternoLabel.Text = "Atualização no Sistema Externo:"
+
+        End If
     End Sub
 
 

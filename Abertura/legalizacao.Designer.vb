@@ -105,7 +105,6 @@ Partial Class Legalizacao
         Dim IEOnlineLabel As System.Windows.Forms.Label
         Dim IETipoLabel As System.Windows.Forms.Label
         Dim IEeProcNumLabel As System.Windows.Forms.Label
-        Dim SistemaExternoLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Legalizacao))
         Me.EmpresasBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.EmpresasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -374,6 +373,7 @@ Partial Class Legalizacao
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.SistemaExternoLabel = New System.Windows.Forms.Label()
         NomeFantasiaLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         StatusLabel = New System.Windows.Forms.Label()
@@ -456,7 +456,6 @@ Partial Class Legalizacao
         IEOnlineLabel = New System.Windows.Forms.Label()
         IETipoLabel = New System.Windows.Forms.Label()
         IEeProcNumLabel = New System.Windows.Forms.Label()
-        SistemaExternoLabel = New System.Windows.Forms.Label()
         CType(Me.EmpresasBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.EmpresasBindingNavigator.SuspendLayout()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1245,15 +1244,6 @@ Partial Class Legalizacao
         IEeProcNumLabel.Size = New System.Drawing.Size(75, 13)
         IEeProcNumLabel.TabIndex = 40
         IEeProcNumLabel.Text = "eProcesso Nº:"
-        '
-        'SistemaExternoLabel
-        '
-        SistemaExternoLabel.AutoSize = True
-        SistemaExternoLabel.Location = New System.Drawing.Point(409, 43)
-        SistemaExternoLabel.Name = "SistemaExternoLabel"
-        SistemaExternoLabel.Size = New System.Drawing.Size(159, 13)
-        SistemaExternoLabel.TabIndex = 64
-        SistemaExternoLabel.Text = "Atualização no Sistema Externo:"
         '
         'EmpresasBindingNavigator
         '
@@ -3942,7 +3932,6 @@ Partial Class Legalizacao
         Me.GroupBox10.Controls.Add(Me.BtnData1)
         Me.GroupBox10.Controls.Add(Me.SistemaExternoComboBox)
         Me.GroupBox10.Controls.Add(Me.LabelConsolidar)
-        Me.GroupBox10.Controls.Add(SistemaExternoLabel)
         Me.GroupBox10.Controls.Add(Me.AltConsolidadaComboBox)
         Me.GroupBox10.Controls.Add(Me.BtnVerEventos)
         Me.GroupBox10.Controls.Add(Me.PictureBox2)
@@ -3961,6 +3950,7 @@ Partial Class Legalizacao
         Me.GroupBox10.Controls.Add(ProcessoLabel)
         Me.GroupBox10.Controls.Add(Me.ProcessoComboBox)
         Me.GroupBox10.Controls.Add(Me.TabControle)
+        Me.GroupBox10.Controls.Add(Me.SistemaExternoLabel)
         Me.GroupBox10.Location = New System.Drawing.Point(11, 231)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(637, 424)
@@ -4074,6 +4064,15 @@ Partial Class Legalizacao
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox5.TabIndex = 44
         Me.PictureBox5.TabStop = False
+        '
+        'SistemaExternoLabel
+        '
+        Me.SistemaExternoLabel.AutoSize = True
+        Me.SistemaExternoLabel.Location = New System.Drawing.Point(409, 43)
+        Me.SistemaExternoLabel.Name = "SistemaExternoLabel"
+        Me.SistemaExternoLabel.Size = New System.Drawing.Size(159, 13)
+        Me.SistemaExternoLabel.TabIndex = 68
+        Me.SistemaExternoLabel.Text = "Atualização no Sistema Externo:"
         '
         'Legalizacao
         '
@@ -4447,4 +4446,5 @@ Partial Class Legalizacao
     Friend WithEvents BtnLimparSocio As Button
     Friend WithEvents BtnLimparSocios As Button
     Friend WithEvents BtnCopiaDataDeNasc As Button
+    Friend WithEvents SistemaExternoLabel As Label
 End Class
