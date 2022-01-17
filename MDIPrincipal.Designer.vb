@@ -72,6 +72,8 @@ Partial Class MDIPrincipal
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BuscaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscaPorResponsavelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -81,7 +83,7 @@ Partial Class MDIPrincipal
         '
         Me.MenuStrip.BackColor = System.Drawing.Color.White
         Me.MenuStrip.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.EmpresasToolStripMenuItem, Me.AlvaráToolStripMenuItem, Me.TelefonesToolStripMenuItem, Me.ConsultaToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.AgendaToolStripMenuItem, Me.HelpMenu})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.EmpresasToolStripMenuItem, Me.AlvaráToolStripMenuItem, Me.TelefonesToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.ConsultaToolStripMenuItem, Me.BuscaToolStripMenuItem, Me.AgendaToolStripMenuItem, Me.HelpMenu})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(683, 25)
@@ -434,6 +436,19 @@ Partial Class MDIPrincipal
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(204, 17)
         Me.ToolStripStatusLabel.Text = "Produzido por Rogerio Stranieri -2019"
         '
+        'BuscaToolStripMenuItem
+        '
+        Me.BuscaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscaPorResponsavelToolStripMenuItem})
+        Me.BuscaToolStripMenuItem.Name = "BuscaToolStripMenuItem"
+        Me.BuscaToolStripMenuItem.Size = New System.Drawing.Size(55, 21)
+        Me.BuscaToolStripMenuItem.Text = "Busca"
+        '
+        'BuscaPorResponsavelToolStripMenuItem
+        '
+        Me.BuscaPorResponsavelToolStripMenuItem.Name = "BuscaPorResponsavelToolStripMenuItem"
+        Me.BuscaPorResponsavelToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
+        Me.BuscaPorResponsavelToolStripMenuItem.Text = "Busca por responsavel"
+        '
         'MDIPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -505,4 +520,6 @@ Partial Class MDIPrincipal
     Friend WithEvents NovoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NovasEmpresasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegimeFederalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BuscaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BuscaPorResponsavelToolStripMenuItem As ToolStripMenuItem
 End Class

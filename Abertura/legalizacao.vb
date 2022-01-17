@@ -1699,14 +1699,14 @@ prazo de 90 dias para empresas abertas a partir de 2021.
     Private Sub RegimeFederalComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RegimeFederalComboBox.SelectedIndexChanged
         RegimeFederalComboBox.Font = New Font(RegimeFederalComboBox.Font, FontStyle.Bold)
 
-        If Me.RegimeFederalComboBox.Text = "Pendência" Then
-            Me.RegimeFederalComboBox.BackColor = Color.Yellow
-            Me.RegimeFederalComboBox.ForeColor = Color.Black
+        If RegimeFederalComboBox.Text = "Pendência" Then
+            RegimeFederalComboBox.BackColor = Color.Yellow
+            RegimeFederalComboBox.ForeColor = Color.Black
 
 
         Else
             RegimeFederalComboBox.BackColor = Color.Green
-            Me.RegimeFederalComboBox.ForeColor = Color.White
+            RegimeFederalComboBox.ForeColor = Color.White
 
 
         End If

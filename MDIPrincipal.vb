@@ -651,4 +651,23 @@ Public Class MDIPrincipal
 
         End If
     End Sub
+
+    Private Sub BuscaPorResponsavelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscaPorResponsavelToolStripMenuItem.Click
+        If Application.OpenForms.OfType(Of BuscaNomeSocio)().Count() > 0 Then
+
+            BuscaNomeSocio.Focus()
+            BuscaNomeSocio.Close()
+            BuscaNomeSocio.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            BuscaNomeSocio.Show()
+
+
+        Else
+
+            BuscaNomeSocio.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            BuscaNomeSocio.Show()
+
+        End If
+    End Sub
 End Class
