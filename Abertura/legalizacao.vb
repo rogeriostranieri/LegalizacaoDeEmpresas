@@ -793,14 +793,17 @@ Precisa do Protocolo de Viabilidade da Junta Comercial", "Prince Ajuda")
                 NaturezaJuridicaComboBox.SelectedIndex = -1
 
                 'que faltou
-                RegimeFederalComboBox.SelectedText = "Pendência"
+                'RegimeFederalComboBox.SelectedText = "Pendência"
+                RegimeFederalComboBox.SelectedIndex = 4
 
 
                 'procedimentos
                 'StatusComboBox.SelectedIndex = -1
-                StatusComboBox.SelectedText = "Não Iniciado"
+                'StatusComboBox.SelectedText = "Não Iniciado"
+                StatusComboBox.SelectedIndex = 0
                 ProcessoComboBox.SelectedIndex = -1
-                SistemaExternoComboBox.SelectedText = "Não"
+                'SistemaExternoComboBox.SelectedText = "Não"
+                SistemaExternoComboBox.SelectedIndex = 1
                 EmpCriadoMaskedTextBox.Text = DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString()
                 AvisarDiaMaskedTextBox.Text = DateTime.Now.ToString()
                 Editar()
@@ -824,14 +827,17 @@ Precisa do Protocolo de Viabilidade da Junta Comercial", "Prince Ajuda")
                 NaturezaJuridicaComboBox.SelectedIndex = -1
 
                 'que faltou
-                RegimeFederalComboBox.SelectedText = "Pendência"
+                'RegimeFederalComboBox.SelectedText = "Pendência"
+                RegimeFederalComboBox.SelectedIndex = 4
 
 
                 'procedimentos
                 'StatusComboBox.SelectedIndex = -1
-                StatusComboBox.SelectedText = "Não Iniciado"
+                'StatusComboBox.SelectedText = "Não Iniciado"
+                StatusComboBox.SelectedIndex = 0
                 ProcessoComboBox.SelectedIndex = -1
-                SistemaExternoComboBox.SelectedText = "Não"
+                'SistemaExternoComboBox.SelectedText = "Não"
+                SistemaExternoComboBox.SelectedIndex = 1
                 EmpCriadoMaskedTextBox.Text = DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString()
                 AvisarDiaMaskedTextBox.Text = DateTime.Now.ToString()
             Else
@@ -1697,7 +1703,7 @@ prazo de 90 dias para empresas abertas a partir de 2021.
     End Sub
 
     Private Sub RegimeFederalComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RegimeFederalComboBox.SelectedIndexChanged
-        RegimeFederalComboBox.Font = New Font(RegimeFederalComboBox.Font, FontStyle.Bold)
+        '        RegimeFederalComboBox.Font = New Font(RegimeFederalComboBox.Font, FontStyle.Bold)
 
         If RegimeFederalComboBox.Text = "Pendência" Then
             RegimeFederalComboBox.BackColor = Color.Yellow
