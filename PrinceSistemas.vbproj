@@ -104,6 +104,7 @@
     <Compile Include="Abertura\BoxConsultaCNPJEmpresa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Abertura\ClassDataBox.vb" />
     <Compile Include="Abertura\FrmEmpresaEmAndamento.Designer.vb">
       <DependentUpon>FrmEmpresaEmAndamento.vb</DependentUpon>
     </Compile>
@@ -120,6 +121,12 @@
       <DependentUpon>FrmProtocolados.vb</DependentUpon>
     </Compile>
     <Compile Include="Abertura\FrmProtocolados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abertura\FrmTeste.Designer.vb">
+      <DependentUpon>FrmTeste.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Abertura\FrmTeste.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Abertura\MudaCorTexto.vb">
@@ -390,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Abertura\FrmProtocolados.resx">
       <DependentUpon>FrmProtocolados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abertura\FrmTeste.resx">
+      <DependentUpon>FrmTeste.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.vb</DependentUpon>

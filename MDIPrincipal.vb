@@ -670,4 +670,9 @@ Public Class MDIPrincipal
 
         End If
     End Sub
+
+    Private Sub TesteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TesteToolStripMenuItem.Click
+        FrmTeste.Show()
+
+    End Sub
 End Class

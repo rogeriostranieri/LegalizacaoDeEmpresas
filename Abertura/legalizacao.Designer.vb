@@ -362,6 +362,7 @@ Partial Class Legalizacao
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBoxBuscaProtocolo = New System.Windows.Forms.ComboBox()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.Calendar1 = New System.Windows.Forms.MonthCalendar()
         Me.NovaRazaoSocialLabel = New System.Windows.Forms.Label()
         Me.PictureBoxSistemaExterno = New System.Windows.Forms.PictureBox()
         Me.BtnData1 = New System.Windows.Forms.Button()
@@ -369,11 +370,11 @@ Partial Class Legalizacao
         Me.AltConsolidadaComboBox = New System.Windows.Forms.ComboBox()
         Me.BtnVerEventos = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.SistemaExternoLabel = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.SistemaExternoLabel = New System.Windows.Forms.Label()
         NomeFantasiaLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         StatusLabel = New System.Windows.Forms.Label()
@@ -537,7 +538,7 @@ Partial Class Legalizacao
         'ProcessoLabel
         '
         ProcessoLabel.AutoSize = True
-        ProcessoLabel.Location = New System.Drawing.Point(21, 91)
+        ProcessoLabel.Location = New System.Drawing.Point(11, 106)
         ProcessoLabel.Name = "ProcessoLabel"
         ProcessoLabel.Size = New System.Drawing.Size(54, 13)
         ProcessoLabel.TabIndex = 11
@@ -1194,7 +1195,7 @@ Partial Class Legalizacao
         'AvisarDiaLabel
         '
         AvisarDiaLabel.AutoSize = True
-        AvisarDiaLabel.Location = New System.Drawing.Point(7, 45)
+        AvisarDiaLabel.Location = New System.Drawing.Point(7, 43)
         AvisarDiaLabel.Name = "AvisarDiaLabel"
         AvisarDiaLabel.Size = New System.Drawing.Size(58, 13)
         AvisarDiaLabel.TabIndex = 20
@@ -1393,7 +1394,7 @@ Partial Class Legalizacao
         Me.TabControle.Controls.Add(Me.TabPage6)
         Me.TabControle.Controls.Add(Me.TabPage2)
         Me.TabControle.Controls.Add(Me.TabPage17)
-        Me.TabControle.Location = New System.Drawing.Point(6, 139)
+        Me.TabControle.Location = New System.Drawing.Point(6, 163)
         Me.TabControle.Name = "TabControle"
         Me.TabControle.SelectedIndex = 0
         Me.TabControle.Size = New System.Drawing.Size(625, 265)
@@ -3406,7 +3407,7 @@ Partial Class Legalizacao
         Me.NovaRazaoSocialComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "NovaRazaoSocial", True))
         Me.NovaRazaoSocialComboBox.FormattingEnabled = True
         Me.NovaRazaoSocialComboBox.Items.AddRange(New Object() {"Abertura", "Alteração", "Não Altera"})
-        Me.NovaRazaoSocialComboBox.Location = New System.Drawing.Point(314, 114)
+        Me.NovaRazaoSocialComboBox.Location = New System.Drawing.Point(304, 129)
         Me.NovaRazaoSocialComboBox.Name = "NovaRazaoSocialComboBox"
         Me.NovaRazaoSocialComboBox.Size = New System.Drawing.Size(61, 21)
         Me.NovaRazaoSocialComboBox.TabIndex = 7
@@ -3414,7 +3415,7 @@ Partial Class Legalizacao
         'AvisarDiaMaskedTextBox
         '
         Me.AvisarDiaMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "AvisarDia", True))
-        Me.AvisarDiaMaskedTextBox.Location = New System.Drawing.Point(65, 42)
+        Me.AvisarDiaMaskedTextBox.Location = New System.Drawing.Point(65, 40)
         Me.AvisarDiaMaskedTextBox.Mask = "00/00/0000"
         Me.AvisarDiaMaskedTextBox.Name = "AvisarDiaMaskedTextBox"
         Me.AvisarDiaMaskedTextBox.Size = New System.Drawing.Size(65, 20)
@@ -3424,7 +3425,7 @@ Partial Class Legalizacao
         'LembreteCheckBox
         '
         Me.LembreteCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.EmpresasBindingSource, "Lembrete", True))
-        Me.LembreteCheckBox.Location = New System.Drawing.Point(136, 36)
+        Me.LembreteCheckBox.Location = New System.Drawing.Point(137, 65)
         Me.LembreteCheckBox.Name = "LembreteCheckBox"
         Me.LembreteCheckBox.Size = New System.Drawing.Size(73, 18)
         Me.LembreteCheckBox.TabIndex = 16
@@ -3434,7 +3435,7 @@ Partial Class Legalizacao
         'PrioridadeCheckBox
         '
         Me.PrioridadeCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.EmpresasBindingSource, "Prioridade", True))
-        Me.PrioridadeCheckBox.Location = New System.Drawing.Point(136, 53)
+        Me.PrioridadeCheckBox.Location = New System.Drawing.Point(65, 65)
         Me.PrioridadeCheckBox.Name = "PrioridadeCheckBox"
         Me.PrioridadeCheckBox.Size = New System.Drawing.Size(76, 18)
         Me.PrioridadeCheckBox.TabIndex = 5
@@ -3444,7 +3445,7 @@ Partial Class Legalizacao
         'Button24
         '
         Me.Button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button24.Location = New System.Drawing.Point(12, 352)
+        Me.Button24.Location = New System.Drawing.Point(10, 372)
         Me.Button24.Name = "Button24"
         Me.Button24.Size = New System.Drawing.Size(69, 50)
         Me.Button24.TabIndex = 45
@@ -3454,7 +3455,7 @@ Partial Class Legalizacao
         'Button21
         '
         Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button21.Location = New System.Drawing.Point(12, 455)
+        Me.Button21.Location = New System.Drawing.Point(10, 475)
         Me.Button21.Name = "Button21"
         Me.Button21.Size = New System.Drawing.Size(69, 23)
         Me.Button21.TabIndex = 44
@@ -3464,7 +3465,7 @@ Partial Class Legalizacao
         'Button20
         '
         Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button20.Location = New System.Drawing.Point(12, 408)
+        Me.Button20.Location = New System.Drawing.Point(10, 428)
         Me.Button20.Name = "Button20"
         Me.Button20.Size = New System.Drawing.Size(69, 41)
         Me.Button20.TabIndex = 43
@@ -3521,7 +3522,7 @@ Partial Class Legalizacao
         '
         Me.ProcessoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "Processo", True))
         Me.ProcessoComboBox.FormattingEnabled = True
-        Me.ProcessoComboBox.Location = New System.Drawing.Point(75, 87)
+        Me.ProcessoComboBox.Location = New System.Drawing.Point(65, 102)
         Me.ProcessoComboBox.Name = "ProcessoComboBox"
         Me.ProcessoComboBox.Size = New System.Drawing.Size(107, 21)
         Me.ProcessoComboBox.TabIndex = 12
@@ -3731,7 +3732,7 @@ Partial Class Legalizacao
         'LinkLabel9
         '
         Me.LinkLabel9.AutoSize = True
-        Me.LinkLabel9.Location = New System.Drawing.Point(251, 91)
+        Me.LinkLabel9.Location = New System.Drawing.Point(241, 106)
         Me.LinkLabel9.Name = "LinkLabel9"
         Me.LinkLabel9.Size = New System.Drawing.Size(56, 13)
         Me.LinkLabel9.TabIndex = 34
@@ -3741,7 +3742,7 @@ Partial Class Legalizacao
         'NAlteracaoLabel
         '
         Me.NAlteracaoLabel.AutoSize = True
-        Me.NAlteracaoLabel.Location = New System.Drawing.Point(185, 90)
+        Me.NAlteracaoLabel.Location = New System.Drawing.Point(175, 105)
         Me.NAlteracaoLabel.Name = "NAlteracaoLabel"
         Me.NAlteracaoLabel.Size = New System.Drawing.Size(25, 13)
         Me.NAlteracaoLabel.TabIndex = 22
@@ -3752,7 +3753,7 @@ Partial Class Legalizacao
         Me.NAlteracaoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "NAlteracao", True))
         Me.NAlteracaoComboBox.FormattingEnabled = True
         Me.NAlteracaoComboBox.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "+21"})
-        Me.NAlteracaoComboBox.Location = New System.Drawing.Point(211, 87)
+        Me.NAlteracaoComboBox.Location = New System.Drawing.Point(201, 102)
         Me.NAlteracaoComboBox.Name = "NAlteracaoComboBox"
         Me.NAlteracaoComboBox.Size = New System.Drawing.Size(34, 21)
         Me.NAlteracaoComboBox.TabIndex = 21
@@ -3826,7 +3827,7 @@ Partial Class Legalizacao
         Me.GroupBox9.Controls.Add(Me.BtnExcluir)
         Me.GroupBox9.Location = New System.Drawing.Point(654, 26)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(88, 620)
+        Me.GroupBox9.Size = New System.Drawing.Size(88, 640)
         Me.GroupBox9.TabIndex = 29
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "MENU"
@@ -3845,7 +3846,7 @@ Partial Class Legalizacao
         'Button28
         '
         Me.Button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button28.Location = New System.Drawing.Point(12, 578)
+        Me.Button28.Location = New System.Drawing.Point(10, 598)
         Me.Button28.Name = "Button28"
         Me.Button28.Size = New System.Drawing.Size(69, 23)
         Me.Button28.TabIndex = 48
@@ -3866,7 +3867,7 @@ Partial Class Legalizacao
         'Button27
         '
         Me.Button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button27.Location = New System.Drawing.Point(12, 484)
+        Me.Button27.Location = New System.Drawing.Point(10, 504)
         Me.Button27.Name = "Button27"
         Me.Button27.Size = New System.Drawing.Size(69, 41)
         Me.Button27.TabIndex = 47
@@ -3876,7 +3877,7 @@ Partial Class Legalizacao
         'Button26
         '
         Me.Button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button26.Location = New System.Drawing.Point(12, 531)
+        Me.Button26.Location = New System.Drawing.Point(10, 551)
         Me.Button26.Name = "Button26"
         Me.Button26.Size = New System.Drawing.Size(69, 41)
         Me.Button26.TabIndex = 46
@@ -3935,11 +3936,11 @@ Partial Class Legalizacao
         Me.GroupBox10.Controls.Add(Me.AltConsolidadaComboBox)
         Me.GroupBox10.Controls.Add(Me.BtnVerEventos)
         Me.GroupBox10.Controls.Add(Me.PictureBox2)
-        Me.GroupBox10.Controls.Add(Me.LembreteCheckBox)
-        Me.GroupBox10.Controls.Add(Me.PrioridadeCheckBox)
         Me.GroupBox10.Controls.Add(Me.AvisarDiaMaskedTextBox)
+        Me.GroupBox10.Controls.Add(Me.LembreteCheckBox)
         Me.GroupBox10.Controls.Add(AvisarDiaLabel)
         Me.GroupBox10.Controls.Add(Me.LinkLabel9)
+        Me.GroupBox10.Controls.Add(Me.PrioridadeCheckBox)
         Me.GroupBox10.Controls.Add(StatusLabel)
         Me.GroupBox10.Controls.Add(Me.StatusComboBox)
         Me.GroupBox10.Controls.Add(Me.Button5)
@@ -3953,15 +3954,21 @@ Partial Class Legalizacao
         Me.GroupBox10.Controls.Add(Me.SistemaExternoLabel)
         Me.GroupBox10.Location = New System.Drawing.Point(11, 231)
         Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(637, 424)
+        Me.GroupBox10.Size = New System.Drawing.Size(637, 447)
         Me.GroupBox10.TabIndex = 37
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "Procedimentos"
         '
+        'Calendar1
+        '
+        Me.Calendar1.Location = New System.Drawing.Point(15, 29)
+        Me.Calendar1.Name = "Calendar1"
+        Me.Calendar1.TabIndex = 70
+        '
         'NovaRazaoSocialLabel
         '
         Me.NovaRazaoSocialLabel.AutoSize = True
-        Me.NovaRazaoSocialLabel.Location = New System.Drawing.Point(178, 117)
+        Me.NovaRazaoSocialLabel.Location = New System.Drawing.Point(168, 132)
         Me.NovaRazaoSocialLabel.Name = "NovaRazaoSocialLabel"
         Me.NovaRazaoSocialLabel.Size = New System.Drawing.Size(139, 13)
         Me.NovaRazaoSocialLabel.TabIndex = 67
@@ -3979,7 +3986,7 @@ Partial Class Legalizacao
         'BtnData1
         '
         Me.BtnData1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnData1.Location = New System.Drawing.Point(207, 42)
+        Me.BtnData1.Location = New System.Drawing.Point(136, 39)
         Me.BtnData1.Name = "BtnData1"
         Me.BtnData1.Size = New System.Drawing.Size(43, 21)
         Me.BtnData1.TabIndex = 43
@@ -3989,7 +3996,7 @@ Partial Class Legalizacao
         'LabelConsolidar
         '
         Me.LabelConsolidar.AutoSize = True
-        Me.LabelConsolidar.Location = New System.Drawing.Point(15, 117)
+        Me.LabelConsolidar.Location = New System.Drawing.Point(5, 132)
         Me.LabelConsolidar.Name = "LabelConsolidar"
         Me.LabelConsolidar.Size = New System.Drawing.Size(59, 13)
         Me.LabelConsolidar.TabIndex = 42
@@ -4000,7 +4007,7 @@ Partial Class Legalizacao
         Me.AltConsolidadaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "AltConsolidada", True))
         Me.AltConsolidadaComboBox.FormattingEnabled = True
         Me.AltConsolidadaComboBox.Items.AddRange(New Object() {"Consolidar", "Não Consolidar"})
-        Me.AltConsolidadaComboBox.Location = New System.Drawing.Point(75, 114)
+        Me.AltConsolidadaComboBox.Location = New System.Drawing.Point(65, 129)
         Me.AltConsolidadaComboBox.Name = "AltConsolidadaComboBox"
         Me.AltConsolidadaComboBox.Size = New System.Drawing.Size(97, 21)
         Me.AltConsolidadaComboBox.TabIndex = 41
@@ -4017,12 +4024,21 @@ Partial Class Legalizacao
         '
         'PictureBox2
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(503, 65)
+        Me.PictureBox2.Location = New System.Drawing.Point(481, 65)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(122, 72)
+        Me.PictureBox2.Size = New System.Drawing.Size(144, 80)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 39
         Me.PictureBox2.TabStop = False
+        '
+        'SistemaExternoLabel
+        '
+        Me.SistemaExternoLabel.AutoSize = True
+        Me.SistemaExternoLabel.Location = New System.Drawing.Point(409, 43)
+        Me.SistemaExternoLabel.Name = "SistemaExternoLabel"
+        Me.SistemaExternoLabel.Size = New System.Drawing.Size(159, 13)
+        Me.SistemaExternoLabel.TabIndex = 68
+        Me.SistemaExternoLabel.Text = "Atualização no Sistema Externo:"
         '
         'PictureBox3
         '
@@ -4065,15 +4081,6 @@ Partial Class Legalizacao
         Me.PictureBox5.TabIndex = 44
         Me.PictureBox5.TabStop = False
         '
-        'SistemaExternoLabel
-        '
-        Me.SistemaExternoLabel.AutoSize = True
-        Me.SistemaExternoLabel.Location = New System.Drawing.Point(409, 43)
-        Me.SistemaExternoLabel.Name = "SistemaExternoLabel"
-        Me.SistemaExternoLabel.Size = New System.Drawing.Size(159, 13)
-        Me.SistemaExternoLabel.TabIndex = 68
-        Me.SistemaExternoLabel.Text = "Atualização no Sistema Externo:"
-        '
         'Legalizacao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4081,7 +4088,8 @@ Partial Class Legalizacao
         Me.AutoScroll = True
         Me.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.fundo_azul
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(742, 657)
+        Me.ClientSize = New System.Drawing.Size(742, 693)
+        Me.Controls.Add(Me.Calendar1)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox3)
@@ -4447,4 +4455,5 @@ Partial Class Legalizacao
     Friend WithEvents BtnLimparSocios As Button
     Friend WithEvents BtnCopiaDataDeNasc As Button
     Friend WithEvents SistemaExternoLabel As Label
+    Friend WithEvents Calendar1 As MonthCalendar
 End Class
