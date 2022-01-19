@@ -3927,6 +3927,7 @@ Partial Class Legalizacao
         '
         Me.GroupBox10.AutoSize = True
         Me.GroupBox10.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox10.Controls.Add(Me.Calendar1)
         Me.GroupBox10.Controls.Add(Me.NovaRazaoSocialComboBox)
         Me.GroupBox10.Controls.Add(Me.NovaRazaoSocialLabel)
         Me.GroupBox10.Controls.Add(Me.PictureBoxSistemaExterno)
@@ -3961,7 +3962,7 @@ Partial Class Legalizacao
         '
         'Calendar1
         '
-        Me.Calendar1.Location = New System.Drawing.Point(15, 29)
+        Me.Calendar1.Location = New System.Drawing.Point(65, 59)
         Me.Calendar1.Name = "Calendar1"
         Me.Calendar1.TabIndex = 70
         '
@@ -4089,7 +4090,6 @@ Partial Class Legalizacao
         Me.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.fundo_azul
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(742, 693)
-        Me.Controls.Add(Me.Calendar1)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox3)

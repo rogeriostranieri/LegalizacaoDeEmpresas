@@ -1775,14 +1775,11 @@ CPF =
     '///// TEM MAIS NO LOAD 
     Private Sub AvisarDiaMaskedTextBox_Click(sender As Object, e As EventArgs) Handles AvisarDiaMaskedTextBox.Click
         Calendar1.Visible = True
-        AvisarDiaMaskedTextBox.Text = Calendar1.SelectionStart.ToShortDateString()
+        'AvisarDiaMaskedTextBox.Text = Calendar1.SelectionStart.ToShortDateString()
         'Calendar1.Visible = False
     End Sub
 
-    Private Sub Calendar1_DateChanged(sender As Object, e As DateRangeEventArgs) Handles Calendar1.DateChanged
-        AvisarDiaMaskedTextBox.Text = Calendar1.SelectionStart.ToShortDateString()
-        Calendar1.Visible = False
-    End Sub
+
 
     Private Sub AvisarDiaMaskedTextBox_Leave(sender As Object, e As EventArgs) Handles AvisarDiaMaskedTextBox.Leave
         Calendar1.Visible = False
@@ -1797,6 +1794,11 @@ CPF =
     Private Sub Calendar1_MouseLeave(sender As Object, e As EventArgs) Handles Calendar1.MouseLeave
         Calendar1.Visible = False
 
+    End Sub
+
+    Private Sub Calendar1_DateSelected(sender As Object, e As DateRangeEventArgs) Handles Calendar1.DateSelected
+        AvisarDiaMaskedTextBox.Text = Calendar1.SelectionStart
+        Calendar1.Visible = False
     End Sub
 
     '/////////// fim do codigo de mostrar calendario

@@ -15,7 +15,7 @@ Public Class FrmAlvara
             'Dim Calendario As New MonthCalendar  ' VER ISSO E COLOCA COMO PADRAO
 
             Calendar1.Visible = False
-            Calendar1.Location = New Point(65, 59)
+            Calendar1.Location = New Point(87, 163)
             '////// fim calencario
 
 
@@ -966,13 +966,9 @@ Public Class FrmAlvara
     '///// TEM MAIS NO LOAD 
     Private Sub AvisarDiaMaskedTextBox_Click(sender As Object, e As EventArgs) Handles AvisarDiaMaskedTextBox.Click
         Calendar1.Visible = True
-        AvisarDiaMaskedTextBox.Text = Calendar1.SelectionStart.ToShortDateString()
-        'Calendar1.Visible = False
-    End Sub
+        'AvisarDiaMaskedTextBox.Text = Calendar1.SelectionStart.ToShortDateString()
 
-    Private Sub Calendar1_DateChanged(sender As Object, e As DateRangeEventArgs) Handles Calendar1.DateChanged
-        AvisarDiaMaskedTextBox.Text = Calendar1.SelectionStart.ToShortDateString()
-        Calendar1.Visible = False
+        'Calendar1.Visible = False
     End Sub
 
     Private Sub AvisarDiaMaskedTextBox_Leave(sender As Object, e As EventArgs) Handles AvisarDiaMaskedTextBox.Leave
@@ -988,6 +984,11 @@ Public Class FrmAlvara
     Private Sub Calendar1_MouseLeave(sender As Object, e As EventArgs) Handles Calendar1.MouseLeave
         Calendar1.Visible = False
 
+    End Sub
+
+    Private Sub Calendar1_DateSelected(sender As Object, e As DateRangeEventArgs) Handles Calendar1.DateSelected
+        AvisarDiaMaskedTextBox.Text = Calendar1.SelectionStart
+        Calendar1.Visible = False
     End Sub
 
     '/////////// fim do codigo de mostrar calendario
