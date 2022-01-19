@@ -117,6 +117,8 @@ Partial Class FrmAlvara
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button27 = New System.Windows.Forms.Button()
+        Me.Button26 = New System.Windows.Forms.Button()
         Me.BtnProcotBomb = New System.Windows.Forms.Button()
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -257,8 +259,7 @@ Partial Class FrmAlvara
         Me.EndEstadoLabel2 = New System.Windows.Forms.Label()
         Me.EndCidadeLabel2 = New System.Windows.Forms.Label()
         Me.BtnData1 = New System.Windows.Forms.Button()
-        Me.Button26 = New System.Windows.Forms.Button()
-        Me.Button27 = New System.Windows.Forms.Button()
+        Me.Calendar1 = New System.Windows.Forms.MonthCalendar()
         RazaoSocialLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         BombeirosSituacaoLabel = New System.Windows.Forms.Label()
@@ -1252,6 +1253,30 @@ Partial Class FrmAlvara
         Me.GroupBox2.TabIndex = 13
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Corpo de Bombeiros ( PrevFogo )"
+        '
+        'Button27
+        '
+        Me.Button27.BackColor = System.Drawing.Color.Transparent
+        Me.Button27.BackgroundImage = CType(resources.GetObject("Button27.BackgroundImage"), System.Drawing.Image)
+        Me.Button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button27.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button27.Location = New System.Drawing.Point(224, 18)
+        Me.Button27.Name = "Button27"
+        Me.Button27.Size = New System.Drawing.Size(46, 22)
+        Me.Button27.TabIndex = 81
+        Me.Button27.Text = "Copiar"
+        Me.Button27.UseVisualStyleBackColor = False
+        '
+        'Button26
+        '
+        Me.Button26.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button26.Location = New System.Drawing.Point(159, 45)
+        Me.Button26.Name = "Button26"
+        Me.Button26.Size = New System.Drawing.Size(43, 21)
+        Me.Button26.TabIndex = 80
+        Me.Button26.Text = "Agora"
+        Me.Button26.UseVisualStyleBackColor = True
         '
         'BtnProcotBomb
         '
@@ -2797,29 +2822,11 @@ Partial Class FrmAlvara
         Me.BtnData1.Text = "Agora"
         Me.BtnData1.UseVisualStyleBackColor = True
         '
-        'Button26
+        'Calendar1
         '
-        Me.Button26.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button26.Location = New System.Drawing.Point(159, 45)
-        Me.Button26.Name = "Button26"
-        Me.Button26.Size = New System.Drawing.Size(43, 21)
-        Me.Button26.TabIndex = 80
-        Me.Button26.Text = "Agora"
-        Me.Button26.UseVisualStyleBackColor = True
-        '
-        'Button27
-        '
-        Me.Button27.BackColor = System.Drawing.Color.Transparent
-        Me.Button27.BackgroundImage = CType(resources.GetObject("Button27.BackgroundImage"), System.Drawing.Image)
-        Me.Button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button27.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button27.Location = New System.Drawing.Point(224, 18)
-        Me.Button27.Name = "Button27"
-        Me.Button27.Size = New System.Drawing.Size(46, 22)
-        Me.Button27.TabIndex = 81
-        Me.Button27.Text = "Copiar"
-        Me.Button27.UseVisualStyleBackColor = False
+        Me.Calendar1.Location = New System.Drawing.Point(87, 163)
+        Me.Calendar1.Name = "Calendar1"
+        Me.Calendar1.TabIndex = 79
         '
         'FrmAlvara
         '
@@ -2828,6 +2835,7 @@ Partial Class FrmAlvara
         Me.AutoScroll = True
         Me.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.fundo_azul
         Me.ClientSize = New System.Drawing.Size(850, 628)
+        Me.Controls.Add(Me.Calendar1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.GroupBox9)
@@ -3089,4 +3097,5 @@ Partial Class FrmAlvara
     Friend WithEvents EndEstadoLabel2 As Label
     Friend WithEvents Button26 As Button
     Friend WithEvents Button27 As Button
+    Friend WithEvents Calendar1 As MonthCalendar
 End Class

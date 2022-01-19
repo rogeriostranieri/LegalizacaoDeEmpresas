@@ -121,6 +121,8 @@ Public Class Legalizacao
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '//// calendario 
+        'Dim Calendario As New MonthCalendar  ' VER ISSO E COLOCA COMO PADRAO
+
         Calendar1.Visible = False
         Calendar1.Location = New Point(65, 59)
         '////// fim calencario
