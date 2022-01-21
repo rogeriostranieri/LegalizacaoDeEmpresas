@@ -74,7 +74,6 @@ Partial Class MDIPrincipal
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.TesteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -278,7 +277,7 @@ Partial Class MDIPrincipal
         '
         'BuscaToolStripMenuItem
         '
-        Me.BuscaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscaPorResponsavelToolStripMenuItem, Me.TesteToolStripMenuItem})
+        Me.BuscaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscaPorResponsavelToolStripMenuItem})
         Me.BuscaToolStripMenuItem.Name = "BuscaToolStripMenuItem"
         Me.BuscaToolStripMenuItem.Size = New System.Drawing.Size(55, 21)
         Me.BuscaToolStripMenuItem.Text = "Busca"
@@ -450,12 +449,6 @@ Partial Class MDIPrincipal
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(204, 17)
         Me.ToolStripStatusLabel.Text = "Produzido por Rogerio Stranieri -2019"
         '
-        'TesteToolStripMenuItem
-        '
-        Me.TesteToolStripMenuItem.Name = "TesteToolStripMenuItem"
-        Me.TesteToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
-        Me.TesteToolStripMenuItem.Text = "teste"
-        '
         'MDIPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -529,5 +522,4 @@ Partial Class MDIPrincipal
     Friend WithEvents RegimeFederalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BuscaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BuscaPorResponsavelToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TesteToolStripMenuItem As ToolStripMenuItem
 End Class
