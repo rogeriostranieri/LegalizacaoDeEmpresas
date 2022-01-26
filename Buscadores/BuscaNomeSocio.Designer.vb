@@ -30,11 +30,11 @@ Partial Class BuscaNomeSocio
         Me.TableAdapterManager = New PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager()
         Me.EmpresasBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ComBoxNomeResp = New System.Windows.Forms.ComboBox()
         Me.RazaoSocialTextBox = New System.Windows.Forms.TextBox()
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.BtnAbrir = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -45,6 +45,16 @@ Partial Class BuscaNomeSocio
         CType(Me.EmpresasBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.EmpresasBindingNavigator.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'RazaoSocialLabel
+        '
+        RazaoSocialLabel.AutoSize = True
+        RazaoSocialLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        RazaoSocialLabel.Location = New System.Drawing.Point(163, 217)
+        RazaoSocialLabel.Name = "RazaoSocialLabel"
+        RazaoSocialLabel.Size = New System.Drawing.Size(92, 16)
+        RazaoSocialLabel.TabIndex = 2
+        RazaoSocialLabel.Text = "Razao Social:"
         '
         'PrinceDBDataSet
         '
@@ -99,9 +109,25 @@ Partial Class BuscaNomeSocio
         Me.BindingNavigatorCountItem.Text = "de {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Número total de itens"
         '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(110, 22)
+        Me.ToolStripLabel1.Text = "Codigo da Empresa"
+        '
+        'BindingNavigatorPositionItem
+        '
+        Me.BindingNavigatorPositionItem.AccessibleName = "Posição"
+        Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
+        Me.BindingNavigatorPositionItem.Text = "0"
+        Me.BindingNavigatorPositionItem.ToolTipText = "Posição atual"
+        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'ComBoxNomeResp
@@ -116,18 +142,7 @@ Partial Class BuscaNomeSocio
         Me.ComBoxNomeResp.Name = "ComBoxNomeResp"
         Me.ComBoxNomeResp.Size = New System.Drawing.Size(487, 24)
         Me.ComBoxNomeResp.TabIndex = 1
-        Me.ComBoxNomeResp.Text = "Digite aqui o nome . . . "
         Me.ComBoxNomeResp.ValueMember = "NomeResponsavel"
-        '
-        'RazaoSocialLabel
-        '
-        RazaoSocialLabel.AutoSize = True
-        RazaoSocialLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RazaoSocialLabel.Location = New System.Drawing.Point(163, 217)
-        RazaoSocialLabel.Name = "RazaoSocialLabel"
-        RazaoSocialLabel.Size = New System.Drawing.Size(92, 16)
-        RazaoSocialLabel.TabIndex = 2
-        RazaoSocialLabel.Text = "Razao Social:"
         '
         'RazaoSocialTextBox
         '
@@ -138,22 +153,6 @@ Partial Class BuscaNomeSocio
         Me.RazaoSocialTextBox.ReadOnly = True
         Me.RazaoSocialTextBox.Size = New System.Drawing.Size(377, 22)
         Me.RazaoSocialTextBox.TabIndex = 3
-        '
-        'BindingNavigatorPositionItem
-        '
-        Me.BindingNavigatorPositionItem.AccessibleName = "Posição"
-        Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
-        Me.BindingNavigatorPositionItem.Text = "0"
-        Me.BindingNavigatorPositionItem.ToolTipText = "Posição atual"
-        '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(110, 22)
-        Me.ToolStripLabel1.Text = "Codigo da Empresa"
         '
         'BtnAbrir
         '
@@ -210,7 +209,7 @@ Partial Class BuscaNomeSocio
         Me.Controls.Add(Me.EmpresasBindingNavigator)
         Me.Name = "BuscaNomeSocio"
         Me.ShowIcon = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Buscador por Nome de Sócio em Sistema"
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

@@ -31,7 +31,8 @@ Partial Class FrmBuscaEmpresas
         Me.txtPesquisa = New System.Windows.Forms.TextBox()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MaskedCNPJ = New System.Windows.Forms.MaskedTextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,15 +77,15 @@ Partial Class FrmBuscaEmpresas
         Me.EmpresasDataGridView.Location = New System.Drawing.Point(26, 117)
         Me.EmpresasDataGridView.Name = "EmpresasDataGridView"
         Me.EmpresasDataGridView.ReadOnly = True
-        Me.EmpresasDataGridView.Size = New System.Drawing.Size(701, 220)
+        Me.EmpresasDataGridView.Size = New System.Drawing.Size(633, 243)
         Me.EmpresasDataGridView.TabIndex = 1
         '
         'txtPesquisa
         '
         Me.txtPesquisa.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPesquisa.Location = New System.Drawing.Point(26, 73)
+        Me.txtPesquisa.Location = New System.Drawing.Point(164, 67)
         Me.txtPesquisa.Name = "txtPesquisa"
-        Me.txtPesquisa.Size = New System.Drawing.Size(313, 24)
+        Me.txtPesquisa.Size = New System.Drawing.Size(389, 24)
         Me.txtPesquisa.TabIndex = 2
         '
         'DataGridViewTextBoxColumn2
@@ -93,6 +94,7 @@ Partial Class FrmBuscaEmpresas
         Me.DataGridViewTextBoxColumn2.HeaderText = "Razão Social"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 400
         '
         'DataGridViewTextBoxColumn3
         '
@@ -100,26 +102,41 @@ Partial Class FrmBuscaEmpresas
         Me.DataGridViewTextBoxColumn3.HeaderText = "CNPJ"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 150
         '
-        'MaskedCNPJ
+        'Label1
         '
-        Me.MaskedCNPJ.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MaskedCNPJ.Location = New System.Drawing.Point(427, 73)
-        Me.MaskedCNPJ.Mask = "99.999.999/9999-99"
-        Me.MaskedCNPJ.Name = "MaskedCNPJ"
-        Me.MaskedCNPJ.Size = New System.Drawing.Size(145, 24)
-        Me.MaskedCNPJ.TabIndex = 3
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(23, 70)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(135, 18)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Digite para buscar :"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(215, 20)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(231, 24)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Busca por Razão Social"
         '
         'FrmBuscaEmpresas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.MaskedCNPJ)
+        Me.ClientSize = New System.Drawing.Size(693, 380)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtPesquisa)
         Me.Controls.Add(Me.EmpresasDataGridView)
         Me.Name = "FrmBuscaEmpresas"
-        Me.Text = "FrmBuscaEmpresas"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Busca por Razão Social"
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresasDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -136,5 +153,6 @@ Partial Class FrmBuscaEmpresas
     Friend WithEvents txtPesquisa As TextBox
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents MaskedCNPJ As MaskedTextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class
