@@ -122,7 +122,6 @@ Public Class Legalizacao
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '//// calendario 
         'Dim Calendario As New MonthCalendar  ' VER ISSO E COLOCA COMO PADRAO
-
         Calendar1.Visible = False
         Calendar1.Location = New Point(65, 59)
         '////// fim calencario
@@ -1775,6 +1774,7 @@ CPF =
     '///// TEM MAIS NO LOAD 
     Private Sub AvisarDiaMaskedTextBox_Click(sender As Object, e As EventArgs) Handles AvisarDiaMaskedTextBox.Click
         Calendar1.Visible = True
+
         'AvisarDiaMaskedTextBox.Text = Calendar1.SelectionStart.ToShortDateString()
         'Calendar1.Visible = False
     End Sub

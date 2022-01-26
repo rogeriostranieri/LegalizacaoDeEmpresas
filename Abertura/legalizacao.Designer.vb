@@ -332,6 +332,7 @@ Partial Class Legalizacao
         Me.EmpCriadoMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Calendar1 = New System.Windows.Forms.MonthCalendar()
         Me.RazaoSocialLabel = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Button43 = New System.Windows.Forms.Button()
@@ -362,7 +363,6 @@ Partial Class Legalizacao
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBoxBuscaProtocolo = New System.Windows.Forms.ComboBox()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.Calendar1 = New System.Windows.Forms.MonthCalendar()
         Me.NovaRazaoSocialLabel = New System.Windows.Forms.Label()
         Me.PictureBoxSistemaExterno = New System.Windows.Forms.PictureBox()
         Me.BtnData1 = New System.Windows.Forms.Button()
@@ -3406,8 +3406,8 @@ Partial Class Legalizacao
         '
         Me.NovaRazaoSocialComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "NovaRazaoSocial", True))
         Me.NovaRazaoSocialComboBox.FormattingEnabled = True
-        Me.NovaRazaoSocialComboBox.Items.AddRange(New Object() {"Abertura", "Alteração", "Não Altera"})
-        Me.NovaRazaoSocialComboBox.Location = New System.Drawing.Point(304, 129)
+        Me.NovaRazaoSocialComboBox.Items.AddRange(New Object() {"Não", "Sim"})
+        Me.NovaRazaoSocialComboBox.Location = New System.Drawing.Point(268, 129)
         Me.NovaRazaoSocialComboBox.Name = "NovaRazaoSocialComboBox"
         Me.NovaRazaoSocialComboBox.Size = New System.Drawing.Size(61, 21)
         Me.NovaRazaoSocialComboBox.TabIndex = 7
@@ -3615,6 +3615,12 @@ Partial Class Legalizacao
         Me.GroupBox2.Size = New System.Drawing.Size(678, 165)
         Me.GroupBox2.TabIndex = 22
         Me.GroupBox2.TabStop = False
+        '
+        'Calendar1
+        '
+        Me.Calendar1.Location = New System.Drawing.Point(168, 55)
+        Me.Calendar1.Name = "Calendar1"
+        Me.Calendar1.TabIndex = 70
         '
         'RazaoSocialLabel
         '
@@ -3960,16 +3966,10 @@ Partial Class Legalizacao
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "Procedimentos"
         '
-        'Calendar1
-        '
-        Me.Calendar1.Location = New System.Drawing.Point(65, 59)
-        Me.Calendar1.Name = "Calendar1"
-        Me.Calendar1.TabIndex = 70
-        '
         'NovaRazaoSocialLabel
         '
         Me.NovaRazaoSocialLabel.AutoSize = True
-        Me.NovaRazaoSocialLabel.Location = New System.Drawing.Point(168, 132)
+        Me.NovaRazaoSocialLabel.Location = New System.Drawing.Point(132, 132)
         Me.NovaRazaoSocialLabel.Name = "NovaRazaoSocialLabel"
         Me.NovaRazaoSocialLabel.Size = New System.Drawing.Size(139, 13)
         Me.NovaRazaoSocialLabel.TabIndex = 67
@@ -4007,10 +4007,10 @@ Partial Class Legalizacao
         '
         Me.AltConsolidadaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "AltConsolidada", True))
         Me.AltConsolidadaComboBox.FormattingEnabled = True
-        Me.AltConsolidadaComboBox.Items.AddRange(New Object() {"Consolidar", "Não Consolidar"})
+        Me.AltConsolidadaComboBox.Items.AddRange(New Object() {"Não", "Sim"})
         Me.AltConsolidadaComboBox.Location = New System.Drawing.Point(65, 129)
         Me.AltConsolidadaComboBox.Name = "AltConsolidadaComboBox"
-        Me.AltConsolidadaComboBox.Size = New System.Drawing.Size(97, 21)
+        Me.AltConsolidadaComboBox.Size = New System.Drawing.Size(61, 21)
         Me.AltConsolidadaComboBox.TabIndex = 41
         '
         'BtnVerEventos

@@ -671,5 +671,22 @@ Public Class MDIPrincipal
         End If
     End Sub
 
+    Private Sub BuscaEmpresaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscaEmpresaToolStripMenuItem.Click
+        If Application.OpenForms.OfType(Of FrmBuscaEmpresas)().Count() > 0 Then
 
+            FrmBuscaEmpresas.Focus()
+            FrmBuscaEmpresas.Close()
+            FrmBuscaEmpresas.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmBuscaEmpresas.Show()
+
+
+        Else
+
+            FrmBuscaEmpresas.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmBuscaEmpresas.Show()
+
+        End If
+    End Sub
 End Class
