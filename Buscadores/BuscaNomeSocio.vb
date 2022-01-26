@@ -1,10 +1,9 @@
 ﻿Public Class BuscaNomeSocio
-    Private Sub EmpresasBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
-        Me.Validate()
-        Me.EmpresasBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.PrinceDBDataSet)
-
+    Private Sub Form_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Escape Then Me.Close()
     End Sub
+
+
 
     Private Sub BuscaNomeSocio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.Empresas'. Você pode movê-la ou removê-la conforme necessário.
