@@ -332,7 +332,6 @@ Partial Class Legalizacao
         Me.EmpCriadoMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Calendar1 = New System.Windows.Forms.MonthCalendar()
         Me.RazaoSocialLabel = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Button43 = New System.Windows.Forms.Button()
@@ -342,6 +341,7 @@ Partial Class Legalizacao
         Me.TipoDeEmpresaComboBox = New System.Windows.Forms.ComboBox()
         Me.PorteDaEmpresaComboBox = New System.Windows.Forms.ComboBox()
         Me.RegimeFederalComboBox = New System.Windows.Forms.ComboBox()
+        Me.Calendar1 = New System.Windows.Forms.MonthCalendar()
         Me.SistemaExternoComboBox = New System.Windows.Forms.ComboBox()
         Me.Button42 = New System.Windows.Forms.Button()
         Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
@@ -375,6 +375,8 @@ Partial Class Legalizacao
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.LinkLabel18 = New System.Windows.Forms.LinkLabel()
+        Me.BtnLocalizar = New System.Windows.Forms.Button()
         NomeFantasiaLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         StatusLabel = New System.Windows.Forms.Label()
@@ -3587,6 +3589,7 @@ Partial Class Legalizacao
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.Controls.Add(Me.LinkLabel18)
         Me.GroupBox2.Controls.Add(Me.NaturezaJuridicaComboBox)
         Me.GroupBox2.Controls.Add(Me.RazaoSocialLabel)
         Me.GroupBox2.Controls.Add(Me.PictureBox6)
@@ -3615,12 +3618,6 @@ Partial Class Legalizacao
         Me.GroupBox2.Size = New System.Drawing.Size(678, 165)
         Me.GroupBox2.TabIndex = 22
         Me.GroupBox2.TabStop = False
-        '
-        'Calendar1
-        '
-        Me.Calendar1.Location = New System.Drawing.Point(168, 55)
-        Me.Calendar1.Name = "Calendar1"
-        Me.Calendar1.TabIndex = 70
         '
         'RazaoSocialLabel
         '
@@ -3713,6 +3710,12 @@ Partial Class Legalizacao
         Me.RegimeFederalComboBox.Name = "RegimeFederalComboBox"
         Me.RegimeFederalComboBox.Size = New System.Drawing.Size(121, 21)
         Me.RegimeFederalComboBox.TabIndex = 28
+        '
+        'Calendar1
+        '
+        Me.Calendar1.Location = New System.Drawing.Point(168, 55)
+        Me.Calendar1.Name = "Calendar1"
+        Me.Calendar1.TabIndex = 70
         '
         'SistemaExternoComboBox
         '
@@ -4082,6 +4085,28 @@ Partial Class Legalizacao
         Me.PictureBox5.TabIndex = 44
         Me.PictureBox5.TabStop = False
         '
+        'LinkLabel18
+        '
+        Me.LinkLabel18.AutoSize = True
+        Me.LinkLabel18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel18.Location = New System.Drawing.Point(503, 116)
+        Me.LinkLabel18.Name = "LinkLabel18"
+        Me.LinkLabel18.Size = New System.Drawing.Size(128, 13)
+        Me.LinkLabel18.TabIndex = 65
+        Me.LinkLabel18.TabStop = True
+        Me.LinkLabel18.Text = "Consulta Optante Simples"
+        '
+        'BtnLocalizar
+        '
+        Me.BtnLocalizar.BackgroundImage = CType(resources.GetObject("BtnLocalizar.BackgroundImage"), System.Drawing.Image)
+        Me.BtnLocalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnLocalizar.Location = New System.Drawing.Point(666, -1)
+        Me.BtnLocalizar.Name = "BtnLocalizar"
+        Me.BtnLocalizar.Size = New System.Drawing.Size(69, 23)
+        Me.BtnLocalizar.TabIndex = 45
+        Me.BtnLocalizar.Text = "Localizar"
+        Me.BtnLocalizar.UseVisualStyleBackColor = True
+        '
         'Legalizacao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4090,6 +4115,7 @@ Partial Class Legalizacao
         Me.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.fundo_azul
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(742, 693)
+        Me.Controls.Add(Me.BtnLocalizar)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox3)
@@ -4456,4 +4482,6 @@ Partial Class Legalizacao
     Friend WithEvents BtnCopiaDataDeNasc As Button
     Friend WithEvents SistemaExternoLabel As Label
     Friend WithEvents Calendar1 As MonthCalendar
+    Friend WithEvents LinkLabel18 As LinkLabel
+    Friend WithEvents BtnLocalizar As Button
 End Class

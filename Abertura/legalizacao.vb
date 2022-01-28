@@ -1801,8 +1801,30 @@ CPF =
         Calendar1.Visible = False
     End Sub
 
+
     '/////////// fim do codigo de mostrar calendario
 
+    Private Sub LinkLabel18_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel18.LinkClicked
+        System.Diagnostics.Process.Start("http://www8.receita.fazenda.gov.br/simplesnacional/servicos/grupo.aspx?grp=10")
 
+    End Sub
 
+    Private Sub BtnLocalizar_Click(sender As Object, e As EventArgs) Handles BtnLocalizar.Click
+        If Application.OpenForms.OfType(Of FrmAtalhoBuscadores)().Count() > 0 Then
+
+            FrmAtalhoBuscadores.Focus()
+            FrmAtalhoBuscadores.Close()
+            ' FrmAtalhoBuscadores.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmAtalhoBuscadores.Show()
+            'Me.Close()
+
+        Else
+
+            'FrmAtalhoBuscadores.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmAtalhoBuscadores.Show()
+            ' Me.Close()
+        End If
+    End Sub
 End Class

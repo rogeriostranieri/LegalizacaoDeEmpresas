@@ -144,6 +144,12 @@
     <Compile Include="Buscadores\BuscaNomeSocio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Buscadores\FrmAtalhoBuscadores.Designer.vb">
+      <DependentUpon>FrmAtalhoBuscadores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Buscadores\FrmAtalhoBuscadores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Buscadores\FrmBuscaEmpresas.Designer.vb">
       <DependentUpon>FrmBuscaEmpresas.vb</DependentUpon>
     </Compile>
@@ -412,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Buscadores\BuscaNomeSocio.resx">
       <DependentUpon>BuscaNomeSocio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buscadores\FrmAtalhoBuscadores.resx">
+      <DependentUpon>FrmAtalhoBuscadores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Buscadores\FrmBuscaEmpresas.resx">
       <DependentUpon>FrmBuscaEmpresas.vb</DependentUpon>
