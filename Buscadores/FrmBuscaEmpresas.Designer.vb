@@ -28,14 +28,16 @@ Partial Class FrmBuscaEmpresas
         Me.EmpresasTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.EmpresasTableAdapter()
         Me.TableAdapterManager = New PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager()
         Me.EmpresasDataGridView = New System.Windows.Forms.DataGridView()
-        Me.txtPesquisa = New System.Windows.Forms.TextBox()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtPesquisa = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PrinceDBDataSet
@@ -80,14 +82,6 @@ Partial Class FrmBuscaEmpresas
         Me.EmpresasDataGridView.Size = New System.Drawing.Size(633, 243)
         Me.EmpresasDataGridView.TabIndex = 1
         '
-        'txtPesquisa
-        '
-        Me.txtPesquisa.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPesquisa.Location = New System.Drawing.Point(164, 67)
-        Me.txtPesquisa.Name = "txtPesquisa"
-        Me.txtPesquisa.Size = New System.Drawing.Size(389, 24)
-        Me.txtPesquisa.TabIndex = 2
-        '
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "RazaoSocial"
@@ -103,6 +97,14 @@ Partial Class FrmBuscaEmpresas
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
         Me.DataGridViewTextBoxColumn3.Width = 150
+        '
+        'txtPesquisa
+        '
+        Me.txtPesquisa.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPesquisa.Location = New System.Drawing.Point(164, 67)
+        Me.txtPesquisa.Name = "txtPesquisa"
+        Me.txtPesquisa.Size = New System.Drawing.Size(389, 24)
+        Me.txtPesquisa.TabIndex = 2
         '
         'Label1
         '
@@ -124,11 +126,25 @@ Partial Class FrmBuscaEmpresas
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Busca por Razão Social"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox2.Image = Global.PrinceSistemas.My.Resources.Resources.fechar2
+        Me.PictureBox2.Location = New System.Drawing.Point(560, 1)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(129, 58)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 15
+        Me.PictureBox2.TabStop = False
+        '
         'FrmBuscaEmpresas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(693, 380)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtPesquisa)
@@ -140,6 +156,7 @@ Partial Class FrmBuscaEmpresas
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresasDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -155,4 +172,5 @@ Partial Class FrmBuscaEmpresas
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
