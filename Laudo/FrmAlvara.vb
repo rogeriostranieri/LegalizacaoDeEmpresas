@@ -523,13 +523,13 @@ Public Class FrmAlvara
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
 
-        System.Diagnostics.Process.Start("http://www.prevfogo.pr.gov.br/modules/conteudo/conteudo.php?conteudo=1")
+        System.Diagnostics.Process.Start("http://www.bombeiros.pr.gov.br/PrevFogo/Pagina/Solicitacao-de-Vistoria")
 
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
 
-        System.Diagnostics.Process.Start("http://www.prevfogo.pr.gov.br/modules/conteudo/conteudo.php?conteudo=3")
+        System.Diagnostics.Process.Start("https://www.bombeiros.pr.gov.br/PrevFogo/Pagina/Acompanhar-Processo")
 
     End Sub
 
