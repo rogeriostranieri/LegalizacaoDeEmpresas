@@ -275,11 +275,11 @@ Partial Class Legalizacao
         Me.Button11 = New System.Windows.Forms.Button()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.GroupBox13 = New System.Windows.Forms.GroupBox()
+        Me.Button36 = New System.Windows.Forms.Button()
         Me.BtnCopiaDataDeNasc = New System.Windows.Forms.Button()
         Me.Button35 = New System.Windows.Forms.Button()
         Me.Button34 = New System.Windows.Forms.Button()
         Me.Button37 = New System.Windows.Forms.Button()
-        Me.Button36 = New System.Windows.Forms.Button()
         Me.OrgãoPedSimplesComboBox = New System.Windows.Forms.ComboBox()
         Me.DataUltdefSimplesMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         Me.DataSimplesMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
@@ -332,6 +332,7 @@ Partial Class Legalizacao
         Me.EmpCriadoMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.LinkLabel18 = New System.Windows.Forms.LinkLabel()
         Me.RazaoSocialLabel = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Button43 = New System.Windows.Forms.Button()
@@ -375,7 +376,6 @@ Partial Class Legalizacao
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.LinkLabel18 = New System.Windows.Forms.LinkLabel()
         Me.BtnLocalizar = New System.Windows.Forms.Button()
         NomeFantasiaLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
@@ -3026,11 +3026,11 @@ Partial Class Legalizacao
         '
         'GroupBox13
         '
+        Me.GroupBox13.Controls.Add(Me.Button36)
         Me.GroupBox13.Controls.Add(Me.BtnCopiaDataDeNasc)
         Me.GroupBox13.Controls.Add(Me.Button35)
         Me.GroupBox13.Controls.Add(Me.Button34)
         Me.GroupBox13.Controls.Add(Me.Button37)
-        Me.GroupBox13.Controls.Add(Me.Button36)
         Me.GroupBox13.Location = New System.Drawing.Point(165, 102)
         Me.GroupBox13.Name = "GroupBox13"
         Me.GroupBox13.Size = New System.Drawing.Size(200, 131)
@@ -3038,10 +3038,20 @@ Partial Class Legalizacao
         Me.GroupBox13.TabStop = False
         Me.GroupBox13.Text = "Copia rápida"
         '
+        'Button36
+        '
+        Me.Button36.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button36.Location = New System.Drawing.Point(4, 99)
+        Me.Button36.Name = "Button36"
+        Me.Button36.Size = New System.Drawing.Size(114, 25)
+        Me.Button36.TabIndex = 48
+        Me.Button36.Text = "Código do Simples"
+        Me.Button36.UseVisualStyleBackColor = True
+        '
         'BtnCopiaDataDeNasc
         '
         Me.BtnCopiaDataDeNasc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCopiaDataDeNasc.Location = New System.Drawing.Point(4, 100)
+        Me.BtnCopiaDataDeNasc.Location = New System.Drawing.Point(4, 71)
         Me.BtnCopiaDataDeNasc.Name = "BtnCopiaDataDeNasc"
         Me.BtnCopiaDataDeNasc.Size = New System.Drawing.Size(114, 25)
         Me.BtnCopiaDataDeNasc.TabIndex = 55
@@ -3077,16 +3087,6 @@ Partial Class Legalizacao
         Me.Button37.TabIndex = 51
         Me.Button37.Text = "Título de Eleitor"
         Me.Button37.UseVisualStyleBackColor = True
-        '
-        'Button36
-        '
-        Me.Button36.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button36.Location = New System.Drawing.Point(4, 72)
-        Me.Button36.Name = "Button36"
-        Me.Button36.Size = New System.Drawing.Size(114, 25)
-        Me.Button36.TabIndex = 48
-        Me.Button36.Text = "Código do Simples"
-        Me.Button36.UseVisualStyleBackColor = True
         '
         'OrgãoPedSimplesComboBox
         '
@@ -3619,6 +3619,17 @@ Partial Class Legalizacao
         Me.GroupBox2.TabIndex = 22
         Me.GroupBox2.TabStop = False
         '
+        'LinkLabel18
+        '
+        Me.LinkLabel18.AutoSize = True
+        Me.LinkLabel18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel18.Location = New System.Drawing.Point(503, 116)
+        Me.LinkLabel18.Name = "LinkLabel18"
+        Me.LinkLabel18.Size = New System.Drawing.Size(128, 13)
+        Me.LinkLabel18.TabIndex = 65
+        Me.LinkLabel18.TabStop = True
+        Me.LinkLabel18.Text = "Consulta Optante Simples"
+        '
         'RazaoSocialLabel
         '
         Me.RazaoSocialLabel.AutoSize = True
@@ -3674,7 +3685,7 @@ Partial Class Legalizacao
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(538, 72)
+        Me.Label4.Location = New System.Drawing.Point(533, 72)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(32, 13)
         Me.Label4.TabIndex = 31
@@ -3684,7 +3695,7 @@ Partial Class Legalizacao
         '
         Me.TipoDeEmpresaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "TipoDeEmpresa", True))
         Me.TipoDeEmpresaComboBox.FormattingEnabled = True
-        Me.TipoDeEmpresaComboBox.Items.AddRange(New Object() {"Sociedade Empresária Limitada ( Ltda. )", "Empresa Individual de Responsabilidade Limitada ( Eireli )", "Empresa individual ( RE )", "Microempreendedor Indivual ( MEI )", "Sociedade Anônima (SA)", "Sociedade Simples"})
+        Me.TipoDeEmpresaComboBox.Items.AddRange(New Object() {"Sociedade Empresária Limitada ( Ltda. )", "Empresa Individual de Responsabilidade Limitada ( Eireli )", "Empresa individual ( RE )", "Microempreendedor Indivual ( MEI )", "Sociedade Anônima (SA)", "Sociedade Simples", "Igreja", "Comunidade e Similares"})
         Me.TipoDeEmpresaComboBox.Location = New System.Drawing.Point(99, 13)
         Me.TipoDeEmpresaComboBox.Name = "TipoDeEmpresaComboBox"
         Me.TipoDeEmpresaComboBox.Size = New System.Drawing.Size(287, 21)
@@ -3695,10 +3706,10 @@ Partial Class Legalizacao
         Me.PorteDaEmpresaComboBox.Cursor = System.Windows.Forms.Cursors.Default
         Me.PorteDaEmpresaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "PorteDaEmpresa", True))
         Me.PorteDaEmpresaComboBox.FormattingEnabled = True
-        Me.PorteDaEmpresaComboBox.Items.AddRange(New Object() {"ME", "EPP", "Outros", "-"})
-        Me.PorteDaEmpresaComboBox.Location = New System.Drawing.Point(576, 68)
+        Me.PorteDaEmpresaComboBox.Items.AddRange(New Object() {"ME", "EPP", "Demais", "Outros", "-"})
+        Me.PorteDaEmpresaComboBox.Location = New System.Drawing.Point(567, 68)
         Me.PorteDaEmpresaComboBox.Name = "PorteDaEmpresaComboBox"
-        Me.PorteDaEmpresaComboBox.Size = New System.Drawing.Size(52, 21)
+        Me.PorteDaEmpresaComboBox.Size = New System.Drawing.Size(61, 21)
         Me.PorteDaEmpresaComboBox.TabIndex = 29
         '
         'RegimeFederalComboBox
@@ -3713,7 +3724,7 @@ Partial Class Legalizacao
         '
         'Calendar1
         '
-        Me.Calendar1.Location = New System.Drawing.Point(168, 55)
+        Me.Calendar1.Location = New System.Drawing.Point(0, 56)
         Me.Calendar1.Name = "Calendar1"
         Me.Calendar1.TabIndex = 70
         '
@@ -4084,17 +4095,6 @@ Partial Class Legalizacao
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox5.TabIndex = 44
         Me.PictureBox5.TabStop = False
-        '
-        'LinkLabel18
-        '
-        Me.LinkLabel18.AutoSize = True
-        Me.LinkLabel18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel18.Location = New System.Drawing.Point(503, 116)
-        Me.LinkLabel18.Name = "LinkLabel18"
-        Me.LinkLabel18.Size = New System.Drawing.Size(128, 13)
-        Me.LinkLabel18.TabIndex = 65
-        Me.LinkLabel18.TabStop = True
-        Me.LinkLabel18.Text = "Consulta Optante Simples"
         '
         'BtnLocalizar
         '
