@@ -1827,4 +1827,15 @@ CPF =
             ' Me.Close()
         End If
     End Sub
+
+    Private Sub BtnContador_Click(sender As Object, e As EventArgs) Handles BtnContador.Click
+        If Application.OpenForms.OfType(Of Contador)().Count() > 0 Then
+            Contador.Focus()
+            '   Contador.MdiParent = MDIPrincipal
+
+        Else
+            ' Contador.MdiParent = MDIPrincipal
+            Contador.Show()
+        End If
+    End Sub
 End Class

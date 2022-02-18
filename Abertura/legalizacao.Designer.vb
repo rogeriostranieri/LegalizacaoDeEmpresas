@@ -355,6 +355,7 @@ Partial Class Legalizacao
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnFechar = New System.Windows.Forms.Button()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.BtnContador = New System.Windows.Forms.Button()
         Me.BtnEditar = New System.Windows.Forms.Button()
         Me.Button28 = New System.Windows.Forms.Button()
         Me.BtnAlteracao = New System.Windows.Forms.Button()
@@ -3832,6 +3833,7 @@ Partial Class Legalizacao
         '
         Me.GroupBox9.AutoSize = True
         Me.GroupBox9.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox9.Controls.Add(Me.BtnContador)
         Me.GroupBox9.Controls.Add(Me.BtnEditar)
         Me.GroupBox9.Controls.Add(Me.Button24)
         Me.GroupBox9.Controls.Add(Me.Button28)
@@ -3851,6 +3853,17 @@ Partial Class Legalizacao
         Me.GroupBox9.TabIndex = 29
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "MENU"
+        '
+        'BtnContador
+        '
+        Me.BtnContador.BackgroundImage = CType(resources.GetObject("BtnContador.BackgroundImage"), System.Drawing.Image)
+        Me.BtnContador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnContador.Location = New System.Drawing.Point(10, 326)
+        Me.BtnContador.Name = "BtnContador"
+        Me.BtnContador.Size = New System.Drawing.Size(69, 23)
+        Me.BtnContador.TabIndex = 57
+        Me.BtnContador.Text = "Contador"
+        Me.BtnContador.UseVisualStyleBackColor = True
         '
         'BtnEditar
         '
@@ -4484,4 +4497,5 @@ Partial Class Legalizacao
     Friend WithEvents Calendar1 As MonthCalendar
     Friend WithEvents LinkLabel18 As LinkLabel
     Friend WithEvents BtnLocalizar As Button
+    Friend WithEvents BtnContador As Button
 End Class

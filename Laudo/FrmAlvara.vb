@@ -333,6 +333,10 @@ Public Class FrmAlvara
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
 
+        'Abrir anotações direto
+        TabAlvara.SelectTab(1)
+        TabControl1.SelectTab(0)
+
 
         If ModeloSistemaComboBox.Text = "Alvará Antigo" Then
             'tirar espaço do textbox laudo
@@ -394,6 +398,7 @@ Public Class FrmAlvara
             MessageBox.Show("Sem sistema para consulta", "Prince Sistemas - Alerta")
 
         End If
+
 
 
     End Sub
@@ -991,6 +996,13 @@ Public Class FrmAlvara
         Calendar1.Visible = False
     End Sub
 
+
     '/////////// fim do codigo de mostrar calendario
+
+
+    Private Sub BtnAnotacoes_Click(sender As Object, e As EventArgs) Handles BtnAnotacoes.Click
+        TabAlvara.SelectTab(1)
+        TabControl1.SelectTab(0)
+    End Sub
 
 End Class

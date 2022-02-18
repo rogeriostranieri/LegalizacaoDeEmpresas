@@ -696,7 +696,7 @@ Partial Class LaudosCadastro
         Me.TableAdapterManager.ContadorTableAdapter = Nothing
         Me.TableAdapterManager.EmpresasTableAdapter = Nothing
         Me.TableAdapterManager.LaudosTableAdapter = Me.LaudosTableAdapter
-        Me.TableAdapterManager.LoginTableAdapter = Nothing
+        ' Me.TableAdapterManiger.LoginTableAdapter = Nothing
         Me.TableAdapterManager.NaturezajuridicaTableAdapter = Nothing
         Me.TableAdapterManager.TelefonesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete

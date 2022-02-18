@@ -260,6 +260,7 @@ Partial Class FrmAlvara
         Me.EndCidadeLabel2 = New System.Windows.Forms.Label()
         Me.BtnData1 = New System.Windows.Forms.Button()
         Me.Calendar1 = New System.Windows.Forms.MonthCalendar()
+        Me.BtnAnotacoes = New System.Windows.Forms.Button()
         RazaoSocialLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         BombeirosSituacaoLabel = New System.Windows.Forms.Label()
@@ -830,18 +831,20 @@ Partial Class FrmAlvara
         'EndCidadeLabel1
         '
         EndCidadeLabel1.AutoSize = True
-        EndCidadeLabel1.Location = New System.Drawing.Point(261, 110)
+        EndCidadeLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        EndCidadeLabel1.Location = New System.Drawing.Point(252, 112)
         EndCidadeLabel1.Name = "EndCidadeLabel1"
-        EndCidadeLabel1.Size = New System.Drawing.Size(43, 13)
+        EndCidadeLabel1.Size = New System.Drawing.Size(55, 16)
         EndCidadeLabel1.TabIndex = 75
         EndCidadeLabel1.Text = "Cidade:"
         '
         'EndEstadoLabel1
         '
         EndEstadoLabel1.AutoSize = True
-        EndEstadoLabel1.Location = New System.Drawing.Point(261, 123)
+        EndEstadoLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        EndEstadoLabel1.Location = New System.Drawing.Point(252, 133)
         EndEstadoLabel1.Name = "EndEstadoLabel1"
-        EndEstadoLabel1.Size = New System.Drawing.Size(43, 13)
+        EndEstadoLabel1.Size = New System.Drawing.Size(54, 16)
         EndEstadoLabel1.TabIndex = 76
         EndEstadoLabel1.Text = "Estado:"
         '
@@ -1845,6 +1848,7 @@ Partial Class FrmAlvara
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox4.Controls.Add(Me.BtnAnotacoes)
         Me.GroupBox4.Controls.Add(Me.NlaudoLabel)
         Me.GroupBox4.Controls.Add(Me.BtnBombVer)
         Me.GroupBox4.Controls.Add(BombeiroSituacaoLabel)
@@ -2799,17 +2803,19 @@ Partial Class FrmAlvara
         'EndEstadoLabel2
         '
         Me.EndEstadoLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "EndEstado", True))
-        Me.EndEstadoLabel2.Location = New System.Drawing.Point(302, 123)
+        Me.EndEstadoLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EndEstadoLabel2.Location = New System.Drawing.Point(302, 133)
         Me.EndEstadoLabel2.Name = "EndEstadoLabel2"
-        Me.EndEstadoLabel2.Size = New System.Drawing.Size(182, 13)
+        Me.EndEstadoLabel2.Size = New System.Drawing.Size(182, 15)
         Me.EndEstadoLabel2.TabIndex = 77
         '
         'EndCidadeLabel2
         '
         Me.EndCidadeLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "EndCidade", True))
-        Me.EndCidadeLabel2.Location = New System.Drawing.Point(303, 110)
+        Me.EndCidadeLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EndCidadeLabel2.Location = New System.Drawing.Point(303, 112)
         Me.EndCidadeLabel2.Name = "EndCidadeLabel2"
-        Me.EndCidadeLabel2.Size = New System.Drawing.Size(181, 13)
+        Me.EndCidadeLabel2.Size = New System.Drawing.Size(181, 18)
         Me.EndCidadeLabel2.TabIndex = 76
         '
         'BtnData1
@@ -2824,9 +2830,22 @@ Partial Class FrmAlvara
         '
         'Calendar1
         '
-        Me.Calendar1.Location = New System.Drawing.Point(87, 163)
+        Me.Calendar1.Location = New System.Drawing.Point(480, 182)
         Me.Calendar1.Name = "Calendar1"
         Me.Calendar1.TabIndex = 79
+        '
+        'BtnAnotacoes
+        '
+        Me.BtnAnotacoes.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.BtnAnotacoes.BackgroundImage = CType(resources.GetObject("BtnAnotacoes.BackgroundImage"), System.Drawing.Image)
+        Me.BtnAnotacoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnAnotacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAnotacoes.Location = New System.Drawing.Point(265, 19)
+        Me.BtnAnotacoes.Name = "BtnAnotacoes"
+        Me.BtnAnotacoes.Size = New System.Drawing.Size(72, 24)
+        Me.BtnAnotacoes.TabIndex = 79
+        Me.BtnAnotacoes.Text = "Anotações"
+        Me.BtnAnotacoes.UseVisualStyleBackColor = False
         '
         'FrmAlvara
         '
@@ -3098,4 +3117,5 @@ Partial Class FrmAlvara
     Friend WithEvents Button26 As Button
     Friend WithEvents Button27 As Button
     Friend WithEvents Calendar1 As MonthCalendar
+    Friend WithEvents BtnAnotacoes As Button
 End Class
