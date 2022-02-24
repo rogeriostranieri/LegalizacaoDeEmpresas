@@ -115,6 +115,9 @@ Public Class Legalizacao
 
         End If
 
+
+
+
     End Sub
 
 
@@ -653,7 +656,11 @@ Art. 60. A firma individual ou a sociedade que não proceder a qualquer arquivam
 
 
             Else
-                Clipboard.SetText(ProtocoloJuntaComercialTextBox.Text)
+
+                ' Clipboard.SetText(ProtocoloJuntaComercialTextBox.Text)
+                ProtocoloREDESIMTextBox.Text = ProtocoloJuntaComercialTextBox.Text
+                Clipboard.SetText(ProtocoloREDESIMTextBox.Text)
+
                 MsgBox("Protocolo Copiado da Junta Comercial e abrindo site...", MsgBoxStyle.Information, "Prince Sistemas Informa!")
 
                 System.Diagnostics.Process.Start("http://www.receita.fazenda.gov.br/PessoaJuridica/CNPJ/fcpj/consulta.asp?_ga=2.158688954.1840779760.1611238476-1712582906.1584021811")
@@ -1332,6 +1339,11 @@ Protocolo RedeSim= " & G & ".
                 EmpCriadoMaskedTextBox.Text = DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString()
                 AvisarDiaMaskedTextBox.Text = DateTime.Now.ToString()
 
+                LembreteCheckBox.CheckState = CheckState.Unchecked
+                PrioridadeCheckBox.CheckState = CheckState.Unchecked
+
+                SistemaExternoComboBox.SelectedIndex = SistemaExternoComboBox.FindStringExact("Não")
+
             Catch ex As System.InvalidCastException
                 MessageBox.Show("ERRO", "Prince Avisa")
 
@@ -1622,6 +1634,9 @@ Protocolo RedeSim= " & G & ".
 
     Private Sub BtnData3_Click(sender As Object, e As EventArgs) Handles BtnData3.Click
         ProtJuntaFinalMaskedTextBox.Text = DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString()
+
+        StatusComboBox.SelectedIndex = StatusComboBox.FindStringExact("Junta Comercial - Protocolado")
+
     End Sub
 
     Private Sub BtnData4_Click(sender As Object, e As EventArgs) Handles BtnData4.Click
@@ -1837,5 +1852,12 @@ CPF =
             ' Contador.MdiParent = MDIPrincipal
             Contador.Show()
         End If
+    End Sub
+
+    Private Sub BtnFedJunta_Click(sender As Object, e As EventArgs) Handles BtnFedJunta.Click
+
+        TabControle.SelectTab(2)
+        TabControle.SelectTab(3)
+        ProtocoloREDESIMTextBox.Text = ProtocoloJuntaComercialTextBox.Text
     End Sub
 End Class

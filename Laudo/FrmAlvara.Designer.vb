@@ -172,6 +172,7 @@ Partial Class FrmAlvara
         Me.Label5 = New System.Windows.Forms.Label()
         Me.SituacaoComboBox = New System.Windows.Forms.ComboBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.BtnAnotacoes = New System.Windows.Forms.Button()
         Me.NlaudoLabel = New System.Windows.Forms.Label()
         Me.BtnBombVer = New System.Windows.Forms.Button()
         Me.BombeiroSituacaoComboBox = New System.Windows.Forms.ComboBox()
@@ -260,7 +261,6 @@ Partial Class FrmAlvara
         Me.EndCidadeLabel2 = New System.Windows.Forms.Label()
         Me.BtnData1 = New System.Windows.Forms.Button()
         Me.Calendar1 = New System.Windows.Forms.MonthCalendar()
-        Me.BtnAnotacoes = New System.Windows.Forms.Button()
         RazaoSocialLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         BombeirosSituacaoLabel = New System.Windows.Forms.Label()
@@ -1868,6 +1868,19 @@ Partial Class FrmAlvara
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "CENTRAL DE LAUDOS E ALVARÁS"
         '
+        'BtnAnotacoes
+        '
+        Me.BtnAnotacoes.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.BtnAnotacoes.BackgroundImage = CType(resources.GetObject("BtnAnotacoes.BackgroundImage"), System.Drawing.Image)
+        Me.BtnAnotacoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnAnotacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAnotacoes.Location = New System.Drawing.Point(265, 19)
+        Me.BtnAnotacoes.Name = "BtnAnotacoes"
+        Me.BtnAnotacoes.Size = New System.Drawing.Size(72, 24)
+        Me.BtnAnotacoes.TabIndex = 79
+        Me.BtnAnotacoes.Text = "Anotações"
+        Me.BtnAnotacoes.UseVisualStyleBackColor = False
+        '
         'NlaudoLabel
         '
         Me.NlaudoLabel.AutoSize = True
@@ -2833,19 +2846,6 @@ Partial Class FrmAlvara
         Me.Calendar1.Location = New System.Drawing.Point(480, 182)
         Me.Calendar1.Name = "Calendar1"
         Me.Calendar1.TabIndex = 79
-        '
-        'BtnAnotacoes
-        '
-        Me.BtnAnotacoes.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.BtnAnotacoes.BackgroundImage = CType(resources.GetObject("BtnAnotacoes.BackgroundImage"), System.Drawing.Image)
-        Me.BtnAnotacoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnAnotacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAnotacoes.Location = New System.Drawing.Point(265, 19)
-        Me.BtnAnotacoes.Name = "BtnAnotacoes"
-        Me.BtnAnotacoes.Size = New System.Drawing.Size(72, 24)
-        Me.BtnAnotacoes.TabIndex = 79
-        Me.BtnAnotacoes.Text = "Anotações"
-        Me.BtnAnotacoes.UseVisualStyleBackColor = False
         '
         'FrmAlvara
         '

@@ -237,6 +237,7 @@ Partial Class Legalizacao
         Me.BtnConsultaJunta = New System.Windows.Forms.Button()
         Me.ProtocoloJuntaComercialTextBox = New System.Windows.Forms.TextBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.BtnFedJunta = New System.Windows.Forms.Button()
         Me.BtnData4 = New System.Windows.Forms.Button()
         Me.Button47 = New System.Windows.Forms.Button()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
@@ -2603,6 +2604,7 @@ Partial Class Legalizacao
         'TabPage4
         '
         Me.TabPage4.AutoScroll = True
+        Me.TabPage4.Controls.Add(Me.BtnFedJunta)
         Me.TabPage4.Controls.Add(Me.BtnData4)
         Me.TabPage4.Controls.Add(Me.Button47)
         Me.TabPage4.Controls.Add(Me.GroupBox7)
@@ -2622,6 +2624,16 @@ Partial Class Legalizacao
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Receita Federal"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'BtnFedJunta
+        '
+        Me.BtnFedJunta.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnFedJunta.Location = New System.Drawing.Point(265, 35)
+        Me.BtnFedJunta.Name = "BtnFedJunta"
+        Me.BtnFedJunta.Size = New System.Drawing.Size(43, 21)
+        Me.BtnFedJunta.TabIndex = 53
+        Me.BtnFedJunta.Text = "Copiar"
+        Me.BtnFedJunta.UseVisualStyleBackColor = True
         '
         'BtnData4
         '
@@ -3725,7 +3737,7 @@ Partial Class Legalizacao
         '
         'Calendar1
         '
-        Me.Calendar1.Location = New System.Drawing.Point(0, 56)
+        Me.Calendar1.Location = New System.Drawing.Point(247, 63)
         Me.Calendar1.Name = "Calendar1"
         Me.Calendar1.TabIndex = 70
         '
@@ -4498,4 +4510,5 @@ Partial Class Legalizacao
     Friend WithEvents LinkLabel18 As LinkLabel
     Friend WithEvents BtnLocalizar As Button
     Friend WithEvents BtnContador As Button
+    Friend WithEvents BtnFedJunta As Button
 End Class

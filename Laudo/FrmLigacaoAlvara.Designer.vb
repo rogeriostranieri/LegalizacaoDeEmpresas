@@ -23,6 +23,7 @@ Partial Class FrmLigacaoAlvara
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmLigacaoAlvara))
         Me.PrinceDBDataSet = New PrinceSistemas.PrinceDBDataSet()
         Me.LaudosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LaudosTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.LaudosTableAdapter()
@@ -39,6 +40,7 @@ Partial Class FrmLigacaoAlvara
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button13 = New System.Windows.Forms.Button()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LaudosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LaudosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,6 +65,7 @@ Partial Class FrmLigacaoAlvara
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.CNAETableAdapter = Nothing
         Me.TableAdapterManager.ContadorTableAdapter = Nothing
+        Me.TableAdapterManager.ContatosTableAdapter = Nothing
         Me.TableAdapterManager.EmpresasTableAdapter = Nothing
         Me.TableAdapterManager.LaudosTableAdapter = Me.LaudosTableAdapter
         Me.TableAdapterManager.LoginTableAdapter = Nothing
@@ -174,18 +177,30 @@ Partial Class FrmLigacaoAlvara
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button1.Location = New System.Drawing.Point(479, 31)
+        Me.Button1.Location = New System.Drawing.Point(477, 294)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(89, 34)
         Me.Button1.TabIndex = 21
         Me.Button1.Text = "Atualizar"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Button13
+        '
+        Me.Button13.BackgroundImage = CType(resources.GetObject("Button13.BackgroundImage"), System.Drawing.Image)
+        Me.Button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button13.Location = New System.Drawing.Point(499, 36)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(69, 23)
+        Me.Button13.TabIndex = 56
+        Me.Button13.Text = "Telefones"
+        Me.Button13.UseVisualStyleBackColor = True
+        '
         'FrmLigacaoAlvara
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(578, 299)
+        Me.ClientSize = New System.Drawing.Size(578, 335)
+        Me.Controls.Add(Me.Button13)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ComboBox1)
@@ -220,4 +235,5 @@ Partial Class FrmLigacaoAlvara
     Friend WithEvents SanitarioExigencia As DataGridViewTextBoxColumn
     Friend WithEvents SetranExigencia As DataGridViewTextBoxColumn
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button13 As Button
 End Class

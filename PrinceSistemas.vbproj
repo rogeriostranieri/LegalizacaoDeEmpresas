@@ -186,6 +186,7 @@
     <Compile Include="Laudo\FrmLigacaoAlvara.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Laudo\ModCPFeCNPJ.vb" />
     <Compile Include="Modulo\LoadingForm.Designer.vb">
       <DependentUpon>LoadingForm.vb</DependentUpon>
     </Compile>

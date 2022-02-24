@@ -1,7 +1,10 @@
 ﻿Imports System.IO
 Imports System.Data
 Imports System.Data.SqlClient
+
 Public Class FrmAlvara
+
+
 
     Private Sub Form_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Escape Then Me.Close()
@@ -39,7 +42,6 @@ Public Class FrmAlvara
 
 
     End Sub
-
 
 
 
@@ -1004,5 +1006,8 @@ Public Class FrmAlvara
         TabAlvara.SelectTab(1)
         TabControl1.SelectTab(0)
     End Sub
+
+
+
 
 End Class

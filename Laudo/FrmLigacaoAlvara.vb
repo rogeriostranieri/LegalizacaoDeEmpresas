@@ -91,4 +91,18 @@
         Me.Refresh()
         Filtro()
     End Sub
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        If Application.OpenForms.OfType(Of Telefones)().Count() > 0 Then
+
+            Telefones.Focus()
+
+
+        Else
+
+            Telefones.MdiParent = Me
+            Telefones.Show()
+
+        End If
+    End Sub
 End Class
