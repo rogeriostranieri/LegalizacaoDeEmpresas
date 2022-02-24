@@ -261,6 +261,7 @@ Partial Class FrmAlvara
         Me.EndCidadeLabel2 = New System.Windows.Forms.Label()
         Me.BtnData1 = New System.Windows.Forms.Button()
         Me.Calendar1 = New System.Windows.Forms.MonthCalendar()
+        Me.BtnContLigacao = New System.Windows.Forms.Button()
         RazaoSocialLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         BombeirosSituacaoLabel = New System.Windows.Forms.Label()
@@ -2377,6 +2378,7 @@ Partial Class FrmAlvara
         '
         'GroupBox7
         '
+        Me.GroupBox7.Controls.Add(Me.BtnContLigacao)
         Me.GroupBox7.Controls.Add(Me.BombeirosCheckBox)
         Me.GroupBox7.Controls.Add(Me.AmbientalCheckBox)
         Me.GroupBox7.Controls.Add(Me.ViabilidadeCheckBox)
@@ -2847,6 +2849,17 @@ Partial Class FrmAlvara
         Me.Calendar1.Name = "Calendar1"
         Me.Calendar1.TabIndex = 79
         '
+        'BtnContLigacao
+        '
+        Me.BtnContLigacao.BackgroundImage = CType(resources.GetObject("BtnContLigacao.BackgroundImage"), System.Drawing.Image)
+        Me.BtnContLigacao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnContLigacao.Location = New System.Drawing.Point(377, 11)
+        Me.BtnContLigacao.Name = "BtnContLigacao"
+        Me.BtnContLigacao.Size = New System.Drawing.Size(119, 23)
+        Me.BtnContLigacao.TabIndex = 58
+        Me.BtnContLigacao.Text = "Controle de ligações"
+        Me.BtnContLigacao.UseVisualStyleBackColor = True
+        '
         'FrmAlvara
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3118,4 +3131,5 @@ Partial Class FrmAlvara
     Friend WithEvents Button27 As Button
     Friend WithEvents Calendar1 As MonthCalendar
     Friend WithEvents BtnAnotacoes As Button
+    Friend WithEvents BtnContLigacao As Button
 End Class

@@ -1007,7 +1007,17 @@ Public Class FrmAlvara
         TabControl1.SelectTab(0)
     End Sub
 
+    Private Sub BtnContLigacao_Click(sender As Object, e As EventArgs) Handles BtnContLigacao.Click
+        If Application.OpenForms.OfType(Of FrmLigacaoAlvara)().Count() > 0 Then
+
+            FrmLigacaoAlvara.Focus()
 
 
+        Else
 
+            FrmLigacaoAlvara.MdiParent = Me
+            FrmLigacaoAlvara.Show()
+
+        End If
+    End Sub
 End Class
