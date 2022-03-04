@@ -689,4 +689,23 @@ Public Class MDIPrincipal
 
         End If
     End Sub
+
+    Private Sub ControleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ControleToolStripMenuItem.Click
+        If Application.OpenForms.OfType(Of FrmControleEmpresas)().Count() > 0 Then
+
+            FrmControleEmpresas.Focus()
+            FrmControleEmpresas.Close()
+            FrmControleEmpresas.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmControleEmpresas.Show()
+
+
+        Else
+
+            FrmControleEmpresas.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmControleEmpresas.Show()
+
+        End If
+    End Sub
 End Class

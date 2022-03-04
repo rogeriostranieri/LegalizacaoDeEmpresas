@@ -30,6 +30,7 @@ Partial Class MDIPrincipal
         Me.ContadorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.SairToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ControleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpresasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControleLegalizaçãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlvaráToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -53,6 +54,7 @@ Partial Class MDIPrincipal
         Me.PrevFogoBombeiroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscaPorResponsavelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscaEmpresaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TributáriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpMenu = New System.Windows.Forms.ToolStripMenuItem()
@@ -74,7 +76,6 @@ Partial Class MDIPrincipal
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.BuscaEmpresaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -93,7 +94,7 @@ Partial Class MDIPrincipal
         '
         'MenuToolStripMenuItem
         '
-        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContadorToolStripMenuItem, Me.ToolStripSeparator1, Me.SairToolStripMenuItem1})
+        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContadorToolStripMenuItem, Me.ToolStripSeparator1, Me.SairToolStripMenuItem1, Me.ControleToolStripMenuItem})
         Me.MenuToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.MenuToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
@@ -119,6 +120,12 @@ Partial Class MDIPrincipal
         Me.SairToolStripMenuItem1.Name = "SairToolStripMenuItem1"
         Me.SairToolStripMenuItem1.Size = New System.Drawing.Size(195, 22)
         Me.SairToolStripMenuItem1.Text = "Sair"
+        '
+        'ControleToolStripMenuItem
+        '
+        Me.ControleToolStripMenuItem.Name = "ControleToolStripMenuItem"
+        Me.ControleToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
+        Me.ControleToolStripMenuItem.Text = "Controle"
         '
         'EmpresasToolStripMenuItem
         '
@@ -289,6 +296,12 @@ Partial Class MDIPrincipal
         Me.BuscaPorResponsavelToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
         Me.BuscaPorResponsavelToolStripMenuItem.Text = "Busca por responsavel"
         '
+        'BuscaEmpresaToolStripMenuItem
+        '
+        Me.BuscaEmpresaToolStripMenuItem.Name = "BuscaEmpresaToolStripMenuItem"
+        Me.BuscaEmpresaToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
+        Me.BuscaEmpresaToolStripMenuItem.Text = "Busca Empresa"
+        '
         'AgendaToolStripMenuItem
         '
         Me.AgendaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TributáriaToolStripMenuItem})
@@ -450,12 +463,6 @@ Partial Class MDIPrincipal
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(204, 17)
         Me.ToolStripStatusLabel.Text = "Produzido por Rogerio Stranieri -2019"
         '
-        'BuscaEmpresaToolStripMenuItem
-        '
-        Me.BuscaEmpresaToolStripMenuItem.Name = "BuscaEmpresaToolStripMenuItem"
-        Me.BuscaEmpresaToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
-        Me.BuscaEmpresaToolStripMenuItem.Text = "Busca Empresa"
-        '
         'MDIPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -530,4 +537,5 @@ Partial Class MDIPrincipal
     Friend WithEvents BuscaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BuscaPorResponsavelToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BuscaEmpresaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ControleToolStripMenuItem As ToolStripMenuItem
 End Class

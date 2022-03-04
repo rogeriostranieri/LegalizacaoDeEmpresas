@@ -98,6 +98,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abertura\Administracao\FrmControleEmpresas.Designer.vb">
+      <DependentUpon>FrmControleEmpresas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Abertura\Administracao\FrmControleEmpresas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Abertura\BoxConsultaCNPJEmpresa.Designer.vb">
       <DependentUpon>BoxConsultaCNPJEmpresa.vb</DependentUpon>
     </Compile>
@@ -105,6 +111,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Abertura\ClassDataBox.vb" />
+    <Compile Include="Abertura\Administracao\FrmEmpresaAltStatus.Designer.vb">
+      <DependentUpon>FrmEmpresaAltStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Abertura\Administracao\FrmEmpresaAltStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Abertura\FrmEmpresaEmAndamento.Designer.vb">
       <DependentUpon>FrmEmpresaEmAndamento.vb</DependentUpon>
     </Compile>
@@ -399,6 +411,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Abertura\Administracao\FrmControleEmpresas.resx">
+      <DependentUpon>FrmControleEmpresas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abertura\Administracao\FrmEmpresaAltStatus.resx">
+      <DependentUpon>FrmEmpresaAltStatus.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Abertura\BoxConsultaCNPJEmpresa.resx">
       <DependentUpon>BoxConsultaCNPJEmpresa.vb</DependentUpon>
     </EmbeddedResource>
