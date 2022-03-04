@@ -32,10 +32,10 @@ Partial Class FrmControleEmpresas
         'BtnExterno
         '
         Me.BtnExterno.BackColor = System.Drawing.Color.Transparent
-        Me.BtnExterno.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnExterno.Location = New System.Drawing.Point(12, 49)
+        Me.BtnExterno.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExterno.Location = New System.Drawing.Point(12, 27)
         Me.BtnExterno.Name = "BtnExterno"
-        Me.BtnExterno.Size = New System.Drawing.Size(117, 50)
+        Me.BtnExterno.Size = New System.Drawing.Size(150, 50)
         Me.BtnExterno.TabIndex = 5
         Me.BtnExterno.Text = "Controle Status"
         Me.BtnExterno.UseVisualStyleBackColor = False
@@ -80,10 +80,15 @@ Partial Class FrmControleEmpresas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.bg
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(291, 154)
         Me.Controls.Add(Me.BtnExterno)
         Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.DoubleBuffered = True
         Me.Name = "FrmControleEmpresas"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Controle Geral de Empresas"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)

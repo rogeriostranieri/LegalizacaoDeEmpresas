@@ -94,7 +94,7 @@ Partial Class MDIPrincipal
         '
         'MenuToolStripMenuItem
         '
-        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContadorToolStripMenuItem, Me.ToolStripSeparator1, Me.SairToolStripMenuItem1, Me.ControleToolStripMenuItem})
+        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ControleToolStripMenuItem, Me.ContadorToolStripMenuItem, Me.ToolStripSeparator1, Me.SairToolStripMenuItem1})
         Me.MenuToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.MenuToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
