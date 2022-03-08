@@ -1015,7 +1015,7 @@ Public Class FrmAlvara
 
         Else
 
-            FrmLigacaoAlvara.MdiParent = Me
+            FrmLigacaoAlvara.MdiParent = MDIPrincipal
             FrmLigacaoAlvara.Show()
 
         End If
