@@ -100,7 +100,7 @@
 
         Else
 
-            Telefones.MdiParent = Me
+            Telefones.MdiParent = MDIPrincipal
             Telefones.Show()
 
         End If
