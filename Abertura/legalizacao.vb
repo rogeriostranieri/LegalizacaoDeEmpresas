@@ -123,6 +123,8 @@ Public Class Legalizacao
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.CADstatus'. Você pode movê-la ou removê-la conforme necessário.
+        Me.CADstatusTableAdapter.Fill(Me.PrinceDBDataSet.CADstatus)
         '//// calendario 
         'Dim Calendario As New MonthCalendar  ' VER ISSO E COLOCA COMO PADRAO
         Calendar1.Visible = False
@@ -139,7 +141,7 @@ Public Class Legalizacao
             Editar()
 
             'chama combobox status
-            ModCombobox.ComboboxLegalizacao()
+            '   ModCombobox.ComboboxLegalizacao()
             ModCombobox.ComboboxLegalizacaoProcesso()
 
             'Ficar focado no campo busca

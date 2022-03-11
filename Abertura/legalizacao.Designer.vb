@@ -379,6 +379,8 @@ Partial Class Legalizacao
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.BtnLocalizar = New System.Windows.Forms.Button()
+        Me.CADstatusBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CADstatusTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.CADstatusTableAdapter()
         NomeFantasiaLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         StatusLabel = New System.Windows.Forms.Label()
@@ -510,6 +512,7 @@ Partial Class Legalizacao
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CADstatusBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NomeFantasiaLabel
@@ -1380,6 +1383,8 @@ Partial Class Legalizacao
         Me.StatusComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.StatusComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.StatusComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "Status", True))
+        Me.StatusComboBox.DataSource = Me.CADstatusBindingSource
+        Me.StatusComboBox.DisplayMember = "Descricao"
         Me.StatusComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.StatusComboBox.FormattingEnabled = True
         Me.StatusComboBox.Location = New System.Drawing.Point(378, 14)
@@ -3560,6 +3565,7 @@ Partial Class Legalizacao
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CADstatusTableAdapter = Nothing
         Me.TableAdapterManager.CNAETableAdapter = Nothing
         Me.TableAdapterManager.ContadorTableAdapter = Nothing
         Me.TableAdapterManager.ContatosTableAdapter = Nothing
@@ -4132,6 +4138,15 @@ Partial Class Legalizacao
         Me.BtnLocalizar.Text = "Localizar"
         Me.BtnLocalizar.UseVisualStyleBackColor = True
         '
+        'CADstatusBindingSource
+        '
+        Me.CADstatusBindingSource.DataMember = "CADstatus"
+        Me.CADstatusBindingSource.DataSource = Me.PrinceDBDataSetBindingSource
+        '
+        'CADstatusTableAdapter
+        '
+        Me.CADstatusTableAdapter.ClearBeforeFill = True
+        '
         'Legalizacao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4233,6 +4248,7 @@ Partial Class Legalizacao
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CADstatusBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -4511,4 +4527,6 @@ Partial Class Legalizacao
     Friend WithEvents BtnLocalizar As Button
     Friend WithEvents BtnContador As Button
     Friend WithEvents BtnFedJunta As Button
+    Friend WithEvents CADstatusBindingSource As BindingSource
+    Friend WithEvents CADstatusTableAdapter As PrinceDBDataSetTableAdapters.CADstatusTableAdapter
 End Class

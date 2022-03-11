@@ -2,10 +2,12 @@
 
 
     Private Sub RelatorioEmpresas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.CADstatus'. Você pode movê-la ou removê-la conforme necessário.
+        Me.CADstatusTableAdapter.Fill(Me.PrinceDBDataSet.CADstatus)
         'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.Empresas'. Você pode movê-la ou removê-la conforme necessário.
         Me.EmpresasTableAdapter.Fill(Me.PrinceDBDataSet.Empresas)
 
-        ModCombobox.ComboboxRelatorioEmpresasStatus()
+        'ModCombobox.ComboboxRelatorioEmpresasStatus()
         ModCombobox.ComboboxRelatorioProcesso()
     End Sub
 

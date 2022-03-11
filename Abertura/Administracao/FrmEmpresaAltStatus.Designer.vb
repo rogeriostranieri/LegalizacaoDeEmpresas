@@ -24,8 +24,8 @@ Partial Class FrmEmpresaAltStatus
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DescricaoLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEmpresaAltStatus))
         Dim DescricaoLabel1 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEmpresaAltStatus))
         Me.BtnFechar = New System.Windows.Forms.Button()
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnNovo = New System.Windows.Forms.Button()
@@ -57,6 +57,16 @@ Partial Class FrmEmpresaAltStatus
         DescricaoLabel.Size = New System.Drawing.Size(58, 13)
         DescricaoLabel.TabIndex = 30
         DescricaoLabel.Text = "Descricao:"
+        '
+        'DescricaoLabel1
+        '
+        DescricaoLabel1.AutoSize = True
+        DescricaoLabel1.BackColor = System.Drawing.Color.Transparent
+        DescricaoLabel1.Location = New System.Drawing.Point(36, 50)
+        DescricaoLabel1.Name = "DescricaoLabel1"
+        DescricaoLabel1.Size = New System.Drawing.Size(43, 13)
+        DescricaoLabel1.TabIndex = 34
+        DescricaoLabel1.Text = "Buscar:"
         '
         'BtnFechar
         '
@@ -197,18 +207,10 @@ Partial Class FrmEmpresaAltStatus
         Me.Label2.TabIndex = 34
         Me.Label2.Text = "Consulta"
         '
-        'DescricaoLabel1
-        '
-        DescricaoLabel1.AutoSize = True
-        DescricaoLabel1.BackColor = System.Drawing.Color.Transparent
-        DescricaoLabel1.Location = New System.Drawing.Point(36, 50)
-        DescricaoLabel1.Name = "DescricaoLabel1"
-        DescricaoLabel1.Size = New System.Drawing.Size(43, 13)
-        DescricaoLabel1.TabIndex = 34
-        DescricaoLabel1.Text = "Buscar:"
-        '
         'DescricaoComboBox
         '
+        Me.DescricaoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.DescricaoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.DescricaoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CADstatusBindingSource, "Descricao", True))
         Me.DescricaoComboBox.DataSource = Me.CADstatusBindingSource
         Me.DescricaoComboBox.DisplayMember = "Descricao"

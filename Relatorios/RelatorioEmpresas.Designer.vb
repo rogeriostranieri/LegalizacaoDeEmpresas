@@ -29,6 +29,11 @@ Partial Class RelatorioEmpresas
         Me.EmpresasTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.EmpresasTableAdapter()
         Me.TableAdapterManager = New PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager()
         Me.EmpresasDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Processo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NireData = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BbtnPrint = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.StatusComboBox = New System.Windows.Forms.ComboBox()
@@ -40,14 +45,12 @@ Partial Class RelatorioEmpresas
         Me.ProcessoComboBox = New System.Windows.Forms.ComboBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Processo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NireData = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CADstatusBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CADstatusTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.CADstatusTableAdapter()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CADstatusBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PrinceDBDataSet
@@ -67,6 +70,7 @@ Partial Class RelatorioEmpresas
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CADstatusTableAdapter = Nothing
         Me.TableAdapterManager.CNAETableAdapter = Nothing
         Me.TableAdapterManager.ContadorTableAdapter = Nothing
         Me.TableAdapterManager.ContatosTableAdapter = Nothing
@@ -92,6 +96,44 @@ Partial Class RelatorioEmpresas
         Me.EmpresasDataGridView.Size = New System.Drawing.Size(659, 263)
         Me.EmpresasDataGridView.TabIndex = 1
         '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "RazaoSocial"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Razão Social"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 200
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "CNPJ"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "CNPJ"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 120
+        '
+        'DataGridViewTextBoxColumn22
+        '
+        Me.DataGridViewTextBoxColumn22.DataPropertyName = "Status"
+        Me.DataGridViewTextBoxColumn22.HeaderText = "Status"
+        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
+        Me.DataGridViewTextBoxColumn22.ReadOnly = True
+        '
+        'Processo
+        '
+        Me.Processo.DataPropertyName = "Processo"
+        Me.Processo.HeaderText = "Processo"
+        Me.Processo.Name = "Processo"
+        Me.Processo.ReadOnly = True
+        Me.Processo.Width = 80
+        '
+        'NireData
+        '
+        Me.NireData.DataPropertyName = "NireData"
+        Me.NireData.HeaderText = "Data Abertura"
+        Me.NireData.Name = "NireData"
+        Me.NireData.ReadOnly = True
+        '
         'BbtnPrint
         '
         Me.BbtnPrint.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -114,6 +156,10 @@ Partial Class RelatorioEmpresas
         '
         'StatusComboBox
         '
+        Me.StatusComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.StatusComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.StatusComboBox.DataSource = Me.CADstatusBindingSource
+        Me.StatusComboBox.DisplayMember = "Descricao"
         Me.StatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.StatusComboBox.FormattingEnabled = True
         Me.StatusComboBox.Location = New System.Drawing.Point(62, 61)
@@ -192,43 +238,14 @@ Partial Class RelatorioEmpresas
         Me.Label2.TabIndex = 35
         Me.Label2.Text = "Tipo:"
         '
-        'DataGridViewTextBoxColumn2
+        'CADstatusBindingSource
         '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "RazaoSocial"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Razão Social"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 200
+        Me.CADstatusBindingSource.DataMember = "CADstatus"
+        Me.CADstatusBindingSource.DataSource = Me.PrinceDBDataSet
         '
-        'DataGridViewTextBoxColumn3
+        'CADstatusTableAdapter
         '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "CNPJ"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "CNPJ"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 120
-        '
-        'DataGridViewTextBoxColumn22
-        '
-        Me.DataGridViewTextBoxColumn22.DataPropertyName = "Status"
-        Me.DataGridViewTextBoxColumn22.HeaderText = "Status"
-        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
-        Me.DataGridViewTextBoxColumn22.ReadOnly = True
-        '
-        'Processo
-        '
-        Me.Processo.DataPropertyName = "Processo"
-        Me.Processo.HeaderText = "Processo"
-        Me.Processo.Name = "Processo"
-        Me.Processo.ReadOnly = True
-        Me.Processo.Width = 80
-        '
-        'NireData
-        '
-        Me.NireData.DataPropertyName = "NireData"
-        Me.NireData.HeaderText = "Data Abertura"
-        Me.NireData.Name = "NireData"
-        Me.NireData.ReadOnly = True
+        Me.CADstatusTableAdapter.ClearBeforeFill = True
         '
         'RelatorioEmpresas
         '
@@ -253,6 +270,7 @@ Partial Class RelatorioEmpresas
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresasDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CADstatusBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -279,4 +297,6 @@ Partial Class RelatorioEmpresas
     Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
     Friend WithEvents Processo As DataGridViewTextBoxColumn
     Friend WithEvents NireData As DataGridViewTextBoxColumn
+    Friend WithEvents CADstatusBindingSource As BindingSource
+    Friend WithEvents CADstatusTableAdapter As PrinceDBDataSetTableAdapters.CADstatusTableAdapter
 End Class
