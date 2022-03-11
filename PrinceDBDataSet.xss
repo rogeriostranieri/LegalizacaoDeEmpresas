@@ -15,7 +15,7 @@
     <Shape ID="DesignTable:Municipio" ZOrder="5" X="29" Y="434" Height="191" Width="203" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:Contatos" ZOrder="4" X="489" Y="779" Height="305" Width="196" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:Empresas" ZOrder="3" X="32" Y="74" Height="305" Width="199" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:CADstatus" ZOrder="1" X="305" Y="105" Height="115" Width="204" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:CADstatus" ZOrder="1" X="343" Y="113" Height="115" Width="204" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

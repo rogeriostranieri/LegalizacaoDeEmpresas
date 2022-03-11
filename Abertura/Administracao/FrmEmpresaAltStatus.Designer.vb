@@ -24,7 +24,6 @@ Partial Class FrmEmpresaAltStatus
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DescricaoLabel As System.Windows.Forms.Label
-        Dim DescricaoLabel1 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEmpresaAltStatus))
         Me.BtnFechar = New System.Windows.Forms.Button()
         Me.BtnSalvar = New System.Windows.Forms.Button()
@@ -34,15 +33,13 @@ Partial Class FrmEmpresaAltStatus
         Me.CADstatusBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PrinceDBDataSet = New PrinceSistemas.PrinceDBDataSet()
         Me.CADstatusDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.CADstatusTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.CADstatusTableAdapter()
         Me.TableAdapterManager = New PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DescricaoComboBox = New System.Windows.Forms.ComboBox()
+        Me.Descricao = New System.Windows.Forms.DataGridViewTextBoxColumn()
         DescricaoLabel = New System.Windows.Forms.Label()
-        DescricaoLabel1 = New System.Windows.Forms.Label()
         CType(Me.CADstatusBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CADstatusDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,27 +49,17 @@ Partial Class FrmEmpresaAltStatus
         '
         DescricaoLabel.AutoSize = True
         DescricaoLabel.BackColor = System.Drawing.Color.Transparent
-        DescricaoLabel.Location = New System.Drawing.Point(21, 129)
+        DescricaoLabel.Location = New System.Drawing.Point(24, 68)
         DescricaoLabel.Name = "DescricaoLabel"
         DescricaoLabel.Size = New System.Drawing.Size(58, 13)
         DescricaoLabel.TabIndex = 30
         DescricaoLabel.Text = "Descricao:"
         '
-        'DescricaoLabel1
-        '
-        DescricaoLabel1.AutoSize = True
-        DescricaoLabel1.BackColor = System.Drawing.Color.Transparent
-        DescricaoLabel1.Location = New System.Drawing.Point(36, 50)
-        DescricaoLabel1.Name = "DescricaoLabel1"
-        DescricaoLabel1.Size = New System.Drawing.Size(43, 13)
-        DescricaoLabel1.TabIndex = 34
-        DescricaoLabel1.Text = "Buscar:"
-        '
         'BtnFechar
         '
         Me.BtnFechar.BackgroundImage = CType(resources.GetObject("BtnFechar.BackgroundImage"), System.Drawing.Image)
         Me.BtnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnFechar.Location = New System.Drawing.Point(548, 141)
+        Me.BtnFechar.Location = New System.Drawing.Point(551, 80)
         Me.BtnFechar.Name = "BtnFechar"
         Me.BtnFechar.Size = New System.Drawing.Size(69, 23)
         Me.BtnFechar.TabIndex = 29
@@ -83,7 +70,7 @@ Partial Class FrmEmpresaAltStatus
         '
         Me.BtnSalvar.BackgroundImage = CType(resources.GetObject("BtnSalvar.BackgroundImage"), System.Drawing.Image)
         Me.BtnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnSalvar.Location = New System.Drawing.Point(473, 140)
+        Me.BtnSalvar.Location = New System.Drawing.Point(476, 79)
         Me.BtnSalvar.Name = "BtnSalvar"
         Me.BtnSalvar.Size = New System.Drawing.Size(69, 23)
         Me.BtnSalvar.TabIndex = 28
@@ -95,7 +82,7 @@ Partial Class FrmEmpresaAltStatus
         Me.BtnNovo.BackgroundImage = CType(resources.GetObject("BtnNovo.BackgroundImage"), System.Drawing.Image)
         Me.BtnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnNovo.ForeColor = System.Drawing.Color.Green
-        Me.BtnNovo.Location = New System.Drawing.Point(473, 112)
+        Me.BtnNovo.Location = New System.Drawing.Point(476, 51)
         Me.BtnNovo.Name = "BtnNovo"
         Me.BtnNovo.Size = New System.Drawing.Size(69, 22)
         Me.BtnNovo.TabIndex = 26
@@ -107,7 +94,7 @@ Partial Class FrmEmpresaAltStatus
         Me.BtnExcluir.BackgroundImage = CType(resources.GetObject("BtnExcluir.BackgroundImage"), System.Drawing.Image)
         Me.BtnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnExcluir.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnExcluir.Location = New System.Drawing.Point(548, 112)
+        Me.BtnExcluir.Location = New System.Drawing.Point(551, 51)
         Me.BtnExcluir.Name = "BtnExcluir"
         Me.BtnExcluir.Size = New System.Drawing.Size(69, 23)
         Me.BtnExcluir.TabIndex = 27
@@ -117,7 +104,7 @@ Partial Class FrmEmpresaAltStatus
         'DescricaoTextBox
         '
         Me.DescricaoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CADstatusBindingSource, "Descricao", True))
-        Me.DescricaoTextBox.Location = New System.Drawing.Point(85, 126)
+        Me.DescricaoTextBox.Location = New System.Drawing.Point(88, 65)
         Me.DescricaoTextBox.Name = "DescricaoTextBox"
         Me.DescricaoTextBox.Size = New System.Drawing.Size(370, 20)
         Me.DescricaoTextBox.TabIndex = 31
@@ -138,28 +125,20 @@ Partial Class FrmEmpresaAltStatus
         Me.CADstatusDataGridView.AllowUserToDeleteRows = False
         Me.CADstatusDataGridView.AutoGenerateColumns = False
         Me.CADstatusDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.CADstatusDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2})
+        Me.CADstatusDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Descricao})
         Me.CADstatusDataGridView.DataSource = Me.CADstatusBindingSource
-        Me.CADstatusDataGridView.Location = New System.Drawing.Point(15, 216)
+        Me.CADstatusDataGridView.Location = New System.Drawing.Point(18, 155)
         Me.CADstatusDataGridView.Name = "CADstatusDataGridView"
         Me.CADstatusDataGridView.ReadOnly = True
         Me.CADstatusDataGridView.Size = New System.Drawing.Size(527, 209)
         Me.CADstatusDataGridView.TabIndex = 31
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Descricao"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Descricao"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 400
         '
         'Button1
         '
         Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(548, 393)
+        Me.Button1.Location = New System.Drawing.Point(551, 332)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(78, 32)
         Me.Button1.TabIndex = 32
@@ -201,25 +180,19 @@ Partial Class FrmEmpresaAltStatus
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 189)
+        Me.Label2.Location = New System.Drawing.Point(15, 128)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(83, 24)
         Me.Label2.TabIndex = 34
         Me.Label2.Text = "Consulta"
         '
-        'DescricaoComboBox
+        'Descricao
         '
-        Me.DescricaoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
-        Me.DescricaoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.DescricaoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CADstatusBindingSource, "Descricao", True))
-        Me.DescricaoComboBox.DataSource = Me.CADstatusBindingSource
-        Me.DescricaoComboBox.DisplayMember = "Descricao"
-        Me.DescricaoComboBox.FormattingEnabled = True
-        Me.DescricaoComboBox.Location = New System.Drawing.Point(85, 47)
-        Me.DescricaoComboBox.Name = "DescricaoComboBox"
-        Me.DescricaoComboBox.Size = New System.Drawing.Size(287, 21)
-        Me.DescricaoComboBox.TabIndex = 35
-        Me.DescricaoComboBox.ValueMember = "Descricao"
+        Me.Descricao.DataPropertyName = "Descricao"
+        Me.Descricao.HeaderText = "Descrição"
+        Me.Descricao.Name = "Descricao"
+        Me.Descricao.ReadOnly = True
+        Me.Descricao.Width = 400
         '
         'FrmEmpresaAltStatus
         '
@@ -227,9 +200,7 @@ Partial Class FrmEmpresaAltStatus
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.bg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(646, 445)
-        Me.Controls.Add(DescricaoLabel1)
-        Me.Controls.Add(Me.DescricaoComboBox)
+        Me.ClientSize = New System.Drawing.Size(636, 375)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
@@ -262,9 +233,8 @@ Partial Class FrmEmpresaAltStatus
     Friend WithEvents TableAdapterManager As PrinceDBDataSetTableAdapters.TableAdapterManager
     Friend WithEvents DescricaoTextBox As TextBox
     Friend WithEvents CADstatusDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents DescricaoComboBox As ComboBox
+    Friend WithEvents Descricao As DataGridViewTextBoxColumn
 End Class
