@@ -80,6 +80,10 @@ Adicionar Novo Registro em Laudos/Alvará?", MsgBoxStyle.YesNoCancel, "Prince Si
                                     Legalizacao.TabControl2.SelectTab(1)
                                     Legalizacao.TabControl2.SelectTab(2)
                                     Legalizacao.TabControl2.SelectTab(3)
+                                    Legalizacao.TabControl2.SelectTab(4)
+                                    Legalizacao.TabControl2.SelectTab(5)
+                                    Legalizacao.TabControl2.SelectTab(6)
+
 
 
 
@@ -375,6 +379,9 @@ Verifique se o CNPJ do Alvará, são iguais ao do CNPJ do Cadastro Empresas!")
             Legalizacao.TabControl2.SelectTab(1)
             Legalizacao.TabControl2.SelectTab(2)
             Legalizacao.TabControl2.SelectTab(3)
+            Legalizacao.TabControl2.SelectTab(4)
+            Legalizacao.TabControl2.SelectTab(5)
+            Legalizacao.TabControl2.SelectTab(6)
 
 
             '//
