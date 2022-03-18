@@ -43,7 +43,7 @@ Partial Class Login
         'UsernameLabel
         '
         Me.UsernameLabel.BackColor = System.Drawing.Color.Transparent
-        Me.UsernameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsernameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsernameLabel.ForeColor = System.Drawing.Color.White
         Me.UsernameLabel.Location = New System.Drawing.Point(150, 98)
         Me.UsernameLabel.Name = "UsernameLabel"
@@ -55,7 +55,7 @@ Partial Class Login
         'PasswordLabel
         '
         Me.PasswordLabel.BackColor = System.Drawing.Color.Transparent
-        Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PasswordLabel.ForeColor = System.Drawing.Color.White
         Me.PasswordLabel.Location = New System.Drawing.Point(149, 142)
         Me.PasswordLabel.Name = "PasswordLabel"
@@ -83,7 +83,7 @@ Partial Class Login
         '
         'OK
         '
-        Me.OK.BackColor = System.Drawing.Color.Green
+        Me.OK.BackColor = System.Drawing.Color.LimeGreen
         Me.OK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.OK.Location = New System.Drawing.Point(133, 218)
         Me.OK.Name = "OK"
@@ -97,6 +97,7 @@ Partial Class Login
         Me.Cancel.BackColor = System.Drawing.Color.Red
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Cancel.ForeColor = System.Drawing.Color.Black
         Me.Cancel.Location = New System.Drawing.Point(233, 218)
         Me.Cancel.Name = "Cancel"
         Me.Cancel.Size = New System.Drawing.Size(60, 30)
@@ -109,11 +110,11 @@ Partial Class Login
         Me.Button1.BackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(383, 12)
+        Me.Button1.Location = New System.Drawing.Point(379, 12)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(47, 26)
+        Me.Button1.Size = New System.Drawing.Size(51, 26)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Ajuda"
         Me.Button1.UseVisualStyleBackColor = False
@@ -122,11 +123,11 @@ Partial Class Login
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Bauhaus 93", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Bauhaus 93", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(124, 31)
+        Me.Label1.Location = New System.Drawing.Point(107, 38)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(186, 28)
+        Me.Label1.Size = New System.Drawing.Size(226, 33)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "IDENTIFICAÇÃO"
         '
