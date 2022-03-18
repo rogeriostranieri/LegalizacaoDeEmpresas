@@ -27,10 +27,10 @@ Partial Class MDIPrincipal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MDIPrincipal))
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ControleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContadorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.SairToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ControleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpresasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControleLegalizaçãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlvaráToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -101,6 +101,12 @@ Partial Class MDIPrincipal
         Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(55, 21)
         Me.MenuToolStripMenuItem.Text = "Menu"
         '
+        'ControleToolStripMenuItem
+        '
+        Me.ControleToolStripMenuItem.Name = "ControleToolStripMenuItem"
+        Me.ControleToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
+        Me.ControleToolStripMenuItem.Text = "Controle Geral"
+        '
         'ContadorToolStripMenuItem
         '
         Me.ContadorToolStripMenuItem.Name = "ContadorToolStripMenuItem"
@@ -120,12 +126,6 @@ Partial Class MDIPrincipal
         Me.SairToolStripMenuItem1.Name = "SairToolStripMenuItem1"
         Me.SairToolStripMenuItem1.Size = New System.Drawing.Size(195, 22)
         Me.SairToolStripMenuItem1.Text = "Sair"
-        '
-        'ControleToolStripMenuItem
-        '
-        Me.ControleToolStripMenuItem.Name = "ControleToolStripMenuItem"
-        Me.ControleToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
-        Me.ControleToolStripMenuItem.Text = "Controle"
         '
         'EmpresasToolStripMenuItem
         '
@@ -178,7 +178,7 @@ Partial Class MDIPrincipal
         Me.OrToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.OrToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.OrToolStripMenuItem.Name = "OrToolStripMenuItem"
-        Me.OrToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.OrToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.OrToolStripMenuItem.Text = "Órgão público"
         '
         'ContatosToolStripMenuItem
@@ -187,7 +187,7 @@ Partial Class MDIPrincipal
         Me.ContatosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.ContatosToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.ContatosToolStripMenuItem.Name = "ContatosToolStripMenuItem"
-        Me.ContatosToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.ContatosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ContatosToolStripMenuItem.Text = "Contatos"
         '
         'RelatóriosToolStripMenuItem
