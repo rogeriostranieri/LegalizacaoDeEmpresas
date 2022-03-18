@@ -2,10 +2,12 @@
 
 
     Private Sub RelatorioLaudos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.CADSituacaoAlvara'. Você pode movê-la ou removê-la conforme necessário.
+        Me.CADSituacaoAlvaraTableAdapter.Fill(Me.PrinceDBDataSet.CADSituacaoAlvara)
         'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.Laudos'. Você pode movê-la ou removê-la conforme necessário.
         Me.LaudosTableAdapter.Fill(Me.PrinceDBDataSet.Laudos)
 
-        ModCombobox.ComboboxRelatorioAlvara()
+        '   ModCombobox.ComboboxRelatorioAlvara()
     End Sub
 
 

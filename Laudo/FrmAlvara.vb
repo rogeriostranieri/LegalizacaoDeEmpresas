@@ -13,6 +13,8 @@ Public Class FrmAlvara
 
 
     Private Sub LaudosConsulta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.CADSituacaoAlvara'. Você pode movê-la ou removê-la conforme necessário.
+        Me.CADSituacaoAlvaraTableAdapter.Fill(Me.PrinceDBDataSet.CADSituacaoAlvara)
         Try
             '//// calendario 
             'Dim Calendario As New MonthCalendar  ' VER ISSO E COLOCA COMO PADRAO
@@ -38,7 +40,7 @@ Public Class FrmAlvara
         'Carrega Combobox situação
         'Dim n As New ComboBox
 
-        ModCombobox.ComboboxAlvara()
+        ' ModCombobox.ComboboxAlvara()
 
 
     End Sub

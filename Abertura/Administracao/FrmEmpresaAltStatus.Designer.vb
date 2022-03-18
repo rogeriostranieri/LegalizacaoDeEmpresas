@@ -33,12 +33,13 @@ Partial Class FrmEmpresaAltStatus
         Me.CADstatusBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PrinceDBDataSet = New PrinceSistemas.PrinceDBDataSet()
         Me.CADstatusDataGridView = New System.Windows.Forms.DataGridView()
+        Me.IDCADstatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descricao = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.CADstatusTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.CADstatusTableAdapter()
         Me.TableAdapterManager = New PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Descricao = New System.Windows.Forms.DataGridViewTextBoxColumn()
         DescricaoLabel = New System.Windows.Forms.Label()
         CType(Me.CADstatusBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,20 +126,36 @@ Partial Class FrmEmpresaAltStatus
         Me.CADstatusDataGridView.AllowUserToDeleteRows = False
         Me.CADstatusDataGridView.AutoGenerateColumns = False
         Me.CADstatusDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.CADstatusDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Descricao})
+        Me.CADstatusDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDCADstatusDataGridViewTextBoxColumn, Me.Descricao})
         Me.CADstatusDataGridView.DataSource = Me.CADstatusBindingSource
         Me.CADstatusDataGridView.Location = New System.Drawing.Point(18, 155)
         Me.CADstatusDataGridView.Name = "CADstatusDataGridView"
         Me.CADstatusDataGridView.ReadOnly = True
-        Me.CADstatusDataGridView.Size = New System.Drawing.Size(527, 209)
+        Me.CADstatusDataGridView.Size = New System.Drawing.Size(507, 209)
         Me.CADstatusDataGridView.TabIndex = 31
+        '
+        'IDCADstatusDataGridViewTextBoxColumn
+        '
+        Me.IDCADstatusDataGridViewTextBoxColumn.DataPropertyName = "ID_CADstatus"
+        Me.IDCADstatusDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDCADstatusDataGridViewTextBoxColumn.Name = "IDCADstatusDataGridViewTextBoxColumn"
+        Me.IDCADstatusDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IDCADstatusDataGridViewTextBoxColumn.Width = 50
+        '
+        'Descricao
+        '
+        Me.Descricao.DataPropertyName = "Descricao"
+        Me.Descricao.HeaderText = "Descrição"
+        Me.Descricao.Name = "Descricao"
+        Me.Descricao.ReadOnly = True
+        Me.Descricao.Width = 400
         '
         'Button1
         '
         Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(551, 332)
+        Me.Button1.Location = New System.Drawing.Point(531, 331)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(78, 32)
         Me.Button1.TabIndex = 32
@@ -152,6 +169,7 @@ Partial Class FrmEmpresaAltStatus
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CADSituacaoAlvaraTableAdapter = Nothing
         Me.TableAdapterManager.CADstatusTableAdapter = Me.CADstatusTableAdapter
         Me.TableAdapterManager.CNAETableAdapter = Nothing
         Me.TableAdapterManager.ContadorTableAdapter = Nothing
@@ -186,14 +204,6 @@ Partial Class FrmEmpresaAltStatus
         Me.Label2.TabIndex = 34
         Me.Label2.Text = "Consulta"
         '
-        'Descricao
-        '
-        Me.Descricao.DataPropertyName = "Descricao"
-        Me.Descricao.HeaderText = "Descrição"
-        Me.Descricao.Name = "Descricao"
-        Me.Descricao.ReadOnly = True
-        Me.Descricao.Width = 400
-        '
         'FrmEmpresaAltStatus
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -211,6 +221,7 @@ Partial Class FrmEmpresaAltStatus
         Me.Controls.Add(Me.BtnSalvar)
         Me.Controls.Add(Me.BtnNovo)
         Me.Controls.Add(Me.BtnExcluir)
+        Me.KeyPreview = True
         Me.Name = "FrmEmpresaAltStatus"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -236,5 +247,6 @@ Partial Class FrmEmpresaAltStatus
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents IDCADstatusDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Descricao As DataGridViewTextBoxColumn
 End Class

@@ -27,4 +27,23 @@
 
         End If
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If Application.OpenForms.OfType(Of FrmControleSituacaoAlvara)().Count() > 0 Then
+
+            FrmControleSituacaoAlvara.Focus()
+            FrmControleSituacaoAlvara.Close()
+            FrmControleSituacaoAlvara.MdiParent = MDIPrincipal
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmControleSituacaoAlvara.Show()
+
+
+        Else
+
+            FrmControleSituacaoAlvara.MdiParent = MDIPrincipal
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmControleSituacaoAlvara.Show()
+
+        End If
+    End Sub
 End Class

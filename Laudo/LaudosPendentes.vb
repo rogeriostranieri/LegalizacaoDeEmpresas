@@ -7,10 +7,12 @@
     End Sub
 
     Private Sub LaudosPendentes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.CADSituacaoAlvara'. Você pode movê-la ou removê-la conforme necessário.
+        Me.CADSituacaoAlvaraTableAdapter.Fill(Me.PrinceDBDataSet.CADSituacaoAlvara)
         'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.Laudos'. Você pode movê-la ou removê-la conforme necessário.
         Me.LaudosTableAdapter.Fill(Me.PrinceDBDataSet.Laudos)
 
-        LaudosBindingSource.Filter = "situacao = 'Não Iniciado'  Or  situacao = 'Aguardando Pagamento'  Or  situacao = 'Em Andamento'  Or  situacao = 'Pendência' "
+        ' LaudosBindingSource.Filter = "situacao = 'Não Iniciado'  Or  situacao = 'Aguardando Pagamento'  Or  situacao = 'Em Andamento'  Or  situacao = 'Pendência' "
 
         ComboBox1.SelectedIndex = 0
         Button2.PerformClick()

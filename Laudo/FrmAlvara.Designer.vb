@@ -221,6 +221,7 @@ Partial Class FrmAlvara
         Me.NaturezaListBox = New System.Windows.Forms.ListBox()
         Me.TabPage13 = New System.Windows.Forms.TabPage()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.BtnContLigacao = New System.Windows.Forms.Button()
         Me.TabPage14 = New System.Windows.Forms.TabPage()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.TabPage15 = New System.Windows.Forms.TabPage()
@@ -261,7 +262,8 @@ Partial Class FrmAlvara
         Me.EndCidadeLabel2 = New System.Windows.Forms.Label()
         Me.BtnData1 = New System.Windows.Forms.Button()
         Me.Calendar1 = New System.Windows.Forms.MonthCalendar()
-        Me.BtnContLigacao = New System.Windows.Forms.Button()
+        Me.CADSituacaoAlvaraBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CADSituacaoAlvaraTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.CADSituacaoAlvaraTableAdapter()
         RazaoSocialLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         BombeirosSituacaoLabel = New System.Windows.Forms.Label()
@@ -352,6 +354,7 @@ Partial Class FrmAlvara
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox9.SuspendLayout()
+        CType(Me.CADSituacaoAlvaraBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RazaoSocialLabel
@@ -866,6 +869,8 @@ Partial Class FrmAlvara
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CADSituacaoAlvaraTableAdapter = Nothing
+        Me.TableAdapterManager.CADstatusTableAdapter = Nothing
         Me.TableAdapterManager.CNAETableAdapter = Nothing
         Me.TableAdapterManager.ContadorTableAdapter = Nothing
         Me.TableAdapterManager.ContatosTableAdapter = Nothing
@@ -1839,7 +1844,11 @@ Partial Class FrmAlvara
         '
         'SituacaoComboBox
         '
+        Me.SituacaoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.SituacaoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.SituacaoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "Situacao", True))
+        Me.SituacaoComboBox.DataSource = Me.CADSituacaoAlvaraBindingSource
+        Me.SituacaoComboBox.DisplayMember = "Descricao"
         Me.SituacaoComboBox.FormattingEnabled = True
         Me.SituacaoComboBox.Location = New System.Drawing.Point(315, 85)
         Me.SituacaoComboBox.Name = "SituacaoComboBox"
@@ -2391,6 +2400,17 @@ Partial Class FrmAlvara
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Controle de ligações"
         '
+        'BtnContLigacao
+        '
+        Me.BtnContLigacao.BackgroundImage = CType(resources.GetObject("BtnContLigacao.BackgroundImage"), System.Drawing.Image)
+        Me.BtnContLigacao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnContLigacao.Location = New System.Drawing.Point(377, 11)
+        Me.BtnContLigacao.Name = "BtnContLigacao"
+        Me.BtnContLigacao.Size = New System.Drawing.Size(119, 23)
+        Me.BtnContLigacao.TabIndex = 58
+        Me.BtnContLigacao.Text = "Controle de ligações"
+        Me.BtnContLigacao.UseVisualStyleBackColor = True
+        '
         'TabPage14
         '
         Me.TabPage14.Controls.Add(Me.Button6)
@@ -2849,16 +2869,14 @@ Partial Class FrmAlvara
         Me.Calendar1.Name = "Calendar1"
         Me.Calendar1.TabIndex = 79
         '
-        'BtnContLigacao
+        'CADSituacaoAlvaraBindingSource
         '
-        Me.BtnContLigacao.BackgroundImage = CType(resources.GetObject("BtnContLigacao.BackgroundImage"), System.Drawing.Image)
-        Me.BtnContLigacao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnContLigacao.Location = New System.Drawing.Point(377, 11)
-        Me.BtnContLigacao.Name = "BtnContLigacao"
-        Me.BtnContLigacao.Size = New System.Drawing.Size(119, 23)
-        Me.BtnContLigacao.TabIndex = 58
-        Me.BtnContLigacao.Text = "Controle de ligações"
-        Me.BtnContLigacao.UseVisualStyleBackColor = True
+        Me.CADSituacaoAlvaraBindingSource.DataMember = "CADSituacaoAlvara"
+        Me.CADSituacaoAlvaraBindingSource.DataSource = Me.PrinceDBDataSet
+        '
+        'CADSituacaoAlvaraTableAdapter
+        '
+        Me.CADSituacaoAlvaraTableAdapter.ClearBeforeFill = True
         '
         'FrmAlvara
         '
@@ -2943,6 +2961,7 @@ Partial Class FrmAlvara
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox9.PerformLayout()
+        CType(Me.CADSituacaoAlvaraBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3132,4 +3151,6 @@ Partial Class FrmAlvara
     Friend WithEvents Calendar1 As MonthCalendar
     Friend WithEvents BtnAnotacoes As Button
     Friend WithEvents BtnContLigacao As Button
+    Friend WithEvents CADSituacaoAlvaraBindingSource As BindingSource
+    Friend WithEvents CADSituacaoAlvaraTableAdapter As PrinceDBDataSetTableAdapters.CADSituacaoAlvaraTableAdapter
 End Class

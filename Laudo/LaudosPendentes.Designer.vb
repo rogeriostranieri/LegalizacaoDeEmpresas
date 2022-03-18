@@ -39,9 +39,12 @@ Partial Class LaudosPendentes
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.CADSituacaoAlvaraBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CADSituacaoAlvaraTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.CADSituacaoAlvaraTableAdapter()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LaudosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LaudosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CADSituacaoAlvaraBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PrinceDBDataSet
@@ -61,8 +64,11 @@ Partial Class LaudosPendentes
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CADSituacaoAlvaraTableAdapter = Nothing
+        Me.TableAdapterManager.CADstatusTableAdapter = Nothing
         Me.TableAdapterManager.CNAETableAdapter = Nothing
         Me.TableAdapterManager.ContadorTableAdapter = Nothing
+        Me.TableAdapterManager.ContatosTableAdapter = Nothing
         Me.TableAdapterManager.EmpresasTableAdapter = Nothing
         Me.TableAdapterManager.LaudosTableAdapter = Me.LaudosTableAdapter
         Me.TableAdapterManager.LoginTableAdapter = Nothing
@@ -146,18 +152,19 @@ Partial Class LaudosPendentes
         '
         'ComboBox1
         '
+        Me.ComboBox1.DataSource = Me.CADSituacaoAlvaraBindingSource
+        Me.ComboBox1.DisplayMember = "Descricao"
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Não Iniciado", "Aguardando Pagamento", "Em Andamento", "Pendência"})
         Me.ComboBox1.Location = New System.Drawing.Point(61, 66)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(275, 21)
         Me.ComboBox1.TabIndex = 24
         '
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(188, 66)
+        Me.Button2.Location = New System.Drawing.Point(342, 66)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(57, 24)
         Me.Button2.TabIndex = 23
@@ -172,6 +179,15 @@ Partial Class LaudosPendentes
         Me.Label1.Size = New System.Drawing.Size(52, 13)
         Me.Label1.TabIndex = 25
         Me.Label1.Text = "Situação:"
+        '
+        'CADSituacaoAlvaraBindingSource
+        '
+        Me.CADSituacaoAlvaraBindingSource.DataMember = "CADSituacaoAlvara"
+        Me.CADSituacaoAlvaraBindingSource.DataSource = Me.PrinceDBDataSet
+        '
+        'CADSituacaoAlvaraTableAdapter
+        '
+        Me.CADSituacaoAlvaraTableAdapter.ClearBeforeFill = True
         '
         'LaudosPendentes
         '
@@ -193,6 +209,7 @@ Partial Class LaudosPendentes
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LaudosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LaudosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CADSituacaoAlvaraBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -213,4 +230,6 @@ Partial Class LaudosPendentes
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Button2 As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents CADSituacaoAlvaraBindingSource As BindingSource
+    Friend WithEvents CADSituacaoAlvaraTableAdapter As PrinceDBDataSetTableAdapters.CADSituacaoAlvaraTableAdapter
 End Class

@@ -41,24 +41,29 @@ Partial Class RelatorioLaudos
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nlaudo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn59 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CADSituacaoAlvaraBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CADSituacaoAlvaraTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.CADSituacaoAlvaraTableAdapter()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LaudosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LaudosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CADSituacaoAlvaraBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SituacaoComboBox
         '
+        Me.SituacaoComboBox.DataSource = Me.CADSituacaoAlvaraBindingSource
+        Me.SituacaoComboBox.DisplayMember = "Descricao"
         Me.SituacaoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SituacaoComboBox.FormattingEnabled = True
         Me.SituacaoComboBox.Location = New System.Drawing.Point(62, 50)
         Me.SituacaoComboBox.Name = "SituacaoComboBox"
-        Me.SituacaoComboBox.Size = New System.Drawing.Size(172, 21)
+        Me.SituacaoComboBox.Size = New System.Drawing.Size(296, 21)
         Me.SituacaoComboBox.TabIndex = 38
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(240, 50)
+        Me.Button1.Location = New System.Drawing.Point(364, 50)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(57, 24)
         Me.Button1.TabIndex = 37
@@ -135,6 +140,8 @@ Partial Class RelatorioLaudos
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CADSituacaoAlvaraTableAdapter = Nothing
+        Me.TableAdapterManager.CADstatusTableAdapter = Nothing
         Me.TableAdapterManager.CNAETableAdapter = Nothing
         Me.TableAdapterManager.ContadorTableAdapter = Nothing
         Me.TableAdapterManager.ContatosTableAdapter = Nothing
@@ -190,6 +197,15 @@ Partial Class RelatorioLaudos
         Me.DataGridViewTextBoxColumn59.ReadOnly = True
         Me.DataGridViewTextBoxColumn59.Width = 150
         '
+        'CADSituacaoAlvaraBindingSource
+        '
+        Me.CADSituacaoAlvaraBindingSource.DataMember = "CADSituacaoAlvara"
+        Me.CADSituacaoAlvaraBindingSource.DataSource = Me.PrinceDBDataSet
+        '
+        'CADSituacaoAlvaraTableAdapter
+        '
+        Me.CADSituacaoAlvaraTableAdapter.ClearBeforeFill = True
+        '
         'RelatorioLaudos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -210,6 +226,7 @@ Partial Class RelatorioLaudos
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LaudosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LaudosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CADSituacaoAlvaraBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -232,4 +249,6 @@ Partial Class RelatorioLaudos
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents Nlaudo As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn59 As DataGridViewTextBoxColumn
+    Friend WithEvents CADSituacaoAlvaraBindingSource As BindingSource
+    Friend WithEvents CADSituacaoAlvaraTableAdapter As PrinceDBDataSetTableAdapters.CADSituacaoAlvaraTableAdapter
 End Class

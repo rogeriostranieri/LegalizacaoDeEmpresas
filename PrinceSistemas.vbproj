@@ -98,10 +98,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abertura\Administracao\FrmControleEmpresas.Designer.vb">
+    <Compile Include="Administração Controle\FrmControleEmpresas.Designer.vb">
       <DependentUpon>FrmControleEmpresas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Abertura\Administracao\FrmControleEmpresas.vb">
+    <Compile Include="Administração Controle\FrmControleEmpresas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Abertura\BoxConsultaCNPJEmpresa.Designer.vb">
@@ -172,6 +172,12 @@
       <DependentUpon>FrmProcuracao.vb</DependentUpon>
     </Compile>
     <Compile Include="Federal\FrmProcuracao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laudo\Administracao\FrmControleSituacaoAlvara.Designer.vb">
+      <DependentUpon>FrmControleSituacaoAlvara.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Laudo\Administracao\FrmControleSituacaoAlvara.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Laudo\BoxConsultaCNPJLaudo.Designer.vb">
@@ -411,7 +417,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Abertura\Administracao\FrmControleEmpresas.resx">
+    <EmbeddedResource Include="Administração Controle\FrmControleEmpresas.resx">
       <DependentUpon>FrmControleEmpresas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Abertura\Administracao\FrmEmpresaAltStatus.resx">
@@ -446,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Federal\FrmProcuracao.resx">
       <DependentUpon>FrmProcuracao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laudo\Administracao\FrmControleSituacaoAlvara.resx">
+      <DependentUpon>FrmControleSituacaoAlvara.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laudo\BoxConsultaCNPJLaudo.resx">
       <DependentUpon>BoxConsultaCNPJLaudo.vb</DependentUpon>
