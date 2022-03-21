@@ -28,13 +28,13 @@ Partial Class FrmProtocolados
         Me.EmpresasTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.EmpresasTableAdapter()
         Me.TableAdapterManager = New PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager()
         Me.EmpresasDataGridView = New System.Windows.Forms.DataGridView()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IEVencPedido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataSimples = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrazoSimples = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,6 +57,8 @@ Partial Class FrmProtocolados
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CADSituacaoAlvaraTableAdapter = Nothing
+        Me.TableAdapterManager.CADstatusTableAdapter = Nothing
         Me.TableAdapterManager.CNAETableAdapter = Nothing
         Me.TableAdapterManager.ContadorTableAdapter = Nothing
         Me.TableAdapterManager.ContatosTableAdapter = Nothing
@@ -74,13 +76,34 @@ Partial Class FrmProtocolados
         Me.EmpresasDataGridView.AllowUserToDeleteRows = False
         Me.EmpresasDataGridView.AutoGenerateColumns = False
         Me.EmpresasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.EmpresasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn31, Me.IEVencPedido, Me.DataSimples})
+        Me.EmpresasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn31, Me.DataGridViewTextBoxColumn1, Me.PrazoSimples})
         Me.EmpresasDataGridView.DataSource = Me.EmpresasBindingSource
         Me.EmpresasDataGridView.Location = New System.Drawing.Point(12, 72)
         Me.EmpresasDataGridView.Name = "EmpresasDataGridView"
         Me.EmpresasDataGridView.ReadOnly = True
         Me.EmpresasDataGridView.Size = New System.Drawing.Size(619, 220)
         Me.EmpresasDataGridView.TabIndex = 1
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(542, 298)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(89, 34)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "Atualizar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Schoolbook", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Blue
+        Me.Label3.Location = New System.Drawing.Point(38, 26)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(579, 23)
+        Me.Label3.TabIndex = 12
+        Me.Label3.Text = "CONSULTAS EMPRESAS PROTOCOLADAS OU EM ESPERA"
         '
         'DataGridViewTextBoxColumn2
         '
@@ -106,40 +129,19 @@ Partial Class FrmProtocolados
         Me.DataGridViewTextBoxColumn31.ReadOnly = True
         Me.DataGridViewTextBoxColumn31.Width = 70
         '
-        'IEVencPedido
+        'DataGridViewTextBoxColumn1
         '
-        Me.IEVencPedido.DataPropertyName = "IEVencPedido"
-        Me.IEVencPedido.HeaderText = "Prazo Máximo Receita Estadual"
-        Me.IEVencPedido.Name = "IEVencPedido"
-        Me.IEVencPedido.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "IEVencPedido"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Prazo Máximo Receita Estadual"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
         '
-        'DataSimples
+        'PrazoSimples
         '
-        Me.DataSimples.DataPropertyName = "DataSimples"
-        Me.DataSimples.HeaderText = "Prazo Máximo Simples Nacional"
-        Me.DataSimples.Name = "DataSimples"
-        Me.DataSimples.ReadOnly = True
-        '
-        'Button2
-        '
-        Me.Button2.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(542, 298)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(89, 34)
-        Me.Button2.TabIndex = 13
-        Me.Button2.Text = "Atualizar"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Schoolbook", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Blue
-        Me.Label3.Location = New System.Drawing.Point(38, 26)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(579, 23)
-        Me.Label3.TabIndex = 12
-        Me.Label3.Text = "CONSULTAS EMPRESAS PROTOCOLADAS OU EM ESPERA"
+        Me.PrazoSimples.DataPropertyName = "PrazoSimples"
+        Me.PrazoSimples.HeaderText = "Prazo Máximo Simples Nacional"
+        Me.PrazoSimples.Name = "PrazoSimples"
+        Me.PrazoSimples.ReadOnly = True
         '
         'FrmProtocolados
         '
@@ -172,6 +174,6 @@ Partial Class FrmProtocolados
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn31 As DataGridViewTextBoxColumn
-    Friend WithEvents IEVencPedido As DataGridViewTextBoxColumn
-    Friend WithEvents DataSimples As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents PrazoSimples As DataGridViewTextBoxColumn
 End Class
