@@ -76,6 +76,7 @@ Partial Class MDIPrincipal
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -178,7 +179,7 @@ Partial Class MDIPrincipal
         Me.OrToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.OrToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.OrToolStripMenuItem.Name = "OrToolStripMenuItem"
-        Me.OrToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OrToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.OrToolStripMenuItem.Text = "Órgão público"
         '
         'ContatosToolStripMenuItem
@@ -187,7 +188,7 @@ Partial Class MDIPrincipal
         Me.ContatosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.ContatosToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.ContatosToolStripMenuItem.Name = "ContatosToolStripMenuItem"
-        Me.ContatosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ContatosToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.ContatosToolStripMenuItem.Text = "Contatos"
         '
         'RelatóriosToolStripMenuItem
@@ -348,7 +349,7 @@ Partial Class MDIPrincipal
         '
         Me.ToolStrip.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.ToolStrip.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripSeparator3, Me.ToolStripButton2, Me.ToolStripSeparator4, Me.ToolStripButton3, Me.ToolStripSeparator7, Me.ToolStripButton4, Me.ToolStripSeparator5, Me.ToolStripDropDownButton1})
+        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripSeparator3, Me.ToolStripButton2, Me.ToolStripSeparator4, Me.ToolStripButton3, Me.ToolStripSeparator7, Me.ToolStripButton4, Me.ToolStripSeparator5, Me.ToolStripDropDownButton1, Me.ToolStripButton5})
         Me.ToolStrip.Location = New System.Drawing.Point(0, 25)
         Me.ToolStrip.Name = "ToolStrip"
         Me.ToolStrip.Size = New System.Drawing.Size(683, 25)
@@ -463,6 +464,15 @@ Partial Class MDIPrincipal
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(204, 17)
         Me.ToolStripStatusLabel.Text = "Produzido por Rogerio Stranieri -2019"
         '
+        'ToolStripButton5
+        '
+        Me.ToolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripButton5.Image = CType(resources.GetObject("ToolStripButton5.Image"), System.Drawing.Image)
+        Me.ToolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton5.Name = "ToolStripButton5"
+        Me.ToolStripButton5.Size = New System.Drawing.Size(44, 22)
+        Me.ToolStripButton5.Text = "EMAIL"
+        '
         'MDIPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -538,4 +548,5 @@ Partial Class MDIPrincipal
     Friend WithEvents BuscaPorResponsavelToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BuscaEmpresaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ControleToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripButton5 As ToolStripButton
 End Class

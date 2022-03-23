@@ -168,6 +168,12 @@
     <Compile Include="Buscadores\FrmBuscaEmpresas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="eMail\FrmMail.Designer.vb">
+      <DependentUpon>FrmMail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="eMail\FrmMail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Federal\FrmProcuracao.Designer.vb">
       <DependentUpon>FrmProcuracao.vb</DependentUpon>
     </Compile>
@@ -449,6 +455,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Buscadores\FrmBuscaEmpresas.resx">
       <DependentUpon>FrmBuscaEmpresas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMail\FrmMail.resx">
+      <DependentUpon>FrmMail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Federal\FrmProcuracao.resx">
       <DependentUpon>FrmProcuracao.vb</DependentUpon>

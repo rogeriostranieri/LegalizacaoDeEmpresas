@@ -25,6 +25,8 @@ Partial Class RelatorioLaudos
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RelatorioLaudos))
         Me.SituacaoComboBox = New System.Windows.Forms.ComboBox()
+        Me.CADSituacaoAlvaraBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PrinceDBDataSet = New PrinceSistemas.PrinceDBDataSet()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -32,21 +34,19 @@ Partial Class RelatorioLaudos
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-        Me.PrinceDBDataSet = New PrinceSistemas.PrinceDBDataSet()
         Me.LaudosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LaudosTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.LaudosTableAdapter()
         Me.TableAdapterManager = New PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager()
         Me.LaudosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.CADSituacaoAlvaraTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.CADSituacaoAlvaraTableAdapter()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nlaudo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn59 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CADSituacaoAlvaraBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CADSituacaoAlvaraTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.CADSituacaoAlvaraTableAdapter()
+        Me.Situacao = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.CADSituacaoAlvaraBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LaudosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LaudosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CADSituacaoAlvaraBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SituacaoComboBox
@@ -59,6 +59,16 @@ Partial Class RelatorioLaudos
         Me.SituacaoComboBox.Name = "SituacaoComboBox"
         Me.SituacaoComboBox.Size = New System.Drawing.Size(296, 21)
         Me.SituacaoComboBox.TabIndex = 38
+        '
+        'CADSituacaoAlvaraBindingSource
+        '
+        Me.CADSituacaoAlvaraBindingSource.DataMember = "CADSituacaoAlvara"
+        Me.CADSituacaoAlvaraBindingSource.DataSource = Me.PrinceDBDataSet
+        '
+        'PrinceDBDataSet
+        '
+        Me.PrinceDBDataSet.DataSetName = "PrinceDBDataSet"
+        Me.PrinceDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Button1
         '
@@ -84,7 +94,7 @@ Partial Class RelatorioLaudos
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Monotype Corsiva", 21.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Blue
-        Me.Label3.Location = New System.Drawing.Point(268, 0)
+        Me.Label3.Location = New System.Drawing.Point(258, -1)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(193, 36)
         Me.Label3.TabIndex = 36
@@ -123,11 +133,6 @@ Partial Class RelatorioLaudos
         'PrintDocument1
         '
         '
-        'PrinceDBDataSet
-        '
-        Me.PrinceDBDataSet.DataSetName = "PrinceDBDataSet"
-        Me.PrinceDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'LaudosBindingSource
         '
         Me.LaudosBindingSource.DataMember = "Laudos"
@@ -159,13 +164,17 @@ Partial Class RelatorioLaudos
         Me.LaudosDataGridView.AllowUserToDeleteRows = False
         Me.LaudosDataGridView.AutoGenerateColumns = False
         Me.LaudosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.LaudosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.Nlaudo, Me.DataGridViewTextBoxColumn59})
+        Me.LaudosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.Nlaudo, Me.Situacao})
         Me.LaudosDataGridView.DataSource = Me.LaudosBindingSource
         Me.LaudosDataGridView.Location = New System.Drawing.Point(15, 80)
         Me.LaudosDataGridView.Name = "LaudosDataGridView"
         Me.LaudosDataGridView.ReadOnly = True
         Me.LaudosDataGridView.Size = New System.Drawing.Size(651, 300)
         Me.LaudosDataGridView.TabIndex = 40
+        '
+        'CADSituacaoAlvaraTableAdapter
+        '
+        Me.CADSituacaoAlvaraTableAdapter.ClearBeforeFill = True
         '
         'DataGridViewTextBoxColumn2
         '
@@ -189,22 +198,12 @@ Partial Class RelatorioLaudos
         Me.Nlaudo.Name = "Nlaudo"
         Me.Nlaudo.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn59
+        'Situacao
         '
-        Me.DataGridViewTextBoxColumn59.DataPropertyName = "Situacao"
-        Me.DataGridViewTextBoxColumn59.HeaderText = "Situação"
-        Me.DataGridViewTextBoxColumn59.Name = "DataGridViewTextBoxColumn59"
-        Me.DataGridViewTextBoxColumn59.ReadOnly = True
-        Me.DataGridViewTextBoxColumn59.Width = 150
-        '
-        'CADSituacaoAlvaraBindingSource
-        '
-        Me.CADSituacaoAlvaraBindingSource.DataMember = "CADSituacaoAlvara"
-        Me.CADSituacaoAlvaraBindingSource.DataSource = Me.PrinceDBDataSet
-        '
-        'CADSituacaoAlvaraTableAdapter
-        '
-        Me.CADSituacaoAlvaraTableAdapter.ClearBeforeFill = True
+        Me.Situacao.DataPropertyName = "Situacao"
+        Me.Situacao.HeaderText = "Situação"
+        Me.Situacao.Name = "Situacao"
+        Me.Situacao.ReadOnly = True
         '
         'RelatorioLaudos
         '
@@ -223,10 +222,10 @@ Partial Class RelatorioLaudos
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Relatório Geral de  Alvarás / Laudos"
+        CType(Me.CADSituacaoAlvaraBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LaudosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LaudosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CADSituacaoAlvaraBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -245,10 +244,10 @@ Partial Class RelatorioLaudos
     Friend WithEvents LaudosTableAdapter As PrinceDBDataSetTableAdapters.LaudosTableAdapter
     Friend WithEvents TableAdapterManager As PrinceDBDataSetTableAdapters.TableAdapterManager
     Friend WithEvents LaudosDataGridView As DataGridView
+    Friend WithEvents CADSituacaoAlvaraBindingSource As BindingSource
+    Friend WithEvents CADSituacaoAlvaraTableAdapter As PrinceDBDataSetTableAdapters.CADSituacaoAlvaraTableAdapter
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents Nlaudo As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn59 As DataGridViewTextBoxColumn
-    Friend WithEvents CADSituacaoAlvaraBindingSource As BindingSource
-    Friend WithEvents CADSituacaoAlvaraTableAdapter As PrinceDBDataSetTableAdapters.CADSituacaoAlvaraTableAdapter
+    Friend WithEvents Situacao As DataGridViewTextBoxColumn
 End Class
