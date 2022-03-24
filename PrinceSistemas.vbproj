@@ -168,6 +168,12 @@
     <Compile Include="Buscadores\FrmBuscaEmpresas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="eMail\FrmEmailCaixaDeSaida.Designer.vb">
+      <DependentUpon>FrmEmailCaixaDeSaida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="eMail\FrmEmailCaixaDeSaida.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="eMail\FrmMail.Designer.vb">
       <DependentUpon>FrmMail.vb</DependentUpon>
     </Compile>
@@ -219,6 +225,7 @@
     </Compile>
     <Compile Include="Modulo\ModBacRest.vb" />
     <Compile Include="Modulo\ModCombobox.vb" />
+    <Compile Include="Modulo\ModeMail.vb" />
     <Compile Include="Modulo\ModTexto.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -455,6 +462,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Buscadores\FrmBuscaEmpresas.resx">
       <DependentUpon>FrmBuscaEmpresas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMail\FrmEmailCaixaDeSaida.resx">
+      <DependentUpon>FrmEmailCaixaDeSaida.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="eMail\FrmMail.resx">
       <DependentUpon>FrmMail.vb</DependentUpon>
@@ -836,6 +846,7 @@
     <None Include="Resources\1.jpg" />
     <None Include="Resources\login.jpg" />
     <None Include="Resources\aviso.jpg" />
+    <None Include="Resources\email.png" />
     <Content Include="Tribal_Phoenix__6.ico" />
   </ItemGroup>
   <ItemGroup>

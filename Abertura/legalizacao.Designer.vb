@@ -122,6 +122,8 @@ Partial Class Legalizacao
         Me.NomeFantasiaTextBox = New System.Windows.Forms.TextBox()
         Me.CNPJMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         Me.StatusComboBox = New System.Windows.Forms.ComboBox()
+        Me.CADstatusBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PrinceDBDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabControle = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.MotivoLabel = New System.Windows.Forms.Label()
@@ -322,7 +324,6 @@ Partial Class Legalizacao
         Me.EmpInicioAtividadeMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         Me.NaturezaJuridicaComboBox = New System.Windows.Forms.ComboBox()
         Me.NaturezajuridicaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PrinceDBDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CNAEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProcessoComboBox = New System.Windows.Forms.ComboBox()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -379,7 +380,6 @@ Partial Class Legalizacao
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.BtnLocalizar = New System.Windows.Forms.Button()
-        Me.CADstatusBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CADstatusTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.CADstatusTableAdapter()
         NomeFantasiaLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
@@ -467,6 +467,8 @@ Partial Class Legalizacao
         Me.EmpresasBindingNavigator.SuspendLayout()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CADstatusBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PrinceDBDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControle.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage10.SuspendLayout()
@@ -500,7 +502,6 @@ Partial Class Legalizacao
         Me.TabPage2.SuspendLayout()
         Me.TabPage17.SuspendLayout()
         CType(Me.NaturezajuridicaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PrinceDBDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CNAEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -512,7 +513,6 @@ Partial Class Legalizacao
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CADstatusBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NomeFantasiaLabel
@@ -1391,6 +1391,16 @@ Partial Class Legalizacao
         Me.StatusComboBox.Name = "StatusComboBox"
         Me.StatusComboBox.Size = New System.Drawing.Size(250, 21)
         Me.StatusComboBox.TabIndex = 10
+        '
+        'CADstatusBindingSource
+        '
+        Me.CADstatusBindingSource.DataMember = "CADstatus"
+        Me.CADstatusBindingSource.DataSource = Me.PrinceDBDataSetBindingSource
+        '
+        'PrinceDBDataSetBindingSource
+        '
+        Me.PrinceDBDataSetBindingSource.DataSource = Me.PrinceDBDataSet
+        Me.PrinceDBDataSetBindingSource.Position = 0
         '
         'TabControle
         '
@@ -3528,11 +3538,6 @@ Partial Class Legalizacao
         Me.NaturezajuridicaBindingSource.DataMember = "Naturezajuridica"
         Me.NaturezajuridicaBindingSource.DataSource = Me.PrinceDBDataSetBindingSource
         '
-        'PrinceDBDataSetBindingSource
-        '
-        Me.PrinceDBDataSetBindingSource.DataSource = Me.PrinceDBDataSet
-        Me.PrinceDBDataSetBindingSource.Position = 0
-        '
         'CNAEBindingSource
         '
         Me.CNAEBindingSource.DataMember = "CNAE"
@@ -3565,10 +3570,13 @@ Partial Class Legalizacao
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CADSituacaoAlvaraTableAdapter = Nothing
         Me.TableAdapterManager.CADstatusTableAdapter = Nothing
         Me.TableAdapterManager.CNAETableAdapter = Nothing
         Me.TableAdapterManager.ContadorTableAdapter = Nothing
         Me.TableAdapterManager.ContatosTableAdapter = Nothing
+        Me.TableAdapterManager.eMailCaixaDeSaidaTableAdapter = Nothing
+        Me.TableAdapterManager.eMailTableAdapter = Nothing
         Me.TableAdapterManager.EmpresasTableAdapter = Me.EmpresasTableAdapter
         Me.TableAdapterManager.LaudosTableAdapter = Nothing
         Me.TableAdapterManager.LoginTableAdapter = Nothing
@@ -3743,7 +3751,7 @@ Partial Class Legalizacao
         '
         'Calendar1
         '
-        Me.Calendar1.Location = New System.Drawing.Point(247, 63)
+        Me.Calendar1.Location = New System.Drawing.Point(102, 39)
         Me.Calendar1.Name = "Calendar1"
         Me.Calendar1.TabIndex = 70
         '
@@ -4138,11 +4146,6 @@ Partial Class Legalizacao
         Me.BtnLocalizar.Text = "Localizar"
         Me.BtnLocalizar.UseVisualStyleBackColor = True
         '
-        'CADstatusBindingSource
-        '
-        Me.CADstatusBindingSource.DataMember = "CADstatus"
-        Me.CADstatusBindingSource.DataSource = Me.PrinceDBDataSetBindingSource
-        '
         'CADstatusTableAdapter
         '
         Me.CADstatusTableAdapter.ClearBeforeFill = True
@@ -4177,6 +4180,8 @@ Partial Class Legalizacao
         Me.EmpresasBindingNavigator.PerformLayout()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CADstatusBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PrinceDBDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControle.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -4234,7 +4239,6 @@ Partial Class Legalizacao
         Me.TabPage17.ResumeLayout(False)
         Me.TabPage17.PerformLayout()
         CType(Me.NaturezajuridicaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PrinceDBDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CNAEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
@@ -4248,7 +4252,6 @@ Partial Class Legalizacao
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CADstatusBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

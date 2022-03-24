@@ -873,6 +873,8 @@ Precisa do Protocolo de Viabilidade da Junta Comercial", "Prince Ajuda")
         ' Else
 
         ' End If
+
+
     End Sub
 
     Private Sub Button19_Click(sender As Object, e As EventArgs) Handles BtnFechar.Click
@@ -1344,7 +1346,8 @@ Protocolo RedeSim= " & G & ".
                 LembreteCheckBox.CheckState = CheckState.Unchecked
                 PrioridadeCheckBox.CheckState = CheckState.Unchecked
 
-                SistemaExternoComboBox.SelectedIndex = SistemaExternoComboBox.FindStringExact("Não")
+
+                SistemaExternoComboBox.SelectedIndex = 1
 
             Catch ex As System.InvalidCastException
                 MessageBox.Show("ERRO", "Prince Avisa")
@@ -1691,13 +1694,7 @@ prazo de 90 dias para empresas abertas a partir de 2021.
 
     End Sub
 
-    Private Sub StatusComboBox_TextUpdate(sender As Object, e As EventArgs) Handles StatusComboBox.TextUpdate
-        If StatusComboBox.Text = "Junta Comercial - Protocolado" Then
 
-            MessageBox.Show("Cadastrar no Sistema e informar os funcionários sobre a finalização da Junta Comercial", "ATENÇÃO")
-
-        End If
-    End Sub
 
     Private Sub SistemaExternoComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SistemaExternoComboBox.SelectedIndexChanged
         SistemaExternoComboBox.Font = New Font(SistemaExternoComboBox.Font, FontStyle.Bold)
@@ -1710,7 +1707,10 @@ prazo de 90 dias para empresas abertas a partir de 2021.
             PictureBoxSistemaExterno.Image = My.Resources.check
 
 
+
         End If
+
+
         If Me.SistemaExternoComboBox.Text = "Não" Then
             Me.SistemaExternoComboBox.BackColor = Color.Red
             ' Me.SistemaExternoComboBox.Font = Bold
@@ -1861,5 +1861,36 @@ CPF =
         TabControle.SelectTab(2)
         TabControle.SelectTab(3)
         ProtocoloREDESIMTextBox.Text = ProtocoloJuntaComercialTextBox.Text
+    End Sub
+
+    Private Sub SistemaExternoComboBox_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles SistemaExternoComboBox.SelectionChangeCommitted
+        If SistemaExternoComboBox.SelectedIndex = 0 Then
+            'selecionar o index 0 que seria o SIM
+            SistemaExternoComboBox.Text = "Sim"
+
+
+            If MsgBox(" Deseja enviar por e-mail toda alteração feita?", MsgBoxStyle.YesNo, "Apagar") = MsgBoxResult.Yes Then
+
+                If Application.OpenForms.OfType(Of FrmMail)().Count() > 0 Then
+                    Dim Sair As String
+                    Sair = MsgBox("O e-Mail ja está aberto", MsgBoxStyle.Question, "Prince Sistemas Informa!")
+
+                    FrmMail.MdiParent = MDIPrincipal
+                    FrmMail.Show()
+
+
+
+                    'abrir a automação
+                    ModeMail.Enviaremaillegalizao()
+
+                Else
+
+                    FrmMail.MdiParent = MDIPrincipal
+                    FrmMail.Show()
+                    ModeMail.Enviaremaillegalizao()
+
+                End If
+            End If
+        End If
     End Sub
 End Class

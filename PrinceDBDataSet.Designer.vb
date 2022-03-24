@@ -7275,6 +7275,8 @@ Partial Public Class PrinceDBDataSet
         
         Private columnCaixaDeSaida As Global.System.Data.DataColumn
         
+        Private columnParaGeral As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -7367,6 +7369,14 @@ Partial Public Class PrinceDBDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property ParaGeralColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnParaGeral
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -7403,9 +7413,9 @@ Partial Public Class PrinceDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddeMailRow(ByVal eMail As String, ByVal SenhaEmail As String, ByVal SmtpClient As String, ByVal SmtpPort As String, ByVal clientSsl As String, ByVal CaixaDeSaida As String) As eMailRow
+        Public Overloads Function AddeMailRow(ByVal eMail As String, ByVal SenhaEmail As String, ByVal SmtpClient As String, ByVal SmtpPort As String, ByVal clientSsl As String, ByVal CaixaDeSaida As String, ByVal ParaGeral As String) As eMailRow
             Dim roweMailRow As eMailRow = CType(Me.NewRow,eMailRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, eMail, SenhaEmail, SmtpClient, SmtpPort, clientSsl, CaixaDeSaida}
+            Dim columnValuesArray() As Object = New Object() {Nothing, eMail, SenhaEmail, SmtpClient, SmtpPort, clientSsl, CaixaDeSaida, ParaGeral}
             roweMailRow.ItemArray = columnValuesArray
             Me.Rows.Add(roweMailRow)
             Return roweMailRow
@@ -7441,6 +7451,7 @@ Partial Public Class PrinceDBDataSet
             Me.columnSmtpPort = MyBase.Columns("SmtpPort")
             Me.columnclientSsl = MyBase.Columns("clientSsl")
             Me.columnCaixaDeSaida = MyBase.Columns("CaixaDeSaida")
+            Me.columnParaGeral = MyBase.Columns("ParaGeral")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7460,6 +7471,8 @@ Partial Public Class PrinceDBDataSet
             MyBase.Columns.Add(Me.columnclientSsl)
             Me.columnCaixaDeSaida = New Global.System.Data.DataColumn("CaixaDeSaida", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCaixaDeSaida)
+            Me.columnParaGeral = New Global.System.Data.DataColumn("ParaGeral", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnParaGeral)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID_eMail}, true))
             Me.columnID_eMail.AutoIncrement = true
             Me.columnID_eMail.AutoIncrementSeed = -1
@@ -7473,6 +7486,7 @@ Partial Public Class PrinceDBDataSet
             Me.columnSmtpPort.MaxLength = 2147483647
             Me.columnclientSsl.MaxLength = 2147483647
             Me.columnCaixaDeSaida.MaxLength = 2147483647
+            Me.columnParaGeral.MaxLength = 2147483647
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -14908,6 +14922,21 @@ Partial Public Class PrinceDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property ParaGeral() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableeMail.ParaGeralColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("O valor da coluna 'ParaGeral' na tabela 'eMail' é DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableeMail.ParaGeralColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IseMailNull() As Boolean
             Return Me.IsNull(Me.tableeMail.eMailColumn)
         End Function
@@ -14976,6 +15005,18 @@ Partial Public Class PrinceDBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetCaixaDeSaidaNull()
             Me(Me.tableeMail.CaixaDeSaidaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsParaGeralNull() As Boolean
+            Return Me.IsNull(Me.tableeMail.ParaGeralColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetParaGeralNull()
+            Me(Me.tableeMail.ParaGeralColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -25766,6 +25807,7 @@ Namespace PrinceDBDataSetTableAdapters
             tableMapping.ColumnMappings.Add("SmtpPort", "SmtpPort")
             tableMapping.ColumnMappings.Add("clientSsl", "clientSsl")
             tableMapping.ColumnMappings.Add("CaixaDeSaida", "CaixaDeSaida")
+            tableMapping.ColumnMappings.Add("ParaGeral", "ParaGeral")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -25775,9 +25817,10 @@ Namespace PrinceDBDataSetTableAdapters
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [eMail] ([eMail], [SenhaEmail], [SmtpClient], [SmtpPort], [clientSsl]"& _ 
-                ", [CaixaDeSaida]) VALUES (@eMail, @SenhaEmail, @SmtpClient, @SmtpPort, @clientSs"& _ 
-                "l, @CaixaDeSaida);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID_eMail, eMail, SenhaEmail, SmtpClient, SmtpPort, cl"& _ 
-                "ientSsl, CaixaDeSaida FROM eMail WHERE (ID_eMail = SCOPE_IDENTITY())"
+                ", [CaixaDeSaida], [ParaGeral]) VALUES (@eMail, @SenhaEmail, @SmtpClient, @SmtpPo"& _ 
+                "rt, @clientSsl, @CaixaDeSaida, @ParaGeral);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID_eMail, eMail, SenhaEmail,"& _ 
+                " SmtpClient, SmtpPort, clientSsl, CaixaDeSaida, ParaGeral FROM eMail WHERE (ID_e"& _ 
+                "Mail = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@eMail", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "eMail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SenhaEmail", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SenhaEmail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -25785,13 +25828,14 @@ Namespace PrinceDBDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SmtpPort", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SmtpPort", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@clientSsl", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientSsl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CaixaDeSaida", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CaixaDeSaida", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ParaGeral", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ParaGeral", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [eMail] SET [eMail] = @eMail, [SenhaEmail] = @SenhaEmail, [SmtpClient] = @"& _ 
                 "SmtpClient, [SmtpPort] = @SmtpPort, [clientSsl] = @clientSsl, [CaixaDeSaida] = @"& _ 
-                "CaixaDeSaida WHERE (([ID_eMail] = @Original_ID_eMail));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID_eMail, eMail,"& _ 
-                " SenhaEmail, SmtpClient, SmtpPort, clientSsl, CaixaDeSaida FROM eMail WHERE (ID_"& _ 
-                "eMail = @ID_eMail)"
+                "CaixaDeSaida, [ParaGeral] = @ParaGeral WHERE (([ID_eMail] = @Original_ID_eMail))"& _ 
+                ";"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID_eMail, eMail, SenhaEmail, SmtpClient, SmtpPort, clientSsl, CaixaDeS"& _ 
+                "aida, ParaGeral FROM eMail WHERE (ID_eMail = @ID_eMail)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@eMail", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "eMail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SenhaEmail", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SenhaEmail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -25799,6 +25843,7 @@ Namespace PrinceDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SmtpPort", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SmtpPort", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@clientSsl", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientSsl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CaixaDeSaida", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CaixaDeSaida", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ParaGeral", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ParaGeral", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID_eMail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_eMail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID_eMail", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_eMail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -25897,7 +25942,7 @@ Namespace PrinceDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal eMail As String, ByVal SenhaEmail As String, ByVal SmtpClient As String, ByVal SmtpPort As String, ByVal clientSsl As String, ByVal CaixaDeSaida As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal eMail As String, ByVal SenhaEmail As String, ByVal SmtpClient As String, ByVal SmtpPort As String, ByVal clientSsl As String, ByVal CaixaDeSaida As String, ByVal ParaGeral As String) As Integer
             If (eMail Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -25928,6 +25973,11 @@ Namespace PrinceDBDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = CType(CaixaDeSaida,String)
             End If
+            If (ParaGeral Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(ParaGeral,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -25947,7 +25997,7 @@ Namespace PrinceDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal eMail As String, ByVal SenhaEmail As String, ByVal SmtpClient As String, ByVal SmtpPort As String, ByVal clientSsl As String, ByVal CaixaDeSaida As String, ByVal Original_ID_eMail As Integer, ByVal ID_eMail As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal eMail As String, ByVal SenhaEmail As String, ByVal SmtpClient As String, ByVal SmtpPort As String, ByVal clientSsl As String, ByVal CaixaDeSaida As String, ByVal ParaGeral As String, ByVal Original_ID_eMail As Integer, ByVal ID_eMail As Integer) As Integer
             If (eMail Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -25978,8 +26028,13 @@ Namespace PrinceDBDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = CType(CaixaDeSaida,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_ID_eMail,Integer)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(ID_eMail,Integer)
+            If (ParaGeral Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(ParaGeral,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_ID_eMail,Integer)
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(ID_eMail,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -25999,8 +26054,8 @@ Namespace PrinceDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal eMail As String, ByVal SenhaEmail As String, ByVal SmtpClient As String, ByVal SmtpPort As String, ByVal clientSsl As String, ByVal CaixaDeSaida As String, ByVal Original_ID_eMail As Integer) As Integer
-            Return Me.Update(eMail, SenhaEmail, SmtpClient, SmtpPort, clientSsl, CaixaDeSaida, Original_ID_eMail, Original_ID_eMail)
+        Public Overloads Overridable Function Update(ByVal eMail As String, ByVal SenhaEmail As String, ByVal SmtpClient As String, ByVal SmtpPort As String, ByVal clientSsl As String, ByVal CaixaDeSaida As String, ByVal ParaGeral As String, ByVal Original_ID_eMail As Integer) As Integer
+            Return Me.Update(eMail, SenhaEmail, SmtpClient, SmtpPort, clientSsl, CaixaDeSaida, ParaGeral, Original_ID_eMail, Original_ID_eMail)
         End Function
     End Class
     

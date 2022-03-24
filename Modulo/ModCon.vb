@@ -617,7 +617,8 @@ Protocolo: Data " & D & "; Tipo:" & E & ", Número:" & F & ", Ano:" & G & ", Sen
             FrmAlvara.TabAlvara.SelectTab(4)
 
         Catch ex As System.InvalidCastException
-            MessageBox.Show("ERRO", "Prince Avisa")
+            MessageBox.Show("Erro na conexão!" & vbCrLf & ex.Message)
+
 
         End Try
 
