@@ -561,11 +561,11 @@ Partial Class FrmMail
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Lucida Calligraphy", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Lucida Calligraphy", 14.0!)
         Me.Label1.ForeColor = System.Drawing.Color.Blue
-        Me.Label1.Location = New System.Drawing.Point(60, 8)
+        Me.Label1.Location = New System.Drawing.Point(60, 13)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(65, 21)
+        Me.Label1.Size = New System.Drawing.Size(74, 24)
         Me.Label1.TabIndex = 50
         Me.Label1.Text = "e-Mail"
         '

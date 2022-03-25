@@ -87,11 +87,21 @@ Public Class FrmMail
             client.UseDefaultCredentials = False
             client.Credentials = New System.Net.NetworkCredential(UserName, "betel8785")
             Try
+                'envia o email
                 client.Send(mail)
-                MessageBox.Show("E-mail enviado com sucesso")
+                'anexa na caixa de saida os dados
                 ModeMail.EmailCaixaDeSaida()
+                'atualiza a caixa de saida neste form
+                Me.EMailCaixaDeSaidaTableAdapter.Fill(Me.PrinceDBDataSet.eMailCaixaDeSaida)
+                Me.Refresh()
 
+                'limpa tudo
+                TextBoxPara.Text = ""
+                TextBoxAssunto.Text = "Digite aqui o assunto..."
+                RichTextBoxMensagem.Text = "Seu texto ...."
 
+                'finaliza mostrando que está tudo ok
+                MessageBox.Show("E-mail enviado com sucesso")
 
             Catch ex As Exception
                 MessageBox.Show("Erro ao enviar o e-mail ,tente novamente ou configure corretamente os dados nas configurações")
@@ -128,7 +138,7 @@ Public Class FrmMail
             EMailCaixaDeSaidaDataGridView.Rows.RemoveAt(EMailCaixaDeSaidaDataGridView.CurrentRow.Index)
 
             Me.Validate()
-            Me.EMailCaixaDeSaidaBindingSource.RemoveCurrent()
+            '  Me.EMailCaixaDeSaidaBindingSource.RemoveCurrent()
             Me.EMailCaixaDeSaidaTableAdapter.Update(Me.PrinceDBDataSet.eMailCaixaDeSaida)
             Me.EMailCaixaDeSaidaTableAdapter.Fill(Me.PrinceDBDataSet.eMailCaixaDeSaida)
 

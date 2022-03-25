@@ -27,6 +27,7 @@ Partial Class FrmEmailCaixaDeSaida
         Dim EMailDestinoLabel As System.Windows.Forms.Label
         Dim AssuntoLabel As System.Windows.Forms.Label
         Dim CaixaDeSaidaTextoLabel As System.Windows.Forms.Label
+        Dim DataEnviadoLabel1 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEmailCaixaDeSaida))
         Me.PrinceDBDataSet = New PrinceSistemas.PrinceDBDataSet()
         Me.EMailCaixaDeSaidaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -40,10 +41,12 @@ Partial Class FrmEmailCaixaDeSaida
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DataEnviadoMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         EMailPrincipalLabel = New System.Windows.Forms.Label()
         EMailDestinoLabel = New System.Windows.Forms.Label()
         AssuntoLabel = New System.Windows.Forms.Label()
         CaixaDeSaidaTextoLabel = New System.Windows.Forms.Label()
+        DataEnviadoLabel1 = New System.Windows.Forms.Label()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EMailCaixaDeSaidaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,7 +55,7 @@ Partial Class FrmEmailCaixaDeSaida
         'EMailPrincipalLabel
         '
         EMailPrincipalLabel.AutoSize = True
-        EMailPrincipalLabel.Location = New System.Drawing.Point(38, 61)
+        EMailPrincipalLabel.Location = New System.Drawing.Point(38, 73)
         EMailPrincipalLabel.Name = "EMailPrincipalLabel"
         EMailPrincipalLabel.Size = New System.Drawing.Size(81, 13)
         EMailPrincipalLabel.TabIndex = 1
@@ -61,7 +64,7 @@ Partial Class FrmEmailCaixaDeSaida
         'EMailDestinoLabel
         '
         EMailDestinoLabel.AutoSize = True
-        EMailDestinoLabel.Location = New System.Drawing.Point(42, 87)
+        EMailDestinoLabel.Location = New System.Drawing.Point(42, 99)
         EMailDestinoLabel.Name = "EMailDestinoLabel"
         EMailDestinoLabel.Size = New System.Drawing.Size(77, 13)
         EMailDestinoLabel.TabIndex = 3
@@ -70,7 +73,7 @@ Partial Class FrmEmailCaixaDeSaida
         'AssuntoLabel
         '
         AssuntoLabel.AutoSize = True
-        AssuntoLabel.Location = New System.Drawing.Point(71, 129)
+        AssuntoLabel.Location = New System.Drawing.Point(71, 141)
         AssuntoLabel.Name = "AssuntoLabel"
         AssuntoLabel.Size = New System.Drawing.Size(48, 13)
         AssuntoLabel.TabIndex = 5
@@ -79,11 +82,20 @@ Partial Class FrmEmailCaixaDeSaida
         'CaixaDeSaidaTextoLabel
         '
         CaixaDeSaidaTextoLabel.AutoSize = True
-        CaixaDeSaidaTextoLabel.Location = New System.Drawing.Point(6, 181)
+        CaixaDeSaidaTextoLabel.Location = New System.Drawing.Point(6, 193)
         CaixaDeSaidaTextoLabel.Name = "CaixaDeSaidaTextoLabel"
         CaixaDeSaidaTextoLabel.Size = New System.Drawing.Size(113, 13)
         CaixaDeSaidaTextoLabel.TabIndex = 7
         CaixaDeSaidaTextoLabel.Text = "Caixa De Saida Texto:"
+        '
+        'DataEnviadoLabel1
+        '
+        DataEnviadoLabel1.AutoSize = True
+        DataEnviadoLabel1.Location = New System.Drawing.Point(130, 47)
+        DataEnviadoLabel1.Name = "DataEnviadoLabel1"
+        DataEnviadoLabel1.Size = New System.Drawing.Size(81, 13)
+        DataEnviadoLabel1.TabIndex = 52
+        DataEnviadoLabel1.Text = "Enviado no dia:"
         '
         'PrinceDBDataSet
         '
@@ -120,7 +132,7 @@ Partial Class FrmEmailCaixaDeSaida
         'EMailPrincipalTextBox
         '
         Me.EMailPrincipalTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailCaixaDeSaidaBindingSource, "eMailPrincipal", True))
-        Me.EMailPrincipalTextBox.Location = New System.Drawing.Point(125, 58)
+        Me.EMailPrincipalTextBox.Location = New System.Drawing.Point(125, 70)
         Me.EMailPrincipalTextBox.Name = "EMailPrincipalTextBox"
         Me.EMailPrincipalTextBox.ReadOnly = True
         Me.EMailPrincipalTextBox.Size = New System.Drawing.Size(216, 20)
@@ -129,7 +141,7 @@ Partial Class FrmEmailCaixaDeSaida
         'EMailDestinoTextBox
         '
         Me.EMailDestinoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailCaixaDeSaidaBindingSource, "eMailDestino", True))
-        Me.EMailDestinoTextBox.Location = New System.Drawing.Point(125, 84)
+        Me.EMailDestinoTextBox.Location = New System.Drawing.Point(125, 96)
         Me.EMailDestinoTextBox.Name = "EMailDestinoTextBox"
         Me.EMailDestinoTextBox.ReadOnly = True
         Me.EMailDestinoTextBox.Size = New System.Drawing.Size(216, 20)
@@ -138,7 +150,7 @@ Partial Class FrmEmailCaixaDeSaida
         'AssuntoTextBox
         '
         Me.AssuntoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailCaixaDeSaidaBindingSource, "Assunto", True))
-        Me.AssuntoTextBox.Location = New System.Drawing.Point(125, 126)
+        Me.AssuntoTextBox.Location = New System.Drawing.Point(125, 138)
         Me.AssuntoTextBox.Name = "AssuntoTextBox"
         Me.AssuntoTextBox.ReadOnly = True
         Me.AssuntoTextBox.Size = New System.Drawing.Size(216, 20)
@@ -147,7 +159,7 @@ Partial Class FrmEmailCaixaDeSaida
         'CaixaDeSaidaTextoRichTextBox
         '
         Me.CaixaDeSaidaTextoRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailCaixaDeSaidaBindingSource, "CaixaDeSaidaTexto", True))
-        Me.CaixaDeSaidaTextoRichTextBox.Location = New System.Drawing.Point(125, 152)
+        Me.CaixaDeSaidaTextoRichTextBox.Location = New System.Drawing.Point(125, 164)
         Me.CaixaDeSaidaTextoRichTextBox.Name = "CaixaDeSaidaTextoRichTextBox"
         Me.CaixaDeSaidaTextoRichTextBox.ReadOnly = True
         Me.CaixaDeSaidaTextoRichTextBox.Size = New System.Drawing.Size(359, 153)
@@ -199,15 +211,27 @@ Partial Class FrmEmailCaixaDeSaida
         Me.Label1.ForeColor = System.Drawing.Color.Blue
         Me.Label1.Location = New System.Drawing.Point(54, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(235, 21)
+        Me.Label1.Size = New System.Drawing.Size(145, 21)
         Me.Label1.TabIndex = 52
-        Me.Label1.Text = "e-Mail - Caixa de enviados"
+        Me.Label1.Text = "e-Mail enviados"
+        '
+        'DataEnviadoMaskedTextBox
+        '
+        Me.DataEnviadoMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailCaixaDeSaidaBindingSource, "DataEnviado", True))
+        Me.DataEnviadoMaskedTextBox.Location = New System.Drawing.Point(217, 44)
+        Me.DataEnviadoMaskedTextBox.Name = "DataEnviadoMaskedTextBox"
+        Me.DataEnviadoMaskedTextBox.ReadOnly = True
+        Me.DataEnviadoMaskedTextBox.Size = New System.Drawing.Size(124, 20)
+        Me.DataEnviadoMaskedTextBox.TabIndex = 53
+        Me.DataEnviadoMaskedTextBox.ValidatingType = GetType(Date)
         '
         'FrmEmailCaixaDeSaida
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(495, 306)
+        Me.ClientSize = New System.Drawing.Size(504, 325)
+        Me.Controls.Add(DataEnviadoLabel1)
+        Me.Controls.Add(Me.DataEnviadoMaskedTextBox)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
@@ -247,4 +271,5 @@ Partial Class FrmEmailCaixaDeSaida
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents DataEnviadoMaskedTextBox As MaskedTextBox
 End Class

@@ -29,7 +29,9 @@ Module ModeMail
 
 
                         'Abrir FORM
+                        FrmEmailCaixaDeSaida.MdiParent = MDIPrincipal
                         FrmEmailCaixaDeSaida.Show()
+                        FrmEmailCaixaDeSaida.Visible = False
                         'Valida e Abre um novo registro
                         FrmEmailCaixaDeSaida.Validate()
                         FrmEmailCaixaDeSaida.EMailCaixaDeSaidaBindingSource.AddNew()
@@ -54,6 +56,9 @@ Module ModeMail
                         'Focus
                         FrmEmailCaixaDeSaida.EMailPrincipalTextBox.Focus()
 
+                        'adicionar data
+
+                        FrmEmailCaixaDeSaida.DataEnviadoMaskedTextBox.Text = DateTime.Now.AddMinutes(55).ToString("dd'/'MM'/'yyyy HH:mm:ss", System.Globalization.CultureInfo.GetCultureInfo("pt-BR"))
 
 
                         'MessageBox.Show("Importação realizada com sucesso","Prince Sistemas Informa")
