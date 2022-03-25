@@ -70,7 +70,6 @@ Partial Class FrmMail
         Me.EMailCaixaDeSaidaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EMailCaixaDeSaidaTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.eMailCaixaDeSaidaTableAdapter()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         EMailLabel = New System.Windows.Forms.Label()
         SenhaEmailLabel = New System.Windows.Forms.Label()
@@ -87,7 +86,6 @@ Partial Class FrmMail
         CType(Me.EMailCaixaDeSaidaBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         CType(Me.EMailCaixaDeSaidaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'EMailLabel
@@ -140,9 +138,9 @@ Partial Class FrmMail
         ParaGeralLabel.AutoSize = True
         ParaGeralLabel.Location = New System.Drawing.Point(6, 203)
         ParaGeralLabel.Name = "ParaGeralLabel"
-        ParaGeralLabel.Size = New System.Drawing.Size(127, 13)
+        ParaGeralLabel.Size = New System.Drawing.Size(135, 13)
         ParaGeralLabel.TabIndex = 50
-        ParaGeralLabel.Text = "E-mail padrão para envio:"
+        ParaGeralLabel.Text = "E-mail padrão para destino:"
         '
         'LabelDe
         '
@@ -406,18 +404,18 @@ Partial Class FrmMail
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(252, 294)
+        Me.Label2.Location = New System.Drawing.Point(291, 294)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(260, 13)
+        Me.Label2.Size = New System.Drawing.Size(221, 13)
         Me.Label2.TabIndex = 52
-        Me.Label2.Text = "Utilizar "" ; "" (ponto e vírgula) para separar cada e-mail"
+        Me.Label2.Text = "Utilizar "" , "" (vírgula) para separar cada e-mail"
         '
         'ParaGeralRichTextBox
         '
         Me.ParaGeralRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailBindingSource, "ParaGeral", True))
-        Me.ParaGeralRichTextBox.Location = New System.Drawing.Point(137, 200)
+        Me.ParaGeralRichTextBox.Location = New System.Drawing.Point(145, 200)
         Me.ParaGeralRichTextBox.Name = "ParaGeralRichTextBox"
-        Me.ParaGeralRichTextBox.Size = New System.Drawing.Size(375, 91)
+        Me.ParaGeralRichTextBox.Size = New System.Drawing.Size(367, 91)
         Me.ParaGeralRichTextBox.TabIndex = 51
         Me.ParaGeralRichTextBox.Text = ""
         '
@@ -547,23 +545,13 @@ Partial Class FrmMail
         Me.Button1.Text = "Fechar"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.PictureBox1.Image = Global.PrinceSistemas.My.Resources.Resources.email
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 6)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(42, 38)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 50
-        Me.PictureBox1.TabStop = False
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Lucida Calligraphy", 14.0!)
-        Me.Label1.ForeColor = System.Drawing.Color.Blue
-        Me.Label1.Location = New System.Drawing.Point(60, 13)
+        Me.Label1.ForeColor = System.Drawing.Color.GreenYellow
+        Me.Label1.Location = New System.Drawing.Point(12, 6)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(74, 24)
         Me.Label1.TabIndex = 50
@@ -573,8 +561,9 @@ Partial Class FrmMail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.backupfundo
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(570, 430)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TabControle)
@@ -596,7 +585,6 @@ Partial Class FrmMail
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         CType(Me.EMailCaixaDeSaidaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -627,7 +615,6 @@ Partial Class FrmMail
     Friend WithEvents ButtonExcluirSaida As Button
     Friend WithEvents ButtonNovoConfig As Button
     Friend WithEvents ButtonSalvarConfig As Button
-    Friend WithEvents TextBoxPara As RichTextBox
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
@@ -636,11 +623,11 @@ Partial Class FrmMail
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents ButtonExcluirConfig As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ButtonLimpar As Button
     Friend WithEvents ButtonContatos As Button
     Friend WithEvents ParaGeralRichTextBox As RichTextBox
     Friend WithEvents ButtonGeral As Button
     Friend WithEvents Label2 As Label
+    Friend WithEvents TextBoxPara As RichTextBox
 End Class

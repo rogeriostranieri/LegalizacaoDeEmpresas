@@ -71,24 +71,35 @@ Public Class FrmMail
             TabControle.SelectedIndex = 0
 
 
+            'codigo de entrada de dados 
             Dim UserName As String = EMailTextBox.Text
+            Dim Destinatario As String = TextBoxPara.Text
             Dim UserSenha As String = SenhaEmailTextBox.Text
-            Dim mail As MailMessage = New MailMessage
 
-            mail.From = New MailAddress(UserName)
-            mail.To.Add(New MailAddress(TextBoxPara.Text))
-            mail.Subject = TextBoxAssunto.Text
-            mail.Body = RichTextBoxMensagem.Text
 
-            mail.IsBodyHtml = True
+            Dim destinatarios As String = Destinatario
+            Dim Enviar As System.Net.Mail.MailMessage = New System.Net.Mail.MailMessage()
+
+
+            Enviar.From = New System.Net.Mail.MailAddress(UserName)
+
+            For Each mail As String In destinatarios.Split(New Char() {","c})
+                Enviar.To.Add(New System.Net.Mail.MailAddress(mail))
+            Next
+
+            Enviar.Subject = TextBoxAssunto.Text
+            Enviar.Body = RichTextBoxMensagem.Text
+
+            'fim codigo de entrada de dados 
+            'inicio da confg para envio
 
             Dim client As SmtpClient = New SmtpClient(SmtpClientTextBox.Text, SmtpPortTextBox.Text)
             client.EnableSsl = True
             client.UseDefaultCredentials = False
-            client.Credentials = New System.Net.NetworkCredential(UserName, "betel8785")
+            client.Credentials = New System.Net.NetworkCredential(UserName, UserSenha)
             Try
                 'envia o email
-                client.Send(mail)
+                client.Send(Enviar)
                 'anexa na caixa de saida os dados
                 ModeMail.EmailCaixaDeSaida()
                 'atualiza a caixa de saida neste form
@@ -212,7 +223,7 @@ Public Class FrmMail
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles ButtonLimpar.Click
         If MsgBox(" Deseja limpar tudo que foi escrito sem enviar?", MsgBoxStyle.YesNo, "Apagar") = MsgBoxResult.Yes Then
             TextBoxPara.Text = ""
-        TextBoxAssunto.Text = "Digite aqui o assunto..."
+            TextBoxAssunto.Text = "Digite aqui o assunto..."
             RichTextBoxMensagem.Text = "Seu texto ...."
         End If
 

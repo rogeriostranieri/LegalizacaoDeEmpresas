@@ -103,7 +103,7 @@ Module ModeMail
             Dim E = Legalizacao.SistemaExternoComboBox.Text.ToString()
 
             'assunto
-            FrmMail.TextBoxAssunto.Text = A
+            FrmMail.TextBoxAssunto.Text = C & " - da Empresa: " & A & ""
 
             'corpo do email
             FrmMail.RichTextBoxMensagem.SelectedText &=
