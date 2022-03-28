@@ -727,4 +727,23 @@ Public Class MDIPrincipal
 
         End If
     End Sub
+
+    Private Sub EMailToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EMailToolStripMenuItem.Click
+        If Application.OpenForms.OfType(Of FrmMail)().Count() > 0 Then
+
+            FrmMail.Focus()
+            FrmMail.Close()
+            FrmMail.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmMail.Show()
+
+
+        Else
+
+            FrmMail.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmMail.Show()
+
+        End If
+    End Sub
 End Class

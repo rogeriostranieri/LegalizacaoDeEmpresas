@@ -31,20 +31,29 @@ Module ModeMail
                         'Abrir FORM
                         FrmEmailCaixaDeSaida.MdiParent = MDIPrincipal
                         FrmEmailCaixaDeSaida.Show()
-                        FrmEmailCaixaDeSaida.Visible = False
+
                         'Valida e Abre um novo registro
                         FrmEmailCaixaDeSaida.Validate()
                         FrmEmailCaixaDeSaida.EMailCaixaDeSaidaBindingSource.AddNew()
                         '  LFrmEmailCaixaDeSaida.RazaoSocialTextBox.Text = RazaoSocialTextBox.Text
 
 
+                        FrmEmailCaixaDeSaida.Focus()
                         'codigo de copiar entre os form
 
                         'COPIA OS DADOS
-                        FrmEmailCaixaDeSaida.EMailPrincipalTextBox.Text = FrmMail.ComboBoxEmailSelecionar.Text
-                        FrmEmailCaixaDeSaida.EMailDestinoTextBox.Text = FrmMail.TextBoxPara.Text
-                        FrmEmailCaixaDeSaida.AssuntoTextBox.Text = FrmMail.TextBoxAssunto.Text
-                        FrmEmailCaixaDeSaida.CaixaDeSaidaTextoRichTextBox.Text = FrmMail.RichTextBoxMensagem.Text
+                        Dim A = FrmMail.ComboBoxEmailSelecionar.Text.ToString()
+                        Dim B = FrmMail.TextBoxPara.Text.ToString()
+                        Dim C = FrmMail.TextBoxAssunto.Text.ToString()
+                        Dim D = FrmMail.RichTextBoxMensagem.Text.ToString()
+
+
+
+
+                        FrmEmailCaixaDeSaida.EMailPrincipalTextBox.Text = A
+                        FrmEmailCaixaDeSaida.EMailDestinoTextBox.Text = B
+                        FrmEmailCaixaDeSaida.AssuntoTextBox.Text = C
+                        FrmEmailCaixaDeSaida.CaixaDeSaidaTextoRichTextBox.Text = D
 
 
 
@@ -52,13 +61,10 @@ Module ModeMail
                         '  FrmEmailCaixaDeSaida.DataCriadoMaskedTextBox.Text = System.DateTime.Now
                         '  FrmEmailCaixaDeSaida.AvisarDiaMaskedTextBox.Text = System.DateTime.Today
 
-                        'termina as copia e foca
-                        'Focus
-                        FrmEmailCaixaDeSaida.EMailPrincipalTextBox.Focus()
-
                         'adicionar data
 
                         FrmEmailCaixaDeSaida.DataEnviadoMaskedTextBox.Text = DateTime.Now.AddMinutes(55).ToString("dd'/'MM'/'yyyy HH:mm:ss", System.Globalization.CultureInfo.GetCultureInfo("pt-BR"))
+
 
 
                         'MessageBox.Show("Importação realizada com sucesso","Prince Sistemas Informa")
@@ -101,16 +107,23 @@ Module ModeMail
             Dim C = Legalizacao.ProcessoComboBox.Text.ToString()
             Dim D = Legalizacao.MotivoRichTextBox.Text.ToString()
             Dim E = Legalizacao.SistemaExternoComboBox.Text.ToString()
+            Dim F = Legalizacao.IETextBox.Text.ToString()
+            If E = "" Then
+                F = "Não tem Inscrição Estadual"
+            End If
 
             'assunto
             FrmMail.TextBoxAssunto.Text = C & " - da Empresa: " & A & ""
 
             'corpo do email
             FrmMail.RichTextBoxMensagem.SelectedText &=
-"A Empresa: " & A & ", com CNPJ: " & B & ", 
-Com o processo de:" & C & ", 
-Teve como objetivo de: " & D &",
-E no sistema ja foi atualizado:" & E & ".
+"A Empresa: " & A & ", 
+inscrita no CNPJ nº: " & B & ", e inscrita no Estado com nº: " & F & ", 
+
+Com o processo de: " & C & ", 
+Teve como objetivo de: " & D & ",
+
+E no Sistema ja foi atualizado: " & E & ".
 
             
 //-----------------//-----------------//-----------------//-----------------//

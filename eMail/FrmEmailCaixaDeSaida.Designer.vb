@@ -36,12 +36,12 @@ Partial Class FrmEmailCaixaDeSaida
         Me.EMailPrincipalTextBox = New System.Windows.Forms.TextBox()
         Me.EMailDestinoTextBox = New System.Windows.Forms.TextBox()
         Me.AssuntoTextBox = New System.Windows.Forms.TextBox()
-        Me.CaixaDeSaidaTextoRichTextBox = New System.Windows.Forms.RichTextBox()
         Me.ComboBoxBusca = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataEnviadoMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
+        Me.CaixaDeSaidaTextoRichTextBox = New System.Windows.Forms.RichTextBox()
         EMailPrincipalLabel = New System.Windows.Forms.Label()
         EMailDestinoLabel = New System.Windows.Forms.Label()
         AssuntoLabel = New System.Windows.Forms.Label()
@@ -156,16 +156,6 @@ Partial Class FrmEmailCaixaDeSaida
         Me.AssuntoTextBox.Size = New System.Drawing.Size(216, 20)
         Me.AssuntoTextBox.TabIndex = 6
         '
-        'CaixaDeSaidaTextoRichTextBox
-        '
-        Me.CaixaDeSaidaTextoRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailCaixaDeSaidaBindingSource, "CaixaDeSaidaTexto", True))
-        Me.CaixaDeSaidaTextoRichTextBox.Location = New System.Drawing.Point(125, 164)
-        Me.CaixaDeSaidaTextoRichTextBox.Name = "CaixaDeSaidaTextoRichTextBox"
-        Me.CaixaDeSaidaTextoRichTextBox.ReadOnly = True
-        Me.CaixaDeSaidaTextoRichTextBox.Size = New System.Drawing.Size(359, 153)
-        Me.CaixaDeSaidaTextoRichTextBox.TabIndex = 8
-        Me.CaixaDeSaidaTextoRichTextBox.Text = ""
-        '
         'ComboBoxBusca
         '
         Me.ComboBoxBusca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
@@ -225,11 +215,22 @@ Partial Class FrmEmailCaixaDeSaida
         Me.DataEnviadoMaskedTextBox.TabIndex = 53
         Me.DataEnviadoMaskedTextBox.ValidatingType = GetType(Date)
         '
+        'CaixaDeSaidaTextoRichTextBox
+        '
+        Me.CaixaDeSaidaTextoRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailCaixaDeSaidaBindingSource, "CaixaDeSaidaTexto", True))
+        Me.CaixaDeSaidaTextoRichTextBox.Location = New System.Drawing.Point(125, 193)
+        Me.CaixaDeSaidaTextoRichTextBox.Name = "CaixaDeSaidaTextoRichTextBox"
+        Me.CaixaDeSaidaTextoRichTextBox.ReadOnly = True
+        Me.CaixaDeSaidaTextoRichTextBox.Size = New System.Drawing.Size(366, 126)
+        Me.CaixaDeSaidaTextoRichTextBox.TabIndex = 54
+        Me.CaixaDeSaidaTextoRichTextBox.Text = ""
+        '
         'FrmEmailCaixaDeSaida
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(504, 325)
+        Me.ClientSize = New System.Drawing.Size(511, 331)
+        Me.Controls.Add(Me.CaixaDeSaidaTextoRichTextBox)
         Me.Controls.Add(DataEnviadoLabel1)
         Me.Controls.Add(Me.DataEnviadoMaskedTextBox)
         Me.Controls.Add(Me.PictureBox1)
@@ -237,7 +238,6 @@ Partial Class FrmEmailCaixaDeSaida
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ComboBoxBusca)
         Me.Controls.Add(CaixaDeSaidaTextoLabel)
-        Me.Controls.Add(Me.CaixaDeSaidaTextoRichTextBox)
         Me.Controls.Add(AssuntoLabel)
         Me.Controls.Add(Me.AssuntoTextBox)
         Me.Controls.Add(EMailDestinoLabel)
@@ -266,10 +266,10 @@ Partial Class FrmEmailCaixaDeSaida
     Friend WithEvents EMailPrincipalTextBox As TextBox
     Friend WithEvents EMailDestinoTextBox As TextBox
     Friend WithEvents AssuntoTextBox As TextBox
-    Friend WithEvents CaixaDeSaidaTextoRichTextBox As RichTextBox
     Friend WithEvents ComboBoxBusca As ComboBox
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents DataEnviadoMaskedTextBox As MaskedTextBox
+    Friend WithEvents CaixaDeSaidaTextoRichTextBox As RichTextBox
 End Class

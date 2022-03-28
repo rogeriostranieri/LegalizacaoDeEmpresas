@@ -30,6 +30,8 @@ Partial Class FrmMail
         Dim ClientSslLabel As System.Windows.Forms.Label
         Dim ParaGeralLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMail))
+        Dim HabilitaSslLabel As System.Windows.Forms.Label
+        Dim CredencialLabel As System.Windows.Forms.Label
         Me.LabelDe = New System.Windows.Forms.Label()
         Me.LabelPara = New System.Windows.Forms.Label()
         Me.ButtonEnviar = New System.Windows.Forms.Button()
@@ -71,12 +73,18 @@ Partial Class FrmMail
         Me.EMailCaixaDeSaidaTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.eMailCaixaDeSaidaTableAdapter()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.HabilitaSslComboBox = New System.Windows.Forms.ComboBox()
+        Me.CredencialComboBox = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         EMailLabel = New System.Windows.Forms.Label()
         SenhaEmailLabel = New System.Windows.Forms.Label()
         SmtpClientLabel = New System.Windows.Forms.Label()
         SmtpPortLabel = New System.Windows.Forms.Label()
         ClientSslLabel = New System.Windows.Forms.Label()
         ParaGeralLabel = New System.Windows.Forms.Label()
+        HabilitaSslLabel = New System.Windows.Forms.Label()
+        CredencialLabel = New System.Windows.Forms.Label()
         Me.TabControle.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.EMailBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -127,16 +135,17 @@ Partial Class FrmMail
         'ClientSslLabel
         '
         ClientSslLabel.AutoSize = True
-        ClientSslLabel.Location = New System.Drawing.Point(54, 147)
+        ClientSslLabel.Location = New System.Drawing.Point(54, 201)
         ClientSslLabel.Name = "ClientSslLabel"
         ClientSslLabel.Size = New System.Drawing.Size(85, 13)
         ClientSslLabel.TabIndex = 8
         ClientSslLabel.Text = "Segurança SSL:"
+        ClientSslLabel.Visible = False
         '
         'ParaGeralLabel
         '
         ParaGeralLabel.AutoSize = True
-        ParaGeralLabel.Location = New System.Drawing.Point(6, 203)
+        ParaGeralLabel.Location = New System.Drawing.Point(6, 235)
         ParaGeralLabel.Name = "ParaGeralLabel"
         ParaGeralLabel.Size = New System.Drawing.Size(135, 13)
         ParaGeralLabel.TabIndex = 50
@@ -377,6 +386,13 @@ Partial Class FrmMail
         '
         'TabPage3
         '
+        Me.TabPage3.AutoScroll = True
+        Me.TabPage3.Controls.Add(Me.Label4)
+        Me.TabPage3.Controls.Add(Me.Label3)
+        Me.TabPage3.Controls.Add(CredencialLabel)
+        Me.TabPage3.Controls.Add(Me.CredencialComboBox)
+        Me.TabPage3.Controls.Add(HabilitaSslLabel)
+        Me.TabPage3.Controls.Add(Me.HabilitaSslComboBox)
         Me.TabPage3.Controls.Add(Me.Label2)
         Me.TabPage3.Controls.Add(ParaGeralLabel)
         Me.TabPage3.Controls.Add(Me.ParaGeralRichTextBox)
@@ -404,16 +420,16 @@ Partial Class FrmMail
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(291, 294)
+        Me.Label2.Location = New System.Drawing.Point(164, 326)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(221, 13)
+        Me.Label2.Size = New System.Drawing.Size(348, 13)
         Me.Label2.TabIndex = 52
-        Me.Label2.Text = "Utilizar "" , "" (vírgula) para separar cada e-mail"
+        Me.Label2.Text = "Utilizar "" , "" (vírgula) para separar cada e-mail, e sem espaõs, tudo junto!"
         '
         'ParaGeralRichTextBox
         '
         Me.ParaGeralRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailBindingSource, "ParaGeral", True))
-        Me.ParaGeralRichTextBox.Location = New System.Drawing.Point(145, 200)
+        Me.ParaGeralRichTextBox.Location = New System.Drawing.Point(145, 232)
         Me.ParaGeralRichTextBox.Name = "ParaGeralRichTextBox"
         Me.ParaGeralRichTextBox.Size = New System.Drawing.Size(367, 91)
         Me.ParaGeralRichTextBox.TabIndex = 51
@@ -460,11 +476,12 @@ Partial Class FrmMail
         Me.ClientSslComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ClientSslComboBox.FormattingEnabled = True
         Me.ClientSslComboBox.Items.AddRange(New Object() {"", "False", "True"})
-        Me.ClientSslComboBox.Location = New System.Drawing.Point(145, 144)
+        Me.ClientSslComboBox.Location = New System.Drawing.Point(145, 198)
         Me.ClientSslComboBox.Name = "ClientSslComboBox"
         Me.ClientSslComboBox.Size = New System.Drawing.Size(100, 21)
         Me.ClientSslComboBox.Sorted = True
         Me.ClientSslComboBox.TabIndex = 9
+        Me.ClientSslComboBox.Visible = False
         '
         'SmtpPortTextBox
         '
@@ -549,13 +566,71 @@ Partial Class FrmMail
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Lucida Calligraphy", 14.0!)
+        Me.Label1.Font = New System.Drawing.Font("Lucida Fax", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.GreenYellow
-        Me.Label1.Location = New System.Drawing.Point(12, 6)
+        Me.Label1.Location = New System.Drawing.Point(20, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(74, 24)
+        Me.Label1.Size = New System.Drawing.Size(101, 32)
         Me.Label1.TabIndex = 50
         Me.Label1.Text = "e-Mail"
+        '
+        'HabilitaSslLabel
+        '
+        HabilitaSslLabel.AutoSize = True
+        HabilitaSslLabel.Location = New System.Drawing.Point(71, 147)
+        HabilitaSslLabel.Name = "HabilitaSslLabel"
+        HabilitaSslLabel.Size = New System.Drawing.Size(68, 13)
+        HabilitaSslLabel.TabIndex = 52
+        HabilitaSslLabel.Text = "Habilita SSL:"
+        '
+        'HabilitaSslComboBox
+        '
+        Me.HabilitaSslComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailBindingSource, "HabilitaSsl", True))
+        Me.HabilitaSslComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.HabilitaSslComboBox.FormattingEnabled = True
+        Me.HabilitaSslComboBox.Items.AddRange(New Object() {"", "False", "True"})
+        Me.HabilitaSslComboBox.Location = New System.Drawing.Point(145, 144)
+        Me.HabilitaSslComboBox.Name = "HabilitaSslComboBox"
+        Me.HabilitaSslComboBox.Size = New System.Drawing.Size(100, 21)
+        Me.HabilitaSslComboBox.TabIndex = 53
+        '
+        'CredencialLabel
+        '
+        CredencialLabel.AutoSize = True
+        CredencialLabel.Location = New System.Drawing.Point(79, 174)
+        CredencialLabel.Name = "CredencialLabel"
+        CredencialLabel.Size = New System.Drawing.Size(60, 13)
+        CredencialLabel.TabIndex = 53
+        CredencialLabel.Text = "Credencial:"
+        '
+        'CredencialComboBox
+        '
+        Me.CredencialComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailBindingSource, "Credencial", True))
+        Me.CredencialComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CredencialComboBox.FormattingEnabled = True
+        Me.CredencialComboBox.Items.AddRange(New Object() {"", "False", "True"})
+        Me.CredencialComboBox.Location = New System.Drawing.Point(145, 171)
+        Me.CredencialComboBox.Name = "CredencialComboBox"
+        Me.CredencialComboBox.Size = New System.Drawing.Size(100, 21)
+        Me.CredencialComboBox.TabIndex = 54
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(251, 174)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.TabIndex = 55
+        Me.Label3.Text = "* False"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(251, 147)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(36, 13)
+        Me.Label4.TabIndex = 56
+        Me.Label4.Text = "* True"
         '
         'FrmMail
         '
@@ -630,4 +705,8 @@ Partial Class FrmMail
     Friend WithEvents ButtonGeral As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents TextBoxPara As RichTextBox
+    Friend WithEvents CredencialComboBox As ComboBox
+    Friend WithEvents HabilitaSslComboBox As ComboBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class

@@ -346,7 +346,7 @@ Partial Class Legalizacao
         Me.RegimeFederalComboBox = New System.Windows.Forms.ComboBox()
         Me.Calendar1 = New System.Windows.Forms.MonthCalendar()
         Me.SistemaExternoComboBox = New System.Windows.Forms.ComboBox()
-        Me.Button42 = New System.Windows.Forms.Button()
+        Me.ButtoneMail = New System.Windows.Forms.Button()
         Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
         Me.NAlteracaoLabel = New System.Windows.Forms.Label()
         Me.NAlteracaoComboBox = New System.Windows.Forms.ComboBox()
@@ -3765,16 +3765,16 @@ Partial Class Legalizacao
         Me.SistemaExternoComboBox.Size = New System.Drawing.Size(61, 21)
         Me.SistemaExternoComboBox.TabIndex = 65
         '
-        'Button42
+        'ButtoneMail
         '
-        Me.Button42.BackgroundImage = CType(resources.GetObject("Button42.BackgroundImage"), System.Drawing.Image)
-        Me.Button42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button42.Location = New System.Drawing.Point(12, 211)
-        Me.Button42.Name = "Button42"
-        Me.Button42.Size = New System.Drawing.Size(69, 48)
-        Me.Button42.TabIndex = 44
-        Me.Button42.Text = "Consulta REDESIM"
-        Me.Button42.UseVisualStyleBackColor = True
+        Me.ButtoneMail.BackgroundImage = CType(resources.GetObject("ButtoneMail.BackgroundImage"), System.Drawing.Image)
+        Me.ButtoneMail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ButtoneMail.Location = New System.Drawing.Point(10, 297)
+        Me.ButtoneMail.Name = "ButtoneMail"
+        Me.ButtoneMail.Size = New System.Drawing.Size(69, 23)
+        Me.ButtoneMail.TabIndex = 44
+        Me.ButtoneMail.Text = "e-Mail"
+        Me.ButtoneMail.UseVisualStyleBackColor = True
         '
         'LinkLabel9
         '
@@ -3863,7 +3863,7 @@ Partial Class Legalizacao
         Me.GroupBox9.Controls.Add(Me.BtnEditar)
         Me.GroupBox9.Controls.Add(Me.Button24)
         Me.GroupBox9.Controls.Add(Me.Button28)
-        Me.GroupBox9.Controls.Add(Me.Button42)
+        Me.GroupBox9.Controls.Add(Me.ButtoneMail)
         Me.GroupBox9.Controls.Add(Me.Button20)
         Me.GroupBox9.Controls.Add(Me.BtnAlteracao)
         Me.GroupBox9.Controls.Add(Me.Button27)
@@ -3916,7 +3916,7 @@ Partial Class Legalizacao
         '
         Me.BtnAlteracao.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.fundo_azul
         Me.BtnAlteracao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnAlteracao.Location = New System.Drawing.Point(12, 264)
+        Me.BtnAlteracao.Location = New System.Drawing.Point(10, 219)
         Me.BtnAlteracao.Name = "BtnAlteracao"
         Me.BtnAlteracao.Size = New System.Drawing.Size(69, 39)
         Me.BtnAlteracao.TabIndex = 49
@@ -4444,7 +4444,7 @@ Partial Class Legalizacao
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button42 As Button
+    Friend WithEvents ButtoneMail As Button
     Friend WithEvents TabPage16 As TabPage
     Friend WithEvents DataExcSocialMaskedTextBox As MaskedTextBox
     Friend WithEvents CapitalITextBox As TextBox

@@ -1,4 +1,7 @@
 ﻿Imports System.Net.Mail
+Imports System.ComponentModel
+Imports System.Net
+
 Imports System.Data.SqlClient
 
 
@@ -57,6 +60,7 @@ Public Class FrmMail
         Else
 
 
+
         End If
 
     End Sub
@@ -75,8 +79,6 @@ Public Class FrmMail
             Dim UserName As String = EMailTextBox.Text
             Dim Destinatario As String = TextBoxPara.Text
             Dim UserSenha As String = SenhaEmailTextBox.Text
-
-
             Dim destinatarios As String = Destinatario
             Dim Enviar As System.Net.Mail.MailMessage = New System.Net.Mail.MailMessage()
 
@@ -90,13 +92,28 @@ Public Class FrmMail
             Enviar.Subject = TextBoxAssunto.Text
             Enviar.Body = RichTextBoxMensagem.Text
 
+
+            Enviar.IsBodyHtml = True
+            Enviar.Priority = System.Net.Mail.MailPriority.Normal
             'fim codigo de entrada de dados 
             'inicio da confg para envio
 
-            Dim client As SmtpClient = New SmtpClient(SmtpClientTextBox.Text, SmtpPortTextBox.Text)
-            client.EnableSsl = True
-            client.UseDefaultCredentials = False
+
+            '  Dim client As SmtpClient = New SmtpClient(SmtpClientTextBox.Text, SmtpPortTextBox.Text)
+
+            Dim client As New SmtpClient()
+            client.Host = SmtpClientTextBox.Text
+            client.Port = SmtpPortTextBox.Text
+            client.EnableSsl = HabilitaSslComboBox.Text
+
+            client.UseDefaultCredentials = CredencialComboBox.Text
+
+
             client.Credentials = New System.Net.NetworkCredential(UserName, UserSenha)
+
+            'client.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network
+            client.DeliveryMethod = SmtpDeliveryMethod.Network
+
             Try
                 'envia o email
                 client.Send(Enviar)
@@ -201,9 +218,6 @@ Public Class FrmMail
         End If
     End Sub
 
-    Private Sub ButtonSalvarConfig_Click(sender As Object, e As EventArgs) Handles ButtonSalvarConfig.Click
-        Salvar()
-    End Sub
 
     Private Sub ButtonExcluirConfig_Click(sender As Object, e As EventArgs) Handles ButtonExcluirConfig.Click
         If MsgBox(" Deseja apagar a configuração atual?", MsgBoxStyle.YesNo, "Apagar") = MsgBoxResult.Yes Then
@@ -269,6 +283,25 @@ Public Class FrmMail
             Texto_Modificado = False
         End If
     End Sub
+
     'fim do codigo
 
+
+
+    Private Sub ButtonNovoConfig_Click(sender As Object, e As EventArgs) Handles ButtonNovoConfig.Click
+        Try
+            'Salva alterações
+            'Me.Validate()
+            Me.EMailBindingSource.AddNew()
+
+        Catch exc As Exception
+
+            MessageBox.Show("Ocorreu um Erro ao atualizar" + vbCrLf + exc.Message + vbCrLf + vbCrLf + "Linha em vermelho com erro", "Prince Sistemas Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        End Try
+    End Sub
+
+    Private Sub ButtonSalvarConfig_Click(sender As Object, e As EventArgs) Handles ButtonSalvarConfig.Click
+        Salvar()
+    End Sub
 End Class

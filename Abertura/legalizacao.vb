@@ -1378,11 +1378,6 @@ Protocolo RedeSim= " & G & ".
         ArquivoContratoTextBox.Text = ""
     End Sub
 
-    Private Sub Button42_Click(sender As Object, e As EventArgs) Handles Button42.Click
-        System.Diagnostics.Process.Start("https://consultacnpj.redesim.gov.br/")
-
-    End Sub
-
     Private Sub Button43_Click(sender As Object, e As EventArgs) Handles Button43.Click
         Dim CNPJ As String = CNPJMaskedTextBox.Text
         'CNPJ = CNPJ.Replace("/", ",").Replace(".", "-")
@@ -1891,6 +1886,25 @@ CPF =
 
                 End If
             End If
+        End If
+    End Sub
+
+    Private Sub ButtoneMail_Click(sender As Object, e As EventArgs) Handles ButtoneMail.Click
+        If Application.OpenForms.OfType(Of FrmMail)().Count() > 0 Then
+
+            FrmMail.Focus()
+            FrmMail.Close()
+            FrmMail.MdiParent = MDIPrincipal
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmMail.Show()
+
+
+        Else
+
+            FrmMail.MdiParent = MDIPrincipal
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmMail.Show()
+
         End If
     End Sub
 End Class
