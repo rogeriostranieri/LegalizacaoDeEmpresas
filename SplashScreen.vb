@@ -1,5 +1,5 @@
 ﻿Public NotInheritable Class SplashScreen
-  
+
 
     'TODO: Este formulário pode ser facilmente configurado como a tela inicial da aplicação através da edição da aba "Aplicação"
     '  no Designer de Projeto ("Propriedades" dentro do menu "Projetos").

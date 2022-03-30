@@ -1,6 +1,4 @@
-﻿Imports System.Data
-Imports System.Data.SqlClient
-Public Class LaudosCadastro
+﻿Public Class LaudosCadastro
 
     Private Sub LaudosBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()

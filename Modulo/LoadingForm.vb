@@ -1,5 +1,4 @@
-﻿Imports System.Windows.Forms
-Imports System.ComponentModel
+﻿Imports System.ComponentModel
 
 
 Public Class LoadingForm

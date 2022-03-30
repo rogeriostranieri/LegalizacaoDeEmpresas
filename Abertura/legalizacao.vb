@@ -1,7 +1,4 @@
-﻿Imports System.Data
-Imports System.Data.SqlClient
-
-Public Class Legalizacao
+﻿Public Class Legalizacao
     'ESPAÇO para os DIM GERAL
 
     'Bloqueando para edição

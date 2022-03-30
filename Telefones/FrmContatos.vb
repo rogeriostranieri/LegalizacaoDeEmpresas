@@ -1,7 +1,4 @@
-﻿Imports System.IO
-Imports System.Data
-Imports System.Data.SqlClient
-Public Class FrmContatos
+﻿Public Class FrmContatos
 
 
     Private Sub Contatos_Load(sender As Object, e As EventArgs) Handles MyBase.Load

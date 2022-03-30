@@ -1,8 +1,5 @@
-﻿Imports System.Net.Mail
-Imports System.ComponentModel
-Imports System.Net
-
-Imports System.Data.SqlClient
+﻿Imports System.IO
+Imports System.Net.Mail
 
 
 Public Class FrmMail
@@ -17,7 +14,12 @@ Public Class FrmMail
         'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.eMail'. Você pode movê-la ou removê-la conforme necessário.
         Me.EMailTableAdapter.Fill(Me.PrinceDBDataSet.eMail)
 
+        ProgressBar1.Value = 0
+        ProgressBar1.BackColor = Color.Green
     End Sub
+
+
+
 
 
     Private Sub Salvar()
@@ -67,10 +69,13 @@ Public Class FrmMail
 
 
 
+
     'tem que configurar no cliente POP/IMAP e habilitar e ter os dados"
     Private Sub ButtonEnviar_Click(sender As Object, e As EventArgs) Handles ButtonEnviar.Click
-        If MsgBox(" Deseja enviar este e-Mail?", MsgBoxStyle.YesNo, "Enviar") = MsgBoxResult.Yes Then
 
+
+        If MsgBox(" Deseja enviar este e-Mail?", MsgBoxStyle.YesNo, "Enviar") = MsgBoxResult.Yes Then
+            ProgressBar1.BackColor = Color.Green
             TabControle.SelectedIndex = 2
             TabControle.SelectedIndex = 0
 
@@ -83,23 +88,44 @@ Public Class FrmMail
             Dim Enviar As System.Net.Mail.MailMessage = New System.Net.Mail.MailMessage()
 
 
+            ProgressBar1.Value = 10
+
             Enviar.From = New System.Net.Mail.MailAddress(UserName)
 
             For Each mail As String In destinatarios.Split(New Char() {","c})
                 Enviar.To.Add(New System.Net.Mail.MailAddress(mail))
             Next
 
+            ProgressBar1.Value = 20
             Enviar.Subject = TextBoxAssunto.Text
             Enviar.Body = RichTextBoxMensagem.Text
 
 
             Enviar.IsBodyHtml = True
             Enviar.Priority = System.Net.Mail.MailPriority.Normal
+
+            ProgressBar1.Value = 30
+
+            'anexos
+            'atribui caminhos dos anexos
+
+            For Each filePath As String In OpenFileDialog1.FileNames
+                If File.Exists(filePath) Then
+                    Dim fileName As String = Path.GetFileName(filePath)
+                    Enviar.Attachments.Add(New Attachment(filePath))
+                End If
+            Next
+            'Enviar.Attachments.Add(New Net.Mail.Attachment(o.ToString()))
+            'Enviar.Attachments.Add(New Net.Mail.Attachment(RichTextBox1.Text))
+
+
+
             'fim codigo de entrada de dados 
             'inicio da confg para envio
 
 
             '  Dim client As SmtpClient = New SmtpClient(SmtpClientTextBox.Text, SmtpPortTextBox.Text)
+            ProgressBar1.Value = 40
 
             Dim client As New SmtpClient()
             client.Host = SmtpClientTextBox.Text
@@ -108,33 +134,50 @@ Public Class FrmMail
 
             client.UseDefaultCredentials = CredencialComboBox.Text
 
+            'Arquivos que vão em anexo dentro de um ListBox
+
+            ProgressBar1.Value = 50
+
 
             client.Credentials = New System.Net.NetworkCredential(UserName, UserSenha)
 
             'client.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network
             client.DeliveryMethod = SmtpDeliveryMethod.Network
-
+            ProgressBar1.Value = 60
             Try
+                ProgressBar1.Value = 70
                 'envia o email
                 client.Send(Enviar)
+
                 'anexa na caixa de saida os dados
                 ModeMail.EmailCaixaDeSaida()
                 'atualiza a caixa de saida neste form
                 Me.EMailCaixaDeSaidaTableAdapter.Fill(Me.PrinceDBDataSet.eMailCaixaDeSaida)
                 Me.Refresh()
-
+                ProgressBar1.Value = 80
                 'limpa tudo
                 TextBoxPara.Text = ""
                 TextBoxAssunto.Text = "Digite aqui o assunto..."
                 RichTextBoxMensagem.Text = "Seu texto ...."
+                LblAnexo.Text = "Anexo..."
 
+                ProgressBar1.Value = 90
                 'finaliza mostrando que está tudo ok
+                '    Timer1.Stop()
+                '    Timer1.Enabled = False
+
+                ProgressBar1.Value = 100
                 MessageBox.Show("E-mail enviado com sucesso")
 
+
             Catch ex As Exception
+                ProgressBar1.Value = 100
+                ProgressBar1.BackColor = Color.Red
                 MessageBox.Show("Erro ao enviar o e-mail ,tente novamente ou configure corretamente os dados nas configurações")
+
             End Try
         End If
+
 
     End Sub
 
@@ -161,22 +204,31 @@ Public Class FrmMail
     End Sub
 
     Private Sub ButtonExcluirSaida_Click(sender As Object, e As EventArgs) Handles ButtonExcluirSaida.Click
-        If MsgBox(" Deseja apagar o e-mail enviado selecionado na caixa de saída?", MsgBoxStyle.YesNo, "Apagar") = MsgBoxResult.Yes Then
-            'EMailCaixaDeSaida
-            EMailCaixaDeSaidaDataGridView.Rows.RemoveAt(EMailCaixaDeSaidaDataGridView.CurrentRow.Index)
 
-            Me.Validate()
-            '  Me.EMailCaixaDeSaidaBindingSource.RemoveCurrent()
-            Me.EMailCaixaDeSaidaTableAdapter.Update(Me.PrinceDBDataSet.eMailCaixaDeSaida)
-            Me.EMailCaixaDeSaidaTableAdapter.Fill(Me.PrinceDBDataSet.eMailCaixaDeSaida)
+        Try
+            If MsgBox(" Deseja apagar o e-mail enviado selecionado na caixa de saída?", MsgBoxStyle.YesNo, "Apagar") = MsgBoxResult.Yes Then
+                'EMailCaixaDeSaida
+                Try
+                    EMailCaixaDeSaidaDataGridView.Rows.RemoveAt(EMailCaixaDeSaidaDataGridView.CurrentRow.Index)
+                Catch ex As Exception
+                    MsgBox("ERRO " & vbCrLf & ex.Message)
+                End Try
 
-            'Dim indexLinha As Integer
-            'indexLinha = EMailCaixaDeSaidaDataGridView.CurrentCell.RowIndex
+                Me.Validate()
+                '  Me.EMailCaixaDeSaidaBindingSource.RemoveCurrent()
+                Me.EMailCaixaDeSaidaTableAdapter.Update(Me.PrinceDBDataSet.eMailCaixaDeSaida)
+                Me.EMailCaixaDeSaidaTableAdapter.Fill(Me.PrinceDBDataSet.eMailCaixaDeSaida)
 
-            ' EMailCaixaDeSaidaDataGridView.Rows.RemoveAt(indexLinha)
+                'Dim indexLinha As Integer
+                'indexLinha = EMailCaixaDeSaidaDataGridView.CurrentCell.RowIndex
 
-            ' MessageBox.Show("Atualizando . . . !", "Informativo - Prince Sistemas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        End If
+                ' EMailCaixaDeSaidaDataGridView.Rows.RemoveAt(indexLinha)
+
+                ' MessageBox.Show("Atualizando . . . !", "Informativo - Prince Sistemas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+        Catch ex As Exception
+            MsgBox("ERRO " & vbCrLf & ex.Message)
+        End Try
     End Sub
 
     Private Sub FrmMail_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -220,13 +272,17 @@ Public Class FrmMail
 
 
     Private Sub ButtonExcluirConfig_Click(sender As Object, e As EventArgs) Handles ButtonExcluirConfig.Click
-        If MsgBox(" Deseja apagar a configuração atual?", MsgBoxStyle.YesNo, "Apagar") = MsgBoxResult.Yes Then
-            Me.Validate()
-            Me.EMailBindingSource.RemoveCurrent()
-            Me.EMailTableAdapter.Update(Me.PrinceDBDataSet.eMail)
-            Me.EMailTableAdapter.Fill(Me.PrinceDBDataSet.eMail)
-            MessageBox.Show("Atualizando . . . !", "Informativo - Prince Sistemas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        End If
+        Try
+            If MsgBox(" Deseja apagar a configuração atual?", MsgBoxStyle.YesNo, "Apagar") = MsgBoxResult.Yes Then
+                Me.Validate()
+                Me.EMailBindingSource.RemoveCurrent()
+                Me.EMailTableAdapter.Update(Me.PrinceDBDataSet.eMail)
+                Me.EMailTableAdapter.Fill(Me.PrinceDBDataSet.eMail)
+                MessageBox.Show("Atualizando . . . !", "Informativo - Prince Sistemas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+        Catch error_t As Exception
+            MsgBox(error_t.ToString)
+        End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -304,4 +360,40 @@ Public Class FrmMail
     Private Sub ButtonSalvarConfig_Click(sender As Object, e As EventArgs) Handles ButtonSalvarConfig.Click
         Salvar()
     End Sub
+
+
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        'ativar Acesso a app menos seguro
+
+    End Sub
+
+
+    Private Sub ButtonAnexar_Click(sender As Object, e As EventArgs) Handles ButtonAnexar.Click
+        OpenFileDialog1.ShowDialog()
+
+
+
+    End Sub
+
+
+    Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
+        Try
+
+            For Each filePath As String In OpenFileDialog1.FileNames
+                If File.Exists(filePath) Then
+                    Dim fileName As String = Path.GetFileName(filePath)
+                    LblAnexo.Text += fileName + Environment.NewLine
+                End If
+            Next
+
+        Catch error_t As Exception
+            MsgBox(error_t.ToString)
+        End Try
+    End Sub
+
+
+
+
+
 End Class

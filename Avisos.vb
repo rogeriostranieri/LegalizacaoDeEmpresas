@@ -1,6 +1,4 @@
-﻿Imports System.Timers
-
-Public Class Avisos
+﻿Public Class Avisos
 
 
     Private Sub Avisos_Load(sender As Object, e As EventArgs) Handles MyBase.Load

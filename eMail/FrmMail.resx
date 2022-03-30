@@ -135,6 +135,12 @@
   <metadata name="ParaGeralLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <metadata name="HabilitaSslLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="CredencialLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ButtonContatos.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -144,7 +150,7 @@
         ztbhztfhztfiz9fiz9ji0Njj0Nnj0dnj0dnk0drk0trk0trl0tvl09vl09vm09zm1Nzm1Nzn1N3n1d3n
         1d3o1d7o1t7o1t7p19/p19/q1t/pz9jj2ODq2ODr2OHr2eHr2eHs2eLs2uLs2uLt2uPt2+Pt2+Pu2+Tu
         2+Tv3OTv3OXv3OXw3eXw3ebw3ebx3ufy3ufz3ujz3+jz3+j03+n04On04On14Or14Or24er24ev24ev3
-        4uv34uz34uz44+z44+344+35b680IwAAAAlwSFlzAAAXEgAAFxIBZ5/SUgAAABl0RVh0U29mdHdhcmUA
+        4uv34uz34uz44+z44+344+35b680IwAAAAlwSFlzAAAXEQAAFxEByibzPwAAABl0RVh0U29mdHdhcmUA
         TWljcm9zb2Z0IE9mZmljZX/tNXEAAP5ASURBVHhe7P35oz7LVp+HbQahAcQkBAKNaGK4QiCQbAUBFyx0
         nDiJEiexE2e0M9nK//8HpGrV093V3TUPPbx7PT9cXc4957vft2rVc5Y+q7r31xX8BPzkTzl++qf/ivAz
         f/Wv/tW/Zvjrf8Pwsz/7sz/3c3/T8PM//wu/8IuWX/rlX/7lvyX8yq/8yt+2/Oqv/drfsfz6r//6b/xd
@@ -1334,12 +1340,6 @@
   </data>
   <metadata name="EMailBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>160, 17</value>
-  </metadata>
-  <metadata name="EMailBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>160, 17</value>
-  </metadata>
-  <metadata name="PrinceDBDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
   </metadata>
   <metadata name="PrinceDBDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -1352,7 +1352,7 @@
         ztbhztfhztfiz9fiz9ji0Njj0Nnj0dnj0dnk0drk0trk0trl0tvl09vl09vm09zm1Nzm1Nzn1N3n1d3n
         1d3o1d7o1t7o1t7p19/p19/q1t/pz9jj2ODq2ODr2OHr2eHr2eHs2eLs2uLs2uLt2uPt2+Pt2+Pu2+Tu
         2+Tv3OTv3OXv3OXw3eXw3ebw3ebx3ufy3ufz3ujz3+jz3+j03+n04On04On14Or14Or24er24ev24ev3
-        4uv34uz34uz44+z44+344+35b680IwAAAAlwSFlzAAAXEgAAFxIBZ5/SUgAAABl0RVh0U29mdHdhcmUA
+        4uv34uz34uz44+z44+344+35b680IwAAAAlwSFlzAAAXEQAAFxEByibzPwAAABl0RVh0U29mdHdhcmUA
         TWljcm9zb2Z0IE9mZmljZX/tNXEAAP5ASURBVHhe7P35oz7LVp+HbQahAcQkBAKNaGK4QiCQbAUBFyx0
         nDiJEiexE2e0M9nK//8HpGrV093V3TUPPbx7PT9cXc4957vft2rVc5Y+q7r31xX8BPzkTzl++qf/ivAz
         f/Wv/tW/Zvjrf8Pwsz/7sz/3c3/T8PM//wu/8IuWX/rlX/7lvyX8yq/8yt+2/Oqv/drfsfz6r//6b/xd
@@ -2544,19 +2544,7 @@
     <value>True</value>
   </metadata>
   <metadata name="EMailCaixaDeSaidaBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>478, 56</value>
-  </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="EMailCaixaDeSaidaBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>478, 56</value>
-  </metadata>
-  <metadata name="CredencialLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="HabilitaSslLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
+    <value>245, 56</value>
   </metadata>
   <data name="ButtonExcluirConfig.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2566,7 +2554,7 @@
         ztbhztfhztfiz9fiz9ji0Njj0Nnj0dnj0dnk0drk0trk0trl0tvl09vl09vm09zm1Nzm1Nzn1N3n1d3n
         1d3o1d7o1t7o1t7p19/p19/q1t/pz9jj2ODq2ODr2OHr2eHr2eHs2eLs2uLs2uLt2uPt2+Pt2+Pu2+Tu
         2+Tv3OTv3OXv3OXw3eXw3ebw3ebx3ufy3ufz3ujz3+jz3+j03+n04On04On14Or14Or24er24ev24ev3
-        4uv34uz34uz44+z44+344+35b680IwAAAAlwSFlzAAAXEgAAFxIBZ5/SUgAAABl0RVh0U29mdHdhcmUA
+        4uv34uz34uz44+z44+344+35b680IwAAAAlwSFlzAAAXEQAAFxEByibzPwAAABl0RVh0U29mdHdhcmUA
         TWljcm9zb2Z0IE9mZmljZX/tNXEAAP5ASURBVHhe7P35oz7LVp+HbQahAcQkBAKNaGK4QiCQbAUBFyx0
         nDiJEiexE2e0M9nK//8HpGrV093V3TUPPbx7PT9cXc4957vft2rVc5Y+q7r31xX8BPzkTzl++qf/ivAz
         f/Wv/tW/Zvjrf8Pwsz/7sz/3c3/T8PM//wu/8IuWX/rlX/7lvyX8yq/8yt+2/Oqv/drfsfz6r//6b/xd
@@ -3762,7 +3750,7 @@
         ztbhztfhztfiz9fiz9ji0Njj0Nnj0dnj0dnk0drk0trk0trl0tvl09vl09vm09zm1Nzm1Nzn1N3n1d3n
         1d3o1d7o1t7o1t7p19/p19/q1t/pz9jj2ODq2ODr2OHr2eHr2eHs2eLs2uLs2uLt2uPt2+Pt2+Pu2+Tu
         2+Tv3OTv3OXv3OXw3eXw3ebw3ebx3ufy3ufz3ujz3+jz3+j03+n04On04On14Or14Or24er24ev24ev3
-        4uv34uz34uz44+z44+344+35b680IwAAAAlwSFlzAAAXEgAAFxIBZ5/SUgAAABl0RVh0U29mdHdhcmUA
+        4uv34uz34uz44+z44+344+35b680IwAAAAlwSFlzAAAXEQAAFxEByibzPwAAABl0RVh0U29mdHdhcmUA
         TWljcm9zb2Z0IE9mZmljZX/tNXEAAP5ASURBVHhe7P35oz7LVp+HbQahAcQkBAKNaGK4QiCQbAUBFyx0
         nDiJEiexE2e0M9nK//8HpGrV093V3TUPPbx7PT9cXc4957vft2rVc5Y+q7r31xX8BPzkTzl++qf/ivAz
         f/Wv/tW/Zvjrf8Pwsz/7sz/3c3/T8PM//wu/8IuWX/rlX/7lvyX8yq/8yt+2/Oqv/drfsfz6r//6b/xd
@@ -4958,7 +4946,7 @@
         ztbhztfhztfiz9fiz9ji0Njj0Nnj0dnj0dnk0drk0trk0trl0tvl09vl09vm09zm1Nzm1Nzn1N3n1d3n
         1d3o1d7o1t7o1t7p19/p19/q1t/pz9jj2ODq2ODr2OHr2eHr2eHs2eLs2uLs2uLt2uPt2+Pt2+Pu2+Tu
         2+Tv3OTv3OXv3OXw3eXw3ebw3ebx3ufy3ufz3ujz3+jz3+j03+n04On04On14Or14Or24er24ev24ev3
-        4uv34uz34uz44+z44+344+35b680IwAAAAlwSFlzAAAXEgAAFxIBZ5/SUgAAABl0RVh0U29mdHdhcmUA
+        4uv34uz34uz44+z44+344+35b680IwAAAAlwSFlzAAAXEQAAFxEByibzPwAAABl0RVh0U29mdHdhcmUA
         TWljcm9zb2Z0IE9mZmljZX/tNXEAAP5ASURBVHhe7P35oz7LVp+HbQahAcQkBAKNaGK4QiCQbAUBFyx0
         nDiJEiexE2e0M9nK//8HpGrV093V3TUPPbx7PT9cXc4957vft2rVc5Y+q7r31xX8BPzkTzl++qf/ivAz
         f/Wv/tW/Zvjrf8Pwsz/7sz/3c3/T8PM//wu/8IuWX/rlX/7lvyX8yq/8yt+2/Oqv/drfsfz6r//6b/xd
@@ -6153,10 +6141,10 @@
     <value>474, 17</value>
   </metadata>
   <metadata name="EMailCaixaDeSaidaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>736, 17</value>
   </metadata>
   <metadata name="EMailCaixaDeSaidaTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>250, 56</value>
+    <value>17, 56</value>
   </metadata>
   <data name="Button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6166,7 +6154,7 @@
         ztbhztfhztfiz9fiz9ji0Njj0Nnj0dnj0dnk0drk0trk0trl0tvl09vl09vm09zm1Nzm1Nzn1N3n1d3n
         1d3o1d7o1t7o1t7p19/p19/q1t/pz9jj2ODq2ODr2OHr2eHr2eHs2eLs2uLs2uLt2uPt2+Pt2+Pu2+Tu
         2+Tv3OTv3OXv3OXw3eXw3ebw3ebx3ufy3ufz3ujz3+jz3+j03+n04On04On14Or14Or24er24ev24ev3
-        4uv34uz34uz44+z44+344+35b680IwAAAAlwSFlzAAAXEgAAFxIBZ5/SUgAAABl0RVh0U29mdHdhcmUA
+        4uv34uz34uz44+z44+344+35b680IwAAAAlwSFlzAAAXEQAAFxEByibzPwAAABl0RVh0U29mdHdhcmUA
         TWljcm9zb2Z0IE9mZmljZX/tNXEAAP5ASURBVHhe7P35oz7LVp+HbQahAcQkBAKNaGK4QiCQbAUBFyx0
         nDiJEiexE2e0M9nK//8HpGrV093V3TUPPbx7PT9cXc4957vft2rVc5Y+q7r31xX8BPzkTzl++qf/ivAz
         f/Wv/tW/Zvjrf8Pwsz/7sz/3c3/T8PM//wu/8IuWX/rlX/7lvyX8yq/8yt+2/Oqv/drfsfz6r//6b/xd
@@ -7354,10 +7342,10 @@
         HK+o1D6tdvu0fcntR0nm6vb4vO90u5P7wO0fGIL844//Ab0AId8eyYCEAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="HabilitaSslLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
+  <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>485, 56</value>
   </metadata>
-  <metadata name="CredencialLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
+  <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>647, 17</value>
   </metadata>
 </root>

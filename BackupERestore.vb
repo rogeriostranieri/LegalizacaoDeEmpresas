@@ -1,6 +1,4 @@
-﻿Imports System
-Imports System.Data
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
 '"Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755"
 

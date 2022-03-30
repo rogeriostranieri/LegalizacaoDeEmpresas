@@ -1,6 +1,4 @@
-﻿Imports System.Windows.Forms
-
-Public Class MDIPrincipal
+﻿Public Class MDIPrincipal
 
 
 

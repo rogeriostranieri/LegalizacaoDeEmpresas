@@ -47,30 +47,30 @@
 
         ProgressBar1.Visible = True
 
-            Dim d, t As Integer
+        Dim d, t As Integer
 
-            d = e.CurrentProgress
+        d = e.CurrentProgress
 
-            t = e.MaximumProgress
+        t = e.MaximumProgress
 
-            If d <= 0 Then
+        If d <= 0 Then
 
 
 
             ProgressBar1.Value = 0
 
-                ProgressBar1.Visible = False
-                TxtCarregar.Text = "Completo"
-                Label5.Visible = False
+            ProgressBar1.Visible = False
+            TxtCarregar.Text = "Completo"
+            Label5.Visible = False
 
-            Else
+        Else
 
 
             ProgressBar1.Value = Math.Min(ProgressBar1.Maximum, Convert.ToInt32(Math.Floor(ProgressBar1.Maximum * (d / t))))
-                TxtCarregar.Text = "Carregando..."
-                Label5.Visible = True
-                Label5.Text = "Aguarde Carregar a página a baixo"
-            End If
+            TxtCarregar.Text = "Carregando..."
+            Label5.Visible = True
+            Label5.Text = "Aguarde Carregar a página a baixo"
+        End If
 
 
 

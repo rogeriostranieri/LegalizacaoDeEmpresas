@@ -1,4 +1,3 @@
-Imports System.Data
 Imports System.Data.SqlClient
 Public Class Login
 
@@ -14,31 +13,31 @@ Public Class Login
 
 
         If txtUsername.Text.Length <= 0 Then
-                MessageBox.Show("Digite o nome de Usuário!")
-            ElseIf txtPassword.Text.Length <= 0 Then
-                MessageBox.Show("Digite sua Senha")
-            End If
-            Dim str As String = "Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755"
-            Dim sql As String = "select count(*) from Login where Usuario=@Usuario and Senha=@Senha"
-            Using Conn As New SqlConnection(str)
-                Using cmd As New SqlCommand(sql, Conn)
-                    Conn.Open()
-                    cmd.Parameters.AddWithValue("@Usuario", txtUsername.Text)
-                    cmd.Parameters.AddWithValue("@Senha", txtPassword.Text)
-                    Dim value = cmd.ExecuteScalar()
-                    If value > 0 Then
+            MessageBox.Show("Digite o nome de Usuário!")
+        ElseIf txtPassword.Text.Length <= 0 Then
+            MessageBox.Show("Digite sua Senha")
+        End If
+        Dim str As String = "Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755"
+        Dim sql As String = "select count(*) from Login where Usuario=@Usuario and Senha=@Senha"
+        Using Conn As New SqlConnection(str)
+            Using cmd As New SqlCommand(sql, Conn)
+                Conn.Open()
+                cmd.Parameters.AddWithValue("@Usuario", txtUsername.Text)
+                cmd.Parameters.AddWithValue("@Senha", txtPassword.Text)
+                Dim value = cmd.ExecuteScalar()
+                If value > 0 Then
 
-                        'MessageBox.Show("Seja Bem Vindo!")
-                        FimData1()
+                    'MessageBox.Show("Seja Bem Vindo!")
+                    FimData1()
 
-                        MDIPrincipal.Show()
-                        Me.Hide()
-                    Else
-                        MessageBox.Show("Usuário ou Senha incorreta!")
-                    End If
-                End Using
-
+                    MDIPrincipal.Show()
+                    Me.Hide()
+                Else
+                    MessageBox.Show("Usuário ou Senha incorreta!")
+                End If
             End Using
+
+        End Using
 
 
     End Sub

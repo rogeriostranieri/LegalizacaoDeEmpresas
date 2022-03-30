@@ -1,5 +1,7 @@
-﻿Imports System.Data
+﻿Imports System.ComponentModel
 Imports System.Data.SqlClient
+Imports System.IO
+Imports System.Net.Mail
 
 
 Module ModeMail
@@ -136,4 +138,7 @@ E no Sistema ja foi atualizado: " & E & ".
 
 
     End Sub
+
+
+
 End Module

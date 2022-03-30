@@ -1,6 +1,4 @@
-﻿Imports System.Data
-'Imports System.Data.SqlClientPublic
-
+﻿'Imports System.Data.SqlClientPublic
 
 Class VencimentoAlvara
     Private Sub LaudosBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)

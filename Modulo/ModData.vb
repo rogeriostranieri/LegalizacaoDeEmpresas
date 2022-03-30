@@ -1,6 +1,4 @@
-﻿Imports System.Runtime.InteropServices
-
-Module ModData
+﻿Module ModData
     'Dim Registradodll As New PrinceDLL.Rogerio.Registro
     'Dim Empresadll As New PrinceDLL.Rogerio.Empresa
     ' Dim agoradll As New PrinceDLL.Rogerio.DataHoje

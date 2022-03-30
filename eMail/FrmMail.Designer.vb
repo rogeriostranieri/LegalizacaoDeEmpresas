@@ -29,9 +29,9 @@ Partial Class FrmMail
         Dim SmtpPortLabel As System.Windows.Forms.Label
         Dim ClientSslLabel As System.Windows.Forms.Label
         Dim ParaGeralLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMail))
         Dim HabilitaSslLabel As System.Windows.Forms.Label
         Dim CredencialLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMail))
         Me.LabelDe = New System.Windows.Forms.Label()
         Me.LabelPara = New System.Windows.Forms.Label()
         Me.ButtonEnviar = New System.Windows.Forms.Button()
@@ -39,6 +39,8 @@ Partial Class FrmMail
         Me.TextBoxAssunto = New System.Windows.Forms.TextBox()
         Me.TabControle = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.LblAnexo = New System.Windows.Forms.Label()
+        Me.ButtonAnexar = New System.Windows.Forms.Button()
         Me.ButtonGeral = New System.Windows.Forms.Button()
         Me.ButtonContatos = New System.Windows.Forms.Button()
         Me.ButtonLimpar = New System.Windows.Forms.Button()
@@ -57,6 +59,11 @@ Partial Class FrmMail
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EMailCaixaDeSaidaBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.CredencialComboBox = New System.Windows.Forms.ComboBox()
+        Me.HabilitaSslComboBox = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ParaGeralRichTextBox = New System.Windows.Forms.RichTextBox()
         Me.ButtonExcluirConfig = New System.Windows.Forms.Button()
@@ -67,16 +74,15 @@ Partial Class FrmMail
         Me.SmtpClientTextBox = New System.Windows.Forms.TextBox()
         Me.SenhaEmailTextBox = New System.Windows.Forms.TextBox()
         Me.EMailTextBox = New System.Windows.Forms.TextBox()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.EMailTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.eMailTableAdapter()
         Me.TableAdapterManager = New PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager()
         Me.EMailCaixaDeSaidaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EMailCaixaDeSaidaTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.eMailCaixaDeSaidaTableAdapter()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.HabilitaSslComboBox = New System.Windows.Forms.ComboBox()
-        Me.CredencialComboBox = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         EMailLabel = New System.Windows.Forms.Label()
         SenhaEmailLabel = New System.Windows.Forms.Label()
         SmtpClientLabel = New System.Windows.Forms.Label()
@@ -151,6 +157,24 @@ Partial Class FrmMail
         ParaGeralLabel.TabIndex = 50
         ParaGeralLabel.Text = "E-mail padrão para destino:"
         '
+        'HabilitaSslLabel
+        '
+        HabilitaSslLabel.AutoSize = True
+        HabilitaSslLabel.Location = New System.Drawing.Point(71, 147)
+        HabilitaSslLabel.Name = "HabilitaSslLabel"
+        HabilitaSslLabel.Size = New System.Drawing.Size(68, 13)
+        HabilitaSslLabel.TabIndex = 52
+        HabilitaSslLabel.Text = "Habilita SSL:"
+        '
+        'CredencialLabel
+        '
+        CredencialLabel.AutoSize = True
+        CredencialLabel.Location = New System.Drawing.Point(79, 174)
+        CredencialLabel.Name = "CredencialLabel"
+        CredencialLabel.Size = New System.Drawing.Size(60, 13)
+        CredencialLabel.TabIndex = 53
+        CredencialLabel.Text = "Credencial:"
+        '
         'LabelDe
         '
         Me.LabelDe.AutoSize = True
@@ -174,7 +198,7 @@ Partial Class FrmMail
         Me.ButtonEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ButtonEnviar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonEnviar.ForeColor = System.Drawing.Color.Green
-        Me.ButtonEnviar.Location = New System.Drawing.Point(394, 297)
+        Me.ButtonEnviar.Location = New System.Drawing.Point(459, 318)
         Me.ButtonEnviar.Name = "ButtonEnviar"
         Me.ButtonEnviar.Size = New System.Drawing.Size(75, 23)
         Me.ButtonEnviar.TabIndex = 4
@@ -183,7 +207,7 @@ Partial Class FrmMail
         '
         'RichTextBoxMensagem
         '
-        Me.RichTextBoxMensagem.Location = New System.Drawing.Point(48, 151)
+        Me.RichTextBoxMensagem.Location = New System.Drawing.Point(17, 151)
         Me.RichTextBoxMensagem.Name = "RichTextBoxMensagem"
         Me.RichTextBoxMensagem.Size = New System.Drawing.Size(421, 140)
         Me.RichTextBoxMensagem.TabIndex = 5
@@ -191,7 +215,7 @@ Partial Class FrmMail
         '
         'TextBoxAssunto
         '
-        Me.TextBoxAssunto.Location = New System.Drawing.Point(48, 125)
+        Me.TextBoxAssunto.Location = New System.Drawing.Point(17, 125)
         Me.TextBoxAssunto.Name = "TextBoxAssunto"
         Me.TextBoxAssunto.Size = New System.Drawing.Size(421, 20)
         Me.TextBoxAssunto.TabIndex = 6
@@ -210,6 +234,8 @@ Partial Class FrmMail
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.LblAnexo)
+        Me.TabPage1.Controls.Add(Me.ButtonAnexar)
         Me.TabPage1.Controls.Add(Me.ButtonGeral)
         Me.TabPage1.Controls.Add(Me.ButtonContatos)
         Me.TabPage1.Controls.Add(Me.ButtonLimpar)
@@ -227,6 +253,28 @@ Partial Class FrmMail
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Enviar"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'LblAnexo
+        '
+        Me.LblAnexo.AutoSize = True
+        Me.LblAnexo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblAnexo.Location = New System.Drawing.Point(85, 302)
+        Me.LblAnexo.Name = "LblAnexo"
+        Me.LblAnexo.Size = New System.Drawing.Size(54, 16)
+        Me.LblAnexo.TabIndex = 52
+        Me.LblAnexo.Text = "Anexo..."
+        '
+        'ButtonAnexar
+        '
+        Me.ButtonAnexar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ButtonAnexar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonAnexar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ButtonAnexar.Location = New System.Drawing.Point(17, 297)
+        Me.ButtonAnexar.Name = "ButtonAnexar"
+        Me.ButtonAnexar.Size = New System.Drawing.Size(62, 23)
+        Me.ButtonAnexar.TabIndex = 51
+        Me.ButtonAnexar.Text = "Anexar"
+        Me.ButtonAnexar.UseVisualStyleBackColor = True
         '
         'ButtonGeral
         '
@@ -257,7 +305,7 @@ Partial Class FrmMail
         Me.ButtonLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ButtonLimpar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonLimpar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ButtonLimpar.Location = New System.Drawing.Point(48, 297)
+        Me.ButtonLimpar.Location = New System.Drawing.Point(459, 289)
         Me.ButtonLimpar.Name = "ButtonLimpar"
         Me.ButtonLimpar.Size = New System.Drawing.Size(75, 23)
         Me.ButtonLimpar.TabIndex = 9
@@ -268,7 +316,7 @@ Partial Class FrmMail
         '
         Me.TextBoxPara.Location = New System.Drawing.Point(128, 54)
         Me.TextBoxPara.Name = "TextBoxPara"
-        Me.TextBoxPara.Size = New System.Drawing.Size(341, 56)
+        Me.TextBoxPara.Size = New System.Drawing.Size(310, 56)
         Me.TextBoxPara.TabIndex = 8
         Me.TextBoxPara.Text = ""
         '
@@ -387,6 +435,7 @@ Partial Class FrmMail
         'TabPage3
         '
         Me.TabPage3.AutoScroll = True
+        Me.TabPage3.Controls.Add(Me.LinkLabel1)
         Me.TabPage3.Controls.Add(Me.Label4)
         Me.TabPage3.Controls.Add(Me.Label3)
         Me.TabPage3.Controls.Add(CredencialLabel)
@@ -416,6 +465,56 @@ Partial Class FrmMail
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Configurações"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(420, 165)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(33, 13)
+        Me.LinkLabel1.TabIndex = 57
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Gmail"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(251, 147)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(36, 13)
+        Me.Label4.TabIndex = 56
+        Me.Label4.Text = "* True"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(251, 174)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.TabIndex = 55
+        Me.Label3.Text = "* False"
+        '
+        'CredencialComboBox
+        '
+        Me.CredencialComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailBindingSource, "Credencial", True))
+        Me.CredencialComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CredencialComboBox.FormattingEnabled = True
+        Me.CredencialComboBox.Items.AddRange(New Object() {"", "False", "True"})
+        Me.CredencialComboBox.Location = New System.Drawing.Point(145, 171)
+        Me.CredencialComboBox.Name = "CredencialComboBox"
+        Me.CredencialComboBox.Size = New System.Drawing.Size(100, 21)
+        Me.CredencialComboBox.TabIndex = 54
+        '
+        'HabilitaSslComboBox
+        '
+        Me.HabilitaSslComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailBindingSource, "HabilitaSsl", True))
+        Me.HabilitaSslComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.HabilitaSslComboBox.FormattingEnabled = True
+        Me.HabilitaSslComboBox.Items.AddRange(New Object() {"", "False", "True"})
+        Me.HabilitaSslComboBox.Location = New System.Drawing.Point(145, 144)
+        Me.HabilitaSslComboBox.Name = "HabilitaSslComboBox"
+        Me.HabilitaSslComboBox.Size = New System.Drawing.Size(100, 21)
+        Me.HabilitaSslComboBox.TabIndex = 53
         '
         'Label2
         '
@@ -490,7 +589,6 @@ Partial Class FrmMail
         Me.SmtpPortTextBox.Name = "SmtpPortTextBox"
         Me.SmtpPortTextBox.Size = New System.Drawing.Size(100, 20)
         Me.SmtpPortTextBox.TabIndex = 7
-        Me.SmtpPortTextBox.Text = "587"
         '
         'SmtpClientTextBox
         '
@@ -499,7 +597,6 @@ Partial Class FrmMail
         Me.SmtpClientTextBox.Name = "SmtpClientTextBox"
         Me.SmtpClientTextBox.Size = New System.Drawing.Size(226, 20)
         Me.SmtpClientTextBox.TabIndex = 5
-        Me.SmtpClientTextBox.Text = "mail.escritoriobetel.com.br"
         '
         'SenhaEmailTextBox
         '
@@ -508,7 +605,6 @@ Partial Class FrmMail
         Me.SenhaEmailTextBox.Name = "SenhaEmailTextBox"
         Me.SenhaEmailTextBox.Size = New System.Drawing.Size(226, 20)
         Me.SenhaEmailTextBox.TabIndex = 3
-        Me.SenhaEmailTextBox.Text = "betel8785"
         '
         'EMailTextBox
         '
@@ -517,7 +613,13 @@ Partial Class FrmMail
         Me.EMailTextBox.Name = "EMailTextBox"
         Me.EMailTextBox.Size = New System.Drawing.Size(226, 20)
         Me.EMailTextBox.TabIndex = 1
-        Me.EMailTextBox.Text = "contato@escritoriobetel.com.br"
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(2, 433)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(567, 23)
+        Me.ProgressBar1.TabIndex = 53
         '
         'EMailTableAdapter
         '
@@ -570,67 +672,13 @@ Partial Class FrmMail
         Me.Label1.ForeColor = System.Drawing.Color.GreenYellow
         Me.Label1.Location = New System.Drawing.Point(20, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(101, 32)
+        Me.Label1.Size = New System.Drawing.Size(100, 32)
         Me.Label1.TabIndex = 50
         Me.Label1.Text = "e-Mail"
         '
-        'HabilitaSslLabel
+        'OpenFileDialog1
         '
-        HabilitaSslLabel.AutoSize = True
-        HabilitaSslLabel.Location = New System.Drawing.Point(71, 147)
-        HabilitaSslLabel.Name = "HabilitaSslLabel"
-        HabilitaSslLabel.Size = New System.Drawing.Size(68, 13)
-        HabilitaSslLabel.TabIndex = 52
-        HabilitaSslLabel.Text = "Habilita SSL:"
-        '
-        'HabilitaSslComboBox
-        '
-        Me.HabilitaSslComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailBindingSource, "HabilitaSsl", True))
-        Me.HabilitaSslComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.HabilitaSslComboBox.FormattingEnabled = True
-        Me.HabilitaSslComboBox.Items.AddRange(New Object() {"", "False", "True"})
-        Me.HabilitaSslComboBox.Location = New System.Drawing.Point(145, 144)
-        Me.HabilitaSslComboBox.Name = "HabilitaSslComboBox"
-        Me.HabilitaSslComboBox.Size = New System.Drawing.Size(100, 21)
-        Me.HabilitaSslComboBox.TabIndex = 53
-        '
-        'CredencialLabel
-        '
-        CredencialLabel.AutoSize = True
-        CredencialLabel.Location = New System.Drawing.Point(79, 174)
-        CredencialLabel.Name = "CredencialLabel"
-        CredencialLabel.Size = New System.Drawing.Size(60, 13)
-        CredencialLabel.TabIndex = 53
-        CredencialLabel.Text = "Credencial:"
-        '
-        'CredencialComboBox
-        '
-        Me.CredencialComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EMailBindingSource, "Credencial", True))
-        Me.CredencialComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CredencialComboBox.FormattingEnabled = True
-        Me.CredencialComboBox.Items.AddRange(New Object() {"", "False", "True"})
-        Me.CredencialComboBox.Location = New System.Drawing.Point(145, 171)
-        Me.CredencialComboBox.Name = "CredencialComboBox"
-        Me.CredencialComboBox.Size = New System.Drawing.Size(100, 21)
-        Me.CredencialComboBox.TabIndex = 54
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(251, 174)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
-        Me.Label3.TabIndex = 55
-        Me.Label3.Text = "* False"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(251, 147)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(36, 13)
-        Me.Label4.TabIndex = 56
-        Me.Label4.Text = "* True"
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'FrmMail
         '
@@ -638,7 +686,8 @@ Partial Class FrmMail
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.backupfundo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(570, 430)
+        Me.ClientSize = New System.Drawing.Size(570, 458)
+        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TabControle)
@@ -709,4 +758,10 @@ Partial Class FrmMail
     Friend WithEvents HabilitaSslComboBox As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents ButtonAnexar As Button
+    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents LblAnexo As Label
+    Friend WithEvents ProgressBar1 As ProgressBar
 End Class
