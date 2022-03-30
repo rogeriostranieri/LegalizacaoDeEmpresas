@@ -744,4 +744,26 @@
 
         End If
     End Sub
+
+
+
+    Private Sub AlterarSenhaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AlterarSenhaToolStripMenuItem.Click
+
+        If Application.OpenForms.OfType(Of UserADM)().Count() > 0 Then
+
+            UserADM.Focus()
+            UserADM.Close()
+            UserADM.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            UserADM.Show()
+
+
+        Else
+
+            UserADM.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            UserADM.Show()
+
+        End If
+    End Sub
 End Class

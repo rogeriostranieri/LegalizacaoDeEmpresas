@@ -29,6 +29,7 @@ Partial Class MDIPrincipal
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContadorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UsuárioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.SairToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpresasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -78,6 +79,7 @@ Partial Class MDIPrincipal
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.AlterarSenhaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -96,7 +98,7 @@ Partial Class MDIPrincipal
         '
         'MenuToolStripMenuItem
         '
-        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ControleToolStripMenuItem, Me.ContadorToolStripMenuItem, Me.ToolStripSeparator1, Me.SairToolStripMenuItem1})
+        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ControleToolStripMenuItem, Me.ContadorToolStripMenuItem, Me.UsuárioToolStripMenuItem, Me.ToolStripSeparator1, Me.SairToolStripMenuItem1})
         Me.MenuToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.MenuToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
@@ -114,6 +116,13 @@ Partial Class MDIPrincipal
         Me.ContadorToolStripMenuItem.Name = "ContadorToolStripMenuItem"
         Me.ContadorToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.ContadorToolStripMenuItem.Text = "Dados do Contador"
+        '
+        'UsuárioToolStripMenuItem
+        '
+        Me.UsuárioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlterarSenhaToolStripMenuItem})
+        Me.UsuárioToolStripMenuItem.Name = "UsuárioToolStripMenuItem"
+        Me.UsuárioToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
+        Me.UsuárioToolStripMenuItem.Text = "Usuário"
         '
         'ToolStripSeparator1
         '
@@ -478,7 +487,13 @@ Partial Class MDIPrincipal
         Me.ToolStripStatusLabel.ForeColor = System.Drawing.Color.White
         Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(204, 17)
-        Me.ToolStripStatusLabel.Text = "Produzido por Rogerio Stranieri -2019"
+        Me.ToolStripStatusLabel.Text = "Produzido por Rogerio Stranieri -2022"
+        '
+        'AlterarSenhaToolStripMenuItem
+        '
+        Me.AlterarSenhaToolStripMenuItem.Name = "AlterarSenhaToolStripMenuItem"
+        Me.AlterarSenhaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AlterarSenhaToolStripMenuItem.Text = "Alterar Senha"
         '
         'MDIPrincipal
         '
@@ -557,4 +572,6 @@ Partial Class MDIPrincipal
     Friend WithEvents ControleToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripButton5 As ToolStripButton
     Friend WithEvents EMailToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UsuárioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AlterarSenhaToolStripMenuItem As ToolStripMenuItem
 End Class
