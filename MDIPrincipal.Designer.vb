@@ -30,6 +30,7 @@ Partial Class MDIPrincipal
         Me.ControleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContadorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuárioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AlterarSenhaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.SairToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpresasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -79,7 +80,8 @@ Partial Class MDIPrincipal
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.AlterarSenhaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -123,6 +125,12 @@ Partial Class MDIPrincipal
         Me.UsuárioToolStripMenuItem.Name = "UsuárioToolStripMenuItem"
         Me.UsuárioToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.UsuárioToolStripMenuItem.Text = "Usuário"
+        '
+        'AlterarSenhaToolStripMenuItem
+        '
+        Me.AlterarSenhaToolStripMenuItem.Name = "AlterarSenhaToolStripMenuItem"
+        Me.AlterarSenhaToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.AlterarSenhaToolStripMenuItem.Text = "Alterar Senha"
         '
         'ToolStripSeparator1
         '
@@ -365,7 +373,7 @@ Partial Class MDIPrincipal
         '
         Me.ToolStrip.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.ToolStrip.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripSeparator3, Me.ToolStripButton2, Me.ToolStripSeparator4, Me.ToolStripButton3, Me.ToolStripSeparator7, Me.ToolStripButton4, Me.ToolStripSeparator5, Me.ToolStripDropDownButton1, Me.ToolStripButton5})
+        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripSeparator3, Me.ToolStripButton2, Me.ToolStripSeparator4, Me.ToolStripButton3, Me.ToolStripSeparator7, Me.ToolStripButton4, Me.ToolStripSeparator5, Me.ToolStripDropDownButton1, Me.ToolStripButton5, Me.ToolStripSeparator8, Me.ToolStripButton6})
         Me.ToolStrip.Location = New System.Drawing.Point(0, 25)
         Me.ToolStrip.Name = "ToolStrip"
         Me.ToolStrip.Size = New System.Drawing.Size(796, 25)
@@ -489,11 +497,19 @@ Partial Class MDIPrincipal
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(204, 17)
         Me.ToolStripStatusLabel.Text = "Produzido por Rogerio Stranieri -2022"
         '
-        'AlterarSenhaToolStripMenuItem
+        'ToolStripSeparator8
         '
-        Me.AlterarSenhaToolStripMenuItem.Name = "AlterarSenhaToolStripMenuItem"
-        Me.AlterarSenhaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.AlterarSenhaToolStripMenuItem.Text = "Alterar Senha"
+        Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(6, 25)
+        '
+        'ToolStripButton6
+        '
+        Me.ToolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripButton6.Image = CType(resources.GetObject("ToolStripButton6.Image"), System.Drawing.Image)
+        Me.ToolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton6.Name = "ToolStripButton6"
+        Me.ToolStripButton6.Size = New System.Drawing.Size(65, 22)
+        Me.ToolStripButton6.Text = "Anotações"
         '
         'MDIPrincipal
         '
@@ -508,7 +524,9 @@ Partial Class MDIPrincipal
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "MDIPrincipal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Principal"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         Me.ToolStrip.ResumeLayout(False)
@@ -574,4 +592,6 @@ Partial Class MDIPrincipal
     Friend WithEvents EMailToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsuárioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AlterarSenhaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator8 As ToolStripSeparator
+    Friend WithEvents ToolStripButton6 As ToolStripButton
 End Class

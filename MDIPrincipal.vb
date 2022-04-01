@@ -766,4 +766,23 @@
 
         End If
     End Sub
+
+    Private Sub ToolStripButton6_Click(sender As Object, e As EventArgs) Handles ToolStripButton6.Click
+        If Application.OpenForms.OfType(Of FrmAnotacoes)().Count() > 0 Then
+
+            FrmAnotacoes.Focus()
+            FrmAnotacoes.Close()
+            FrmAnotacoes.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmAnotacoes.Show()
+
+
+        Else
+
+            FrmAnotacoes.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmAnotacoes.Show()
+
+        End If
+    End Sub
 End Class

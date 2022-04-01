@@ -444,7 +444,7 @@
                 ' MessageBox.Show(Ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.[Error])
 
                 If MsgBox(" Deseja Buscar CEP correto no site dos correios?", MsgBoxStyle.YesNo, "Busca CEP") = MsgBoxResult.Yes Then
-                    System.Diagnostics.Process.Start("http://www.buscacep.correios.com.br/sistemas/buscacep/")
+                    System.Diagnostics.Process.Start("https://buscacepinter.correios.com.br/app/endereco/index.php")
                 Else
 
                 End If
@@ -998,7 +998,7 @@ Caso o contrato não esteja em sua forma digital (antigo), recomenda-se:
 
 
     Private Sub LinkLabel10_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel10.LinkClicked
-        System.Diagnostics.Process.Start("http://www.buscacep.correios.com.br/sistemas/buscacep/")
+        System.Diagnostics.Process.Start("https://www.correios.com.br")
 
     End Sub
 
@@ -1904,4 +1904,6 @@ CPF =
 
         End If
     End Sub
+
+
 End Class
