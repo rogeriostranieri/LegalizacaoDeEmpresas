@@ -35,10 +35,8 @@ Partial Class FrmAnotacoes
         Me.PrinceDBDataSet = New PrinceSistemas.PrinceDBDataSet()
         Me.AnotacoesTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.AnotacoesTableAdapter()
         Me.TableAdapterManager = New PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager()
-        Me.BotaoMudarFonte = New System.Windows.Forms.Button()
         Me.GroupBoxEditor = New System.Windows.Forms.GroupBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnNegrito = New System.Windows.Forms.Button()
         Me.cbotamanho = New System.Windows.Forms.ComboBox()
         Me.cbofonte = New System.Windows.Forms.ComboBox()
         Me.MudarCorBotao = New System.Windows.Forms.Button()
@@ -53,6 +51,19 @@ Partial Class FrmAnotacoes
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
+        Me.BtnItalico = New System.Windows.Forms.Button()
+        Me.BtnSublinhado = New System.Windows.Forms.Button()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripComboBox1 = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripComboBox2 = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.AnotacoesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,6 +71,7 @@ Partial Class FrmAnotacoes
         Me.GroupBox1.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel2
@@ -203,69 +215,56 @@ Partial Class FrmAnotacoes
         Me.TableAdapterManager.TelefonesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'BotaoMudarFonte
-        '
-        Me.BotaoMudarFonte.Location = New System.Drawing.Point(19, 13)
-        Me.BotaoMudarFonte.Name = "BotaoMudarFonte"
-        Me.BotaoMudarFonte.Size = New System.Drawing.Size(75, 23)
-        Me.BotaoMudarFonte.TabIndex = 3
-        Me.BotaoMudarFonte.Text = "Fonte"
-        Me.BotaoMudarFonte.UseVisualStyleBackColor = True
-        '
         'GroupBoxEditor
         '
-        Me.GroupBoxEditor.Controls.Add(Me.Button2)
-        Me.GroupBoxEditor.Controls.Add(Me.Button1)
+        Me.GroupBoxEditor.Controls.Add(Me.ToolStrip1)
+        Me.GroupBoxEditor.Controls.Add(Me.BtnSublinhado)
+        Me.GroupBoxEditor.Controls.Add(Me.BtnItalico)
+        Me.GroupBoxEditor.Controls.Add(Me.BtnNegrito)
         Me.GroupBoxEditor.Controls.Add(Me.cbotamanho)
         Me.GroupBoxEditor.Controls.Add(Me.cbofonte)
         Me.GroupBoxEditor.Controls.Add(Me.MudarCorBotao)
-        Me.GroupBoxEditor.Controls.Add(Me.BotaoMudarFonte)
         Me.GroupBoxEditor.Location = New System.Drawing.Point(138, 53)
         Me.GroupBoxEditor.Name = "GroupBoxEditor"
-        Me.GroupBoxEditor.Size = New System.Drawing.Size(602, 93)
+        Me.GroupBoxEditor.Size = New System.Drawing.Size(651, 93)
         Me.GroupBoxEditor.TabIndex = 53
         Me.GroupBoxEditor.TabStop = False
         Me.GroupBoxEditor.Text = "Editor"
         '
-        'Button2
+        'BtnNegrito
         '
-        Me.Button2.Location = New System.Drawing.Point(444, 13)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 8
-        Me.Button2.Text = "Cor"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(363, 13)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Cor"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnNegrito.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNegrito.Location = New System.Drawing.Point(361, 59)
+        Me.BtnNegrito.Name = "BtnNegrito"
+        Me.BtnNegrito.Size = New System.Drawing.Size(30, 28)
+        Me.BtnNegrito.TabIndex = 8
+        Me.BtnNegrito.Text = "B"
+        Me.BtnNegrito.UseVisualStyleBackColor = True
         '
         'cbotamanho
         '
+        Me.cbotamanho.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbotamanho.FormattingEnabled = True
-        Me.cbotamanho.Location = New System.Drawing.Point(198, 64)
+        Me.cbotamanho.Location = New System.Drawing.Point(245, 61)
         Me.cbotamanho.Name = "cbotamanho"
-        Me.cbotamanho.Size = New System.Drawing.Size(55, 21)
+        Me.cbotamanho.Size = New System.Drawing.Size(61, 26)
         Me.cbotamanho.TabIndex = 6
         '
         'cbofonte
         '
+        Me.cbofonte.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbofonte.FormattingEnabled = True
-        Me.cbofonte.Location = New System.Drawing.Point(19, 64)
+        Me.cbofonte.Location = New System.Drawing.Point(6, 61)
         Me.cbofonte.Name = "cbofonte"
-        Me.cbofonte.Size = New System.Drawing.Size(150, 21)
+        Me.cbofonte.Size = New System.Drawing.Size(233, 26)
         Me.cbofonte.TabIndex = 5
         '
         'MudarCorBotao
         '
-        Me.MudarCorBotao.Location = New System.Drawing.Point(100, 13)
+        Me.MudarCorBotao.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MudarCorBotao.Location = New System.Drawing.Point(312, 59)
         Me.MudarCorBotao.Name = "MudarCorBotao"
-        Me.MudarCorBotao.Size = New System.Drawing.Size(75, 23)
+        Me.MudarCorBotao.Size = New System.Drawing.Size(43, 28)
         Me.MudarCorBotao.TabIndex = 4
         Me.MudarCorBotao.Text = "Cor"
         Me.MudarCorBotao.UseVisualStyleBackColor = True
@@ -287,12 +286,12 @@ Partial Class FrmAnotacoes
         Me.lblMudaTexto.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblMudaTexto.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMudaTexto.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMudaTexto.ForeColor = System.Drawing.Color.Blue
         Me.lblMudaTexto.Location = New System.Drawing.Point(229, 6)
         Me.lblMudaTexto.Name = "lblMudaTexto"
         Me.lblMudaTexto.Size = New System.Drawing.Size(416, 35)
         Me.lblMudaTexto.TabIndex = 55
-        Me.lblMudaTexto.Text = "**"
         '
         'ButtonSalvar
         '
@@ -382,6 +381,107 @@ Partial Class FrmAnotacoes
         Me.GroupBox2.TabIndex = 56
         Me.GroupBox2.TabStop = False
         '
+        'BtnItalico
+        '
+        Me.BtnItalico.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnItalico.Location = New System.Drawing.Point(397, 59)
+        Me.BtnItalico.Name = "BtnItalico"
+        Me.BtnItalico.Size = New System.Drawing.Size(30, 28)
+        Me.BtnItalico.TabIndex = 9
+        Me.BtnItalico.Text = "I"
+        Me.BtnItalico.UseVisualStyleBackColor = True
+        '
+        'BtnSublinhado
+        '
+        Me.BtnSublinhado.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSublinhado.Location = New System.Drawing.Point(433, 59)
+        Me.BtnSublinhado.Name = "BtnSublinhado"
+        Me.BtnSublinhado.Size = New System.Drawing.Size(30, 28)
+        Me.BtnSublinhado.TabIndex = 10
+        Me.BtnSublinhado.Text = "S"
+        Me.BtnSublinhado.UseVisualStyleBackColor = True
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripComboBox1, Me.ToolStripSeparator1, Me.ToolStripComboBox2, Me.ToolStripSeparator2, Me.ToolStripButton1, Me.ToolStripSeparator3, Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripButton4, Me.ToolStripSeparator4})
+        Me.ToolStrip1.Location = New System.Drawing.Point(3, 16)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(645, 28)
+        Me.ToolStrip1.TabIndex = 11
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripComboBox1
+        '
+        Me.ToolStripComboBox1.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.ToolStripComboBox1.Name = "ToolStripComboBox1"
+        Me.ToolStripComboBox1.Size = New System.Drawing.Size(121, 28)
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 28)
+        '
+        'ToolStripComboBox2
+        '
+        Me.ToolStripComboBox2.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.ToolStripComboBox2.Name = "ToolStripComboBox2"
+        Me.ToolStripComboBox2.Size = New System.Drawing.Size(121, 28)
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 28)
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripButton1.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(50, 25)
+        Me.ToolStripButton1.Text = "Cores"
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripButton2.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(23, 25)
+        Me.ToolStripButton2.Text = "B"
+        '
+        'ToolStripButton3
+        '
+        Me.ToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripButton3.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
+        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton3.Name = "ToolStripButton3"
+        Me.ToolStripButton3.Size = New System.Drawing.Size(23, 25)
+        Me.ToolStripButton3.Text = "I"
+        '
+        'ToolStripButton4
+        '
+        Me.ToolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripButton4.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.ToolStripButton4.Image = CType(resources.GetObject("ToolStripButton4.Image"), System.Drawing.Image)
+        Me.ToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton4.Name = "ToolStripButton4"
+        Me.ToolStripButton4.Size = New System.Drawing.Size(23, 25)
+        Me.ToolStripButton4.Text = "S"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 28)
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 28)
+        '
         'FrmAnotacoes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -397,9 +497,12 @@ Partial Class FrmAnotacoes
         CType(Me.AnotacoesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBoxEditor.ResumeLayout(False)
+        Me.GroupBoxEditor.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -415,7 +518,6 @@ Partial Class FrmAnotacoes
     Friend WithEvents ButtonEstadual As Button
     Friend WithEvents ButtonPrefeitura As Button
     Friend WithEvents ButtonDemais As Button
-    Friend WithEvents BotaoMudarFonte As Button
     Friend WithEvents GroupBoxEditor As GroupBox
     Friend WithEvents MudarCorBotao As Button
     Friend WithEvents cbotamanho As ComboBox
@@ -431,7 +533,19 @@ Partial Class FrmAnotacoes
     Friend WithEvents RichTextBoxAnotacao As RichTextBox
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnNegrito As Button
     Friend WithEvents ColorDialog1 As ColorDialog
+    Friend WithEvents BtnItalico As Button
+    Friend WithEvents BtnSublinhado As Button
+    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripComboBox1 As ToolStripComboBox
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripComboBox2 As ToolStripComboBox
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents ToolStripButton3 As ToolStripButton
+    Friend WithEvents ToolStripButton4 As ToolStripButton
+    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
 End Class

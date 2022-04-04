@@ -5,8 +5,15 @@
         'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.Empresas'. Você pode movê-la ou removê-la conforme necessário.
         Me.EmpresasTableAdapter.Fill(Me.PrinceDBDataSet.Empresas)
         'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.Laudos'. Você pode movê-la ou removê-la conforme necessário.
-        Me.LaudosTableAdapter.Fill(Me.PrinceDBDataSet.Laudos)
+        LaudosTableAdapter.Fill(Me.PrinceDBDataSet.Laudos)
 
+        'FILTRO  EMPRESA
+        Dim FilterA As String = MaskedTextBox1.Text
+        EmpresasBindingSource.Filter = "AvisarDia like '" & FilterA & "%'"
+
+        'FILTRO LAUDO
+        Dim FilterB As String = MaskedTextBox1.Text
+        LaudosBindingSource.Filter = "AvisarDia like '" & FilterB & "%'"
 
         'Data de Hoje convertendo   
         MaskedTextBox1.Text = Now.ToString("dd/MM/yyyy")
@@ -54,23 +61,41 @@
 
         'FIM DO CODIGO .........................
 
+
+        '//// calendario 
+        'Dim Calendario As New MonthCalendar  ' VER ISSO E COLOCA COMO PADRAO
+        Calendar1.Visible = False
+        Calendar1.Location = New Point(258, 107)
+        '////// fim calencario        
+
+        Me.Refresh()
     End Sub
 
     Private Sub Form_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Escape Then Me.Close()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+    Private Sub Filtro()
         ' PESQUISA COM FILTRO POR DATA AVISO
-        'FILTRO LAUDO
-        Dim FilterA As String
-        FilterA = MaskedTextBox1.Text
-        LaudosBindingSource.Filter = "AvisarDia like '" & FilterA & "%'"
 
         'FILTRO  EMPRESA
-        Dim FilterB As String
-        FilterB = MaskedTextBox1.Text
-        EmpresasBindingSource.Filter = "AvisarDia like '" & FilterB & "%'"
+        Dim FilterA As String = MaskedTextBox1.Text
+        EmpresasBindingSource.Filter = "AvisarDia like '" & FilterA & "%'"
+
+        'FILTRO LAUDO
+        Dim FilterB As String = MaskedTextBox1.Text
+        LaudosBindingSource.Filter = "AvisarDia like '" & FilterB & "%'"
+
+
+        'igual do venc laudos
+        VbAvisoPrincipal.MaskedTextBox2.Text = MaskedTextBox1.Text
+        VbAvisoPrincipal.Button2.PerformClick()
+
+        Me.Refresh()
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Filtro()
     End Sub
 
 
@@ -123,10 +148,16 @@
 
             'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.Empresas'. Você pode movê-la ou removê-la conforme necessário.
             Me.EmpresasTableAdapter.Fill(Me.PrinceDBDataSet.Empresas)
+            'Me.EmpresasTableAdapter.Update(Me.PrinceDBDataSet.Empresas)
             'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.Laudos'. Você pode movê-la ou removê-la conforme necessário.
             Me.LaudosTableAdapter.Fill(Me.PrinceDBDataSet.Laudos)
+            '  Me.LaudosTableAdapter.Update(Me.PrinceDBDataSet.Laudos)
 
-            Me.Refresh()
+            ' Me.Avisos_Load(sender, e)
+            ' Me.Show()
+
+
+            ' Me.Refresh()
         Finally
 
 
@@ -167,4 +198,41 @@
 
         End If
     End Sub
+
+
+    '/////////// Inicio do codigo de mostrar calendario
+    '///// TEM MAIS NO LOAD 
+    Private Sub MaskedTextBox1_Click(sender As Object, e As EventArgs) Handles MaskedTextBox1.Click
+        Calendar1.Visible = True
+
+        'AvisarDiaMaskedTextBox.Text = Calendar1.SelectionStart.ToShortDateString()
+        'Calendar1.Visible = False
+    End Sub
+
+
+
+    Private Sub MaskedTextBox1_Leave(sender As Object, e As EventArgs) Handles MaskedTextBox1.Leave
+        Calendar1.Visible = False
+
+    End Sub
+
+    Private Sub Calendar1_Leave(sender As Object, e As EventArgs) Handles Calendar1.Leave
+        Calendar1.Visible = False
+
+    End Sub
+
+    Private Sub Calendar1_MouseLeave(sender As Object, e As EventArgs) Handles Calendar1.MouseLeave
+        Calendar1.Visible = False
+
+    End Sub
+
+    Private Sub Calendar1_DateSelected(sender As Object, e As DateRangeEventArgs) Handles Calendar1.DateSelected
+        MaskedTextBox1.Text = Calendar1.SelectionStart
+        Calendar1.Visible = False
+        Filtro()
+
+    End Sub
+
+
+    '/////////// fim do codigo de mostrar calendario        
 End Class

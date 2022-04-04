@@ -1814,7 +1814,7 @@ CPF =
     '/////////// fim do codigo de mostrar calendario
 
     Private Sub LinkLabel18_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel18.LinkClicked
-        System.Diagnostics.Process.Start("http://www8.receita.fazenda.gov.br/simplesnacional/servicos/grupo.aspx?grp=10")
+        System.Diagnostics.Process.Start("https://www8.receita.fazenda.gov.br/simplesnacional/aplicacoes.aspx?id=21")
 
     End Sub
 

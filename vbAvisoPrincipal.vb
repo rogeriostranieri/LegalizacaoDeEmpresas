@@ -3,20 +3,24 @@
         'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.Laudos'. Você pode movê-la ou removê-la conforme necessário.
         Me.LaudosTableAdapter.Fill(Me.PrinceDBDataSet.Laudos)
 
-        Me.Refresh()
+
         'LaudosBindingSource.Filter = "BombeiroDataProvisorio <> '0' OR ViabilidadeDataProvisorio <> '0' OR AmbientalDataProvisorio <> '0' OR SanitarioDataProvisorio <> '0' OR SetranDataProvisorio <> '0' "
-        MaskedTextBox2.Text = Now
-        Button2.PerformClick()
+        MaskedTextBox1.Text = Now.ToString("dd/MM/yyyy")
+
+        'FILTRO LAUDO
+        Dim FilterB As String = MaskedTextBox1.Text
+        LaudosBindingSource.Filter = "BombeiroDataProvisorio = '" & FilterB & "' OR ViabilidadeDataProvisorio = '" & FilterB & "' OR AmbientalDataProvisorio = '" & FilterB & "' OR SanitarioDataProvisorio = '" & FilterB & "' OR SetranDataProvisorio = '" & FilterB & "' "
+
+        Me.Refresh()
 
     End Sub
 
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        ' PESQUISA COM FILTRO POR DATA AVISO
         'FILTRO LAUDO
-        Dim FilterA As String
-        FilterA = MaskedTextBox2.Text
-        LaudosBindingSource.Filter = "BombeiroDataProvisorio = '" & FilterA & "' OR ViabilidadeDataProvisorio = '" & FilterA & "' OR AmbientalDataProvisorio = '" & FilterA & "' OR SanitarioDataProvisorio = '" & FilterA & "' OR SetranDataProvisorio = '" & FilterA & "' "
+        Dim FilterB As String = MaskedTextBox1.Text
+        LaudosBindingSource.Filter = "BombeiroDataProvisorio = '" & FilterB & "' OR ViabilidadeDataProvisorio = '" & FilterB & "' OR AmbientalDataProvisorio = '" & FilterB & "' OR SanitarioDataProvisorio = '" & FilterB & "' OR SetranDataProvisorio = '" & FilterB & "' "
+        Me.Refresh()
 
     End Sub
 
@@ -34,4 +38,7 @@
             FrmAlvara.ComboBox1.Focus()
         End If
     End Sub
+
+
+
 End Class
