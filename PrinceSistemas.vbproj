@@ -162,6 +162,12 @@
     <Compile Include="Anotacoes\FrmAnotacoes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Anotacoes\FrmBuscaAnotacoes.Designer.vb">
+      <DependentUpon>FrmBuscaAnotacoes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Anotacoes\FrmBuscaAnotacoes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Buscadores\BuscaNomeSocio.Designer.vb">
       <DependentUpon>BuscaNomeSocio.vb</DependentUpon>
     </Compile>
@@ -471,6 +477,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anotacoes\FrmAnotacoes.resx">
       <DependentUpon>FrmAnotacoes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anotacoes\FrmBuscaAnotacoes.resx">
+      <DependentUpon>FrmBuscaAnotacoes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Buscadores\BuscaNomeSocio.resx">
       <DependentUpon>BuscaNomeSocio.vb</DependentUpon>

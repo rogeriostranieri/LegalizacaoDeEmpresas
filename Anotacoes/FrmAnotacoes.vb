@@ -1,8 +1,12 @@
 ﻿Imports System.Drawing.Text
 
+
 Public Class FrmAnotacoes
 
 
+    Private Sub Form_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Escape Then Me.Close()
+    End Sub
 
 
     Private Sub FrmAnotacoes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -32,6 +36,99 @@ Public Class FrmAnotacoes
 
     End Sub
 
+    Private Sub FrmAnotacoes_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim changedRecords As System.Data.DataTable
+        ' changedRecords = PrinceDBDataSet.Telefones.GetChanges()
+        Me.AnotacoesBindingSource.EndEdit()
+
+
+        changedRecords = PrinceDBDataSet.Anotacoes.GetChanges()
+
+
+        If Not (changedRecords Is Nothing) AndAlso (changedRecords.Rows.Count > 0) Then
+
+            Dim message As String
+
+            'message = String.Format("Você realizou = {0} alterações(s)." + vbCrLf + "Deseja Salvar estas alterações?", changedRecords.Rows.Count)
+            message = String.Format("Você realizou alguma(s) alterações(s)." + vbCrLf + "Deseja Salvar estas alterações?", changedRecords.Rows.Count)
+
+
+            Dim result As Integer = MessageBox.Show(message, "Prince Alerta", MessageBoxButtons.YesNoCancel)
+            If result = DialogResult.Cancel Then
+                e.Cancel = True
+            ElseIf result = DialogResult.No Then
+
+            ElseIf result = DialogResult.Yes Then
+                Try
+
+                    AnotacoesTableAdapter.Update(PrinceDBDataSet.Anotacoes)
+
+                Catch error_t As Exception
+                    MsgBox(error_t.ToString)
+                    '' Catch exc As Exception
+
+                    ' MessageBox.Show("Ocorreu um Erro ao atualizar" + vbCrLf + exc.Message + vbCrLf + vbCrLf + "Linha em vermelho com erro", "Prince Sistemas Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+                End Try
+
+            End If
+
+
+        End If
+    End Sub
+
+    Private Sub Salvar()
+
+        Dim changedRecords As System.Data.DataTable
+        ' changedRecords = PrinceDBDataSet.Telefones.GetChanges()
+        Me.AnotacoesBindingSource.EndEdit()
+        changedRecords = PrinceDBDataSet.Anotacoes.GetChanges()
+
+
+        If Not (changedRecords Is Nothing) AndAlso (changedRecords.Rows.Count > 0) Then
+
+            Dim message As String
+
+            'MOSTRA MENSAGM BOX
+            'message = String.Format("Você realizou = {0} alterações(s)." + vbCrLf + "Deseja Salvar estas alterações?", changedRecords.Rows.Count)
+            message = String.Format("Você realizou alguma(s) alterações(s)." + vbCrLf + "Deseja Salvar estas alterações?", changedRecords.Rows.Count)
+
+            'mostra mensagem box SIM OU NAO OU CANCELA
+            Dim result As Integer = MessageBox.Show(message, "Prince Alerta", MessageBoxButtons.YesNoCancel)
+            If result = DialogResult.Cancel Then
+                ' e.Cancel = True
+            ElseIf result = DialogResult.No Then
+                ' AnotacoesBindingSource.fill(PrinceDBDataSet.Anotacoes)
+                AnotacoesBindingSource.CancelEdit() 'teste pois nao funcionou o modo antigo
+
+
+            ElseIf result = DialogResult.Yes Then
+                Try
+                    'Salva alterações
+                    Me.Validate()
+                    Me.AnotacoesBindingSource.EndEdit()
+                    Me.AnotacoesTableAdapter.Update(Me.PrinceDBDataSet.Anotacoes)
+
+                    'Catch exc As Exception
+                    'MessageBox.Show("Ocorreu um Erro ao atualizar" + vbCrLf + exc.Message + vbCrLf + vbCrLf + "Linha em vermelho com erro", "Prince Sistemas Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Catch error_t As Exception
+                    MsgBox(error_t.ToString)
+                End Try
+
+            End If
+        Else
+
+
+
+        End If
+
+    End Sub
+    '=================================================================================
+    'FIM DO SAVE
+    '=================================================================================
+    '=================================================================================
+    'INicio do carregamento de fontes
+    '=================================================================================
 
     Private Sub Fontesinstaladas()
         Dim InstalledFonts = New InstalledFontCollection
@@ -121,6 +218,37 @@ Public Class FrmAnotacoes
         End If
     End Sub
 
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles BtnColar.Click
+        If RichTextBoxAnotacao.SelectedText.Length > 0 Then
+            RichTextBoxAnotacao.Paste()
+        Else
+            RichTextBoxAnotacao.Paste()
+        End If
+    End Sub
+
+
+    Private Sub BtnCopiar_Click(sender As Object, e As EventArgs) Handles BtnCopiar.Click
+        If RichTextBoxAnotacao.SelectedText.Length > 0 Then
+            RichTextBoxAnotacao.Copy()
+        Else
+            RichTextBoxAnotacao.Copy()
+        End If
+    End Sub
+
+    Private Sub BtnPesquisar_Click(sender As Object, e As EventArgs) Handles BtnPesquisar.Click
+        If Application.OpenForms.OfType(Of FrmBuscaAnotacoes)().Count() > 0 Then
+            FrmBuscaAnotacoes.Focus()
+            FrmBuscaAnotacoes.Close()
+            FrmBuscaAnotacoes.MdiParent = MDIPrincipal
+            FrmBuscaAnotacoes.Show()
+        Else
+            FrmBuscaAnotacoes.MdiParent = MDIPrincipal
+            FrmBuscaAnotacoes.Show()
+        End If
+
+        'CRIAR NOVO FORMULARIO
+    End Sub
+
     '=================================================================================
     'Salvar
     '=================================================================================
@@ -145,6 +273,11 @@ Public Class FrmAnotacoes
             lblMudaTexto.Text = "Inicial"
             RichTextBoxAnotacao.DataBindings.Clear()
             RichTextBoxAnotacao.DataBindings.Add(New Binding("RTF", AnotacoesBindingSource, "Inicial"))
+
+
+            'ANEXOS
+
+
         Catch ex As Exception
             MsgBox("Can't load Web page" & vbCrLf & ex.Message)
         End Try
@@ -215,15 +348,24 @@ Public Class FrmAnotacoes
         End Try
     End Sub
 
+    Private Sub ButtonFechar_Click(sender As Object, e As EventArgs) Handles ButtonFechar.Click
+        Me.Close()
 
+    End Sub
 
+    Private Sub AnotacoesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.AnotacoesBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.PrinceDBDataSet)
 
+    End Sub
 
 
 
     '=================================================================================
     'FIM botões
     '=================================================================================
+
 
 
 
