@@ -46,6 +46,11 @@ Partial Class FrmAnotacoes
         Me.BtnCopiar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.BtnAnexar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BtnPesquisar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BtnDataHoraAgora = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblMudaTexto = New System.Windows.Forms.Label()
@@ -63,8 +68,6 @@ Partial Class FrmAnotacoes
         Me.ButtonFechar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.AnotacoesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BtnPesquisar = New System.Windows.Forms.ToolStripButton()
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxEditor.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -110,19 +113,20 @@ Partial Class FrmAnotacoes
         'GroupBoxEditor
         '
         Me.GroupBoxEditor.Controls.Add(Me.ToolStrip1)
-        Me.GroupBoxEditor.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.GroupBoxEditor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBoxEditor.Location = New System.Drawing.Point(141, 49)
         Me.GroupBoxEditor.Name = "GroupBoxEditor"
-        Me.GroupBoxEditor.Size = New System.Drawing.Size(662, 45)
+        Me.GroupBoxEditor.Size = New System.Drawing.Size(662, 55)
         Me.GroupBoxEditor.TabIndex = 53
         Me.GroupBoxEditor.TabStop = False
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cbofonte, Me.ToolStripSeparator1, Me.cbotamanho, Me.ToolStripSeparator2, Me.MudarCorBotao, Me.ToolStripSeparator3, Me.BtnNegrito, Me.BtnItalico, Me.BtnSublinhado, Me.ToolStripSeparator4, Me.BtnColar, Me.BtnCopiar, Me.ToolStripSeparator5, Me.BtnAnexar, Me.ToolStripSeparator6, Me.BtnPesquisar})
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cbofonte, Me.ToolStripSeparator1, Me.cbotamanho, Me.ToolStripSeparator2, Me.MudarCorBotao, Me.ToolStripSeparator3, Me.BtnNegrito, Me.BtnItalico, Me.BtnSublinhado, Me.ToolStripSeparator4, Me.BtnColar, Me.BtnCopiar, Me.ToolStripSeparator5, Me.BtnAnexar, Me.ToolStripSeparator6, Me.BtnPesquisar, Me.ToolStripSeparator7, Me.BtnDataHoraAgora, Me.ToolStripSeparator8})
         Me.ToolStrip1.Location = New System.Drawing.Point(3, 16)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(656, 28)
+        Me.ToolStrip1.Size = New System.Drawing.Size(656, 36)
         Me.ToolStrip1.TabIndex = 11
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -131,24 +135,26 @@ Partial Class FrmAnotacoes
         Me.cbofonte.FlatStyle = System.Windows.Forms.FlatStyle.Standard
         Me.cbofonte.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.cbofonte.Name = "cbofonte"
-        Me.cbofonte.Size = New System.Drawing.Size(201, 28)
+        Me.cbofonte.Size = New System.Drawing.Size(201, 36)
+        Me.cbofonte.ToolTipText = "Escolha sua fonte do texto"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 28)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 36)
         '
         'cbotamanho
         '
         Me.cbotamanho.FlatStyle = System.Windows.Forms.FlatStyle.Standard
         Me.cbotamanho.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.cbotamanho.Name = "cbotamanho"
-        Me.cbotamanho.Size = New System.Drawing.Size(75, 28)
+        Me.cbotamanho.Size = New System.Drawing.Size(75, 36)
+        Me.cbotamanho.ToolTipText = "Tamanho do texto"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 28)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 36)
         '
         'MudarCorBotao
         '
@@ -157,13 +163,14 @@ Partial Class FrmAnotacoes
         Me.MudarCorBotao.Image = CType(resources.GetObject("MudarCorBotao.Image"), System.Drawing.Image)
         Me.MudarCorBotao.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.MudarCorBotao.Name = "MudarCorBotao"
-        Me.MudarCorBotao.Size = New System.Drawing.Size(23, 25)
+        Me.MudarCorBotao.Size = New System.Drawing.Size(23, 33)
         Me.MudarCorBotao.Text = "Cores"
+        Me.MudarCorBotao.ToolTipText = "Escolher Cores no texto"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 28)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 36)
         '
         'BtnNegrito
         '
@@ -172,8 +179,9 @@ Partial Class FrmAnotacoes
         Me.BtnNegrito.Image = CType(resources.GetObject("BtnNegrito.Image"), System.Drawing.Image)
         Me.BtnNegrito.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnNegrito.Name = "BtnNegrito"
-        Me.BtnNegrito.Size = New System.Drawing.Size(23, 25)
+        Me.BtnNegrito.Size = New System.Drawing.Size(23, 33)
         Me.BtnNegrito.Text = "B"
+        Me.BtnNegrito.ToolTipText = "Negrito"
         '
         'BtnItalico
         '
@@ -182,8 +190,9 @@ Partial Class FrmAnotacoes
         Me.BtnItalico.Image = CType(resources.GetObject("BtnItalico.Image"), System.Drawing.Image)
         Me.BtnItalico.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnItalico.Name = "BtnItalico"
-        Me.BtnItalico.Size = New System.Drawing.Size(23, 25)
+        Me.BtnItalico.Size = New System.Drawing.Size(23, 33)
         Me.BtnItalico.Text = "I"
+        Me.BtnItalico.ToolTipText = "Itálico"
         '
         'BtnSublinhado
         '
@@ -192,13 +201,14 @@ Partial Class FrmAnotacoes
         Me.BtnSublinhado.Image = CType(resources.GetObject("BtnSublinhado.Image"), System.Drawing.Image)
         Me.BtnSublinhado.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnSublinhado.Name = "BtnSublinhado"
-        Me.BtnSublinhado.Size = New System.Drawing.Size(23, 25)
+        Me.BtnSublinhado.Size = New System.Drawing.Size(23, 33)
         Me.BtnSublinhado.Text = "S"
+        Me.BtnSublinhado.ToolTipText = "Sublinhado"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 28)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 36)
         '
         'BtnColar
         '
@@ -206,7 +216,7 @@ Partial Class FrmAnotacoes
         Me.BtnColar.Image = CType(resources.GetObject("BtnColar.Image"), System.Drawing.Image)
         Me.BtnColar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnColar.Name = "BtnColar"
-        Me.BtnColar.Size = New System.Drawing.Size(23, 25)
+        Me.BtnColar.Size = New System.Drawing.Size(23, 33)
         Me.BtnColar.Text = "Colar"
         '
         'BtnCopiar
@@ -215,13 +225,13 @@ Partial Class FrmAnotacoes
         Me.BtnCopiar.Image = CType(resources.GetObject("BtnCopiar.Image"), System.Drawing.Image)
         Me.BtnCopiar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnCopiar.Name = "BtnCopiar"
-        Me.BtnCopiar.Size = New System.Drawing.Size(23, 25)
-        Me.BtnCopiar.Text = "Colar"
+        Me.BtnCopiar.Size = New System.Drawing.Size(23, 33)
+        Me.BtnCopiar.Text = "Copiar"
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 28)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 36)
         '
         'BtnAnexar
         '
@@ -229,8 +239,43 @@ Partial Class FrmAnotacoes
         Me.BtnAnexar.Image = CType(resources.GetObject("BtnAnexar.Image"), System.Drawing.Image)
         Me.BtnAnexar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnAnexar.Name = "BtnAnexar"
-        Me.BtnAnexar.Size = New System.Drawing.Size(23, 25)
+        Me.BtnAnexar.Size = New System.Drawing.Size(23, 33)
         Me.BtnAnexar.Text = "Anexar"
+        Me.BtnAnexar.ToolTipText = "Anexar arquivos e imagens"
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 36)
+        '
+        'BtnPesquisar
+        '
+        Me.BtnPesquisar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnPesquisar.Image = CType(resources.GetObject("BtnPesquisar.Image"), System.Drawing.Image)
+        Me.BtnPesquisar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnPesquisar.Name = "BtnPesquisar"
+        Me.BtnPesquisar.Size = New System.Drawing.Size(23, 33)
+        Me.BtnPesquisar.Text = "Pesquisar"
+        Me.BtnPesquisar.ToolTipText = "Localizar e Subistituir"
+        '
+        'ToolStripSeparator7
+        '
+        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 36)
+        '
+        'BtnDataHoraAgora
+        '
+        Me.BtnDataHoraAgora.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnDataHoraAgora.Image = CType(resources.GetObject("BtnDataHoraAgora.Image"), System.Drawing.Image)
+        Me.BtnDataHoraAgora.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnDataHoraAgora.Name = "BtnDataHoraAgora"
+        Me.BtnDataHoraAgora.Size = New System.Drawing.Size(23, 33)
+        Me.BtnDataHoraAgora.Text = "Data e Hora Agora"
+        '
+        'ToolStripSeparator8
+        '
+        Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(6, 36)
         '
         'GroupBox2
         '
@@ -259,12 +304,13 @@ Partial Class FrmAnotacoes
         Me.lblMudaTexto.Name = "lblMudaTexto"
         Me.lblMudaTexto.Size = New System.Drawing.Size(416, 35)
         Me.lblMudaTexto.TabIndex = 55
+        Me.lblMudaTexto.Text = "Escolha no menu lateral..."
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.ButtonLimpar)
         Me.GroupBox1.Controls.Add(Me.ButtonSalvar)
-        Me.GroupBox1.Location = New System.Drawing.Point(809, 100)
+        Me.GroupBox1.Location = New System.Drawing.Point(809, 110)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(78, 104)
         Me.GroupBox1.TabIndex = 54
@@ -305,7 +351,7 @@ Partial Class FrmAnotacoes
         Me.TableLayoutPanel2.Controls.Add(Me.ButtonEstadual, 0, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.ButtonPrefeitura, 0, 4)
         Me.TableLayoutPanel2.Controls.Add(Me.ButtonDemais, 0, 5)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 100)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 110)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 7
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -405,9 +451,9 @@ Partial Class FrmAnotacoes
         'RichTextBoxAnotacao
         '
         Me.RichTextBoxAnotacao.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RichTextBoxAnotacao.Location = New System.Drawing.Point(141, 100)
+        Me.RichTextBoxAnotacao.Location = New System.Drawing.Point(141, 110)
         Me.RichTextBoxAnotacao.Name = "RichTextBoxAnotacao"
-        Me.RichTextBoxAnotacao.Size = New System.Drawing.Size(662, 688)
+        Me.RichTextBoxAnotacao.Size = New System.Drawing.Size(662, 678)
         Me.RichTextBoxAnotacao.TabIndex = 54
         Me.RichTextBoxAnotacao.Text = ""
         '
@@ -441,8 +487,8 @@ Partial Class FrmAnotacoes
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 4
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46.0!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.845638!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.15437!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.18792!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.81208!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53.0!))
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(891, 845)
         Me.TableLayoutPanel5.TabIndex = 55
@@ -451,20 +497,6 @@ Partial Class FrmAnotacoes
         '
         Me.AnotacoesBindingSource.DataMember = "Anotacoes"
         Me.AnotacoesBindingSource.DataSource = Me.PrinceDBDataSet
-        '
-        'ToolStripSeparator6
-        '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 28)
-        '
-        'BtnPesquisar
-        '
-        Me.BtnPesquisar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnPesquisar.Image = CType(resources.GetObject("BtnPesquisar.Image"), System.Drawing.Image)
-        Me.BtnPesquisar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnPesquisar.Name = "BtnPesquisar"
-        Me.BtnPesquisar.Size = New System.Drawing.Size(23, 25)
-        Me.BtnPesquisar.Text = "Pesquisar"
         '
         'FrmAnotacoes
         '
@@ -475,7 +507,9 @@ Partial Class FrmAnotacoes
         Me.KeyPreview = True
         Me.Name = "FrmAnotacoes"
         Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Anotações Gerais"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBoxEditor.ResumeLayout(False)
         Me.GroupBoxEditor.PerformLayout()
@@ -533,4 +567,7 @@ Partial Class FrmAnotacoes
     Friend WithEvents AnotacoesBindingSource As BindingSource
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents BtnPesquisar As ToolStripButton
+    Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
+    Friend WithEvents BtnDataHoraAgora As ToolStripButton
+    Friend WithEvents ToolStripSeparator8 As ToolStripSeparator
 End Class

@@ -37,11 +37,9 @@ Partial Class Telefones
         Dim EmailLabel As System.Windows.Forms.Label
         Dim SiteLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Telefones))
-        Me.PrinceDBDataSet = New PrinceSistemas.PrinceDBDataSet()
-        Me.TelefonesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TelefonesTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.TelefonesTableAdapter()
-        Me.TableAdapterManager = New PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager()
         Me.NomeTextBox = New System.Windows.Forms.TextBox()
+        Me.TelefonesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PrinceDBDataSet = New PrinceSistemas.PrinceDBDataSet()
         Me.Telefone1MaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         Me.TelefoneOutrosRichTextBox = New System.Windows.Forms.RichTextBox()
         Me.ObsRichTextBox = New System.Windows.Forms.RichTextBox()
@@ -64,6 +62,12 @@ Partial Class Telefones
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.ComboBoxBusca = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
+        Me.TelefonesTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.TelefonesTableAdapter()
+        Me.TableAdapterManager = New PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager()
+        Me.CboCidadeOrgao = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         NomeLabel = New System.Windows.Forms.Label()
         Telefone1Label = New System.Windows.Forms.Label()
         TelefoneOutrosLabel = New System.Windows.Forms.Label()
@@ -77,8 +81,8 @@ Partial Class Telefones
         EstadoLabel = New System.Windows.Forms.Label()
         EmailLabel = New System.Windows.Forms.Label()
         SiteLabel = New System.Windows.Forms.Label()
-        CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TelefonesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -88,7 +92,7 @@ Partial Class Telefones
         '
         NomeLabel.AutoSize = True
         NomeLabel.BackColor = System.Drawing.Color.Transparent
-        NomeLabel.Location = New System.Drawing.Point(33, 50)
+        NomeLabel.Location = New System.Drawing.Point(34, 50)
         NomeLabel.Name = "NomeLabel"
         NomeLabel.Size = New System.Drawing.Size(38, 13)
         NomeLabel.TabIndex = 1
@@ -98,7 +102,7 @@ Partial Class Telefones
         '
         Telefone1Label.AutoSize = True
         Telefone1Label.BackColor = System.Drawing.Color.Transparent
-        Telefone1Label.Location = New System.Drawing.Point(19, 73)
+        Telefone1Label.Location = New System.Drawing.Point(20, 73)
         Telefone1Label.Name = "Telefone1Label"
         Telefone1Label.Size = New System.Drawing.Size(52, 13)
         Telefone1Label.TabIndex = 3
@@ -108,7 +112,7 @@ Partial Class Telefones
         '
         TelefoneOutrosLabel.AutoSize = True
         TelefoneOutrosLabel.BackColor = System.Drawing.Color.Transparent
-        TelefoneOutrosLabel.Location = New System.Drawing.Point(12, 102)
+        TelefoneOutrosLabel.Location = New System.Drawing.Point(13, 102)
         TelefoneOutrosLabel.Name = "TelefoneOutrosLabel"
         TelefoneOutrosLabel.Size = New System.Drawing.Size(57, 13)
         TelefoneOutrosLabel.TabIndex = 5
@@ -118,7 +122,7 @@ Partial Class Telefones
         '
         ObsLabel.AutoSize = True
         ObsLabel.BackColor = System.Drawing.Color.Transparent
-        ObsLabel.Location = New System.Drawing.Point(166, 76)
+        ObsLabel.Location = New System.Drawing.Point(167, 76)
         ObsLabel.Name = "ObsLabel"
         ObsLabel.Size = New System.Drawing.Size(29, 13)
         ObsLabel.TabIndex = 7
@@ -198,7 +202,7 @@ Partial Class Telefones
         '
         EmailLabel.AutoSize = True
         EmailLabel.BackColor = System.Drawing.Color.Transparent
-        EmailLabel.Location = New System.Drawing.Point(33, 204)
+        EmailLabel.Location = New System.Drawing.Point(34, 204)
         EmailLabel.Name = "EmailLabel"
         EmailLabel.Size = New System.Drawing.Size(38, 13)
         EmailLabel.TabIndex = 23
@@ -208,52 +212,34 @@ Partial Class Telefones
         '
         SiteLabel.AutoSize = True
         SiteLabel.BackColor = System.Drawing.Color.Transparent
-        SiteLabel.Location = New System.Drawing.Point(20, 230)
+        SiteLabel.Location = New System.Drawing.Point(21, 230)
         SiteLabel.Name = "SiteLabel"
         SiteLabel.Size = New System.Drawing.Size(51, 13)
         SiteLabel.TabIndex = 25
         SiteLabel.Text = "WebSite:"
         '
-        'PrinceDBDataSet
+        'NomeTextBox
         '
-        Me.PrinceDBDataSet.DataSetName = "PrinceDBDataSet"
-        Me.PrinceDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.NomeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TelefonesBindingSource, "Nome", True))
+        Me.NomeTextBox.Location = New System.Drawing.Point(78, 47)
+        Me.NomeTextBox.Name = "NomeTextBox"
+        Me.NomeTextBox.Size = New System.Drawing.Size(382, 20)
+        Me.NomeTextBox.TabIndex = 2
         '
         'TelefonesBindingSource
         '
         Me.TelefonesBindingSource.DataMember = "Telefones"
         Me.TelefonesBindingSource.DataSource = Me.PrinceDBDataSet
         '
-        'TelefonesTableAdapter
+        'PrinceDBDataSet
         '
-        Me.TelefonesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.CNAETableAdapter = Nothing
-        Me.TableAdapterManager.ContadorTableAdapter = Nothing
-        Me.TableAdapterManager.ContatosTableAdapter = Nothing
-        Me.TableAdapterManager.EmpresasTableAdapter = Nothing
-        Me.TableAdapterManager.LaudosTableAdapter = Nothing
-        Me.TableAdapterManager.LoginTableAdapter = Nothing
-        Me.TableAdapterManager.MunicipioTableAdapter = Nothing
-        Me.TableAdapterManager.NaturezajuridicaTableAdapter = Nothing
-        Me.TableAdapterManager.TelefonesTableAdapter = Me.TelefonesTableAdapter
-        Me.TableAdapterManager.UpdateOrder = PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'NomeTextBox
-        '
-        Me.NomeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TelefonesBindingSource, "Nome", True))
-        Me.NomeTextBox.Location = New System.Drawing.Point(77, 47)
-        Me.NomeTextBox.Name = "NomeTextBox"
-        Me.NomeTextBox.Size = New System.Drawing.Size(382, 20)
-        Me.NomeTextBox.TabIndex = 2
+        Me.PrinceDBDataSet.DataSetName = "PrinceDBDataSet"
+        Me.PrinceDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Telefone1MaskedTextBox
         '
         Me.Telefone1MaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TelefonesBindingSource, "Telefone1", True))
-        Me.Telefone1MaskedTextBox.Location = New System.Drawing.Point(77, 73)
+        Me.Telefone1MaskedTextBox.Location = New System.Drawing.Point(78, 73)
         Me.Telefone1MaskedTextBox.Mask = "(99) 0000-0000"
         Me.Telefone1MaskedTextBox.Name = "Telefone1MaskedTextBox"
         Me.Telefone1MaskedTextBox.Size = New System.Drawing.Size(83, 20)
@@ -262,7 +248,7 @@ Partial Class Telefones
         'TelefoneOutrosRichTextBox
         '
         Me.TelefoneOutrosRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TelefonesBindingSource, "TelefoneOutros", True))
-        Me.TelefoneOutrosRichTextBox.Location = New System.Drawing.Point(77, 99)
+        Me.TelefoneOutrosRichTextBox.Location = New System.Drawing.Point(78, 99)
         Me.TelefoneOutrosRichTextBox.Name = "TelefoneOutrosRichTextBox"
         Me.TelefoneOutrosRichTextBox.Size = New System.Drawing.Size(83, 96)
         Me.TelefoneOutrosRichTextBox.TabIndex = 6
@@ -271,7 +257,7 @@ Partial Class Telefones
         'ObsRichTextBox
         '
         Me.ObsRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TelefonesBindingSource, "Obs", True))
-        Me.ObsRichTextBox.Location = New System.Drawing.Point(201, 76)
+        Me.ObsRichTextBox.Location = New System.Drawing.Point(202, 76)
         Me.ObsRichTextBox.Name = "ObsRichTextBox"
         Me.ObsRichTextBox.Size = New System.Drawing.Size(258, 119)
         Me.ObsRichTextBox.TabIndex = 8
@@ -343,7 +329,7 @@ Partial Class Telefones
         'EmailTextBox
         '
         Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TelefonesBindingSource, "email", True))
-        Me.EmailTextBox.Location = New System.Drawing.Point(77, 201)
+        Me.EmailTextBox.Location = New System.Drawing.Point(78, 201)
         Me.EmailTextBox.Name = "EmailTextBox"
         Me.EmailTextBox.Size = New System.Drawing.Size(214, 20)
         Me.EmailTextBox.TabIndex = 24
@@ -351,7 +337,7 @@ Partial Class Telefones
         'SiteTextBox
         '
         Me.SiteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TelefonesBindingSource, "site", True))
-        Me.SiteTextBox.Location = New System.Drawing.Point(77, 227)
+        Me.SiteTextBox.Location = New System.Drawing.Point(78, 227)
         Me.SiteTextBox.Name = "SiteTextBox"
         Me.SiteTextBox.Size = New System.Drawing.Size(214, 20)
         Me.SiteTextBox.TabIndex = 26
@@ -385,7 +371,7 @@ Partial Class Telefones
         Me.GroupBox1.Controls.Add(CEPLabel)
         Me.GroupBox1.Controls.Add(Me.CEPMaskedTextBox)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 271)
+        Me.GroupBox1.Location = New System.Drawing.Point(13, 271)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(452, 143)
         Me.GroupBox1.TabIndex = 28
@@ -399,7 +385,7 @@ Partial Class Telefones
         Me.GroupBox5.Controls.Add(Me.Button18)
         Me.GroupBox5.Controls.Add(Me.Button17)
         Me.GroupBox5.Controls.Add(Me.Button19)
-        Me.GroupBox5.Location = New System.Drawing.Point(473, 28)
+        Me.GroupBox5.Location = New System.Drawing.Point(504, 28)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(94, 160)
         Me.GroupBox5.TabIndex = 58
@@ -444,10 +430,10 @@ Partial Class Telefones
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ComboBoxBusca})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ComboBoxBusca, Me.ToolStripSeparator1, Me.ToolStripLabel2, Me.CboCidadeOrgao, Me.ToolStripLabel3})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(573, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(598, 25)
         Me.ToolStrip1.TabIndex = 59
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -465,13 +451,60 @@ Partial Class Telefones
         Me.ComboBoxBusca.Name = "ComboBoxBusca"
         Me.ComboBoxBusca.Size = New System.Drawing.Size(260, 25)
         '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(37, 22)
+        Me.ToolStripLabel2.Text = "Filtro:"
+        '
+        'TelefonesTableAdapter
+        '
+        Me.TelefonesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AnotacoesTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CADSituacaoAlvaraTableAdapter = Nothing
+        Me.TableAdapterManager.CADstatusTableAdapter = Nothing
+        Me.TableAdapterManager.CNAETableAdapter = Nothing
+        Me.TableAdapterManager.ContadorTableAdapter = Nothing
+        Me.TableAdapterManager.ContatosTableAdapter = Nothing
+        Me.TableAdapterManager.eMailCaixaDeSaidaTableAdapter = Nothing
+        Me.TableAdapterManager.eMailTableAdapter = Nothing
+        Me.TableAdapterManager.EmpresasTableAdapter = Nothing
+        Me.TableAdapterManager.LaudosTableAdapter = Nothing
+        Me.TableAdapterManager.LoginTableAdapter = Nothing
+        Me.TableAdapterManager.MunicipioTableAdapter = Nothing
+        Me.TableAdapterManager.NaturezajuridicaTableAdapter = Nothing
+        Me.TableAdapterManager.TelefonesTableAdapter = Me.TelefonesTableAdapter
+        Me.TableAdapterManager.UpdateOrder = PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'CboCidadeOrgao
+        '
+        Me.CboCidadeOrgao.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.CboCidadeOrgao.Name = "CboCidadeOrgao"
+        Me.CboCidadeOrgao.Size = New System.Drawing.Size(100, 25)
+        '
+        'ToolStripLabel3
+        '
+        Me.ToolStripLabel3.Font = New System.Drawing.Font("Segoe UI", 9.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripLabel3.Name = "ToolStripLabel3"
+        Me.ToolStripLabel3.Size = New System.Drawing.Size(87, 22)
+        Me.ToolStripLabel3.Text = "Cidade apenas"
+        '
         'Telefones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.fundo_azul
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(573, 426)
+        Me.ClientSize = New System.Drawing.Size(598, 427)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox1)
@@ -492,8 +525,8 @@ Partial Class Telefones
         Me.Name = "Telefones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Telefones dos Órgãos Governamentais"
-        CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TelefonesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PrinceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
@@ -531,4 +564,8 @@ Partial Class Telefones
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Friend WithEvents ComboBoxBusca As ToolStripComboBox
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripLabel2 As ToolStripLabel
+    Friend WithEvents CboCidadeOrgao As ToolStripTextBox
+    Friend WithEvents ToolStripLabel3 As ToolStripLabel
 End Class

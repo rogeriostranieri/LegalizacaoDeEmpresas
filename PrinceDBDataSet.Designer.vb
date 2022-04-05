@@ -3582,6 +3582,10 @@ Partial Public Class PrinceDBDataSet
         
         Private columnsite As Global.System.Data.DataColumn
         
+        Private columnOrgaoEstado As Global.System.Data.DataColumn
+        
+        Private columnOrgaoCidade As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -3730,6 +3734,22 @@ Partial Public Class PrinceDBDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property OrgaoEstadoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOrgaoEstado
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property OrgaoCidadeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOrgaoCidade
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3766,9 +3786,9 @@ Partial Public Class PrinceDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddTelefonesRow(ByVal Nome As String, ByVal Telefone1 As String, ByVal TelefoneOutros As String, ByVal Obs As String, ByVal CEP As String, ByVal Endereço As String, ByVal Numero As String, ByVal Complemento As String, ByVal Bairro As String, ByVal Cidade As String, ByVal Estado As String, ByVal email As String, ByVal site As String) As TelefonesRow
+        Public Overloads Function AddTelefonesRow(ByVal Nome As String, ByVal Telefone1 As String, ByVal TelefoneOutros As String, ByVal Obs As String, ByVal CEP As String, ByVal Endereço As String, ByVal Numero As String, ByVal Complemento As String, ByVal Bairro As String, ByVal Cidade As String, ByVal Estado As String, ByVal email As String, ByVal site As String, ByVal OrgaoEstado As String, ByVal OrgaoCidade As String) As TelefonesRow
             Dim rowTelefonesRow As TelefonesRow = CType(Me.NewRow,TelefonesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nome, Telefone1, TelefoneOutros, Obs, CEP, Endereço, Numero, Complemento, Bairro, Cidade, Estado, email, site}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nome, Telefone1, TelefoneOutros, Obs, CEP, Endereço, Numero, Complemento, Bairro, Cidade, Estado, email, site, OrgaoEstado, OrgaoCidade}
             rowTelefonesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowTelefonesRow)
             Return rowTelefonesRow
@@ -3811,6 +3831,8 @@ Partial Public Class PrinceDBDataSet
             Me.columnEstado = MyBase.Columns("Estado")
             Me.columnemail = MyBase.Columns("email")
             Me.columnsite = MyBase.Columns("site")
+            Me.columnOrgaoEstado = MyBase.Columns("OrgaoEstado")
+            Me.columnOrgaoCidade = MyBase.Columns("OrgaoCidade")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3844,6 +3866,10 @@ Partial Public Class PrinceDBDataSet
             MyBase.Columns.Add(Me.columnemail)
             Me.columnsite = New Global.System.Data.DataColumn("site", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsite)
+            Me.columnOrgaoEstado = New Global.System.Data.DataColumn("OrgaoEstado", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOrgaoEstado)
+            Me.columnOrgaoCidade = New Global.System.Data.DataColumn("OrgaoCidade", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOrgaoCidade)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID_Telefones}, true))
             Me.columnID_Telefones.AutoIncrement = true
             Me.columnID_Telefones.AutoIncrementSeed = -1
@@ -3864,6 +3890,8 @@ Partial Public Class PrinceDBDataSet
             Me.columnEstado.MaxLength = 50
             Me.columnemail.MaxLength = 2147483647
             Me.columnsite.MaxLength = 2147483647
+            Me.columnOrgaoEstado.MaxLength = 2147483647
+            Me.columnOrgaoCidade.MaxLength = 2147483647
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11520,6 +11548,36 @@ Partial Public Class PrinceDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property OrgaoEstado() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableTelefones.OrgaoEstadoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("O valor da coluna 'OrgaoEstado' na tabela 'Telefones' é DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableTelefones.OrgaoEstadoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property OrgaoCidade() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableTelefones.OrgaoCidadeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("O valor da coluna 'OrgaoCidade' na tabela 'Telefones' é DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableTelefones.OrgaoCidadeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsNomeNull() As Boolean
             Return Me.IsNull(Me.tableTelefones.NomeColumn)
         End Function
@@ -11672,6 +11730,30 @@ Partial Public Class PrinceDBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetsiteNull()
             Me(Me.tableTelefones.siteColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsOrgaoEstadoNull() As Boolean
+            Return Me.IsNull(Me.tableTelefones.OrgaoEstadoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetOrgaoEstadoNull()
+            Me(Me.tableTelefones.OrgaoEstadoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsOrgaoCidadeNull() As Boolean
+            Return Me.IsNull(Me.tableTelefones.OrgaoCidadeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetOrgaoCidadeNull()
+            Me(Me.tableTelefones.OrgaoCidadeColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -21501,6 +21583,8 @@ Namespace PrinceDBDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Estado", "Estado")
             tableMapping.ColumnMappings.Add("email", "email")
             tableMapping.ColumnMappings.Add("site", "site")
+            tableMapping.ColumnMappings.Add("OrgaoEstado", "OrgaoEstado")
+            tableMapping.ColumnMappings.Add("OrgaoCidade", "OrgaoCidade")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -21529,12 +21613,13 @@ Namespace PrinceDBDataSetTableAdapters
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [Telefones] ([Nome], [Telefone1], [TelefoneOutros], [Obs], [CEP], [En"& _ 
-                "dereço], [Numero], [Complemento], [Bairro], [Cidade], [Estado], [email], [site])"& _ 
-                " VALUES (@Nome, @Telefone1, @TelefoneOutros, @Obs, @CEP, @Endereço, @Numero, @Co"& _ 
-                "mplemento, @Bairro, @Cidade, @Estado, @email, @site);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID_Telefones, Nome"& _ 
-                ", Telefone1, TelefoneOutros, Obs, CEP, Endereço, Numero, Complemento, Bairro, Ci"& _ 
-                "dade, Estado, email, site FROM Telefones WHERE (ID_Telefones = SCOPE_IDENTITY())"& _ 
-                ""
+                "dereço], [Numero], [Complemento], [Bairro], [Cidade], [Estado], [email], [site],"& _ 
+                " [OrgaoEstado], [OrgaoCidade]) VALUES (@Nome, @Telefone1, @TelefoneOutros, @Obs,"& _ 
+                " @CEP, @Endereço, @Numero, @Complemento, @Bairro, @Cidade, @Estado, @email, @sit"& _ 
+                "e, @OrgaoEstado, @OrgaoCidade);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID_Telefones, Nome, Telefone1, TelefoneO"& _ 
+                "utros, Obs, CEP, Endereço, Numero, Complemento, Bairro, Cidade, Estado, email, s"& _ 
+                "ite, OrgaoEstado, OrgaoCidade FROM Telefones WHERE (ID_Telefones = SCOPE_IDENTIT"& _ 
+                "Y())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Nome", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Nome", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Telefone1", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Telefone1", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -21549,22 +21634,25 @@ Namespace PrinceDBDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Estado", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Estado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@site", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "site", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OrgaoEstado", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrgaoEstado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OrgaoCidade", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrgaoCidade", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [Telefones] SET [Nome] = @Nome, [Telefone1] = @Telefone1, [TelefoneOutros]"& _ 
                 " = @TelefoneOutros, [Obs] = @Obs, [CEP] = @CEP, [Endereço] = @Endereço, [Numero]"& _ 
                 " = @Numero, [Complemento] = @Complemento, [Bairro] = @Bairro, [Cidade] = @Cidade"& _ 
-                ", [Estado] = @Estado, [email] = @email, [site] = @site WHERE (([ID_Telefones] = "& _ 
-                "@Original_ID_Telefones) AND ((@IsNull_Telefone1 = 1 AND [Telefone1] IS NULL) OR "& _ 
-                "([Telefone1] = @Original_Telefone1)) AND ((@IsNull_TelefoneOutros = 1 AND [Telef"& _ 
-                "oneOutros] IS NULL) OR ([TelefoneOutros] = @Original_TelefoneOutros)) AND ((@IsN"& _ 
-                "ull_CEP = 1 AND [CEP] IS NULL) OR ([CEP] = @Original_CEP)) AND ((@IsNull_Numero "& _ 
-                "= 1 AND [Numero] IS NULL) OR ([Numero] = @Original_Numero)) AND ((@IsNull_Cidade"& _ 
-                " = 1 AND [Cidade] IS NULL) OR ([Cidade] = @Original_Cidade)) AND ((@IsNull_Estad"& _ 
-                "o = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID_Telef"& _ 
-                "ones, Nome, Telefone1, TelefoneOutros, Obs, CEP, Endereço, Numero, Complemento, "& _ 
-                "Bairro, Cidade, Estado, email, site FROM Telefones WHERE (ID_Telefones = @ID_Tel"& _ 
-                "efones)"
+                ", [Estado] = @Estado, [email] = @email, [site] = @site, [OrgaoEstado] = @OrgaoEs"& _ 
+                "tado, [OrgaoCidade] = @OrgaoCidade WHERE (([ID_Telefones] = @Original_ID_Telefon"& _ 
+                "es) AND ((@IsNull_Telefone1 = 1 AND [Telefone1] IS NULL) OR ([Telefone1] = @Orig"& _ 
+                "inal_Telefone1)) AND ((@IsNull_TelefoneOutros = 1 AND [TelefoneOutros] IS NULL) "& _ 
+                "OR ([TelefoneOutros] = @Original_TelefoneOutros)) AND ((@IsNull_CEP = 1 AND [CEP"& _ 
+                "] IS NULL) OR ([CEP] = @Original_CEP)) AND ((@IsNull_Numero = 1 AND [Numero] IS "& _ 
+                "NULL) OR ([Numero] = @Original_Numero)) AND ((@IsNull_Cidade = 1 AND [Cidade] IS"& _ 
+                " NULL) OR ([Cidade] = @Original_Cidade)) AND ((@IsNull_Estado = 1 AND [Estado] I"& _ 
+                "S NULL) OR ([Estado] = @Original_Estado)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID_Telefones, Nome, Telefone"& _ 
+                "1, TelefoneOutros, Obs, CEP, Endereço, Numero, Complemento, Bairro, Cidade, Esta"& _ 
+                "do, email, site, OrgaoEstado, OrgaoCidade FROM Telefones WHERE (ID_Telefones = @"& _ 
+                "ID_Telefones)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Nome", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Nome", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Telefone1", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Telefone1", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -21579,6 +21667,8 @@ Namespace PrinceDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Estado", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Estado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@site", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "site", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OrgaoEstado", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrgaoEstado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OrgaoCidade", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrgaoCidade", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID_Telefones", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_Telefones", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Telefone1", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Telefone1", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Telefone1", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Telefone1", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -21731,7 +21821,7 @@ Namespace PrinceDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Nome As String, ByVal Telefone1 As String, ByVal TelefoneOutros As String, ByVal Obs As String, ByVal CEP As String, ByVal Endereço As String, ByVal Numero As String, ByVal Complemento As String, ByVal Bairro As String, ByVal Cidade As String, ByVal Estado As String, ByVal email As String, ByVal site As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Nome As String, ByVal Telefone1 As String, ByVal TelefoneOutros As String, ByVal Obs As String, ByVal CEP As String, ByVal Endereço As String, ByVal Numero As String, ByVal Complemento As String, ByVal Bairro As String, ByVal Cidade As String, ByVal Estado As String, ByVal email As String, ByVal site As String, ByVal OrgaoEstado As String, ByVal OrgaoCidade As String) As Integer
             If (Nome Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -21797,6 +21887,16 @@ Namespace PrinceDBDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(12).Value = CType(site,String)
             End If
+            If (OrgaoEstado Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(13).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(13).Value = CType(OrgaoEstado,String)
+            End If
+            If (OrgaoCidade Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(14).Value = CType(OrgaoCidade,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -21830,6 +21930,8 @@ Namespace PrinceDBDataSetTableAdapters
                     ByVal Estado As String,  _
                     ByVal email As String,  _
                     ByVal site As String,  _
+                    ByVal OrgaoEstado As String,  _
+                    ByVal OrgaoCidade As String,  _
                     ByVal Original_ID_Telefones As Short,  _
                     ByVal Original_Telefone1 As String,  _
                     ByVal Original_TelefoneOutros As String,  _
@@ -21903,50 +22005,60 @@ Namespace PrinceDBDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(site,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_ID_Telefones,Short)
-            If (Original_Telefone1 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+            If (OrgaoEstado Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Telefone1,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(OrgaoEstado,String)
             End If
-            If (Original_TelefoneOutros Is Nothing) Then
+            If (OrgaoCidade Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(OrgaoCidade,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_ID_Telefones,Short)
+            If (Original_Telefone1 Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_TelefoneOutros,String)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Telefone1,String)
             End If
-            If (Original_CEP Is Nothing) Then
+            If (Original_TelefoneOutros Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_CEP,String)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_TelefoneOutros,String)
             End If
-            If (Original_Numero Is Nothing) Then
+            If (Original_CEP Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Numero,String)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_CEP,String)
             End If
-            If (Original_Cidade Is Nothing) Then
+            If (Original_Numero Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_Cidade,String)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_Numero,String)
             End If
-            If (Original_Estado Is Nothing) Then
+            If (Original_Cidade Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_Estado,String)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_Cidade,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(26).Value = CType(ID_Telefones,Short)
+            If (Original_Estado Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_Estado,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(28).Value = CType(ID_Telefones,Short)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -21980,6 +22092,8 @@ Namespace PrinceDBDataSetTableAdapters
                     ByVal Estado As String,  _
                     ByVal email As String,  _
                     ByVal site As String,  _
+                    ByVal OrgaoEstado As String,  _
+                    ByVal OrgaoCidade As String,  _
                     ByVal Original_ID_Telefones As Short,  _
                     ByVal Original_Telefone1 As String,  _
                     ByVal Original_TelefoneOutros As String,  _
@@ -21987,7 +22101,7 @@ Namespace PrinceDBDataSetTableAdapters
                     ByVal Original_Numero As String,  _
                     ByVal Original_Cidade As String,  _
                     ByVal Original_Estado As String) As Integer
-            Return Me.Update(Nome, Telefone1, TelefoneOutros, Obs, CEP, Endereço, Numero, Complemento, Bairro, Cidade, Estado, email, site, Original_ID_Telefones, Original_Telefone1, Original_TelefoneOutros, Original_CEP, Original_Numero, Original_Cidade, Original_Estado, Original_ID_Telefones)
+            Return Me.Update(Nome, Telefone1, TelefoneOutros, Obs, CEP, Endereço, Numero, Complemento, Bairro, Cidade, Estado, email, site, OrgaoEstado, OrgaoCidade, Original_ID_Telefones, Original_Telefone1, Original_TelefoneOutros, Original_CEP, Original_Numero, Original_Cidade, Original_Estado, Original_ID_Telefones)
         End Function
     End Class
     

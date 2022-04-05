@@ -10,6 +10,10 @@ Public Class FrmAnotacoes
 
 
     Private Sub FrmAnotacoes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.WindowState = FormWindowState.Maximized
+        Me.KeyPreview = True
+
+
         'TODO: esta linha de código carrega dados na tabela 'PrinceDBDataSet.Anotacoes'. Você pode movê-la ou removê-la conforme necessário.
         Me.AnotacoesTableAdapter.Fill(Me.PrinceDBDataSet.Anotacoes)
 
@@ -239,24 +243,35 @@ Public Class FrmAnotacoes
         If Application.OpenForms.OfType(Of FrmBuscaAnotacoes)().Count() > 0 Then
             FrmBuscaAnotacoes.Focus()
             FrmBuscaAnotacoes.Close()
-            FrmBuscaAnotacoes.MdiParent = MDIPrincipal
+            '  FrmBuscaAnotacoes.MdiParent = MDIPrincipal
             FrmBuscaAnotacoes.Show()
         Else
-            FrmBuscaAnotacoes.MdiParent = MDIPrincipal
+            'FrmBuscaAnotacoes.MdiParent = MDIPrincipal
             FrmBuscaAnotacoes.Show()
         End If
 
-        'CRIAR NOVO FORMULARIO
+
     End Sub
+
+
+    Private Sub BtnDataHoraAgora_Click(sender As Object, e As EventArgs) Handles BtnDataHoraAgora.Click
+
+        If RichTextBoxAnotacao.SelectedText.Length > 0 Then
+            RichTextBoxAnotacao.SelectedText = Now.ToString("dd/MM/yyyy HH:mm:ss") + " - " + RichTextBoxAnotacao.SelectedText
+        Else
+            RichTextBoxAnotacao.SelectedText = Now.ToString("dd/MM/yyyy HH:mm:ss") + " - " + RichTextBoxAnotacao.SelectedText
+
+        End If
+    End Sub
+
+
 
     '=================================================================================
     'Salvar
     '=================================================================================
 
     Private Sub ButtonSalvar_Click(sender As Object, e As EventArgs) Handles ButtonSalvar.Click
-        Me.Validate()
-        Me.AnotacoesBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.PrinceDBDataSet)
+        Salvar()
 
     End Sub
 
@@ -348,25 +363,17 @@ Public Class FrmAnotacoes
         End Try
     End Sub
 
+    '=================================================================================
+    'FIM botões
+    '=================================================================================
     Private Sub ButtonFechar_Click(sender As Object, e As EventArgs) Handles ButtonFechar.Click
         Me.Close()
 
     End Sub
 
-    Private Sub AnotacoesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
-        Me.Validate()
-        Me.AnotacoesBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.PrinceDBDataSet)
+    Private Sub BtnAnexar_Click(sender As Object, e As EventArgs) Handles BtnAnexar.Click
+
+
 
     End Sub
-
-
-
-    '=================================================================================
-    'FIM botões
-    '=================================================================================
-
-
-
-
 End Class

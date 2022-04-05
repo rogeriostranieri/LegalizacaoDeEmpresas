@@ -20,6 +20,9 @@
             .DataSource = Me.TelefonesBindingSource
         End With
 
+        'CboCidadeOrgao
+        'If IsNull(CboCidadeOrgao) Then
+
 
     End Sub
 
@@ -139,5 +142,8 @@
         End If
     End Sub
 
-
+    Private Sub CboCidadeOrgao_TextChanged(sender As Object, e As EventArgs) Handles CboCidadeOrgao.TextChanged
+        Me.TelefonesBindingSource.Filter = "Nome LIKE '%" & Me.CboCidadeOrgao.Text & "%' "
+        'Me.TelefonesBindingSource.Filter = "OrgaoCidade LIKE '%" & Me.CboCidadeOrgao.Text & "%' "
+    End Sub
 End Class
