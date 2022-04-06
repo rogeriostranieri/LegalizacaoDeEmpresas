@@ -1,4 +1,5 @@
-﻿Imports System.Drawing.Text
+﻿Imports System.Data.SqlClient
+Imports System.Drawing.Text
 
 
 Public Class FrmAnotacoes
@@ -264,6 +265,70 @@ Public Class FrmAnotacoes
         End If
     End Sub
 
+    Private Sub BtnDesfazer_Click(sender As Object, e As EventArgs) Handles BtnDesfazer.Click
+        If RichTextBoxAnotacao.SelectedText.Length > 0 Then
+            RichTextBoxAnotacao.Undo()
+        Else
+            RichTextBoxAnotacao.Undo()
+        End If
+    End Sub
+
+
+    Private Sub BtnRefazer_Click(sender As Object, e As EventArgs) Handles BtnRefazer.Click
+        If RichTextBoxAnotacao.SelectedText.Length > 0 Then
+            RichTextBoxAnotacao.Redo()
+        Else
+            RichTextBoxAnotacao.Redo()
+        End If
+    End Sub
+
+
+    Private Sub BtnRealcar_Click(sender As Object, e As EventArgs) Handles BtnRealcar.Click
+        Dim MinhasCores As ColorDialog = New ColorDialog
+        'selecionar uma cor customizada
+        MinhasCores.AllowFullOpen = False
+        'Permite o usuário obter ajuda 
+        MinhasCores.ShowHelp = True
+        'Define a cor inicial selecionada para a cor atual
+        MinhasCores.Color = RichTextBoxAnotacao.BackColor
+        'pinta a seleção do texto
+
+        If (MinhasCores.ShowDialog() = DialogResult.OK) Then
+            If RichTextBoxAnotacao.SelectedText.Length > 0 Then
+                RichTextBoxAnotacao.SelectionBackColor = MinhasCores.Color
+            Else
+                RichTextBoxAnotacao.SelectionBackColor = MinhasCores.Color
+
+            End If
+
+        End If
+    End Sub
+
+
+    Private Sub BtnEsquerda_Click(sender As Object, e As EventArgs) Handles BtnEsquerda.Click
+        If RichTextBoxAnotacao.SelectedText.Length > 0 Then
+            RichTextBoxAnotacao.SelectionAlignment = HorizontalAlignment.Left
+        Else
+            RichTextBoxAnotacao.SelectionAlignment = HorizontalAlignment.Left
+        End If
+    End Sub
+
+    Private Sub BtnCentral_Click(sender As Object, e As EventArgs) Handles BtnCentral.Click
+        If RichTextBoxAnotacao.SelectedText.Length > 0 Then
+            RichTextBoxAnotacao.SelectionAlignment = HorizontalAlignment.Center
+        Else
+            RichTextBoxAnotacao.SelectionAlignment = HorizontalAlignment.Center
+        End If
+    End Sub
+
+    Private Sub BtnDireita_Click(sender As Object, e As EventArgs) Handles BtnDireita.Click
+        If RichTextBoxAnotacao.SelectedText.Length > 0 Then
+            RichTextBoxAnotacao.SelectionAlignment = HorizontalAlignment.Right
+        Else
+            RichTextBoxAnotacao.SelectionAlignment = HorizontalAlignment.Right
+        End If
+    End Sub
+
 
 
     '=================================================================================
@@ -371,9 +436,5 @@ Public Class FrmAnotacoes
 
     End Sub
 
-    Private Sub BtnAnexar_Click(sender As Object, e As EventArgs) Handles BtnAnexar.Click
 
-
-
-    End Sub
 End Class

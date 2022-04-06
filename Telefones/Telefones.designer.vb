@@ -64,10 +64,10 @@ Partial Class Telefones
         Me.ComboBoxBusca = New System.Windows.Forms.ToolStripComboBox()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
-        Me.TelefonesTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.TelefonesTableAdapter()
-        Me.TableAdapterManager = New PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager()
         Me.CboCidadeOrgao = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
+        Me.TelefonesTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.TelefonesTableAdapter()
+        Me.TableAdapterManager = New PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager()
         NomeLabel = New System.Windows.Forms.Label()
         Telefone1Label = New System.Windows.Forms.Label()
         TelefoneOutrosLabel = New System.Windows.Forms.Label()
@@ -462,6 +462,19 @@ Partial Class Telefones
         Me.ToolStripLabel2.Size = New System.Drawing.Size(37, 22)
         Me.ToolStripLabel2.Text = "Filtro:"
         '
+        'CboCidadeOrgao
+        '
+        Me.CboCidadeOrgao.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.CboCidadeOrgao.Name = "CboCidadeOrgao"
+        Me.CboCidadeOrgao.Size = New System.Drawing.Size(100, 25)
+        '
+        'ToolStripLabel3
+        '
+        Me.ToolStripLabel3.Font = New System.Drawing.Font("Segoe UI", 9.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripLabel3.Name = "ToolStripLabel3"
+        Me.ToolStripLabel3.Size = New System.Drawing.Size(67, 22)
+        Me.ToolStripLabel3.Text = "Digite Aqui"
+        '
         'TelefonesTableAdapter
         '
         Me.TelefonesTableAdapter.ClearBeforeFill = True
@@ -484,19 +497,6 @@ Partial Class Telefones
         Me.TableAdapterManager.NaturezajuridicaTableAdapter = Nothing
         Me.TableAdapterManager.TelefonesTableAdapter = Me.TelefonesTableAdapter
         Me.TableAdapterManager.UpdateOrder = PrinceSistemas.PrinceDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'CboCidadeOrgao
-        '
-        Me.CboCidadeOrgao.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.CboCidadeOrgao.Name = "CboCidadeOrgao"
-        Me.CboCidadeOrgao.Size = New System.Drawing.Size(100, 25)
-        '
-        'ToolStripLabel3
-        '
-        Me.ToolStripLabel3.Font = New System.Drawing.Font("Segoe UI", 9.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripLabel3.Name = "ToolStripLabel3"
-        Me.ToolStripLabel3.Size = New System.Drawing.Size(87, 22)
-        Me.ToolStripLabel3.Text = "Cidade apenas"
         '
         'Telefones
         '
