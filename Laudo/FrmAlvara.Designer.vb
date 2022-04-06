@@ -171,6 +171,7 @@ Partial Class FrmAlvara
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.SituacaoComboBox = New System.Windows.Forms.ComboBox()
+        Me.CADSituacaoAlvaraBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.BtnAnotacoes = New System.Windows.Forms.Button()
         Me.NlaudoLabel = New System.Windows.Forms.Label()
@@ -262,8 +263,8 @@ Partial Class FrmAlvara
         Me.EndCidadeLabel2 = New System.Windows.Forms.Label()
         Me.BtnData1 = New System.Windows.Forms.Button()
         Me.Calendar1 = New System.Windows.Forms.MonthCalendar()
-        Me.CADSituacaoAlvaraBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CADSituacaoAlvaraTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.CADSituacaoAlvaraTableAdapter()
+        Me.BtnAnotacoesPref = New System.Windows.Forms.Button()
         RazaoSocialLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         BombeirosSituacaoLabel = New System.Windows.Forms.Label()
@@ -332,6 +333,7 @@ Partial Class FrmAlvara
         Me.GroupBox6.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.CADSituacaoAlvaraBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.TabAlvara.SuspendLayout()
         Me.TabPage12.SuspendLayout()
@@ -354,7 +356,6 @@ Partial Class FrmAlvara
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox9.SuspendLayout()
-        CType(Me.CADSituacaoAlvaraBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RazaoSocialLabel
@@ -529,7 +530,7 @@ Partial Class FrmAlvara
         '
         ObservacaoLabel.AutoSize = True
         ObservacaoLabel.BackColor = System.Drawing.Color.Transparent
-        ObservacaoLabel.Location = New System.Drawing.Point(346, 19)
+        ObservacaoLabel.Location = New System.Drawing.Point(444, 9)
         ObservacaoLabel.Name = "ObservacaoLabel"
         ObservacaoLabel.Size = New System.Drawing.Size(68, 13)
         ObservacaoLabel.TabIndex = 73
@@ -838,7 +839,7 @@ Partial Class FrmAlvara
         EndCidadeLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         EndCidadeLabel1.Location = New System.Drawing.Point(252, 112)
         EndCidadeLabel1.Name = "EndCidadeLabel1"
-        EndCidadeLabel1.Size = New System.Drawing.Size(55, 16)
+        EndCidadeLabel1.Size = New System.Drawing.Size(54, 16)
         EndCidadeLabel1.TabIndex = 75
         EndCidadeLabel1.Text = "Cidade:"
         '
@@ -848,7 +849,7 @@ Partial Class FrmAlvara
         EndEstadoLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         EndEstadoLabel1.Location = New System.Drawing.Point(252, 133)
         EndEstadoLabel1.Name = "EndEstadoLabel1"
-        EndEstadoLabel1.Size = New System.Drawing.Size(54, 16)
+        EndEstadoLabel1.Size = New System.Drawing.Size(53, 16)
         EndEstadoLabel1.TabIndex = 76
         EndEstadoLabel1.Text = "Estado:"
         '
@@ -868,12 +869,15 @@ Partial Class FrmAlvara
         '
         'TableAdapterManager
         '
+        Me.TableAdapterManager.AnotacoesTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.CADSituacaoAlvaraTableAdapter = Nothing
         Me.TableAdapterManager.CADstatusTableAdapter = Nothing
         Me.TableAdapterManager.CNAETableAdapter = Nothing
         Me.TableAdapterManager.ContadorTableAdapter = Nothing
         Me.TableAdapterManager.ContatosTableAdapter = Nothing
+        Me.TableAdapterManager.eMailCaixaDeSaidaTableAdapter = Nothing
+        Me.TableAdapterManager.eMailTableAdapter = Nothing
         Me.TableAdapterManager.EmpresasTableAdapter = Nothing
         Me.TableAdapterManager.LaudosTableAdapter = Me.LaudosTableAdapter
         Me.TableAdapterManager.LoginTableAdapter = Nothing
@@ -1630,9 +1634,9 @@ Partial Class FrmAlvara
         Me.Button7.BackgroundImage = CType(resources.GetObject("Button7.BackgroundImage"), System.Drawing.Image)
         Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Location = New System.Drawing.Point(187, 19)
+        Me.Button7.Location = New System.Drawing.Point(188, 19)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(72, 24)
+        Me.Button7.Size = New System.Drawing.Size(71, 24)
         Me.Button7.TabIndex = 40
         Me.Button7.Text = "Consultar"
         Me.Button7.UseVisualStyleBackColor = False
@@ -1725,7 +1729,7 @@ Partial Class FrmAlvara
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.Button8)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(496, 32)
+        Me.GroupBox3.Location = New System.Drawing.Point(518, 32)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(220, 132)
         Me.GroupBox3.TabIndex = 50
@@ -1855,6 +1859,11 @@ Partial Class FrmAlvara
         Me.SituacaoComboBox.Size = New System.Drawing.Size(169, 21)
         Me.SituacaoComboBox.TabIndex = 52
         '
+        'CADSituacaoAlvaraBindingSource
+        '
+        Me.CADSituacaoAlvaraBindingSource.DataMember = "CADSituacaoAlvara"
+        Me.CADSituacaoAlvaraBindingSource.DataSource = Me.PrinceDBDataSet
+        '
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
@@ -1886,9 +1895,9 @@ Partial Class FrmAlvara
         Me.BtnAnotacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAnotacoes.Location = New System.Drawing.Point(265, 19)
         Me.BtnAnotacoes.Name = "BtnAnotacoes"
-        Me.BtnAnotacoes.Size = New System.Drawing.Size(72, 24)
+        Me.BtnAnotacoes.Size = New System.Drawing.Size(40, 24)
         Me.BtnAnotacoes.TabIndex = 79
-        Me.BtnAnotacoes.Text = "Anotações"
+        Me.BtnAnotacoes.Text = "Ver"
         Me.BtnAnotacoes.UseVisualStyleBackColor = False
         '
         'NlaudoLabel
@@ -1908,7 +1917,7 @@ Partial Class FrmAlvara
         Me.BtnBombVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnBombVer.Location = New System.Drawing.Point(264, 87)
         Me.BtnBombVer.Name = "BtnBombVer"
-        Me.BtnBombVer.Size = New System.Drawing.Size(50, 21)
+        Me.BtnBombVer.Size = New System.Drawing.Size(41, 21)
         Me.BtnBombVer.TabIndex = 77
         Me.BtnBombVer.Text = "Ver"
         Me.BtnBombVer.UseVisualStyleBackColor = False
@@ -1933,7 +1942,7 @@ Partial Class FrmAlvara
         Me.TabAlvara.Location = New System.Drawing.Point(0, 125)
         Me.TabAlvara.Name = "TabAlvara"
         Me.TabAlvara.SelectedIndex = 0
-        Me.TabAlvara.Size = New System.Drawing.Size(821, 292)
+        Me.TabAlvara.Size = New System.Drawing.Size(830, 292)
         Me.TabAlvara.TabIndex = 75
         '
         'TabPage12
@@ -1943,7 +1952,7 @@ Partial Class FrmAlvara
         Me.TabPage12.Location = New System.Drawing.Point(4, 22)
         Me.TabPage12.Name = "TabPage12"
         Me.TabPage12.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage12.Size = New System.Drawing.Size(813, 266)
+        Me.TabPage12.Size = New System.Drawing.Size(822, 266)
         Me.TabPage12.TabIndex = 0
         Me.TabPage12.Text = "Dados Cadastrais"
         Me.TabPage12.UseVisualStyleBackColor = True
@@ -2380,7 +2389,7 @@ Partial Class FrmAlvara
         Me.TabPage13.Location = New System.Drawing.Point(4, 22)
         Me.TabPage13.Name = "TabPage13"
         Me.TabPage13.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage13.Size = New System.Drawing.Size(813, 266)
+        Me.TabPage13.Size = New System.Drawing.Size(822, 266)
         Me.TabPage13.TabIndex = 1
         Me.TabPage13.Text = "Acompanhamento"
         Me.TabPage13.UseVisualStyleBackColor = True
@@ -2413,10 +2422,11 @@ Partial Class FrmAlvara
         '
         'TabPage14
         '
+        Me.TabPage14.Controls.Add(Me.BtnAnotacoesPref)
         Me.TabPage14.Controls.Add(Me.Button6)
         Me.TabPage14.Location = New System.Drawing.Point(4, 22)
         Me.TabPage14.Name = "TabPage14"
-        Me.TabPage14.Size = New System.Drawing.Size(813, 266)
+        Me.TabPage14.Size = New System.Drawing.Size(822, 266)
         Me.TabPage14.TabIndex = 2
         Me.TabPage14.Text = "Procedimento"
         Me.TabPage14.UseVisualStyleBackColor = True
@@ -2445,7 +2455,7 @@ Partial Class FrmAlvara
         Me.TabPage15.Location = New System.Drawing.Point(4, 22)
         Me.TabPage15.Name = "TabPage15"
         Me.TabPage15.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage15.Size = New System.Drawing.Size(813, 266)
+        Me.TabPage15.Size = New System.Drawing.Size(822, 266)
         Me.TabPage15.TabIndex = 3
         Me.TabPage15.Text = "Protocolo"
         Me.TabPage15.UseVisualStyleBackColor = True
@@ -2565,9 +2575,9 @@ Partial Class FrmAlvara
         'ObservacaoRichTextBox
         '
         Me.ObservacaoRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "Observacao", True))
-        Me.ObservacaoRichTextBox.Location = New System.Drawing.Point(418, 19)
+        Me.ObservacaoRichTextBox.Location = New System.Drawing.Point(447, 25)
         Me.ObservacaoRichTextBox.Name = "ObservacaoRichTextBox"
-        Me.ObservacaoRichTextBox.Size = New System.Drawing.Size(295, 100)
+        Me.ObservacaoRichTextBox.Size = New System.Drawing.Size(295, 94)
         Me.ObservacaoRichTextBox.TabIndex = 74
         Me.ObservacaoRichTextBox.Text = ""
         '
@@ -2631,6 +2641,8 @@ Partial Class FrmAlvara
         'GroupBox5
         '
         Me.GroupBox5.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox5.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.fundo_azul
+        Me.GroupBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox5.Controls.Add(Me.BtnEditar)
         Me.GroupBox5.Controls.Add(Me.BtnNovaAlteracao)
         Me.GroupBox5.Controls.Add(Me.Btnempresa)
@@ -2640,7 +2652,7 @@ Partial Class FrmAlvara
         Me.GroupBox5.Controls.Add(Me.Button18)
         Me.GroupBox5.Controls.Add(Me.Button17)
         Me.GroupBox5.Controls.Add(Me.Button19)
-        Me.GroupBox5.Location = New System.Drawing.Point(730, 28)
+        Me.GroupBox5.Location = New System.Drawing.Point(751, 29)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(94, 301)
         Me.GroupBox5.TabIndex = 57
@@ -2846,8 +2858,10 @@ Partial Class FrmAlvara
         '
         'EndCidadeLabel2
         '
+        Me.EndCidadeLabel2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.EndCidadeLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LaudosBindingSource, "EndCidade", True))
-        Me.EndCidadeLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EndCidadeLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EndCidadeLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.EndCidadeLabel2.Location = New System.Drawing.Point(303, 112)
         Me.EndCidadeLabel2.Name = "EndCidadeLabel2"
         Me.EndCidadeLabel2.Size = New System.Drawing.Size(181, 18)
@@ -2865,18 +2879,26 @@ Partial Class FrmAlvara
         '
         'Calendar1
         '
-        Me.Calendar1.Location = New System.Drawing.Point(480, 182)
+        Me.Calendar1.Location = New System.Drawing.Point(87, 165)
         Me.Calendar1.Name = "Calendar1"
         Me.Calendar1.TabIndex = 79
-        '
-        'CADSituacaoAlvaraBindingSource
-        '
-        Me.CADSituacaoAlvaraBindingSource.DataMember = "CADSituacaoAlvara"
-        Me.CADSituacaoAlvaraBindingSource.DataSource = Me.PrinceDBDataSet
         '
         'CADSituacaoAlvaraTableAdapter
         '
         Me.CADSituacaoAlvaraTableAdapter.ClearBeforeFill = True
+        '
+        'BtnAnotacoesPref
+        '
+        Me.BtnAnotacoesPref.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.BtnAnotacoesPref.BackgroundImage = CType(resources.GetObject("BtnAnotacoesPref.BackgroundImage"), System.Drawing.Image)
+        Me.BtnAnotacoesPref.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnAnotacoesPref.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAnotacoesPref.Location = New System.Drawing.Point(20, 99)
+        Me.BtnAnotacoesPref.Name = "BtnAnotacoesPref"
+        Me.BtnAnotacoesPref.Size = New System.Drawing.Size(155, 52)
+        Me.BtnAnotacoesPref.TabIndex = 42
+        Me.BtnAnotacoesPref.Text = "Anotações da Prefeitura em Geral"
+        Me.BtnAnotacoesPref.UseVisualStyleBackColor = False
         '
         'FrmAlvara
         '
@@ -2928,6 +2950,7 @@ Partial Class FrmAlvara
         Me.TabPage5.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.CADSituacaoAlvaraBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.TabAlvara.ResumeLayout(False)
@@ -2961,7 +2984,6 @@ Partial Class FrmAlvara
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox9.PerformLayout()
-        CType(Me.CADSituacaoAlvaraBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3153,4 +3175,5 @@ Partial Class FrmAlvara
     Friend WithEvents BtnContLigacao As Button
     Friend WithEvents CADSituacaoAlvaraBindingSource As BindingSource
     Friend WithEvents CADSituacaoAlvaraTableAdapter As PrinceDBDataSetTableAdapters.CADSituacaoAlvaraTableAdapter
+    Friend WithEvents BtnAnotacoesPref As Button
 End Class

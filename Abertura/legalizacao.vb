@@ -1905,5 +1905,158 @@ CPF =
         End If
     End Sub
 
+    Private Sub NovaRazaoSocialComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles NovaRazaoSocialComboBox.SelectedIndexChanged
+        'RazaoSocialTextBox.Text = NovaRazaoSocialFinalTextBox.Text
+        'LinkLabel17
+        If NovaRazaoSocialComboBox.Text = "Sim" Then
+            NovaRazaoSocialFinalTextBox.Visible = True
+            LinkLabel17.Visible = True
 
+        Else
+            NovaRazaoSocialFinalTextBox.Visible = False
+            LinkLabel17.Visible = False
+        End If
+
+
+    End Sub
+
+    Private Sub BtnAnotacoesLEgalizacao_Click(sender As Object, e As EventArgs) Handles BtnAnotacoesLEgalizacao.Click
+        If Application.OpenForms.OfType(Of FrmAnotacoes)().Count() > 0 Then
+
+            FrmAnotacoes.Focus()
+            FrmAnotacoes.Close()
+            FrmAnotacoes.MdiParent = MDIPrincipal
+            FrmAnotacoes.Show()
+            FrmAnotacoes.Focus()
+
+        Else
+
+            FrmAnotacoes.MdiParent = MDIPrincipal
+            FrmAnotacoes.Show()
+
+        End If
+
+        Try
+            FrmAnotacoes.RichTextBoxAnotacao.Visible = True
+            FrmAnotacoes.lblMudaTexto.Visible = True
+
+            FrmAnotacoes.lblMudaTexto.Text = "Legalização"
+            FrmAnotacoes.RichTextBoxAnotacao.DataBindings.Clear()
+            FrmAnotacoes.RichTextBoxAnotacao.DataBindings.Add(New Binding("RTF", FrmAnotacoes.AnotacoesBindingSource, "Legalizacao"))
+        Catch ex As Exception
+            MsgBox("Can't load Web page" & vbCrLf & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BtnAnotacoesFederal_Click(sender As Object, e As EventArgs) Handles BtnAnotacoesFederal.Click, BtnAnotacoesSimples.Click
+        If Application.OpenForms.OfType(Of FrmAnotacoes)().Count() > 0 Then
+
+            FrmAnotacoes.Focus()
+            FrmAnotacoes.Close()
+            FrmAnotacoes.MdiParent = MDIPrincipal
+            FrmAnotacoes.Show()
+            FrmAnotacoes.Focus()
+
+        Else
+
+            FrmAnotacoes.MdiParent = MDIPrincipal
+            FrmAnotacoes.Show()
+
+        End If
+
+        Try
+            FrmAnotacoes.RichTextBoxAnotacao.Visible = True
+            FrmAnotacoes.lblMudaTexto.Visible = True
+
+            FrmAnotacoes.lblMudaTexto.Text = "Receita Federal"
+            FrmAnotacoes.RichTextBoxAnotacao.DataBindings.Clear()
+            FrmAnotacoes.RichTextBoxAnotacao.DataBindings.Add(New Binding("RTF", FrmAnotacoes.AnotacoesBindingSource, "Federal"))
+        Catch ex As Exception
+            MsgBox("Can't load Web page" & vbCrLf & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BtnAnotacoesEstadual_Click(sender As Object, e As EventArgs) Handles BtnAnotacoesEstadual.Click
+        If Application.OpenForms.OfType(Of FrmAnotacoes)().Count() > 0 Then
+
+            FrmAnotacoes.Focus()
+            FrmAnotacoes.Close()
+            FrmAnotacoes.MdiParent = MDIPrincipal
+            FrmAnotacoes.Show()
+            FrmAnotacoes.Focus()
+
+        Else
+
+            FrmAnotacoes.MdiParent = MDIPrincipal
+            FrmAnotacoes.Show()
+
+        End If
+
+        Try
+            FrmAnotacoes.RichTextBoxAnotacao.Visible = True
+            FrmAnotacoes.lblMudaTexto.Visible = True
+
+            FrmAnotacoes.lblMudaTexto.Text = "Receita Estadual"
+            FrmAnotacoes.RichTextBoxAnotacao.DataBindings.Clear()
+            FrmAnotacoes.RichTextBoxAnotacao.DataBindings.Add(New Binding("RTF", FrmAnotacoes.AnotacoesBindingSource, "Estadual"))
+        Catch ex As Exception
+            MsgBox("Can't load Web page" & vbCrLf & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BtnAnotacoesPrefeitura_Click(sender As Object, e As EventArgs) Handles BtnAnotacoesPrefeitura.Click
+        If Application.OpenForms.OfType(Of FrmAnotacoes)().Count() > 0 Then
+
+            FrmAnotacoes.Focus()
+            FrmAnotacoes.Close()
+            FrmAnotacoes.MdiParent = MDIPrincipal
+            FrmAnotacoes.Show()
+            FrmAnotacoes.Focus()
+
+        Else
+
+            FrmAnotacoes.MdiParent = MDIPrincipal
+            FrmAnotacoes.Show()
+
+        End If
+
+        Try
+            FrmAnotacoes.RichTextBoxAnotacao.Visible = True
+            FrmAnotacoes.lblMudaTexto.Visible = True
+
+            FrmAnotacoes.lblMudaTexto.Text = "Prefeitura Municipal"
+            FrmAnotacoes.RichTextBoxAnotacao.DataBindings.Clear()
+            FrmAnotacoes.RichTextBoxAnotacao.DataBindings.Add(New Binding("RTF", FrmAnotacoes.AnotacoesBindingSource, "Municipal"))
+        Catch ex As Exception
+            MsgBox("Can't load Web page" & vbCrLf & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BtnAnotacoesDemais_Click(sender As Object, e As EventArgs) Handles BtnAnotacoesDemais.Click
+        If Application.OpenForms.OfType(Of FrmAnotacoes)().Count() > 0 Then
+
+            FrmAnotacoes.Focus()
+            FrmAnotacoes.Close()
+            FrmAnotacoes.MdiParent = MDIPrincipal
+            FrmAnotacoes.Show()
+            FrmAnotacoes.Focus()
+
+        Else
+
+            FrmAnotacoes.MdiParent = MDIPrincipal
+            FrmAnotacoes.Show()
+
+        End If
+        Try
+            FrmAnotacoes.RichTextBoxAnotacao.Visible = True
+            FrmAnotacoes.lblMudaTexto.Visible = True
+
+            FrmAnotacoes.lblMudaTexto.Text = "Demais Assuntos"
+            FrmAnotacoes.RichTextBoxAnotacao.DataBindings.Clear()
+            FrmAnotacoes.RichTextBoxAnotacao.DataBindings.Add(New Binding("RTF", FrmAnotacoes.AnotacoesBindingSource, "Demais"))
+        Catch ex As Exception
+            MsgBox("Erro! " & vbCrLf & ex.Message)
+        End Try
+
+    End Sub
 End Class

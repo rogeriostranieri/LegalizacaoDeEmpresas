@@ -381,6 +381,12 @@ Partial Class Legalizacao
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.BtnLocalizar = New System.Windows.Forms.Button()
         Me.CADstatusTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.CADstatusTableAdapter()
+        Me.BtnAnotacoesLEgalizacao = New System.Windows.Forms.Button()
+        Me.BtnAnotacoesFederal = New System.Windows.Forms.Button()
+        Me.BtnAnotacoesEstadual = New System.Windows.Forms.Button()
+        Me.BtnAnotacoesPrefeitura = New System.Windows.Forms.Button()
+        Me.BtnAnotacoesDemais = New System.Windows.Forms.Button()
+        Me.BtnAnotacoesSimples = New System.Windows.Forms.Button()
         NomeFantasiaLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         StatusLabel = New System.Windows.Forms.Label()
@@ -2209,6 +2215,7 @@ Partial Class Legalizacao
         'TabPage3
         '
         Me.TabPage3.AutoScroll = True
+        Me.TabPage3.Controls.Add(Me.BtnAnotacoesLEgalizacao)
         Me.TabPage3.Controls.Add(Me.BtnData3)
         Me.TabPage3.Controls.Add(Me.BtnData2)
         Me.TabPage3.Controls.Add(Me.LinkLabelMudarRazaoSocial)
@@ -2259,7 +2266,7 @@ Partial Class Legalizacao
         '
         Me.LinkLabelMudarRazaoSocial.AutoSize = True
         Me.LinkLabelMudarRazaoSocial.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.25!)
-        Me.LinkLabelMudarRazaoSocial.Location = New System.Drawing.Point(196, 134)
+        Me.LinkLabelMudarRazaoSocial.Location = New System.Drawing.Point(198, 135)
         Me.LinkLabelMudarRazaoSocial.Name = "LinkLabelMudarRazaoSocial"
         Me.LinkLabelMudarRazaoSocial.Size = New System.Drawing.Size(101, 13)
         Me.LinkLabelMudarRazaoSocial.TabIndex = 50
@@ -2269,7 +2276,7 @@ Partial Class Legalizacao
         'LabelNovaRazaoFinal
         '
         Me.LabelNovaRazaoFinal.AutoSize = True
-        Me.LabelNovaRazaoFinal.Location = New System.Drawing.Point(6, 98)
+        Me.LabelNovaRazaoFinal.Location = New System.Drawing.Point(8, 99)
         Me.LabelNovaRazaoFinal.Name = "LabelNovaRazaoFinal"
         Me.LabelNovaRazaoFinal.Size = New System.Drawing.Size(147, 13)
         Me.LabelNovaRazaoFinal.TabIndex = 49
@@ -2278,9 +2285,9 @@ Partial Class Legalizacao
         'NovaRazaoSocialFinalTextBox
         '
         Me.NovaRazaoSocialFinalTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpresasBindingSource, "NovaRazaoSocialFinal", True))
-        Me.NovaRazaoSocialFinalTextBox.Location = New System.Drawing.Point(9, 114)
+        Me.NovaRazaoSocialFinalTextBox.Location = New System.Drawing.Point(14, 115)
         Me.NovaRazaoSocialFinalTextBox.Name = "NovaRazaoSocialFinalTextBox"
-        Me.NovaRazaoSocialFinalTextBox.Size = New System.Drawing.Size(288, 20)
+        Me.NovaRazaoSocialFinalTextBox.Size = New System.Drawing.Size(285, 20)
         Me.NovaRazaoSocialFinalTextBox.TabIndex = 48
         '
         'Button48
@@ -2619,6 +2626,7 @@ Partial Class Legalizacao
         'TabPage4
         '
         Me.TabPage4.AutoScroll = True
+        Me.TabPage4.Controls.Add(Me.BtnAnotacoesFederal)
         Me.TabPage4.Controls.Add(Me.BtnFedJunta)
         Me.TabPage4.Controls.Add(Me.BtnData4)
         Me.TabPage4.Controls.Add(Me.Button47)
@@ -2663,7 +2671,7 @@ Partial Class Legalizacao
         'Button47
         '
         Me.Button47.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button47.Location = New System.Drawing.Point(90, 63)
+        Me.Button47.Location = New System.Drawing.Point(24, 63)
         Me.Button47.Name = "Button47"
         Me.Button47.Size = New System.Drawing.Size(60, 24)
         Me.Button47.TabIndex = 41
@@ -2760,7 +2768,7 @@ Partial Class Legalizacao
         'Button13
         '
         Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button13.Location = New System.Drawing.Point(156, 63)
+        Me.Button13.Location = New System.Drawing.Point(90, 63)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(145, 24)
         Me.Button13.TabIndex = 36
@@ -2847,6 +2855,7 @@ Partial Class Legalizacao
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.BtnAnotacoesEstadual)
         Me.TabPage5.Controls.Add(Me.Button33)
         Me.TabPage5.Controls.Add(Me.GroupBox12)
         Me.TabPage5.Controls.Add(Me.IEjuntaComboBox)
@@ -3031,6 +3040,7 @@ Partial Class Legalizacao
         'TabPage7
         '
         Me.TabPage7.AutoScroll = True
+        Me.TabPage7.Controls.Add(Me.BtnAnotacoesSimples)
         Me.TabPage7.Controls.Add(Me.GroupBox13)
         Me.TabPage7.Controls.Add(OrgãoPedSimplesLabel)
         Me.TabPage7.Controls.Add(Me.OrgãoPedSimplesComboBox)
@@ -3293,6 +3303,7 @@ Partial Class Legalizacao
         'TabPage6
         '
         Me.TabPage6.AutoScroll = True
+        Me.TabPage6.Controls.Add(Me.BtnAnotacoesPrefeitura)
         Me.TabPage6.Controls.Add(Me.LinkLabel16)
         Me.TabPage6.Controls.Add(Me.Button32)
         Me.TabPage6.Controls.Add(BombeiroJuntaLabel)
@@ -3348,6 +3359,7 @@ Partial Class Legalizacao
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.BtnAnotacoesDemais)
         Me.TabPage2.Controls.Add(Me.Button9)
         Me.TabPage2.Controls.Add(HistoricoLabel)
         Me.TabPage2.Controls.Add(Me.HistoricoRichTextBox)
@@ -3752,7 +3764,7 @@ Partial Class Legalizacao
         '
         'Calendar1
         '
-        Me.Calendar1.Location = New System.Drawing.Point(102, 39)
+        Me.Calendar1.Location = New System.Drawing.Point(4, 19)
         Me.Calendar1.Name = "Calendar1"
         Me.Calendar1.TabIndex = 70
         '
@@ -4151,6 +4163,72 @@ Partial Class Legalizacao
         '
         Me.CADstatusTableAdapter.ClearBeforeFill = True
         '
+        'BtnAnotacoesLEgalizacao
+        '
+        Me.BtnAnotacoesLEgalizacao.BackgroundImage = CType(resources.GetObject("BtnAnotacoesLEgalizacao.BackgroundImage"), System.Drawing.Image)
+        Me.BtnAnotacoesLEgalizacao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnAnotacoesLEgalizacao.Location = New System.Drawing.Point(536, 11)
+        Me.BtnAnotacoesLEgalizacao.Name = "BtnAnotacoesLEgalizacao"
+        Me.BtnAnotacoesLEgalizacao.Size = New System.Drawing.Size(69, 23)
+        Me.BtnAnotacoesLEgalizacao.TabIndex = 71
+        Me.BtnAnotacoesLEgalizacao.Text = "Anotações"
+        Me.BtnAnotacoesLEgalizacao.UseVisualStyleBackColor = True
+        '
+        'BtnAnotacoesFederal
+        '
+        Me.BtnAnotacoesFederal.BackgroundImage = CType(resources.GetObject("BtnAnotacoesFederal.BackgroundImage"), System.Drawing.Image)
+        Me.BtnAnotacoesFederal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnAnotacoesFederal.Location = New System.Drawing.Point(241, 63)
+        Me.BtnAnotacoesFederal.Name = "BtnAnotacoesFederal"
+        Me.BtnAnotacoesFederal.Size = New System.Drawing.Size(69, 23)
+        Me.BtnAnotacoesFederal.TabIndex = 72
+        Me.BtnAnotacoesFederal.Text = "Anotações"
+        Me.BtnAnotacoesFederal.UseVisualStyleBackColor = True
+        '
+        'BtnAnotacoesEstadual
+        '
+        Me.BtnAnotacoesEstadual.BackgroundImage = CType(resources.GetObject("BtnAnotacoesEstadual.BackgroundImage"), System.Drawing.Image)
+        Me.BtnAnotacoesEstadual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnAnotacoesEstadual.Location = New System.Drawing.Point(439, 12)
+        Me.BtnAnotacoesEstadual.Name = "BtnAnotacoesEstadual"
+        Me.BtnAnotacoesEstadual.Size = New System.Drawing.Size(69, 23)
+        Me.BtnAnotacoesEstadual.TabIndex = 73
+        Me.BtnAnotacoesEstadual.Text = "Anotações"
+        Me.BtnAnotacoesEstadual.UseVisualStyleBackColor = True
+        '
+        'BtnAnotacoesPrefeitura
+        '
+        Me.BtnAnotacoesPrefeitura.BackgroundImage = CType(resources.GetObject("BtnAnotacoesPrefeitura.BackgroundImage"), System.Drawing.Image)
+        Me.BtnAnotacoesPrefeitura.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnAnotacoesPrefeitura.Location = New System.Drawing.Point(338, 19)
+        Me.BtnAnotacoesPrefeitura.Name = "BtnAnotacoesPrefeitura"
+        Me.BtnAnotacoesPrefeitura.Size = New System.Drawing.Size(69, 23)
+        Me.BtnAnotacoesPrefeitura.TabIndex = 74
+        Me.BtnAnotacoesPrefeitura.Text = "Anotações"
+        Me.BtnAnotacoesPrefeitura.UseVisualStyleBackColor = True
+        '
+        'BtnAnotacoesDemais
+        '
+        Me.BtnAnotacoesDemais.BackgroundImage = CType(resources.GetObject("BtnAnotacoesDemais.BackgroundImage"), System.Drawing.Image)
+        Me.BtnAnotacoesDemais.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnAnotacoesDemais.Location = New System.Drawing.Point(510, 79)
+        Me.BtnAnotacoesDemais.Name = "BtnAnotacoesDemais"
+        Me.BtnAnotacoesDemais.Size = New System.Drawing.Size(69, 23)
+        Me.BtnAnotacoesDemais.TabIndex = 75
+        Me.BtnAnotacoesDemais.Text = "Anotações"
+        Me.BtnAnotacoesDemais.UseVisualStyleBackColor = True
+        '
+        'BtnAnotacoesSimples
+        '
+        Me.BtnAnotacoesSimples.BackgroundImage = CType(resources.GetObject("BtnAnotacoesSimples.BackgroundImage"), System.Drawing.Image)
+        Me.BtnAnotacoesSimples.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnAnotacoesSimples.Location = New System.Drawing.Point(299, 74)
+        Me.BtnAnotacoesSimples.Name = "BtnAnotacoesSimples"
+        Me.BtnAnotacoesSimples.Size = New System.Drawing.Size(69, 23)
+        Me.BtnAnotacoesSimples.TabIndex = 76
+        Me.BtnAnotacoesSimples.Text = "Anotações"
+        Me.BtnAnotacoesSimples.UseVisualStyleBackColor = True
+        '
         'Legalizacao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4533,4 +4611,10 @@ Partial Class Legalizacao
     Friend WithEvents BtnFedJunta As Button
     Friend WithEvents CADstatusBindingSource As BindingSource
     Friend WithEvents CADstatusTableAdapter As PrinceDBDataSetTableAdapters.CADstatusTableAdapter
+    Friend WithEvents BtnAnotacoesLEgalizacao As Button
+    Friend WithEvents BtnAnotacoesFederal As Button
+    Friend WithEvents BtnAnotacoesEstadual As Button
+    Friend WithEvents BtnAnotacoesPrefeitura As Button
+    Friend WithEvents BtnAnotacoesDemais As Button
+    Friend WithEvents BtnAnotacoesSimples As Button
 End Class

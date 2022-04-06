@@ -1018,4 +1018,41 @@
 
         End If
     End Sub
+
+    Private Sub EndCidadeLabel2_Click(sender As Object, e As EventArgs) Handles EndCidadeLabel2.Click
+        If EndCidadeLabel2.Text = "" Then
+
+        Else
+            TabAlvara.SelectTab(2)
+
+        End If
+    End Sub
+
+    Private Sub BtnAnotacoesPref_Click(sender As Object, e As EventArgs) Handles BtnAnotacoesPref.Click
+        If Application.OpenForms.OfType(Of FrmAnotacoes)().Count() > 0 Then
+
+            FrmAnotacoes.Focus()
+            FrmAnotacoes.Close()
+            FrmAnotacoes.MdiParent = MDIPrincipal
+            FrmAnotacoes.Show()
+            FrmAnotacoes.Focus()
+
+        Else
+
+            FrmAnotacoes.MdiParent = MDIPrincipal
+            FrmAnotacoes.Show()
+
+        End If
+
+        Try
+            FrmAnotacoes.RichTextBoxAnotacao.Visible = True
+            FrmAnotacoes.lblMudaTexto.Visible = True
+
+            FrmAnotacoes.lblMudaTexto.Text = "Prefeitura Municipal"
+            FrmAnotacoes.RichTextBoxAnotacao.DataBindings.Clear()
+            FrmAnotacoes.RichTextBoxAnotacao.DataBindings.Add(New Binding("RTF", FrmAnotacoes.AnotacoesBindingSource, "Municipal"))
+        Catch ex As Exception
+            MsgBox("Can't load Web page" & vbCrLf & ex.Message)
+        End Try
+    End Sub
 End Class
