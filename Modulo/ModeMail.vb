@@ -117,19 +117,38 @@ Module ModeMail
             'assunto
             FrmMail.TextBoxAssunto.Text = C & " - da Empresa: " & A & ""
 
-            'corpo do email
-            FrmMail.RichTextBoxMensagem.SelectedText &=
-"A Empresa: " & A & ", 
-inscrita no CNPJ nº: " & B & ", e inscrita no Estado com nº: " & F & ", 
-
-Com o processo de: " & C & ", 
-Teve como objetivo de: " & D & ",
-
-E no Sistema ja foi atualizado: " & E & ".
-
-            
-//-----------------//-----------------//-----------------//-----------------//
+            If F = "" Then
+                'corpo do email
+                FrmMail.RichTextBoxMensagem.SelectedText &=
+"<html><body><b>A Empresa:</b> " & A & ", <br/>
+<b>Inscrita no CNPJ</b> Nº: " & B & ".<br/>
+<br/>
+<b>Com o processo de:</b> " & C & ", <br/>
+<b>Teve como objetivo de:</b> " & D & ",<br/>
+<br/>
+<b>E no Sistema ja foi atualizado:</b> " & E & ".<br/>
+<br/>
+<br/>            
+//-----------------//-----------------//-----------------//-----------------//<br/>
+</body></html>
 "
+            Else
+                'corpo do email
+                FrmMail.RichTextBoxMensagem.SelectedText &=
+"<html><body><b>A Empresa:</b> " & A & ", <br/>
+<b>Inscrita no CNPJ</b> Nº: " & B & ", e <b>inscrita no Estado</b> com Nº: " & F & ". <br/>
+<br/>
+<b>Com o processo de:</b> " & C & ", <br/>
+<b>Teve como objetivo de:</b> " & D & ",<br/>
+<br />
+<b>E no Sistema ja foi atualizado:</b> " & E & ".<br/>
+<br/>
+<br/>            
+//-----------------//-----------------//-----------------//-----------------//<br />
+</body></html>
+"
+            End If
+
 
         Catch ex As System.InvalidCastException
             MessageBox.Show("ERRO" & vbCrLf & ex.Message, "Prince Avisa")

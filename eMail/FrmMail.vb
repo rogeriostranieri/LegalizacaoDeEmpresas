@@ -16,6 +16,10 @@ Public Class FrmMail
 
         ProgressBar1.Value = 0
         ProgressBar1.BackColor = Color.Green
+
+
+
+
     End Sub
 
 
@@ -102,7 +106,7 @@ Public Class FrmMail
 
 
             Enviar.IsBodyHtml = True
-            Enviar.Priority = System.Net.Mail.MailPriority.Normal
+            Enviar.Priority = System.Net.Mail.MailPriority.High
 
             ProgressBar1.Value = 30
 
