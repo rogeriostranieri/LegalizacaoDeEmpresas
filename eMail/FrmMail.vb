@@ -85,7 +85,7 @@ Public Class FrmMail
             Dim Destinatario As String = TextBoxPara.Text
             Dim UserSenha As String = SenhaEmailTextBox.Text
             Dim destinatarios As String = Destinatario
-            Dim Enviar As System.Net.Mail.MailMessage = New System.Net.Mail.MailMessage()
+            Dim Enviar As New System.Net.Mail.MailMessage '= New System.Net.Mail.MailMessage()
 
 
             ProgressBar1.Value = 10
@@ -127,12 +127,12 @@ Public Class FrmMail
             '  Dim client As SmtpClient = New SmtpClient(SmtpClientTextBox.Text, SmtpPortTextBox.Text)
             ProgressBar1.Value = 40
 
-            Dim client As New SmtpClient()
-            client.Host = SmtpClientTextBox.Text
-            client.Port = SmtpPortTextBox.Text
-            client.EnableSsl = HabilitaSslComboBox.Text
-
-            client.UseDefaultCredentials = CredencialComboBox.Text
+            Dim client As New SmtpClient With {
+                .Host = SmtpClientTextBox.Text,
+                .Port = SmtpPortTextBox.Text,
+                .EnableSsl = HabilitaSslComboBox.Text,
+                .UseDefaultCredentials = CredencialComboBox.Text
+            }
 
             'Arquivos que vão em anexo dentro de um ListBox
 
@@ -363,7 +363,7 @@ Public Class FrmMail
 
 
 
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         'ativar Acesso a app menos seguro
 
     End Sub

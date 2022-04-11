@@ -59,7 +59,6 @@ Partial Class FrmMail
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EMailCaixaDeSaidaBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.CredencialComboBox = New System.Windows.Forms.ComboBox()
@@ -435,7 +434,6 @@ Partial Class FrmMail
         'TabPage3
         '
         Me.TabPage3.AutoScroll = True
-        Me.TabPage3.Controls.Add(Me.LinkLabel1)
         Me.TabPage3.Controls.Add(Me.Label4)
         Me.TabPage3.Controls.Add(Me.Label3)
         Me.TabPage3.Controls.Add(CredencialLabel)
@@ -465,16 +463,6 @@ Partial Class FrmMail
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Configurações"
         Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(420, 165)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(33, 13)
-        Me.LinkLabel1.TabIndex = 57
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Gmail"
         '
         'Label4
         '
@@ -627,6 +615,7 @@ Partial Class FrmMail
         '
         'TableAdapterManager
         '
+        Me.TableAdapterManager.AnotacoesTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.CADSituacaoAlvaraTableAdapter = Nothing
         Me.TableAdapterManager.CADstatusTableAdapter = Nothing
@@ -759,7 +748,6 @@ Partial Class FrmMail
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents ButtonAnexar As Button
-    Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Timer1 As Timer
     Friend WithEvents LblAnexo As Label

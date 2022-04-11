@@ -1911,10 +1911,14 @@ CPF =
         If NovaRazaoSocialComboBox.Text = "Sim" Then
             NovaRazaoSocialFinalTextBox.Visible = True
             LinkLabel17.Visible = True
+            LabelNovaRazaoFinal.Visible = True
+            LinkLabelMudarRazaoSocial.Visible = True
 
         Else
             NovaRazaoSocialFinalTextBox.Visible = False
             LinkLabel17.Visible = False
+            LabelNovaRazaoFinal.Visible = False
+            LinkLabelMudarRazaoSocial.Visible = False
         End If
 
 

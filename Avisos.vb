@@ -36,15 +36,16 @@
         ' Cria a ToolTip e associa com o Form container.
         Dim toolTip1 As New ToolTip()
         'cria outra ToolTip e associa ao controle Button
-        Dim buttonToolTip As New ToolTip()
-        buttonToolTip.ToolTipTitle = "Dica ToolTip para o controle Button"
-        buttonToolTip.UseFading = True
-        buttonToolTip.UseAnimation = True
-        buttonToolTip.IsBalloon = True
-        buttonToolTip.ShowAlways = True
-        buttonToolTip.AutoPopDelay = 5000
-        buttonToolTip.InitialDelay = 1000
-        buttonToolTip.ReshowDelay = 500
+        Dim buttonToolTip As New ToolTip With {
+            .ToolTipTitle = "Dica ToolTip para o controle Button",
+            .UseFading = True,
+            .UseAnimation = True,
+            .IsBalloon = True,
+            .ShowAlways = True,
+            .AutoPopDelay = 5000,
+            .InitialDelay = 1000,
+            .ReshowDelay = 500
+        }
         buttonToolTip.IsBalloon = True
         ' Define o delay para a ToolTip.
         toolTip1.AutoPopDelay = 5000

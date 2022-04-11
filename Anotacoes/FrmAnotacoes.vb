@@ -154,7 +154,7 @@ Public Class FrmAnotacoes
     '=================================================================================
 
     Private Sub MudarCorBotao_Click(sender As Object, e As EventArgs) Handles MudarCorBotao.Click
-        Dim MinhasCores As ColorDialog = New ColorDialog
+        Dim MinhasCores As ColorDialog '= New ColorDialog
         'selecionar uma cor customizada
         MinhasCores.AllowFullOpen = False
         'Permite o usuário obter ajuda 
@@ -190,10 +190,10 @@ Public Class FrmAnotacoes
 
         'RichTextBoxAnotacao.SelectionFont = New Font(fonte, tamanho, estilo)
     End Sub
-    Private Sub cbofonte_DropDownClosed(sender As Object, e As EventArgs) Handles cbofonte.DropDownClosed
+    Private Sub Cbofonte_DropDownClosed(sender As Object, e As EventArgs) Handles cbofonte.DropDownClosed
         Mudafonte()
     End Sub
-    Private Sub cbotamanho_DropDownClosed(sender As Object, e As EventArgs) Handles cbotamanho.DropDownClosed
+    Private Sub Cbotamanho_DropDownClosed(sender As Object, e As EventArgs) Handles cbotamanho.DropDownClosed
         Mudafonte()
     End Sub
 
@@ -284,7 +284,7 @@ Public Class FrmAnotacoes
 
 
     Private Sub BtnRealcar_Click(sender As Object, e As EventArgs) Handles BtnRealcar.Click
-        Dim MinhasCores As ColorDialog = New ColorDialog
+        Dim MinhasCores As ColorDialog '= New ColorDialog
         'selecionar uma cor customizada
         MinhasCores.AllowFullOpen = False
         'Permite o usuário obter ajuda 
@@ -436,5 +436,8 @@ Public Class FrmAnotacoes
 
     End Sub
 
+    Private Sub ButtonLimpar_Click(sender As Object, e As EventArgs) Handles ButtonLimpar.Click
+        RichTextBoxAnotacao.Clear()
 
+    End Sub
 End Class
