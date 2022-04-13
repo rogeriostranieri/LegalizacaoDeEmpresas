@@ -38,6 +38,7 @@ Partial Class Login
         Me.Cancel = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'UsernameLabel
@@ -107,12 +108,13 @@ Partial Class Login
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackColor = System.Drawing.Color.Black
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(379, 12)
+        Me.Button1.ForeColor = System.Drawing.Color.Transparent
+        Me.Button1.Location = New System.Drawing.Point(377, 12)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(51, 26)
         Me.Button1.TabIndex = 6
@@ -131,6 +133,21 @@ Partial Class Login
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "IDENTIFICAÇÃO"
         '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Black
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Transparent
+        Me.Button2.Location = New System.Drawing.Point(12, 12)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 26)
+        Me.Button2.TabIndex = 8
+        Me.Button2.Text = "Conectar"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Login
         '
         Me.AcceptButton = Me.OK
@@ -140,6 +157,7 @@ Partial Class Login
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(426, 276)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Cancel)
@@ -163,4 +181,5 @@ Partial Class Login
 
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button2 As Button
 End Class

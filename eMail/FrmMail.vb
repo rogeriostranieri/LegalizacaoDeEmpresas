@@ -169,7 +169,7 @@ Public Class FrmMail
                 'finaliza mostrando que está tudo ok
                 '    Timer1.Stop()
                 '    Timer1.Enabled = False
-
+                ProgressBar1.BackColor = Color.Green
                 ProgressBar1.Value = 100
                 MessageBox.Show("E-mail enviado com sucesso")
 
