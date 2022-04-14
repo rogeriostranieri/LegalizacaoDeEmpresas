@@ -77,11 +77,13 @@ Partial Class MDIPrincipal
         Me.NoiteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
-        Me.StatusStrip = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton()
+        Me.StatusStrip = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.LblNomeCompleto = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.LbTema = New System.Windows.Forms.ToolStripLabel()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -373,7 +375,7 @@ Partial Class MDIPrincipal
         '
         Me.ToolStrip.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.ToolStrip.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripSeparator3, Me.ToolStripButton2, Me.ToolStripSeparator4, Me.ToolStripButton3, Me.ToolStripSeparator7, Me.ToolStripButton4, Me.ToolStripSeparator5, Me.ToolStripDropDownButton1, Me.ToolStripButton5, Me.ToolStripSeparator8, Me.ToolStripButton6})
+        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripSeparator3, Me.ToolStripButton2, Me.ToolStripSeparator4, Me.ToolStripButton3, Me.ToolStripSeparator7, Me.ToolStripButton4, Me.ToolStripSeparator5, Me.ToolStripDropDownButton1, Me.ToolStripButton5, Me.ToolStripSeparator8, Me.ToolStripButton6, Me.LbTema})
         Me.ToolStrip.Location = New System.Drawing.Point(0, 25)
         Me.ToolStrip.Name = "ToolStrip"
         Me.ToolStrip.Size = New System.Drawing.Size(796, 25)
@@ -480,23 +482,6 @@ Partial Class MDIPrincipal
         Me.ToolStripButton5.Size = New System.Drawing.Size(49, 22)
         Me.ToolStripButton5.Text = "e-MAIL"
         '
-        'StatusStrip
-        '
-        Me.StatusStrip.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 431)
-        Me.StatusStrip.Name = "StatusStrip"
-        Me.StatusStrip.Size = New System.Drawing.Size(796, 22)
-        Me.StatusStrip.TabIndex = 7
-        Me.StatusStrip.Text = "StatusStrip"
-        '
-        'ToolStripStatusLabel
-        '
-        Me.ToolStripStatusLabel.ForeColor = System.Drawing.Color.White
-        Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
-        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(204, 17)
-        Me.ToolStripStatusLabel.Text = "Produzido por Rogerio Stranieri -2022"
-        '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
@@ -510,6 +495,37 @@ Partial Class MDIPrincipal
         Me.ToolStripButton6.Name = "ToolStripButton6"
         Me.ToolStripButton6.Size = New System.Drawing.Size(65, 22)
         Me.ToolStripButton6.Text = "Anotações"
+        '
+        'StatusStrip
+        '
+        Me.StatusStrip.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel, Me.LblNomeCompleto})
+        Me.StatusStrip.Location = New System.Drawing.Point(0, 431)
+        Me.StatusStrip.Name = "StatusStrip"
+        Me.StatusStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.StatusStrip.Size = New System.Drawing.Size(796, 22)
+        Me.StatusStrip.TabIndex = 7
+        Me.StatusStrip.Text = "StatusStrip"
+        '
+        'ToolStripStatusLabel
+        '
+        Me.ToolStripStatusLabel.ForeColor = System.Drawing.Color.White
+        Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
+        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(204, 17)
+        Me.ToolStripStatusLabel.Text = "Produzido por Rogerio Stranieri -2022"
+        '
+        'LblNomeCompleto
+        '
+        Me.LblNomeCompleto.Name = "LblNomeCompleto"
+        Me.LblNomeCompleto.Size = New System.Drawing.Size(119, 17)
+        Me.LblNomeCompleto.Text = "ToolStripStatusLabel1"
+        '
+        'LbTema
+        '
+        Me.LbTema.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.LbTema.Name = "LbTema"
+        Me.LbTema.Size = New System.Drawing.Size(87, 22)
+        Me.LbTema.Text = "ToolStripLabel1"
         '
         'MDIPrincipal
         '
@@ -594,4 +610,6 @@ Partial Class MDIPrincipal
     Friend WithEvents AlterarSenhaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator8 As ToolStripSeparator
     Friend WithEvents ToolStripButton6 As ToolStripButton
+    Friend WithEvents LblNomeCompleto As ToolStripStatusLabel
+    Friend WithEvents LbTema As ToolStripLabel
 End Class

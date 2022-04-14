@@ -9,6 +9,12 @@ Public Class UserADM
     ' onde CustomPrincipal é a implementação de IPrincipal usada para realizar a autenticação. 
     ' Subsequentemente, My.User irá retornar informações de identificação encapsuladas num objeto CustomPrincipal
     ' como nome de usuário, nome de exibição etc.
+    Private conexao As SqlConnection
+    Private comando As SqlCommand
+    Private da As SqlDataAdapter
+    Private dr As SqlDataReader
+
+
 
     Private Sub ConnectToSQL()
 
@@ -30,7 +36,7 @@ Public Class UserADM
                         'SenhaNova
                         'SenhaNovaRepetida
                         If SenhaNova.Text = SenhaNovaRepetida.Text Then
-                            teste()
+                            Senha()
                         Else
                             MessageBox.Show("As novas senhas estão diferentes!")
 
@@ -62,17 +68,15 @@ Public Class UserADM
     End Sub
 
     Private Sub UserADM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 
 
 
     ' comando atualizar senha
 
-    Private conexao As SqlConnection
-    Private comando As SqlCommand
-    Private da As SqlDataAdapter
-    Private dr As SqlDataReader
-    Private Sub teste()
+
+    Private Sub Senha()
         Try
             conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
 
@@ -96,5 +100,55 @@ Public Class UserADM
             comando = Nothing
             conexao = Nothing
         End Try
+    End Sub
+
+    Private Sub BtnNomeFinal_Click(sender As Object, e As EventArgs) Handles BtnNomeFinal.Click
+        MudarNomeETema()
+    End Sub
+
+    Private Sub MudarNomeETema()
+        Dim str As String = "Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755"
+        Dim sql As String = "select count(*) from Login where Usuario=@Usuario and Senha=@Senha"
+        Using Conn As New SqlConnection(str)
+            Using cmd As New SqlCommand(sql, Conn)
+                Conn.Open()
+                cmd.Parameters.AddWithValue("@Usuario", UsernameTextBox.Text)
+                cmd.Parameters.AddWithValue("@Senha", PasswordTextBox.Text)
+                Dim value = cmd.ExecuteScalar()
+                If value = 1 Then
+                    'UPDATE Login SET Tema=@TemaComboBox WHERE NomeCompleto=@NomeCompletoTextBox
+                    'Selecionar Usuario e mudar nome completo e tema
+                    Dim strSQL As String = "UPDATE Login SET NomeCompleto=@NomeCompleto, Tema=@TemaComboBox WHERE Usuario=@Usuario" 'WHERE ID = @ID
+                    Using cmd4 As New SqlCommand(strSQL, Conn)
+                        cmd4.Parameters.AddWithValue("@NomeCompleto", NomeCompletoTextBox.Text)
+                        cmd4.Parameters.AddWithValue("@TemaComboBox", TemaComboBox.Text)
+                        cmd4.Parameters.AddWithValue("@Usuario", UsernameTextBox.Text)
+                        cmd4.ExecuteNonQuery()
+                    End Using
+                    MDIPrincipal.Refresh()
+
+
+
+                    MsgBox("Dados alterados com sucesso")
+
+                Else
+                    MsgBox("Usuário ou senha incorretos")
+                End If
+            End Using
+        End Using
+
+    End Sub
+
+    Private Sub TESTE()
+        'codigo para mudar o tema
+        '  Dim sql2 As String = "select NomeCompleto from Login where NomeCompleto=@NomeCompletoTextBox "
+        '  Using cmd2 As New SqlCommand(sql2, Conn)
+        '  cmd2.Parameters.AddWithValue("@NomeCompletoTextBox", NomeCompletoTextBox.Text)
+        ' Dim value2 = cmd2.ExecuteScalar()
+        ' End Using
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
     End Sub
 End Class

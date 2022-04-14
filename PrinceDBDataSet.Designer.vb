@@ -3267,6 +3267,10 @@ Partial Public Class PrinceDBDataSet
         
         Private columnSenha As Global.System.Data.DataColumn
         
+        Private columnNomeCompleto As Global.System.Data.DataColumn
+        
+        Private columnTema As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -3327,6 +3331,22 @@ Partial Public Class PrinceDBDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property NomeCompletoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNomeCompleto
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property TemaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTema
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3363,9 +3383,9 @@ Partial Public Class PrinceDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddLoginRow(ByVal Usuario As String, ByVal Senha As String) As LoginRow
+        Public Overloads Function AddLoginRow(ByVal Usuario As String, ByVal Senha As String, ByVal NomeCompleto As String, ByVal Tema As String) As LoginRow
             Dim rowLoginRow As LoginRow = CType(Me.NewRow,LoginRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Usuario, Senha}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Usuario, Senha, NomeCompleto, Tema}
             rowLoginRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowLoginRow)
             Return rowLoginRow
@@ -3397,6 +3417,8 @@ Partial Public Class PrinceDBDataSet
             Me.columnID_Login = MyBase.Columns("ID_Login")
             Me.columnUsuario = MyBase.Columns("Usuario")
             Me.columnSenha = MyBase.Columns("Senha")
+            Me.columnNomeCompleto = MyBase.Columns("NomeCompleto")
+            Me.columnTema = MyBase.Columns("Tema")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3408,6 +3430,10 @@ Partial Public Class PrinceDBDataSet
             MyBase.Columns.Add(Me.columnUsuario)
             Me.columnSenha = New Global.System.Data.DataColumn("Senha", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnSenha)
+            Me.columnNomeCompleto = New Global.System.Data.DataColumn("NomeCompleto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNomeCompleto)
+            Me.columnTema = New Global.System.Data.DataColumn("Tema", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTema)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID_Login}, true))
             Me.columnID_Login.AutoIncrement = true
             Me.columnID_Login.AutoIncrementSeed = -1
@@ -3417,6 +3443,8 @@ Partial Public Class PrinceDBDataSet
             Me.columnID_Login.Unique = true
             Me.columnUsuario.MaxLength = 50
             Me.columnSenha.MaxLength = 50
+            Me.columnNomeCompleto.MaxLength = 2147483647
+            Me.columnTema.MaxLength = 2147483647
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11292,6 +11320,36 @@ Partial Public Class PrinceDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property NomeCompleto() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLogin.NomeCompletoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("O valor da coluna 'NomeCompleto' na tabela 'Login' é DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLogin.NomeCompletoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property Tema() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLogin.TemaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("O valor da coluna 'Tema' na tabela 'Login' é DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLogin.TemaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsUsuarioNull() As Boolean
             Return Me.IsNull(Me.tableLogin.UsuarioColumn)
         End Function
@@ -11312,6 +11370,30 @@ Partial Public Class PrinceDBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetSenhaNull()
             Me(Me.tableLogin.SenhaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsNomeCompletoNull() As Boolean
+            Return Me.IsNull(Me.tableLogin.NomeCompletoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetNomeCompletoNull()
+            Me(Me.tableLogin.NomeCompletoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsTemaNull() As Boolean
+            Return Me.IsNull(Me.tableLogin.TemaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetTemaNull()
+            Me(Me.tableLogin.TemaColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -21216,6 +21298,8 @@ Namespace PrinceDBDataSetTableAdapters
             tableMapping.ColumnMappings.Add("ID_Login", "ID_Login")
             tableMapping.ColumnMappings.Add("Usuario", "Usuario")
             tableMapping.ColumnMappings.Add("Senha", "Senha")
+            tableMapping.ColumnMappings.Add("NomeCompleto", "NomeCompleto")
+            tableMapping.ColumnMappings.Add("Tema", "Tema")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -21230,21 +21314,27 @@ Namespace PrinceDBDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Senha", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Senha", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Login] ([Usuario], [Senha]) VALUES (@Usuario, @Senha);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID_Lo"& _ 
-                "gin, Usuario, Senha FROM Login WHERE (ID_Login = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Login] ([Usuario], [Senha], [NomeCompleto], [Tema]) VALUES (@Usuario"& _ 
+                ", @Senha, @NomeCompleto, @Tema);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID_Login, Usuario, Senha, NomeCompleto,"& _ 
+                " Tema FROM Login WHERE (ID_Login = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Usuario", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Usuario", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Senha", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Senha", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NomeCompleto", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NomeCompleto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Tema", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tema", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [Login] SET [Usuario] = @Usuario, [Senha] = @Senha WHERE (([ID_Login] = @O"& _ 
-                "riginal_ID_Login) AND ((@IsNull_Usuario = 1 AND [Usuario] IS NULL) OR ([Usuario]"& _ 
-                " = @Original_Usuario)) AND ((@IsNull_Senha = 1 AND [Senha] IS NULL) OR ([Senha] "& _ 
-                "= @Original_Senha)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID_Login, Usuario, Senha FROM Login WHERE (ID_Logi"& _ 
-                "n = @ID_Login)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Login] SET [Usuario] = @Usuario, [Senha] = @Senha, [NomeCompleto] = @Nome"& _ 
+                "Completo, [Tema] = @Tema WHERE (([ID_Login] = @Original_ID_Login) AND ((@IsNull_"& _ 
+                "Usuario = 1 AND [Usuario] IS NULL) OR ([Usuario] = @Original_Usuario)) AND ((@Is"& _ 
+                "Null_Senha = 1 AND [Senha] IS NULL) OR ([Senha] = @Original_Senha)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID"& _ 
+                "_Login, Usuario, Senha, NomeCompleto, Tema FROM Login WHERE (ID_Login = @ID_Logi"& _ 
+                "n)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Usuario", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Usuario", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Senha", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Senha", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NomeCompleto", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NomeCompleto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Tema", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tema", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID_Login", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_Login", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Usuario", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Usuario", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Usuario", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Usuario", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -21361,7 +21451,7 @@ Namespace PrinceDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Usuario As String, ByVal Senha As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Usuario As String, ByVal Senha As String, ByVal NomeCompleto As String, ByVal Tema As String) As Integer
             If (Usuario Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -21371,6 +21461,16 @@ Namespace PrinceDBDataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(Senha,String)
+            End If
+            If (NomeCompleto Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(NomeCompleto,String)
+            End If
+            If (Tema Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Tema,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -21391,7 +21491,7 @@ Namespace PrinceDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Usuario As String, ByVal Senha As String, ByVal Original_ID_Login As Short, ByVal Original_Usuario As String, ByVal Original_Senha As String, ByVal ID_Login As Short) As Integer
+        Public Overloads Overridable Function Update(ByVal Usuario As String, ByVal Senha As String, ByVal NomeCompleto As String, ByVal Tema As String, ByVal Original_ID_Login As Short, ByVal Original_Usuario As String, ByVal Original_Senha As String, ByVal ID_Login As Short) As Integer
             If (Usuario Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -21402,22 +21502,32 @@ Namespace PrinceDBDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Senha,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_ID_Login,Short)
-            If (Original_Usuario Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            If (NomeCompleto Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_Usuario,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(NomeCompleto,String)
             End If
-            If (Original_Senha Is Nothing) Then
+            If (Tema Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Tema,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_ID_Login,Short)
+            If (Original_Usuario Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_Senha,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_Usuario,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(ID_Login,Short)
+            If (Original_Senha Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Senha,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(ID_Login,Short)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -21437,8 +21547,8 @@ Namespace PrinceDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Usuario As String, ByVal Senha As String, ByVal Original_ID_Login As Short, ByVal Original_Usuario As String, ByVal Original_Senha As String) As Integer
-            Return Me.Update(Usuario, Senha, Original_ID_Login, Original_Usuario, Original_Senha, Original_ID_Login)
+        Public Overloads Overridable Function Update(ByVal Usuario As String, ByVal Senha As String, ByVal NomeCompleto As String, ByVal Tema As String, ByVal Original_ID_Login As Short, ByVal Original_Usuario As String, ByVal Original_Senha As String) As Integer
+            Return Me.Update(Usuario, Senha, NomeCompleto, Tema, Original_ID_Login, Original_Usuario, Original_Senha, Original_ID_Login)
         End Function
     End Class
     

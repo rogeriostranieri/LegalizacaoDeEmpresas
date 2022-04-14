@@ -1,5 +1,32 @@
-﻿Public Class MDIPrincipal
+﻿Imports System.Data.SqlClient
 
+Public Class MDIPrincipal
+
+    'inicia verificação do login e tema
+    Private conexao As SqlConnection
+    Private comando As SqlCommand
+    Private da As SqlDataAdapter
+    Private dr As SqlDataReader
+
+
+    Private Sub BuscaLogin()
+        'NomeCompleto=@NomeCompleto, LblNomeCompleto.Text e @TemaComboBox", Me.LbTema.Text conectar e modificar
+        conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
+        conexao.Open()
+        'SELECT NomeCompleto, TemaComboBox da tabela Login por login.txtUsername.text
+        comando = New SqlCommand("SELECT NomeCompleto, TemaComboBox FROM Login WHERE Login.Username=@Username", conexao)
+        Dim Usuario As String = "admin"
+
+        comando.Parameters.Add("@Username", SqlDbType.VarChar).Value = Usuario
+        dr = comando.ExecuteReader()
+        If dr.Read Then
+            LblNomeCompleto.Text = dr("NomeCompleto")
+            LbTema.Text = dr("TemaComboBox")
+        End If
+        conexao.Close()
+
+    End Sub
+    'fim do codigo do TEMA
 
 
     Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
@@ -41,25 +68,18 @@
         Me.BackgroundImage = My.Resources._1
 
 
+        BuscaLogin()
 
+        'fim do fundo
 
-
+        'Inicio Aviso
         VbAvisoPrincipal.MdiParent = Me
-        vbAvisoPrincipal.Show()
+        VbAvisoPrincipal.Show()
 
-
-
-
+        'fim do aviso
 
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        'Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        'Me.BackgroundImage = My.Resources.FundoNovo
-
-        'ToolStripComboBox1.Text = "Padrão"
-
-
-        'Me.BackgroundImage = Global.myapp.My.Resources.Resources.Test_pp
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
 
 
@@ -230,17 +250,17 @@
 
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
 
-        If Application.OpenForms.OfType(Of vbAvisoPrincipal)().Count() > 0 Then
+        If Application.OpenForms.OfType(Of VbAvisoPrincipal)().Count() > 0 Then
 
-            vbAvisoPrincipal.Focus()
-            vbAvisoPrincipal.Close()
-            vbAvisoPrincipal.MdiParent = Me
-            vbAvisoPrincipal.Show()
+            VbAvisoPrincipal.Focus()
+            VbAvisoPrincipal.Close()
+            VbAvisoPrincipal.MdiParent = Me
+            VbAvisoPrincipal.Show()
 
         Else
 
-            vbAvisoPrincipal.MdiParent = Me
-            vbAvisoPrincipal.Show()
+            VbAvisoPrincipal.MdiParent = Me
+            VbAvisoPrincipal.Show()
 
         End If
     End Sub

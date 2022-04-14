@@ -30,6 +30,8 @@ Partial Class UserADM
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim NomeCompletoLabel As System.Windows.Forms.Label
+        Dim TemaLabel As System.Windows.Forms.Label
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.PasswordLabel = New System.Windows.Forms.Label()
@@ -41,8 +43,32 @@ Partial Class UserADM
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SenhaNovaRepetida = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnNomeFinal = New System.Windows.Forms.Button()
+        Me.NomeCompletoTextBox = New System.Windows.Forms.TextBox()
+        Me.TemaComboBox = New System.Windows.Forms.ComboBox()
+        NomeCompletoLabel = New System.Windows.Forms.Label()
+        TemaLabel = New System.Windows.Forms.Label()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'NomeCompletoLabel
+        '
+        NomeCompletoLabel.AutoSize = True
+        NomeCompletoLabel.Location = New System.Drawing.Point(537, 14)
+        NomeCompletoLabel.Name = "NomeCompletoLabel"
+        NomeCompletoLabel.Size = New System.Drawing.Size(85, 13)
+        NomeCompletoLabel.TabIndex = 12
+        NomeCompletoLabel.Text = "Nome Completo:"
+        '
+        'TemaLabel
+        '
+        TemaLabel.AutoSize = True
+        TemaLabel.Location = New System.Drawing.Point(537, 57)
+        TemaLabel.Name = "TemaLabel"
+        TemaLabel.Size = New System.Drawing.Size(37, 13)
+        TemaLabel.TabIndex = 14
+        TemaLabel.Text = "Tema:"
         '
         'LogoPictureBox
         '
@@ -93,7 +119,7 @@ Partial Class UserADM
         Me.OK.Name = "OK"
         Me.OK.Size = New System.Drawing.Size(94, 23)
         Me.OK.TabIndex = 5
-        Me.OK.Text = "&OK"
+        Me.OK.Text = "&Alterar Senha"
         '
         'Cancel
         '
@@ -138,13 +164,52 @@ Partial Class UserADM
         Me.Label2.Text = "&Repita Nova Senha"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Button1
+        '
+        Me.Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.Button1.Location = New System.Drawing.Point(643, 122)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(94, 23)
+        Me.Button1.TabIndex = 17
+        Me.Button1.Text = "&Cancelar"
+        '
+        'BtnNomeFinal
+        '
+        Me.BtnNomeFinal.Location = New System.Drawing.Point(540, 122)
+        Me.BtnNomeFinal.Name = "BtnNomeFinal"
+        Me.BtnNomeFinal.Size = New System.Drawing.Size(94, 23)
+        Me.BtnNomeFinal.TabIndex = 16
+        Me.BtnNomeFinal.Text = "&Alterar Dados"
+        '
+        'NomeCompletoTextBox
+        '
+        Me.NomeCompletoTextBox.Location = New System.Drawing.Point(540, 29)
+        Me.NomeCompletoTextBox.Name = "NomeCompletoTextBox"
+        Me.NomeCompletoTextBox.Size = New System.Drawing.Size(256, 20)
+        Me.NomeCompletoTextBox.TabIndex = 18
+        '
+        'TemaComboBox
+        '
+        Me.TemaComboBox.FormattingEnabled = True
+        Me.TemaComboBox.Items.AddRange(New Object() {"Noite"})
+        Me.TemaComboBox.Location = New System.Drawing.Point(540, 73)
+        Me.TemaComboBox.Name = "TemaComboBox"
+        Me.TemaComboBox.Size = New System.Drawing.Size(169, 21)
+        Me.TemaComboBox.TabIndex = 19
+        '
         'UserADM
         '
         Me.AcceptButton = Me.OK
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(440, 247)
+        Me.ClientSize = New System.Drawing.Size(858, 254)
+        Me.Controls.Add(Me.TemaComboBox)
+        Me.Controls.Add(Me.NomeCompletoTextBox)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BtnNomeFinal)
+        Me.Controls.Add(TemaLabel)
+        Me.Controls.Add(NomeCompletoLabel)
         Me.Controls.Add(Me.SenhaNovaRepetida)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.SenhaNova)
@@ -173,4 +238,8 @@ Partial Class UserADM
     Friend WithEvents Label1 As Label
     Friend WithEvents SenhaNovaRepetida As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnNomeFinal As Button
+    Friend WithEvents NomeCompletoTextBox As TextBox
+    Friend WithEvents TemaComboBox As ComboBox
 End Class
