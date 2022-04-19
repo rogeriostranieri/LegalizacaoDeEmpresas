@@ -154,9 +154,7 @@
   <data name="alvara" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\alvara.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="refresh-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\refresh-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+
   <data name="Prince Sistemas3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Prince Sistemas3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -265,9 +263,7 @@
   <data name="aviso-importante-png-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\aviso-importante-png-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fundo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fundo1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+
   <data name="ring64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ring64.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -339,5 +335,143 @@
   </data>
   <data name="email" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\email.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ABERTURA_DE_EMPRESA3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\ABERTURA-DE-EMPRESA3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aguarde_carregando" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\aguarde_carregando.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alvara2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\alvara.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alvara21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\alvara2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alvara31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\alvara3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alvara4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\alvara.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aviso_importante_png_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\aviso-importante-png-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Backup1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\Backup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotaoVerde1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\BotaoVerde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotaoVermelho1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\BotaoVermelho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadastro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\cadastro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadastro__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\cadastro (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\Cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carregar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\carregar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Contador2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\Contador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dadoscadastrais" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\dadoscadastrais.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dados_cadastrais" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\dados-cadastrais.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="email1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\email.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emandamento1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\emandamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Empresas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\Empresas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fechadaempresa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\fechadaempresa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fechado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\fechado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fechar21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\fechar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fita_em_andamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\fita-em-andamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fundo6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\Fundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fundopuro1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\Fundopuro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_laudo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\icon-laudo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_receita_federal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\ico-receita-federal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="importante" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\importante.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="laudos2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\laudos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lembrete1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\lembrete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_300___Cópia1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\logo_300 - Cópia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_abertura_empresas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\logo-abertura-empresas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pagamento1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\pagamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pasta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\pasta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pessoais" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>C:\Users\roger\Downloads\Pessoais.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="prioridade1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\prioridade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\refresh-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RF1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\RF.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ring641" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\ring64.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sanitaria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\sanitaria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Semi_success" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\Semi_success.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tribal_Phoenix__6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\Tribal_Phoenix__6.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="word" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\word.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1983_aviso_importante" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\imagens\1983-aviso importante.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
