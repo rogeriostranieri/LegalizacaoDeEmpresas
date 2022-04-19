@@ -67,9 +67,7 @@ Public Class UserADM
         Me.Close()
     End Sub
 
-    Private Sub UserADM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 
 
 
@@ -150,5 +148,18 @@ Public Class UserADM
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
+    End Sub
+
+    Private Sub UserADM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'preencher TemaComboBox
+        TemaComboBox.Items.Add("Novo")
+        TemaComboBox.Items.Add("Padrão")
+        TemaComboBox.Items.Add("Noite")
+
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Me.Close()
+
     End Sub
 End Class

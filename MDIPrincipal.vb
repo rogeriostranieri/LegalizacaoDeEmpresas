@@ -3,28 +3,44 @@
 Public Class MDIPrincipal
 
     'inicia verificação do login e tema
-    Private conexao As SqlConnection
-    Private comando As SqlCommand
-    Private da As SqlDataAdapter
-    Private dr As SqlDataReader
+    ' Private conexao As SqlConnection
+    'Private comando As SqlCommand
+    ' Private da As SqlDataAdapter
+    'Private dr As SqlDataReader
 
 
     Private Sub BuscaLogin()
-        'NomeCompleto=@NomeCompleto, LblNomeCompleto.Text e @TemaComboBox", Me.LbTema.Text conectar e modificar
+        'ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755
+        'conectar e modificar os label conforme o banco de dados, tabela LOGIN usuario do formulario LOGIN, pegando seu usuario logado e modifica os label tema e nome completo 
+        Dim conexao As SqlConnection
+        Dim comando As SqlCommand
+        Dim da As SqlDataAdapter
+        Dim dr As SqlDataReader
+
         conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
         conexao.Open()
-        'SELECT NomeCompleto, TemaComboBox da tabela Login por login.txtUsername.text
-        comando = New SqlCommand("SELECT NomeCompleto, TemaComboBox FROM Login WHERE Login.Username=@Username", conexao)
-        Dim Usuario As String = "admin"
-
-        comando.Parameters.Add("@Username", SqlDbType.VarChar).Value = Usuario
+        comando = New SqlCommand("SELECT * FROM LOGIN WHERE USUARIO = '" & Login.txtUsername.Text & "'", conexao)
+        da = New SqlDataAdapter(comando)
         dr = comando.ExecuteReader()
-        If dr.Read Then
-            LblNomeCompleto.Text = dr("NomeCompleto")
-            LbTema.Text = dr("TemaComboBox")
-        End If
-        conexao.Close()
+        'pegar nome completo e tema da tabela e modificar LbTema e lblnomecompleto
+        While dr.Read()
+            LblNomeCompleto.Text = "Bem vindo Sr(a). " & dr("NomeCompleto") & "!"
+            LbTema.Text = dr("Tema")
+            'mudar lblnomecompleto e lbtema para cor branca
+            LblNomeCompleto.ForeColor = Color.White
+            LbTema.ForeColor = Color.Black
+            'mudar tema do formulario conforme o lbTema         Me.BackgroundImage = My.Resources._1 ou Me.BackgroundImage = My.Resources.FundoNovo ou Me.BackgroundImage = My.Resources.Noite
+            If LbTema.Text = "Novo" Then
+                Me.BackgroundImage = My.Resources._1
+            ElseIf LbTema.Text = "Padrão" Then
+                Me.BackgroundImage = My.Resources.FundoNovo
+            ElseIf LbTema.Text = "Noite" Then
+                Me.BackgroundImage = My.Resources.noite
+            End If
 
+
+        End While
+        conexao.Close()
     End Sub
     'fim do codigo do TEMA
 
@@ -65,7 +81,6 @@ Public Class MDIPrincipal
         Me.WindowState = FormWindowState.Maximized
 
         'fundo padrao inicial
-        Me.BackgroundImage = My.Resources._1
 
 
         BuscaLogin()
@@ -600,12 +615,12 @@ Public Class MDIPrincipal
     End Sub
 
 
-    Private Sub PadrãoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PadrãoToolStripMenuItem1.Click
+    Private Sub PadrãoToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         Me.BackgroundImage = My.Resources.FundoNovo
         Me.Refresh()
     End Sub
 
-    Private Sub NoiteToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NoiteToolStripMenuItem1.Click
+    Private Sub NoiteToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         Me.BackgroundImage = My.Resources.noite
         Me.Refresh()
     End Sub
@@ -646,7 +661,7 @@ Public Class MDIPrincipal
         End If
     End Sub
 
-    Private Sub NovoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NovoToolStripMenuItem.Click
+    Private Sub NovoToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Me.BackgroundImage = My.Resources._1
         Me.Refresh()
     End Sub
@@ -805,4 +820,6 @@ Public Class MDIPrincipal
 
         End If
     End Sub
+
+
 End Class

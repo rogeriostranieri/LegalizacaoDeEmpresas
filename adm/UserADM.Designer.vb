@@ -47,15 +47,21 @@ Partial Class UserADM
         Me.BtnNomeFinal = New System.Windows.Forms.Button()
         Me.NomeCompletoTextBox = New System.Windows.Forms.TextBox()
         Me.TemaComboBox = New System.Windows.Forms.ComboBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         NomeCompletoLabel = New System.Windows.Forms.Label()
         TemaLabel = New System.Windows.Forms.Label()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NomeCompletoLabel
         '
         NomeCompletoLabel.AutoSize = True
-        NomeCompletoLabel.Location = New System.Drawing.Point(537, 14)
+        NomeCompletoLabel.BackColor = System.Drawing.Color.Transparent
+        NomeCompletoLabel.ForeColor = System.Drawing.Color.White
+        NomeCompletoLabel.Location = New System.Drawing.Point(540, 17)
         NomeCompletoLabel.Name = "NomeCompletoLabel"
         NomeCompletoLabel.Size = New System.Drawing.Size(85, 13)
         NomeCompletoLabel.TabIndex = 12
@@ -64,7 +70,9 @@ Partial Class UserADM
         'TemaLabel
         '
         TemaLabel.AutoSize = True
-        TemaLabel.Location = New System.Drawing.Point(537, 57)
+        TemaLabel.BackColor = System.Drawing.Color.Transparent
+        TemaLabel.ForeColor = System.Drawing.Color.WhiteSmoke
+        TemaLabel.Location = New System.Drawing.Point(540, 60)
         TemaLabel.Name = "TemaLabel"
         TemaLabel.Size = New System.Drawing.Size(37, 13)
         TemaLabel.TabIndex = 14
@@ -72,8 +80,9 @@ Partial Class UserADM
         '
         'LogoPictureBox
         '
+        Me.LogoPictureBox.BackColor = System.Drawing.Color.Transparent
         Me.LogoPictureBox.Image = Global.PrinceSistemas.My.Resources.Resources.Area_de_Membros
-        Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
+        Me.LogoPictureBox.Location = New System.Drawing.Point(3, 3)
         Me.LogoPictureBox.Name = "LogoPictureBox"
         Me.LogoPictureBox.Size = New System.Drawing.Size(197, 193)
         Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -82,7 +91,9 @@ Partial Class UserADM
         '
         'UsernameLabel
         '
-        Me.UsernameLabel.Location = New System.Drawing.Point(203, 9)
+        Me.UsernameLabel.BackColor = System.Drawing.Color.Transparent
+        Me.UsernameLabel.ForeColor = System.Drawing.Color.White
+        Me.UsernameLabel.Location = New System.Drawing.Point(206, 12)
         Me.UsernameLabel.Name = "UsernameLabel"
         Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
         Me.UsernameLabel.TabIndex = 0
@@ -91,7 +102,9 @@ Partial Class UserADM
         '
         'PasswordLabel
         '
-        Me.PasswordLabel.Location = New System.Drawing.Point(203, 52)
+        Me.PasswordLabel.BackColor = System.Drawing.Color.Transparent
+        Me.PasswordLabel.ForeColor = System.Drawing.Color.White
+        Me.PasswordLabel.Location = New System.Drawing.Point(206, 55)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
         Me.PasswordLabel.TabIndex = 2
@@ -100,14 +113,14 @@ Partial Class UserADM
         '
         'UsernameTextBox
         '
-        Me.UsernameTextBox.Location = New System.Drawing.Point(205, 29)
+        Me.UsernameTextBox.Location = New System.Drawing.Point(208, 35)
         Me.UsernameTextBox.Name = "UsernameTextBox"
         Me.UsernameTextBox.Size = New System.Drawing.Size(220, 20)
         Me.UsernameTextBox.TabIndex = 1
         '
         'PasswordTextBox
         '
-        Me.PasswordTextBox.Location = New System.Drawing.Point(205, 72)
+        Me.PasswordTextBox.Location = New System.Drawing.Point(208, 78)
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PasswordTextBox.Size = New System.Drawing.Size(220, 20)
@@ -115,7 +128,7 @@ Partial Class UserADM
         '
         'OK
         '
-        Me.OK.Location = New System.Drawing.Point(229, 211)
+        Me.OK.Location = New System.Drawing.Point(232, 214)
         Me.OK.Name = "OK"
         Me.OK.Size = New System.Drawing.Size(94, 23)
         Me.OK.TabIndex = 5
@@ -124,7 +137,7 @@ Partial Class UserADM
         'Cancel
         '
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Cancel.Location = New System.Drawing.Point(332, 211)
+        Me.Cancel.Location = New System.Drawing.Point(335, 214)
         Me.Cancel.Name = "Cancel"
         Me.Cancel.Size = New System.Drawing.Size(94, 23)
         Me.Cancel.TabIndex = 6
@@ -132,7 +145,7 @@ Partial Class UserADM
         '
         'SenhaNova
         '
-        Me.SenhaNova.Location = New System.Drawing.Point(205, 125)
+        Me.SenhaNova.Location = New System.Drawing.Point(208, 131)
         Me.SenhaNova.Name = "SenhaNova"
         Me.SenhaNova.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.SenhaNova.Size = New System.Drawing.Size(220, 20)
@@ -140,7 +153,9 @@ Partial Class UserADM
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(203, 105)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(206, 108)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(220, 23)
         Me.Label1.TabIndex = 6
@@ -149,7 +164,7 @@ Partial Class UserADM
         '
         'SenhaNovaRepetida
         '
-        Me.SenhaNovaRepetida.Location = New System.Drawing.Point(206, 168)
+        Me.SenhaNovaRepetida.Location = New System.Drawing.Point(209, 173)
         Me.SenhaNovaRepetida.Name = "SenhaNovaRepetida"
         Me.SenhaNovaRepetida.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.SenhaNovaRepetida.Size = New System.Drawing.Size(220, 20)
@@ -157,7 +172,9 @@ Partial Class UserADM
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(204, 148)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(207, 151)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(220, 23)
         Me.Label2.TabIndex = 8
@@ -167,7 +184,7 @@ Partial Class UserADM
         'Button1
         '
         Me.Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button1.Location = New System.Drawing.Point(643, 122)
+        Me.Button1.Location = New System.Drawing.Point(646, 125)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(94, 23)
         Me.Button1.TabIndex = 17
@@ -175,7 +192,7 @@ Partial Class UserADM
         '
         'BtnNomeFinal
         '
-        Me.BtnNomeFinal.Location = New System.Drawing.Point(540, 122)
+        Me.BtnNomeFinal.Location = New System.Drawing.Point(543, 125)
         Me.BtnNomeFinal.Name = "BtnNomeFinal"
         Me.BtnNomeFinal.Size = New System.Drawing.Size(94, 23)
         Me.BtnNomeFinal.TabIndex = 16
@@ -183,19 +200,60 @@ Partial Class UserADM
         '
         'NomeCompletoTextBox
         '
-        Me.NomeCompletoTextBox.Location = New System.Drawing.Point(540, 29)
+        Me.NomeCompletoTextBox.Location = New System.Drawing.Point(543, 32)
         Me.NomeCompletoTextBox.Name = "NomeCompletoTextBox"
-        Me.NomeCompletoTextBox.Size = New System.Drawing.Size(256, 20)
+        Me.NomeCompletoTextBox.Size = New System.Drawing.Size(283, 20)
         Me.NomeCompletoTextBox.TabIndex = 18
         '
         'TemaComboBox
         '
         Me.TemaComboBox.FormattingEnabled = True
         Me.TemaComboBox.Items.AddRange(New Object() {"Noite"})
-        Me.TemaComboBox.Location = New System.Drawing.Point(540, 73)
+        Me.TemaComboBox.Location = New System.Drawing.Point(543, 76)
         Me.TemaComboBox.Name = "TemaComboBox"
         Me.TemaComboBox.Size = New System.Drawing.Size(169, 21)
         Me.TemaComboBox.TabIndex = 19
+        '
+        'Panel1
+        '
+        Me.Panel1.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.fundo1
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.LogoPictureBox)
+        Me.Panel1.Controls.Add(Me.TemaComboBox)
+        Me.Panel1.Controls.Add(Me.UsernameLabel)
+        Me.Panel1.Controls.Add(Me.NomeCompletoTextBox)
+        Me.Panel1.Controls.Add(Me.PasswordLabel)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.UsernameTextBox)
+        Me.Panel1.Controls.Add(Me.BtnNomeFinal)
+        Me.Panel1.Controls.Add(Me.PasswordTextBox)
+        Me.Panel1.Controls.Add(TemaLabel)
+        Me.Panel1.Controls.Add(Me.OK)
+        Me.Panel1.Controls.Add(NomeCompletoLabel)
+        Me.Panel1.Controls.Add(Me.Cancel)
+        Me.Panel1.Controls.Add(Me.SenhaNovaRepetida)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.SenhaNova)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(858, 254)
+        Me.Panel1.TabIndex = 20
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox2.Image = Global.PrinceSistemas.My.Resources.Resources.fechar2
+        Me.PictureBox2.Location = New System.Drawing.Point(721, 191)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(134, 60)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 20
+        Me.PictureBox2.TabStop = False
         '
         'UserADM
         '
@@ -204,24 +262,8 @@ Partial Class UserADM
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(858, 254)
-        Me.Controls.Add(Me.TemaComboBox)
-        Me.Controls.Add(Me.NomeCompletoTextBox)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.BtnNomeFinal)
-        Me.Controls.Add(TemaLabel)
-        Me.Controls.Add(NomeCompletoLabel)
-        Me.Controls.Add(Me.SenhaNovaRepetida)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.SenhaNova)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Cancel)
-        Me.Controls.Add(Me.OK)
-        Me.Controls.Add(Me.PasswordTextBox)
-        Me.Controls.Add(Me.UsernameTextBox)
-        Me.Controls.Add(Me.PasswordLabel)
-        Me.Controls.Add(Me.UsernameLabel)
-        Me.Controls.Add(Me.LogoPictureBox)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "UserADM"
@@ -229,8 +271,10 @@ Partial Class UserADM
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Alterar Senha"
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -242,4 +286,6 @@ Partial Class UserADM
     Friend WithEvents BtnNomeFinal As Button
     Friend WithEvents NomeCompletoTextBox As TextBox
     Friend WithEvents TemaComboBox As ComboBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
