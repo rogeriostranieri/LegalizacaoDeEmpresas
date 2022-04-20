@@ -81,4 +81,6 @@ Public Class UserAltSenha
         SenhaNova.Text = ""
         SenhaNovaRepetida.Text = ""
     End Sub
+
+
 End Class

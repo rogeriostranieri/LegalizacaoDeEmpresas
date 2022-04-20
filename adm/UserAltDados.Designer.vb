@@ -42,7 +42,7 @@ Partial Class UserAltDados
         TemaLabel.BackColor = System.Drawing.Color.Transparent
         TemaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         TemaLabel.ForeColor = System.Drawing.Color.Black
-        TemaLabel.Location = New System.Drawing.Point(37, 136)
+        TemaLabel.Location = New System.Drawing.Point(37, 158)
         TemaLabel.Name = "TemaLabel"
         TemaLabel.Size = New System.Drawing.Size(50, 18)
         TemaLabel.TabIndex = 21
@@ -54,7 +54,7 @@ Partial Class UserAltDados
         NomeCompletoLabel.BackColor = System.Drawing.Color.Transparent
         NomeCompletoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         NomeCompletoLabel.ForeColor = System.Drawing.Color.Black
-        NomeCompletoLabel.Location = New System.Drawing.Point(37, 92)
+        NomeCompletoLabel.Location = New System.Drawing.Point(37, 111)
         NomeCompletoLabel.Name = "NomeCompletoLabel"
         NomeCompletoLabel.Size = New System.Drawing.Size(122, 18)
         NomeCompletoLabel.TabIndex = 20
@@ -63,34 +63,39 @@ Partial Class UserAltDados
         'TemaComboBox
         '
         Me.TemaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.TemaComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.TemaComboBox.ForeColor = System.Drawing.Color.Black
         Me.TemaComboBox.FormattingEnabled = True
-        Me.TemaComboBox.Items.AddRange(New Object() {"Noite"})
-        Me.TemaComboBox.Location = New System.Drawing.Point(40, 154)
+        Me.TemaComboBox.Location = New System.Drawing.Point(40, 179)
         Me.TemaComboBox.Name = "TemaComboBox"
-        Me.TemaComboBox.Size = New System.Drawing.Size(169, 21)
+        Me.TemaComboBox.Size = New System.Drawing.Size(169, 24)
         Me.TemaComboBox.TabIndex = 25
         '
         'NomeCompletoTextBox
         '
-        Me.NomeCompletoTextBox.Location = New System.Drawing.Point(40, 110)
+        Me.NomeCompletoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.NomeCompletoTextBox.ForeColor = System.Drawing.Color.Black
+        Me.NomeCompletoTextBox.Location = New System.Drawing.Point(40, 132)
         Me.NomeCompletoTextBox.Name = "NomeCompletoTextBox"
-        Me.NomeCompletoTextBox.Size = New System.Drawing.Size(283, 20)
+        Me.NomeCompletoTextBox.Size = New System.Drawing.Size(283, 23)
         Me.NomeCompletoTextBox.TabIndex = 24
         '
         'BtnLimpar
         '
         Me.BtnLimpar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.BtnLimpar.Location = New System.Drawing.Point(143, 203)
+        Me.BtnLimpar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BtnLimpar.Location = New System.Drawing.Point(152, 225)
         Me.BtnLimpar.Name = "BtnLimpar"
-        Me.BtnLimpar.Size = New System.Drawing.Size(94, 23)
+        Me.BtnLimpar.Size = New System.Drawing.Size(94, 28)
         Me.BtnLimpar.TabIndex = 23
         Me.BtnLimpar.Text = "&Limpar"
         '
         'BtnNomeFinal
         '
-        Me.BtnNomeFinal.Location = New System.Drawing.Point(40, 203)
+        Me.BtnNomeFinal.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BtnNomeFinal.Location = New System.Drawing.Point(40, 225)
         Me.BtnNomeFinal.Name = "BtnNomeFinal"
-        Me.BtnNomeFinal.Size = New System.Drawing.Size(94, 23)
+        Me.BtnNomeFinal.Size = New System.Drawing.Size(106, 28)
         Me.BtnNomeFinal.TabIndex = 22
         Me.BtnNomeFinal.Text = "Alterar &Dados"
         '
@@ -111,7 +116,7 @@ Partial Class UserAltDados
         Me.PasswordLabel.BackColor = System.Drawing.Color.Transparent
         Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PasswordLabel.ForeColor = System.Drawing.Color.Black
-        Me.PasswordLabel.Location = New System.Drawing.Point(37, 43)
+        Me.PasswordLabel.Location = New System.Drawing.Point(36, 49)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
         Me.PasswordLabel.TabIndex = 28
@@ -120,17 +125,21 @@ Partial Class UserAltDados
         '
         'UsernameTextBox
         '
+        Me.UsernameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.UsernameTextBox.ForeColor = System.Drawing.Color.Black
         Me.UsernameTextBox.Location = New System.Drawing.Point(39, 23)
         Me.UsernameTextBox.Name = "UsernameTextBox"
-        Me.UsernameTextBox.Size = New System.Drawing.Size(220, 20)
+        Me.UsernameTextBox.Size = New System.Drawing.Size(220, 23)
         Me.UsernameTextBox.TabIndex = 27
         '
         'PasswordTextBox
         '
-        Me.PasswordTextBox.Location = New System.Drawing.Point(39, 66)
+        Me.PasswordTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.PasswordTextBox.ForeColor = System.Drawing.Color.Black
+        Me.PasswordTextBox.Location = New System.Drawing.Point(40, 75)
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.PasswordTextBox.Size = New System.Drawing.Size(220, 20)
+        Me.PasswordTextBox.Size = New System.Drawing.Size(220, 23)
         Me.PasswordTextBox.TabIndex = 29
         '
         'UserAltDados
@@ -150,7 +159,7 @@ Partial Class UserAltDados
         Me.Controls.Add(TemaLabel)
         Me.Controls.Add(NomeCompletoLabel)
         Me.Name = "UserAltDados"
-        Me.Size = New System.Drawing.Size(351, 260)
+        Me.Size = New System.Drawing.Size(351, 295)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -37,7 +37,7 @@ Partial Class UserAltSenha
         'UsernameLabel
         '
         Me.UsernameLabel.BackColor = System.Drawing.Color.Transparent
-        Me.UsernameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsernameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.UsernameLabel.ForeColor = System.Drawing.Color.Black
         Me.UsernameLabel.Location = New System.Drawing.Point(39, 9)
         Me.UsernameLabel.Name = "UsernameLabel"
@@ -49,9 +49,9 @@ Partial Class UserAltSenha
         'PasswordLabel
         '
         Me.PasswordLabel.BackColor = System.Drawing.Color.Transparent
-        Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.PasswordLabel.ForeColor = System.Drawing.Color.Black
-        Me.PasswordLabel.Location = New System.Drawing.Point(39, 58)
+        Me.PasswordLabel.Location = New System.Drawing.Point(39, 61)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
         Me.PasswordLabel.TabIndex = 12
@@ -60,25 +60,30 @@ Partial Class UserAltSenha
         '
         'UsernameTextBox
         '
+        Me.UsernameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.UsernameTextBox.ForeColor = System.Drawing.Color.Black
         Me.UsernameTextBox.Location = New System.Drawing.Point(39, 35)
         Me.UsernameTextBox.Name = "UsernameTextBox"
-        Me.UsernameTextBox.Size = New System.Drawing.Size(220, 20)
+        Me.UsernameTextBox.Size = New System.Drawing.Size(220, 23)
         Me.UsernameTextBox.TabIndex = 11
         '
         'PasswordTextBox
         '
-        Me.PasswordTextBox.Location = New System.Drawing.Point(41, 81)
+        Me.PasswordTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.PasswordTextBox.ForeColor = System.Drawing.Color.Black
+        Me.PasswordTextBox.Location = New System.Drawing.Point(39, 87)
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.PasswordTextBox.Size = New System.Drawing.Size(220, 20)
+        Me.PasswordTextBox.Size = New System.Drawing.Size(220, 23)
         Me.PasswordTextBox.TabIndex = 13
         '
         'OK
         '
         Me.OK.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.OK.Location = New System.Drawing.Point(43, 214)
+        Me.OK.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.OK.Location = New System.Drawing.Point(39, 243)
         Me.OK.Name = "OK"
-        Me.OK.Size = New System.Drawing.Size(94, 23)
+        Me.OK.Size = New System.Drawing.Size(119, 27)
         Me.OK.TabIndex = 16
         Me.OK.Text = "&Alterar Senha"
         Me.OK.UseVisualStyleBackColor = False
@@ -87,27 +92,30 @@ Partial Class UserAltSenha
         '
         Me.BtnLimparSenha.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.BtnLimparSenha.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.BtnLimparSenha.Location = New System.Drawing.Point(146, 214)
+        Me.BtnLimparSenha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BtnLimparSenha.Location = New System.Drawing.Point(165, 243)
         Me.BtnLimparSenha.Name = "BtnLimparSenha"
-        Me.BtnLimparSenha.Size = New System.Drawing.Size(94, 23)
+        Me.BtnLimparSenha.Size = New System.Drawing.Size(94, 27)
         Me.BtnLimparSenha.TabIndex = 17
         Me.BtnLimparSenha.Text = "&Limpar"
         Me.BtnLimparSenha.UseVisualStyleBackColor = False
         '
         'SenhaNovaRepetida
         '
-        Me.SenhaNovaRepetida.Location = New System.Drawing.Point(42, 176)
+        Me.SenhaNovaRepetida.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.SenhaNovaRepetida.ForeColor = System.Drawing.Color.Black
+        Me.SenhaNovaRepetida.Location = New System.Drawing.Point(39, 191)
         Me.SenhaNovaRepetida.Name = "SenhaNovaRepetida"
         Me.SenhaNovaRepetida.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.SenhaNovaRepetida.Size = New System.Drawing.Size(220, 20)
+        Me.SenhaNovaRepetida.Size = New System.Drawing.Size(220, 23)
         Me.SenhaNovaRepetida.TabIndex = 15
         '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(39, 111)
+        Me.Label1.Location = New System.Drawing.Point(36, 113)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(220, 23)
         Me.Label1.TabIndex = 18
@@ -117,9 +125,9 @@ Partial Class UserAltSenha
         'Label2
         '
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(40, 154)
+        Me.Label2.Location = New System.Drawing.Point(36, 165)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(220, 23)
         Me.Label2.TabIndex = 19
@@ -128,10 +136,12 @@ Partial Class UserAltSenha
         '
         'SenhaNova
         '
-        Me.SenhaNova.Location = New System.Drawing.Point(41, 134)
+        Me.SenhaNova.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.SenhaNova.ForeColor = System.Drawing.Color.Black
+        Me.SenhaNova.Location = New System.Drawing.Point(39, 139)
         Me.SenhaNova.Name = "SenhaNova"
         Me.SenhaNova.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.SenhaNova.Size = New System.Drawing.Size(220, 20)
+        Me.SenhaNova.Size = New System.Drawing.Size(220, 23)
         Me.SenhaNova.TabIndex = 14
         '
         'UserAltSenha
@@ -151,7 +161,7 @@ Partial Class UserAltSenha
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.SenhaNova)
         Me.Name = "UserAltSenha"
-        Me.Size = New System.Drawing.Size(283, 249)
+        Me.Size = New System.Drawing.Size(283, 305)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
