@@ -42,8 +42,8 @@ Partial Class FrmAdmPrincipal
         Me.TableLayoutPanel1.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.menu_fundo
         Me.TableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.17834!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.82166!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.86787!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.13213!))
         Me.TableLayoutPanel1.Controls.Add(Me.GroupBox1, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.FlowLayoutPanel1, 1, 1)
@@ -53,7 +53,7 @@ Partial Class FrmAdmPrincipal
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.18391!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.81609!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(800, 450)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(639, 397)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'GroupBox1
@@ -62,36 +62,39 @@ Partial Class FrmAdmPrincipal
         Me.GroupBox1.Controls.Add(Me.BtnNovoUsuario)
         Me.GroupBox1.Controls.Add(Me.BtnAltDados)
         Me.GroupBox1.Controls.Add(Me.BtnAlterarSenha)
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 57)
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 51)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(105, 109)
+        Me.GroupBox1.Size = New System.Drawing.Size(108, 109)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Menu"
         '
         'BtnNovoUsuario
         '
+        Me.BtnNovoUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNovoUsuario.Location = New System.Drawing.Point(6, 77)
         Me.BtnNovoUsuario.Name = "BtnNovoUsuario"
-        Me.BtnNovoUsuario.Size = New System.Drawing.Size(93, 23)
+        Me.BtnNovoUsuario.Size = New System.Drawing.Size(101, 23)
         Me.BtnNovoUsuario.TabIndex = 2
         Me.BtnNovoUsuario.Text = "&Novo Usuário"
         Me.BtnNovoUsuario.UseVisualStyleBackColor = True
         '
         'BtnAltDados
         '
+        Me.BtnAltDados.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAltDados.Location = New System.Drawing.Point(6, 48)
         Me.BtnAltDados.Name = "BtnAltDados"
-        Me.BtnAltDados.Size = New System.Drawing.Size(93, 23)
+        Me.BtnAltDados.Size = New System.Drawing.Size(101, 23)
         Me.BtnAltDados.TabIndex = 1
         Me.BtnAltDados.Text = "Alterar &Dados"
         Me.BtnAltDados.UseVisualStyleBackColor = True
         '
         'BtnAlterarSenha
         '
+        Me.BtnAlterarSenha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAlterarSenha.Location = New System.Drawing.Point(6, 19)
         Me.BtnAlterarSenha.Name = "BtnAlterarSenha"
-        Me.BtnAlterarSenha.Size = New System.Drawing.Size(93, 23)
+        Me.BtnAlterarSenha.Size = New System.Drawing.Size(101, 23)
         Me.BtnAlterarSenha.TabIndex = 0
         Me.BtnAlterarSenha.Text = "&Alterar Senha"
         Me.BtnAlterarSenha.UseVisualStyleBackColor = True
@@ -105,11 +108,11 @@ Partial Class FrmAdmPrincipal
         Me.TableLayoutPanel2.Controls.Add(Me.PictureBox1, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 1, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(132, 3)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(117, 3)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(665, 48)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(519, 42)
         Me.TableLayoutPanel2.TabIndex = 4
         '
         'PictureBox1
@@ -117,7 +120,7 @@ Partial Class FrmAdmPrincipal
         Me.PictureBox1.Image = Global.PrinceSistemas.My.Resources.Resources.Pessoais
         Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(59, 42)
+        Me.PictureBox1.Size = New System.Drawing.Size(44, 36)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
@@ -127,7 +130,7 @@ Partial Class FrmAdmPrincipal
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(68, 0)
+        Me.Label1.Location = New System.Drawing.Point(53, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(126, 39)
         Me.Label1.TabIndex = 4
@@ -137,19 +140,20 @@ Partial Class FrmAdmPrincipal
         '
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(132, 57)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(117, 51)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(665, 390)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(519, 343)
         Me.FlowLayoutPanel1.TabIndex = 5
         '
         'FrmAdmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(639, 397)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "FrmAdmPrincipal"
-        Me.Text = "FrmAdmPrincipal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Painel do Administrador"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
