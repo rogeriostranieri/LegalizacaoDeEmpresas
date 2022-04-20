@@ -20,7 +20,7 @@ Partial Class UserADM
     Friend WithEvents UsernameTextBox As System.Windows.Forms.TextBox
     Friend WithEvents PasswordTextBox As System.Windows.Forms.TextBox
     Friend WithEvents OK As System.Windows.Forms.Button
-    Friend WithEvents Cancel As System.Windows.Forms.Button
+    Friend WithEvents BtnLimparSenha As System.Windows.Forms.Button
 
     'Exigido pelo Windows Form Designer
     Private components As System.ComponentModel.IContainer
@@ -38,7 +38,7 @@ Partial Class UserADM
         Me.UsernameTextBox = New System.Windows.Forms.TextBox()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
         Me.OK = New System.Windows.Forms.Button()
-        Me.Cancel = New System.Windows.Forms.Button()
+        Me.BtnLimparSenha = New System.Windows.Forms.Button()
         Me.SenhaNova = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SenhaNovaRepetida = New System.Windows.Forms.TextBox()
@@ -134,14 +134,14 @@ Partial Class UserADM
         Me.OK.TabIndex = 5
         Me.OK.Text = "&Alterar Senha"
         '
-        'Cancel
+        'BtnLimparSenha
         '
-        Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Cancel.Location = New System.Drawing.Point(335, 214)
-        Me.Cancel.Name = "Cancel"
-        Me.Cancel.Size = New System.Drawing.Size(94, 23)
-        Me.Cancel.TabIndex = 6
-        Me.Cancel.Text = "&Cancelar"
+        Me.BtnLimparSenha.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.BtnLimparSenha.Location = New System.Drawing.Point(335, 214)
+        Me.BtnLimparSenha.Name = "BtnLimparSenha"
+        Me.BtnLimparSenha.Size = New System.Drawing.Size(94, 23)
+        Me.BtnLimparSenha.TabIndex = 6
+        Me.BtnLimparSenha.Text = "&Limpar"
         '
         'SenhaNova
         '
@@ -196,7 +196,7 @@ Partial Class UserADM
         Me.BtnNomeFinal.Name = "BtnNomeFinal"
         Me.BtnNomeFinal.Size = New System.Drawing.Size(94, 23)
         Me.BtnNomeFinal.TabIndex = 16
-        Me.BtnNomeFinal.Text = "&Alterar Dados"
+        Me.BtnNomeFinal.Text = "Alterar &Dados"
         '
         'NomeCompletoTextBox
         '
@@ -216,7 +216,7 @@ Partial Class UserADM
         '
         'Panel1
         '
-        Me.Panel1.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.fundo1
+        ' Me.Panel1.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.fundo1
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.LogoPictureBox)
@@ -231,12 +231,11 @@ Partial Class UserADM
         Me.Panel1.Controls.Add(TemaLabel)
         Me.Panel1.Controls.Add(Me.OK)
         Me.Panel1.Controls.Add(NomeCompletoLabel)
-        Me.Panel1.Controls.Add(Me.Cancel)
+        Me.Panel1.Controls.Add(Me.BtnLimparSenha)
         Me.Panel1.Controls.Add(Me.SenhaNovaRepetida)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.SenhaNova)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(858, 254)
@@ -260,7 +259,7 @@ Partial Class UserADM
         Me.AcceptButton = Me.OK
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.Cancel
+        Me.CancelButton = Me.BtnLimparSenha
         Me.ClientSize = New System.Drawing.Size(858, 254)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

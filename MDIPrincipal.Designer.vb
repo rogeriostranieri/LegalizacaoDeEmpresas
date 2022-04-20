@@ -28,9 +28,7 @@ Partial Class MDIPrincipal
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ContadorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuárioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AlterarSenhaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.SairToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpresasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -63,6 +61,8 @@ Partial Class MDIPrincipal
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EMailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContadorToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
@@ -90,16 +90,16 @@ Partial Class MDIPrincipal
         '
         Me.MenuStrip.BackColor = System.Drawing.Color.White
         Me.MenuStrip.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.EmpresasToolStripMenuItem, Me.AlvaráToolStripMenuItem, Me.TelefonesToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.ConsultaToolStripMenuItem, Me.BuscaToolStripMenuItem, Me.AgendaToolStripMenuItem, Me.HelpMenu, Me.EMailToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ToolStripMenuItem1, Me.EmpresasToolStripMenuItem, Me.AlvaráToolStripMenuItem, Me.TelefonesToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.ConsultaToolStripMenuItem, Me.BuscaToolStripMenuItem, Me.AgendaToolStripMenuItem, Me.HelpMenu, Me.EMailToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(796, 25)
+        Me.MenuStrip.Size = New System.Drawing.Size(925, 25)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "MenuStrip"
         '
         'MenuToolStripMenuItem
         '
-        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ControleToolStripMenuItem, Me.ContadorToolStripMenuItem, Me.UsuárioToolStripMenuItem, Me.ToolStripSeparator1, Me.SairToolStripMenuItem1})
+        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ControleToolStripMenuItem, Me.UsuárioToolStripMenuItem, Me.ToolStripSeparator1, Me.SairToolStripMenuItem1})
         Me.MenuToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.MenuToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
@@ -109,32 +109,19 @@ Partial Class MDIPrincipal
         'ControleToolStripMenuItem
         '
         Me.ControleToolStripMenuItem.Name = "ControleToolStripMenuItem"
-        Me.ControleToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
+        Me.ControleToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.ControleToolStripMenuItem.Text = "Controle Geral"
-        '
-        'ContadorToolStripMenuItem
-        '
-        Me.ContadorToolStripMenuItem.Name = "ContadorToolStripMenuItem"
-        Me.ContadorToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
-        Me.ContadorToolStripMenuItem.Text = "Dados do Contador"
         '
         'UsuárioToolStripMenuItem
         '
-        Me.UsuárioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlterarSenhaToolStripMenuItem})
         Me.UsuárioToolStripMenuItem.Name = "UsuárioToolStripMenuItem"
-        Me.UsuárioToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
-        Me.UsuárioToolStripMenuItem.Text = "Usuário"
-        '
-        'AlterarSenhaToolStripMenuItem
-        '
-        Me.AlterarSenhaToolStripMenuItem.Name = "AlterarSenhaToolStripMenuItem"
-        Me.AlterarSenhaToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
-        Me.AlterarSenhaToolStripMenuItem.Text = "Alterar Senha"
+        Me.UsuárioToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.UsuárioToolStripMenuItem.Text = "Controle de Usuário"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(192, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(194, 6)
         '
         'SairToolStripMenuItem1
         '
@@ -142,7 +129,7 @@ Partial Class MDIPrincipal
         Me.SairToolStripMenuItem1.ForeColor = System.Drawing.Color.Black
         Me.SairToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Black
         Me.SairToolStripMenuItem1.Name = "SairToolStripMenuItem1"
-        Me.SairToolStripMenuItem1.Size = New System.Drawing.Size(195, 22)
+        Me.SairToolStripMenuItem1.Size = New System.Drawing.Size(197, 22)
         Me.SairToolStripMenuItem1.Text = "Sair"
         '
         'EmpresasToolStripMenuItem
@@ -368,6 +355,19 @@ Partial Class MDIPrincipal
         Me.EMailToolStripMenuItem.Size = New System.Drawing.Size(57, 21)
         Me.EMailToolStripMenuItem.Text = "e-Mail"
         '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContadorToolStripMenuItem1})
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(77, 21)
+        Me.ToolStripMenuItem1.Text = "Contador"
+        '
+        'ContadorToolStripMenuItem1
+        '
+        Me.ContadorToolStripMenuItem1.Name = "ContadorToolStripMenuItem1"
+        Me.ContadorToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ContadorToolStripMenuItem1.Text = "Dados"
+        '
         'ToolStrip
         '
         Me.ToolStrip.BackColor = System.Drawing.SystemColors.ActiveBorder
@@ -375,7 +375,7 @@ Partial Class MDIPrincipal
         Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripSeparator3, Me.ToolStripButton2, Me.ToolStripSeparator4, Me.ToolStripButton3, Me.ToolStripSeparator7, Me.ToolStripButton4, Me.ToolStripSeparator5, Me.ToolStripButton5, Me.ToolStripSeparator8, Me.ToolStripButton6, Me.LbTema, Me.ToolStripLabel1, Me.ToolStripSeparator9})
         Me.ToolStrip.Location = New System.Drawing.Point(0, 25)
         Me.ToolStrip.Name = "ToolStrip"
-        Me.ToolStrip.Size = New System.Drawing.Size(796, 25)
+        Me.ToolStrip.Size = New System.Drawing.Size(925, 25)
         Me.ToolStrip.TabIndex = 6
         Me.ToolStrip.Text = "ToolStrip"
         '
@@ -488,7 +488,7 @@ Partial Class MDIPrincipal
         Me.StatusStrip.Location = New System.Drawing.Point(0, 431)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.StatusStrip.Size = New System.Drawing.Size(796, 22)
+        Me.StatusStrip.Size = New System.Drawing.Size(925, 22)
         Me.StatusStrip.TabIndex = 7
         Me.StatusStrip.Text = "StatusStrip"
         '
@@ -504,7 +504,7 @@ Partial Class MDIPrincipal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ClientSize = New System.Drawing.Size(796, 453)
+        Me.ClientSize = New System.Drawing.Size(925, 453)
         Me.Controls.Add(Me.ToolStrip)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
@@ -553,7 +553,6 @@ Partial Class MDIPrincipal
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ToolStripButton4 As ToolStripButton
-    Friend WithEvents ContadorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ControleLigaçãoLaudosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BackupToolStripMenuItem As ToolStripMenuItem
@@ -574,11 +573,12 @@ Partial Class MDIPrincipal
     Friend WithEvents ToolStripButton5 As ToolStripButton
     Friend WithEvents EMailToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsuárioToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AlterarSenhaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator8 As ToolStripSeparator
     Friend WithEvents ToolStripButton6 As ToolStripButton
     Friend WithEvents LblNomeCompleto As ToolStripStatusLabel
     Friend WithEvents LbTema As ToolStripLabel
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Friend WithEvents ToolStripSeparator9 As ToolStripSeparator
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ContadorToolStripMenuItem1 As ToolStripMenuItem
 End Class

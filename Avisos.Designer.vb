@@ -224,7 +224,7 @@ Partial Class Avisos
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.PrinceSistemas.My.Resources.Resources.aviso_importante_png_5
+        Me.PictureBox1.Image = Global.PrinceSistemas.My.Resources.Resources.aviso_importante_png_51
         Me.PictureBox1.Location = New System.Drawing.Point(16, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(159, 64)
@@ -250,7 +250,7 @@ Partial Class Avisos
         Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox3.Image = Global.PrinceSistemas.My.Resources.Resources.refresh_512
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.Location = New System.Drawing.Point(374, 77)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(35, 29)

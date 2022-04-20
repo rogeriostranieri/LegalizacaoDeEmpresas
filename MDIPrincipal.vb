@@ -172,7 +172,6 @@ Public Class MDIPrincipal
 
 
         'Ajuda
-        ContadorToolStripMenuItem.ForeColor = Color.Black
         AboutToolStripMenuItem.ForeColor = Color.Black
 
 
@@ -209,7 +208,7 @@ Public Class MDIPrincipal
 
 
         'Ajuda
-        ContadorToolStripMenuItem.BackColor = Color.White
+
         AboutToolStripMenuItem.BackColor = Color.White
 
 
@@ -221,21 +220,6 @@ Public Class MDIPrincipal
 
 
 
-    Private Sub ContadorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContadorToolStripMenuItem.Click
-        If Application.OpenForms.OfType(Of Contador)().Count() > 0 Then
-
-            Contador.Focus()
-            Contador.MdiParent = Me
-
-
-        Else
-
-            Contador.MdiParent = Me
-            Contador.Show()
-
-
-        End If
-    End Sub
 
     Private Sub MDIPrincipal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         ' Me.Close()
@@ -782,26 +766,6 @@ Public Class MDIPrincipal
 
 
 
-    Private Sub AlterarSenhaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AlterarSenhaToolStripMenuItem.Click
-
-        If Application.OpenForms.OfType(Of UserADM)().Count() > 0 Then
-
-            UserADM.Focus()
-            UserADM.Close()
-            UserADM.MdiParent = Me
-            ' WebAgenda.WindowState = FormWindowState.Maximized
-            UserADM.Show()
-
-
-        Else
-
-            UserADM.MdiParent = Me
-            ' WebAgenda.WindowState = FormWindowState.Maximized
-            UserADM.Show()
-
-        End If
-    End Sub
-
     Private Sub ToolStripButton6_Click(sender As Object, e As EventArgs) Handles ToolStripButton6.Click
         If Application.OpenForms.OfType(Of FrmAnotacoes)().Count() > 0 Then
 
@@ -821,5 +785,38 @@ Public Class MDIPrincipal
         End If
     End Sub
 
+    Private Sub UsuárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuárioToolStripMenuItem.Click
+        If Application.OpenForms.OfType(Of FrmAdmPrincipal)().Count() > 0 Then
 
+            FrmAdmPrincipal.Focus()
+            FrmAdmPrincipal.Close()
+            FrmAdmPrincipal.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmAdmPrincipal.Show()
+
+
+        Else
+
+            FrmAdmPrincipal.MdiParent = Me
+            ' WebAgenda.WindowState = FormWindowState.Maximized
+            FrmAdmPrincipal.Show()
+
+        End If
+    End Sub
+
+    Private Sub ContadorToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ContadorToolStripMenuItem1.Click
+        If Application.OpenForms.OfType(Of Contador)().Count() > 0 Then
+
+            Contador.Focus()
+            Contador.MdiParent = Me
+
+
+        Else
+
+            Contador.MdiParent = Me
+            Contador.Show()
+
+
+        End If
+    End Sub
 End Class

@@ -48,7 +48,7 @@ Public Class BackupERestore
 
             If MsgBox(" Sucesso! Salvo na Unidade D:/ 
 Deseja abrir o local salvo?", MsgBoxStyle.YesNo, "Backup Completo!") = MsgBoxResult.Yes Then
-                System.Diagnostics.Process.Start("C:/")
+                System.Diagnostics.Process.Start("D:/")
             End If
 
         End Try

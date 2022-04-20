@@ -11,8 +11,8 @@ Public Class UserADM
     ' como nome de usuário, nome de exibição etc.
     Private conexao As SqlConnection
     Private comando As SqlCommand
-    Private da As SqlDataAdapter
-    Private dr As SqlDataReader
+    Private ReadOnly da As SqlDataAdapter
+    Private ReadOnly dr As SqlDataReader
 
 
 
@@ -63,8 +63,13 @@ Public Class UserADM
         ConnectToSQL()
     End Sub
 
-    Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
-        Me.Close()
+    Private Sub BtnLimparSenha_Click(sender As Object, e As EventArgs) Handles BtnLimparSenha.Click
+        'limpar dados da senha
+
+        UsernameTextBox.Text = ""
+        PasswordTextBox.Text = ""
+        SenhaNova.Text = ""
+        SenhaNovaRepetida.Text = ""
     End Sub
 
 
@@ -162,4 +167,7 @@ Public Class UserADM
         Me.Close()
 
     End Sub
+
+
+
 End Class

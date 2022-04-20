@@ -150,11 +150,35 @@
     <Compile Include="AboutBox.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="adm\FrmAdmPrincipal.Designer.vb">
+      <DependentUpon>FrmAdmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adm\FrmAdmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="adm\UserADM.Designer.vb">
       <DependentUpon>UserADM.vb</DependentUpon>
     </Compile>
     <Compile Include="adm\UserADM.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm\UserAltDados.Designer.vb">
+      <DependentUpon>UserAltDados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adm\UserAltDados.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adm\UserAltSenha.Designer.vb">
+      <DependentUpon>UserAltSenha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adm\UserAltSenha.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adm\UserNovo.Designer.vb">
+      <DependentUpon>UserNovo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adm\UserNovo.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Anotacoes\FrmAnotacoes.Designer.vb">
       <DependentUpon>FrmAnotacoes.vb</DependentUpon>
@@ -472,8 +496,20 @@
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="adm\FrmAdmPrincipal.resx">
+      <DependentUpon>FrmAdmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="adm\UserADM.resx">
       <DependentUpon>UserADM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm\UserAltDados.resx">
+      <DependentUpon>UserAltDados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm\UserAltSenha.resx">
+      <DependentUpon>UserAltSenha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm\UserNovo.resx">
+      <DependentUpon>UserNovo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anotacoes\FrmAnotacoes.resx">
       <DependentUpon>FrmAnotacoes.vb</DependentUpon>
