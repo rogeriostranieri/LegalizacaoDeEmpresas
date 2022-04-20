@@ -37,5 +37,12 @@
 
     End Sub
 
+    Private Sub BtnApagar_Click(sender As Object, e As EventArgs) Handles BtnApagar.Click
+        Label1.Text = "Apagar Usuário do Sistema"
 
+        'abrir UserAltDados formulario dentro do FlowLayoutPanel1
+        FlowLayoutPanel1.Controls.Clear()
+        Dim UserDel As New UserDel
+        FlowLayoutPanel1.Controls.Add(UserDel)
+    End Sub
 End Class

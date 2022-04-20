@@ -110,6 +110,7 @@ Partial Class UserNovo
         '
         'TemaComboBox
         '
+        Me.TemaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.TemaComboBox.FormattingEnabled = True
         Me.TemaComboBox.Location = New System.Drawing.Point(39, 184)
         Me.TemaComboBox.Name = "TemaComboBox"

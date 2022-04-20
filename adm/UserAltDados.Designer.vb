@@ -62,6 +62,7 @@ Partial Class UserAltDados
         '
         'TemaComboBox
         '
+        Me.TemaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.TemaComboBox.FormattingEnabled = True
         Me.TemaComboBox.Items.AddRange(New Object() {"Noite"})
         Me.TemaComboBox.Location = New System.Drawing.Point(40, 154)

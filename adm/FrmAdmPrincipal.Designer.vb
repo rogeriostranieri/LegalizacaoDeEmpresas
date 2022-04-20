@@ -31,6 +31,7 @@ Partial Class FrmAdmPrincipal
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.BtnApagar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -42,8 +43,8 @@ Partial Class FrmAdmPrincipal
         Me.TableLayoutPanel1.BackgroundImage = Global.PrinceSistemas.My.Resources.Resources.menu_fundo
         Me.TableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.86787!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.13213!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.81377!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.18623!))
         Me.TableLayoutPanel1.Controls.Add(Me.GroupBox1, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.FlowLayoutPanel1, 1, 1)
@@ -59,12 +60,13 @@ Partial Class FrmAdmPrincipal
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.BtnApagar)
         Me.GroupBox1.Controls.Add(Me.BtnNovoUsuario)
         Me.GroupBox1.Controls.Add(Me.BtnAltDados)
         Me.GroupBox1.Controls.Add(Me.BtnAlterarSenha)
         Me.GroupBox1.Location = New System.Drawing.Point(3, 51)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(108, 109)
+        Me.GroupBox1.Size = New System.Drawing.Size(127, 173)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Menu"
@@ -72,9 +74,9 @@ Partial Class FrmAdmPrincipal
         'BtnNovoUsuario
         '
         Me.BtnNovoUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnNovoUsuario.Location = New System.Drawing.Point(6, 77)
+        Me.BtnNovoUsuario.Location = New System.Drawing.Point(6, 89)
         Me.BtnNovoUsuario.Name = "BtnNovoUsuario"
-        Me.BtnNovoUsuario.Size = New System.Drawing.Size(101, 23)
+        Me.BtnNovoUsuario.Size = New System.Drawing.Size(110, 29)
         Me.BtnNovoUsuario.TabIndex = 2
         Me.BtnNovoUsuario.Text = "&Novo Usuário"
         Me.BtnNovoUsuario.UseVisualStyleBackColor = True
@@ -82,9 +84,9 @@ Partial Class FrmAdmPrincipal
         'BtnAltDados
         '
         Me.BtnAltDados.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAltDados.Location = New System.Drawing.Point(6, 48)
+        Me.BtnAltDados.Location = New System.Drawing.Point(6, 54)
         Me.BtnAltDados.Name = "BtnAltDados"
-        Me.BtnAltDados.Size = New System.Drawing.Size(101, 23)
+        Me.BtnAltDados.Size = New System.Drawing.Size(110, 29)
         Me.BtnAltDados.TabIndex = 1
         Me.BtnAltDados.Text = "Alterar &Dados"
         Me.BtnAltDados.UseVisualStyleBackColor = True
@@ -94,7 +96,7 @@ Partial Class FrmAdmPrincipal
         Me.BtnAlterarSenha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAlterarSenha.Location = New System.Drawing.Point(6, 19)
         Me.BtnAlterarSenha.Name = "BtnAlterarSenha"
-        Me.BtnAlterarSenha.Size = New System.Drawing.Size(101, 23)
+        Me.BtnAlterarSenha.Size = New System.Drawing.Size(110, 29)
         Me.BtnAlterarSenha.TabIndex = 0
         Me.BtnAlterarSenha.Text = "&Alterar Senha"
         Me.BtnAlterarSenha.UseVisualStyleBackColor = True
@@ -108,11 +110,11 @@ Partial Class FrmAdmPrincipal
         Me.TableLayoutPanel2.Controls.Add(Me.PictureBox1, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 1, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(117, 3)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(136, 3)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(519, 42)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(500, 42)
         Me.TableLayoutPanel2.TabIndex = 4
         '
         'PictureBox1
@@ -120,7 +122,7 @@ Partial Class FrmAdmPrincipal
         Me.PictureBox1.Image = Global.PrinceSistemas.My.Resources.Resources.Pessoais
         Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(44, 36)
+        Me.PictureBox1.Size = New System.Drawing.Size(42, 36)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
@@ -130,7 +132,7 @@ Partial Class FrmAdmPrincipal
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(53, 0)
+        Me.Label1.Location = New System.Drawing.Point(51, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(126, 39)
         Me.Label1.TabIndex = 4
@@ -140,10 +142,20 @@ Partial Class FrmAdmPrincipal
         '
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(117, 51)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(136, 51)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(519, 343)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(500, 343)
         Me.FlowLayoutPanel1.TabIndex = 5
+        '
+        'BtnApagar
+        '
+        Me.BtnApagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnApagar.Location = New System.Drawing.Point(6, 124)
+        Me.BtnApagar.Name = "BtnApagar"
+        Me.BtnApagar.Size = New System.Drawing.Size(110, 29)
+        Me.BtnApagar.TabIndex = 3
+        Me.BtnApagar.Text = "&Apagar Usuário"
+        Me.BtnApagar.UseVisualStyleBackColor = True
         '
         'FrmAdmPrincipal
         '
@@ -171,4 +183,5 @@ Partial Class FrmAdmPrincipal
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Label1 As Label
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents BtnApagar As Button
 End Class

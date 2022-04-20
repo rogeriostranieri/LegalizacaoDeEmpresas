@@ -156,6 +156,7 @@
     <Compile Include="adm\FrmAdmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="adm\ModADMUser.vb" />
     <Compile Include="adm\UserADM.Designer.vb">
       <DependentUpon>UserADM.vb</DependentUpon>
     </Compile>
@@ -172,6 +173,12 @@
       <DependentUpon>UserAltSenha.vb</DependentUpon>
     </Compile>
     <Compile Include="adm\UserAltSenha.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adm\UserDel.Designer.vb">
+      <DependentUpon>UserDel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adm\UserDel.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="adm\UserNovo.Designer.vb">
@@ -507,6 +514,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="adm\UserAltSenha.resx">
       <DependentUpon>UserAltSenha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm\UserDel.resx">
+      <DependentUpon>UserDel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="adm\UserNovo.resx">
       <DependentUpon>UserNovo.vb</DependentUpon>
