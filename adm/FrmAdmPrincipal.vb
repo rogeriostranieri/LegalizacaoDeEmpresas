@@ -21,7 +21,7 @@
     End Sub
 
     Private Sub BtnNovoUsuario_Click(sender As Object, e As EventArgs) Handles BtnNovoUsuario.Click
-        Label1.Text = "Criar Novo Usuário para o Sistema"
+        Label1.Text = "Criar Novo Usuário"
         'abrir UserNovo formulario dentro do FlowLayoutPanel1
         FlowLayoutPanel1.Controls.Clear()
         Dim userNovo As New UserNovo
@@ -38,7 +38,7 @@
     End Sub
 
     Private Sub BtnApagar_Click(sender As Object, e As EventArgs) Handles BtnApagar.Click
-        Label1.Text = "Apagar Usuário do Sistema"
+        Label1.Text = "Apagar Usuário"
 
         'abrir UserAltDados formulario dentro do FlowLayoutPanel1
         FlowLayoutPanel1.Controls.Clear()

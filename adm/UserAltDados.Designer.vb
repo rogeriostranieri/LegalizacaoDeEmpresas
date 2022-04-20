@@ -32,6 +32,7 @@ Partial Class UserAltDados
         Me.PasswordLabel = New System.Windows.Forms.Label()
         Me.UsernameTextBox = New System.Windows.Forms.TextBox()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
+        Me.BtnMostrarDados = New System.Windows.Forms.Button()
         TemaLabel = New System.Windows.Forms.Label()
         NomeCompletoLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -42,7 +43,7 @@ Partial Class UserAltDados
         TemaLabel.BackColor = System.Drawing.Color.Transparent
         TemaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         TemaLabel.ForeColor = System.Drawing.Color.Black
-        TemaLabel.Location = New System.Drawing.Point(37, 158)
+        TemaLabel.Location = New System.Drawing.Point(37, 212)
         TemaLabel.Name = "TemaLabel"
         TemaLabel.Size = New System.Drawing.Size(50, 18)
         TemaLabel.TabIndex = 21
@@ -54,7 +55,7 @@ Partial Class UserAltDados
         NomeCompletoLabel.BackColor = System.Drawing.Color.Transparent
         NomeCompletoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         NomeCompletoLabel.ForeColor = System.Drawing.Color.Black
-        NomeCompletoLabel.Location = New System.Drawing.Point(37, 111)
+        NomeCompletoLabel.Location = New System.Drawing.Point(37, 165)
         NomeCompletoLabel.Name = "NomeCompletoLabel"
         NomeCompletoLabel.Size = New System.Drawing.Size(122, 18)
         NomeCompletoLabel.TabIndex = 20
@@ -66,7 +67,7 @@ Partial Class UserAltDados
         Me.TemaComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.TemaComboBox.ForeColor = System.Drawing.Color.Black
         Me.TemaComboBox.FormattingEnabled = True
-        Me.TemaComboBox.Location = New System.Drawing.Point(40, 179)
+        Me.TemaComboBox.Location = New System.Drawing.Point(40, 233)
         Me.TemaComboBox.Name = "TemaComboBox"
         Me.TemaComboBox.Size = New System.Drawing.Size(169, 24)
         Me.TemaComboBox.TabIndex = 25
@@ -75,7 +76,7 @@ Partial Class UserAltDados
         '
         Me.NomeCompletoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.NomeCompletoTextBox.ForeColor = System.Drawing.Color.Black
-        Me.NomeCompletoTextBox.Location = New System.Drawing.Point(40, 132)
+        Me.NomeCompletoTextBox.Location = New System.Drawing.Point(40, 186)
         Me.NomeCompletoTextBox.Name = "NomeCompletoTextBox"
         Me.NomeCompletoTextBox.Size = New System.Drawing.Size(283, 23)
         Me.NomeCompletoTextBox.TabIndex = 24
@@ -84,7 +85,7 @@ Partial Class UserAltDados
         '
         Me.BtnLimpar.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.BtnLimpar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.BtnLimpar.Location = New System.Drawing.Point(152, 225)
+        Me.BtnLimpar.Location = New System.Drawing.Point(152, 279)
         Me.BtnLimpar.Name = "BtnLimpar"
         Me.BtnLimpar.Size = New System.Drawing.Size(94, 28)
         Me.BtnLimpar.TabIndex = 23
@@ -93,7 +94,7 @@ Partial Class UserAltDados
         'BtnNomeFinal
         '
         Me.BtnNomeFinal.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.BtnNomeFinal.Location = New System.Drawing.Point(40, 225)
+        Me.BtnNomeFinal.Location = New System.Drawing.Point(40, 279)
         Me.BtnNomeFinal.Name = "BtnNomeFinal"
         Me.BtnNomeFinal.Size = New System.Drawing.Size(106, 28)
         Me.BtnNomeFinal.TabIndex = 22
@@ -142,12 +143,22 @@ Partial Class UserAltDados
         Me.PasswordTextBox.Size = New System.Drawing.Size(220, 23)
         Me.PasswordTextBox.TabIndex = 29
         '
+        'BtnMostrarDados
+        '
+        Me.BtnMostrarDados.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BtnMostrarDados.Location = New System.Drawing.Point(40, 116)
+        Me.BtnMostrarDados.Name = "BtnMostrarDados"
+        Me.BtnMostrarDados.Size = New System.Drawing.Size(106, 28)
+        Me.BtnMostrarDados.TabIndex = 30
+        Me.BtnMostrarDados.Text = "Mostrar &Dados"
+        '
         'UserAltDados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Transparent
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.BtnMostrarDados)
         Me.Controls.Add(Me.UsernameLabel)
         Me.Controls.Add(Me.PasswordLabel)
         Me.Controls.Add(Me.UsernameTextBox)
@@ -159,7 +170,7 @@ Partial Class UserAltDados
         Me.Controls.Add(TemaLabel)
         Me.Controls.Add(NomeCompletoLabel)
         Me.Name = "UserAltDados"
-        Me.Size = New System.Drawing.Size(351, 295)
+        Me.Size = New System.Drawing.Size(351, 340)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -173,4 +184,5 @@ Partial Class UserAltDados
     Friend WithEvents PasswordLabel As Label
     Friend WithEvents UsernameTextBox As TextBox
     Friend WithEvents PasswordTextBox As TextBox
+    Friend WithEvents BtnMostrarDados As Button
 End Class

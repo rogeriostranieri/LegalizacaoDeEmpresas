@@ -19,10 +19,6 @@ Public Class UserAltDados
                         cmd4.Parameters.AddWithValue("@Usuario", UsernameTextBox.Text)
                         cmd4.ExecuteNonQuery()
                     End Using
-                    MDIPrincipal.Refresh()
-
-
-
                     MsgBox("Dados alterados com sucesso")
 
                 Else
@@ -45,6 +41,36 @@ Public Class UserAltDados
         PasswordTextBox.Text = ""
         NomeCompletoTextBox.Text = ""
         TemaComboBox.Text = ""
+
+    End Sub
+
+    Private Sub BtnMostrarDados_Click(sender As Object, e As EventArgs) Handles BtnMostrarDados.Click
+        'mostrar dados e tema do usuario
+        Dim str As String = "Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755"
+        Dim sql As String = "select * from Login where Usuario=@Usuario and Senha=@Senha"
+        Using Conn As New SqlConnection(str)
+            Using cmd As New SqlCommand(sql, Conn)
+                Conn.Open()
+                cmd.Parameters.AddWithValue("@Usuario", UsernameTextBox.Text)
+                cmd.Parameters.AddWithValue("@Senha", PasswordTextBox.Text)
+                Dim value = cmd.ExecuteScalar()
+                If value = 1 Then
+                    'Selecionar Usuario e mudar nome completo e tema
+                    Dim strSQL As String = "SELECT * FROM Login WHERE Usuario=@Usuario" 'WHERE ID = @ID
+                    Using cmd4 As New SqlCommand(strSQL, Conn)
+                        cmd4.Parameters.AddWithValue("@Usuario", UsernameTextBox.Text)
+                        Dim dr As SqlDataReader = cmd4.ExecuteReader()
+                        If dr.Read() Then
+                            NomeCompletoTextBox.Text = dr("NomeCompleto")
+                            TemaComboBox.Text = dr("Tema")
+                        End If
+                    End Using
+
+                    'MDIPrincipal.Refresh()
+                End If
+            End Using
+        End Using
+
 
     End Sub
 End Class
