@@ -2067,42 +2067,92 @@ CPF =
 
     End Sub
 
-    'BtnLimparDoc, BtnAbrirDoc
-
-    Private Sub BtnProcDoc_Click(sender As Object, e As EventArgs) Handles BtnProcDoc.Click
-        'open dialog doc e  docx e modificar LblNomeAnexado 
-        Dim dialogo As New OpenFileDialog
-        dialogo.Filter = "Arquivos de Texto (*.doc, *.docx)|*.doc;*.docx"
-        dialogo.Title = "Selecione o arquivo de texto"
-        dialogo.InitialDirectory = "C:\"
-        dialogo.ShowDialog()
-        LblNomeAnexado.Text = dialogo.FileName
-    End Sub
-
-    Private Sub LblNomeAnexado_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
-        'abrir o documento anexado
-        Process.Start(LblNomeAnexado.Text)
-    End Sub
 
 
 
+    'anexar documento
 
+    Private conexao As SqlConnection
+    Private comando As SqlCommand
+    Private ReadOnly da As SqlDataAdapter
+    Private dr As SqlDataReader
     Private Sub BtnSalvarDoc_Click(sender As Object, e As EventArgs) Handles BtnSalvarDoc.Click
-        'salvar doc no banco de dados empresas
-        Dim str As String = "Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755"
-        Dim con As New SqlConnection(str)
-        Dim cmd As New SqlCommand
-        'salvar docx no banco de dados empresas de acordo com a linha RazaoSocialTextBox e  converter doc em varbinary
-        cmd.CommandText = "UPDATE Empresas SET Doc = @Doc WHERE RazaoSocial = @RazaoSocial"
-  
-        Dim sql As String = "INSERT INTO Empresas (DocContratos) VALUES (@DocContratos)"
-        Dim doc As Byte() = File.ReadAllBytes(LblNomeAnexado.Text)
-        cmd.CommandText = sql
-        cmd.Parameters.AddWithValue("@DocContratos", doc)
-        cmd.Connection = con
-        con.Open()
-        cmd.ExecuteNonQuery()
-        con.Close()
-        MsgBox("Documento salvo com sucesso!")
+
+        'procurar e salvar no banco de dados DocContratos varbinary aray    
+        Dim dialogo As New OpenFileDialog With {
+            .Filter = "Arquivos de Texto (*.doc, *.docx)|*.doc;*.docx",
+            .Title = "Selecione o arquivo de texto",
+            .InitialDirectory = "C:\"
+        }
+        dialogo.ShowDialog()
+        DocContratosLinkLabel.Text = dialogo.FileName
+        'salvar no banco de dados SQL SERVER Banco Empresas varbinary aray
+        Try
+            conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
+            'tabela empresas e coluna DocContratos por razao social
+            comando = New SqlCommand("UPDATE Empresas SET DocContratos = @DocContratos WHERE RazaoSocial = @RazaoSocial", conexao)
+            comando.Parameters.Add("@DocContratos", SqlDbType.VarBinary).Value = File.ReadAllBytes(dialogo.FileName)
+            comando.Parameters.Add("@RazaoSocial", SqlDbType.VarChar).Value = RazaoSocialTextBox.Text
+            conexao.Open()
+            comando.ExecuteNonQuery()
+            conexao.Close()
+            MsgBox("Documento salvo com sucesso!")
+
+        Catch ex As Exception
+            MsgBox("Erro! " & vbCrLf & ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub BtnAbrirDoc_Click(sender As Object, e As EventArgs) Handles BtnAbrirDoc.Click
+        'save a file in .docx format, which was saved as VarBinary, in the database table companies and column DocContratos for corporate reasons
+        Try
+            conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
+            comando = New SqlCommand("SELECT DocContratos FROM Empresas WHERE RazaoSocial = @RazaoSocial", conexao)
+            comando.Parameters.Add("@RazaoSocial", SqlDbType.VarChar).Value = RazaoSocialTextBox.Text
+            conexao.Open()
+            'SqlDataReader
+
+            dr = comando.ExecuteReader
+            If dr.Read Then
+                Dim doc As Byte() = DirectCast(dr("DocContratos"), Byte())
+                Dim fs As New FileStream("D:\teste.docx", FileMode.Create)
+                fs.Write(doc, 0, doc.Length)
+                fs.Close()
+                Process.Start("D:\teste.docx")
+            End If
+            conexao.Close()
+        Catch ex As Exception
+            MsgBox("Erro! " & vbCrLf & ex.Message)
+        End Try
+
+
+    End Sub
+
+    Private Sub TabPage20_Enter(sender As Object, e As EventArgs) Handles TabPage20.Enter
+        'verifica se tem DocContratos anexado e mostra mgsbox
+        Try
+            conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
+            comando = New SqlCommand("SELECT DocContratos FROM Empresas WHERE RazaoSocial = @RazaoSocial", conexao)
+            comando.Parameters.Add("@RazaoSocial", SqlDbType.VarChar).Value = RazaoSocialTextBox.Text
+            conexao.Open()
+            dr = comando.ExecuteReader
+            If dr.Read Then
+                Dim doc As Byte() = DirectCast(dr("DocContratos"), Byte())
+                If doc IsNot Nothing Then
+                    BtnAbrirDoc.Enabled = False
+                    BtnSalvarDoc.Enabled = True
+                    'alterar picturebox4
+                    PictureBox7.Image = My.Resources._on
+                Else
+                    BtnAbrirDoc.Enabled = False
+                    BtnSalvarDoc.Enabled = False
+                    PictureBox7.Image = My.Resources.off
+                End If
+            End If
+            conexao.Close()
+        Catch ex As Exception
+            MsgBox("Erro! " & vbCrLf & ex.Message)
+        End Try
     End Sub
 End Class

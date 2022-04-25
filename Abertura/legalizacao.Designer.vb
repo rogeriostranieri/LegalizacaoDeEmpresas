@@ -229,8 +229,7 @@ Partial Class Legalizacao
         Me.ArquivoContratoTextBox = New System.Windows.Forms.TextBox()
         Me.Button38 = New System.Windows.Forms.Button()
         Me.TabPage20 = New System.Windows.Forms.TabPage()
-        Me.BtnLimparDoc = New System.Windows.Forms.Button()
-        Me.BtnProcDoc = New System.Windows.Forms.Button()
+        Me.BtnAbrirDoc = New System.Windows.Forms.Button()
         Me.BtnSalvarDoc = New System.Windows.Forms.Button()
         Me.TabPage11 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -392,6 +391,7 @@ Partial Class Legalizacao
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.BtnLocalizar = New System.Windows.Forms.Button()
         Me.CADstatusTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.CADstatusTableAdapter()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         NomeFantasiaLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         StatusLabel = New System.Windows.Forms.Label()
@@ -526,6 +526,7 @@ Partial Class Legalizacao
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NomeFantasiaLabel
@@ -1269,11 +1270,11 @@ Partial Class Legalizacao
         'Label10
         '
         Label10.AutoSize = True
-        Label10.Location = New System.Drawing.Point(7, 5)
+        Label10.Location = New System.Drawing.Point(18, 31)
         Label10.Name = "Label10"
-        Label10.Size = New System.Drawing.Size(104, 13)
+        Label10.Size = New System.Drawing.Size(95, 13)
         Label10.TabIndex = 47
-        Label10.Text = "Arquivo do Contrato:"
+        Label10.Text = "Contrato Anexado:"
         '
         'EmpresasBindingNavigator
         '
@@ -2534,9 +2535,9 @@ Partial Class Legalizacao
         '
         'TabPage20
         '
-        Me.TabPage20.Controls.Add(Me.BtnLimparDoc)
+        Me.TabPage20.Controls.Add(Me.PictureBox7)
+        Me.TabPage20.Controls.Add(Me.BtnAbrirDoc)
         Me.TabPage20.Controls.Add(Label10)
-        Me.TabPage20.Controls.Add(Me.BtnProcDoc)
         Me.TabPage20.Controls.Add(Me.BtnSalvarDoc)
         Me.TabPage20.Location = New System.Drawing.Point(4, 22)
         Me.TabPage20.Name = "TabPage20"
@@ -2545,34 +2546,24 @@ Partial Class Legalizacao
         Me.TabPage20.Text = "Docx"
         Me.TabPage20.UseVisualStyleBackColor = True
         '
-        'BtnLimparDoc
+        'BtnAbrirDoc
         '
-        Me.BtnLimparDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnLimparDoc.Location = New System.Drawing.Point(78, 46)
-        Me.BtnLimparDoc.Name = "BtnLimparDoc"
-        Me.BtnLimparDoc.Size = New System.Drawing.Size(62, 23)
-        Me.BtnLimparDoc.TabIndex = 51
-        Me.BtnLimparDoc.Text = "Limpar"
-        Me.BtnLimparDoc.UseVisualStyleBackColor = True
-        '
-        'BtnProcDoc
-        '
-        Me.BtnProcDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnProcDoc.Location = New System.Drawing.Point(10, 46)
-        Me.BtnProcDoc.Name = "BtnProcDoc"
-        Me.BtnProcDoc.Size = New System.Drawing.Size(62, 23)
-        Me.BtnProcDoc.TabIndex = 50
-        Me.BtnProcDoc.Text = "Procurar"
-        Me.BtnProcDoc.UseVisualStyleBackColor = True
+        Me.BtnAbrirDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAbrirDoc.Location = New System.Drawing.Point(133, 123)
+        Me.BtnAbrirDoc.Name = "BtnAbrirDoc"
+        Me.BtnAbrirDoc.Size = New System.Drawing.Size(62, 23)
+        Me.BtnAbrirDoc.TabIndex = 53
+        Me.BtnAbrirDoc.Text = "Abrir"
+        Me.BtnAbrirDoc.UseVisualStyleBackColor = True
         '
         'BtnSalvarDoc
         '
         Me.BtnSalvarDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSalvarDoc.Location = New System.Drawing.Point(146, 46)
+        Me.BtnSalvarDoc.Location = New System.Drawing.Point(133, 94)
         Me.BtnSalvarDoc.Name = "BtnSalvarDoc"
         Me.BtnSalvarDoc.Size = New System.Drawing.Size(62, 23)
         Me.BtnSalvarDoc.TabIndex = 48
-        Me.BtnSalvarDoc.Text = "Salvar"
+        Me.BtnSalvarDoc.Text = "Anexar"
         Me.BtnSalvarDoc.UseVisualStyleBackColor = True
         '
         'TabPage11
@@ -4289,6 +4280,14 @@ Partial Class Legalizacao
         '
         Me.CADstatusTableAdapter.ClearBeforeFill = True
         '
+        'PictureBox7
+        '
+        Me.PictureBox7.Location = New System.Drawing.Point(124, 20)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(71, 47)
+        Me.PictureBox7.TabIndex = 54
+        Me.PictureBox7.TabStop = False
+        '
         'Legalizacao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4393,6 +4392,7 @@ Partial Class Legalizacao
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -4680,7 +4680,7 @@ Partial Class Legalizacao
     Friend WithEvents BtnAnotacoesDemais As Button
     Friend WithEvents BtnAnotacoesSimples As Button
     Friend WithEvents TabPage20 As TabPage
-    Friend WithEvents BtnLimparDoc As Button
-    Friend WithEvents BtnProcDoc As Button
     Friend WithEvents BtnSalvarDoc As Button
+    Friend WithEvents BtnAbrirDoc As Button
+    Friend WithEvents PictureBox7 As PictureBox
 End Class

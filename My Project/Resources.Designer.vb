@@ -93,6 +93,16 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property _on() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_on", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property _Stop() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("_Stop", resourceCulture)
@@ -756,6 +766,16 @@ Namespace My.Resources
         Friend ReadOnly Property noite() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("noite", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property off() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("off", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
