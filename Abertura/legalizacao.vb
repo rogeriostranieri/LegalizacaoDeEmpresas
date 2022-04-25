@@ -1,4 +1,7 @@
-﻿Public Class Legalizacao
+﻿Imports System.Data.SqlClient
+Imports System.IO
+
+Public Class Legalizacao
     'ESPAÇO para os DIM GERAL
 
     'Bloqueando para edição
@@ -2062,5 +2065,44 @@ CPF =
             MsgBox("Erro! " & vbCrLf & ex.Message)
         End Try
 
+    End Sub
+
+    'BtnLimparDoc, BtnAbrirDoc
+
+    Private Sub BtnProcDoc_Click(sender As Object, e As EventArgs) Handles BtnProcDoc.Click
+        'open dialog doc e  docx e modificar LblNomeAnexado 
+        Dim dialogo As New OpenFileDialog
+        dialogo.Filter = "Arquivos de Texto (*.doc, *.docx)|*.doc;*.docx"
+        dialogo.Title = "Selecione o arquivo de texto"
+        dialogo.InitialDirectory = "C:\"
+        dialogo.ShowDialog()
+        LblNomeAnexado.Text = dialogo.FileName
+    End Sub
+
+    Private Sub LblNomeAnexado_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
+        'abrir o documento anexado
+        Process.Start(LblNomeAnexado.Text)
+    End Sub
+
+
+
+
+    Private Sub BtnSalvarDoc_Click(sender As Object, e As EventArgs) Handles BtnSalvarDoc.Click
+        'salvar doc no banco de dados empresas
+        Dim str As String = "Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755"
+        Dim con As New SqlConnection(str)
+        Dim cmd As New SqlCommand
+        'salvar docx no banco de dados empresas de acordo com a linha RazaoSocialTextBox e  converter doc em varbinary
+        cmd.CommandText = "UPDATE Empresas SET Doc = @Doc WHERE RazaoSocial = @RazaoSocial"
+  
+        Dim sql As String = "INSERT INTO Empresas (DocContratos) VALUES (@DocContratos)"
+        Dim doc As Byte() = File.ReadAllBytes(LblNomeAnexado.Text)
+        cmd.CommandText = sql
+        cmd.Parameters.AddWithValue("@DocContratos", doc)
+        cmd.Connection = con
+        con.Open()
+        cmd.ExecuteNonQuery()
+        con.Close()
+        MsgBox("Documento salvo com sucesso!")
     End Sub
 End Class

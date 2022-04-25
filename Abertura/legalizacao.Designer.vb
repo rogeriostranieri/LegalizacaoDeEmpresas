@@ -105,6 +105,7 @@ Partial Class Legalizacao
         Dim IEOnlineLabel As System.Windows.Forms.Label
         Dim IETipoLabel As System.Windows.Forms.Label
         Dim IEeProcNumLabel As System.Windows.Forms.Label
+        Dim Label10 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Legalizacao))
         Me.EmpresasBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.EmpresasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -227,6 +228,10 @@ Partial Class Legalizacao
         Me.Button14 = New System.Windows.Forms.Button()
         Me.ArquivoContratoTextBox = New System.Windows.Forms.TextBox()
         Me.Button38 = New System.Windows.Forms.Button()
+        Me.TabPage20 = New System.Windows.Forms.TabPage()
+        Me.BtnLimparDoc = New System.Windows.Forms.Button()
+        Me.BtnProcDoc = New System.Windows.Forms.Button()
+        Me.BtnSalvarDoc = New System.Windows.Forms.Button()
         Me.TabPage11 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
@@ -469,6 +474,7 @@ Partial Class Legalizacao
         IEOnlineLabel = New System.Windows.Forms.Label()
         IETipoLabel = New System.Windows.Forms.Label()
         IEeProcNumLabel = New System.Windows.Forms.Label()
+        Label10 = New System.Windows.Forms.Label()
         CType(Me.EmpresasBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.EmpresasBindingNavigator.SuspendLayout()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -493,6 +499,7 @@ Partial Class Legalizacao
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.TabPage8.SuspendLayout()
+        Me.TabPage20.SuspendLayout()
         Me.TabPage11.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
@@ -1258,6 +1265,15 @@ Partial Class Legalizacao
         IEeProcNumLabel.Size = New System.Drawing.Size(75, 13)
         IEeProcNumLabel.TabIndex = 40
         IEeProcNumLabel.Text = "eProcesso Nº:"
+        '
+        'Label10
+        '
+        Label10.AutoSize = True
+        Label10.Location = New System.Drawing.Point(7, 5)
+        Label10.Name = "Label10"
+        Label10.Size = New System.Drawing.Size(104, 13)
+        Label10.TabIndex = 47
+        Label10.Text = "Arquivo do Contrato:"
         '
         'EmpresasBindingNavigator
         '
@@ -2315,6 +2331,7 @@ Partial Class Legalizacao
         '
         Me.TabControl1.Controls.Add(Me.TabPage9)
         Me.TabControl1.Controls.Add(Me.TabPage8)
+        Me.TabControl1.Controls.Add(Me.TabPage20)
         Me.TabControl1.Controls.Add(Me.TabPage11)
         Me.TabControl1.Location = New System.Drawing.Point(317, 43)
         Me.TabControl1.Name = "TabControl1"
@@ -2514,6 +2531,49 @@ Partial Class Legalizacao
         Me.Button38.TabIndex = 44
         Me.Button38.Text = "Abrir"
         Me.Button38.UseVisualStyleBackColor = True
+        '
+        'TabPage20
+        '
+        Me.TabPage20.Controls.Add(Me.BtnLimparDoc)
+        Me.TabPage20.Controls.Add(Label10)
+        Me.TabPage20.Controls.Add(Me.BtnProcDoc)
+        Me.TabPage20.Controls.Add(Me.BtnSalvarDoc)
+        Me.TabPage20.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage20.Name = "TabPage20"
+        Me.TabPage20.Size = New System.Drawing.Size(284, 164)
+        Me.TabPage20.TabIndex = 3
+        Me.TabPage20.Text = "Docx"
+        Me.TabPage20.UseVisualStyleBackColor = True
+        '
+        'BtnLimparDoc
+        '
+        Me.BtnLimparDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnLimparDoc.Location = New System.Drawing.Point(78, 46)
+        Me.BtnLimparDoc.Name = "BtnLimparDoc"
+        Me.BtnLimparDoc.Size = New System.Drawing.Size(62, 23)
+        Me.BtnLimparDoc.TabIndex = 51
+        Me.BtnLimparDoc.Text = "Limpar"
+        Me.BtnLimparDoc.UseVisualStyleBackColor = True
+        '
+        'BtnProcDoc
+        '
+        Me.BtnProcDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnProcDoc.Location = New System.Drawing.Point(10, 46)
+        Me.BtnProcDoc.Name = "BtnProcDoc"
+        Me.BtnProcDoc.Size = New System.Drawing.Size(62, 23)
+        Me.BtnProcDoc.TabIndex = 50
+        Me.BtnProcDoc.Text = "Procurar"
+        Me.BtnProcDoc.UseVisualStyleBackColor = True
+        '
+        'BtnSalvarDoc
+        '
+        Me.BtnSalvarDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSalvarDoc.Location = New System.Drawing.Point(146, 46)
+        Me.BtnSalvarDoc.Name = "BtnSalvarDoc"
+        Me.BtnSalvarDoc.Size = New System.Drawing.Size(62, 23)
+        Me.BtnSalvarDoc.TabIndex = 48
+        Me.BtnSalvarDoc.Text = "Salvar"
+        Me.BtnSalvarDoc.UseVisualStyleBackColor = True
         '
         'TabPage11
         '
@@ -4291,6 +4351,8 @@ Partial Class Legalizacao
         Me.GroupBox5.PerformLayout()
         Me.TabPage8.ResumeLayout(False)
         Me.TabPage8.PerformLayout()
+        Me.TabPage20.ResumeLayout(False)
+        Me.TabPage20.PerformLayout()
         Me.TabPage11.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
@@ -4617,4 +4679,8 @@ Partial Class Legalizacao
     Friend WithEvents BtnAnotacoesPrefeitura As Button
     Friend WithEvents BtnAnotacoesDemais As Button
     Friend WithEvents BtnAnotacoesSimples As Button
+    Friend WithEvents TabPage20 As TabPage
+    Friend WithEvents BtnLimparDoc As Button
+    Friend WithEvents BtnProcDoc As Button
+    Friend WithEvents BtnSalvarDoc As Button
 End Class
