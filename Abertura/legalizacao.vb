@@ -2150,6 +2150,7 @@ CPF =
 
     Private Sub AtualizarAnexoDoc()
         'verifica se tem DocContratos anexado e mostra mgsbox
+
         Try
             conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
             comando = New SqlCommand("SELECT DocContratos FROM Empresas WHERE RazaoSocial = @RazaoSocial", conexao)
@@ -2181,6 +2182,26 @@ CPF =
 
     Private Sub BtnApagaAnexo_Click(sender As Object, e As EventArgs) Handles BtnApagaAnexo.Click
         'clear a file in .docx format, which was saved as VarBinary, in the database table companies and column DocContratos for corporate reasons
+        'perguntar se deseja apagar
+        Dim result As DialogResult = MessageBox.Show("Deseja apagar o arquivo?", "Apagar Arquivo", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            Try
+                conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
+                comando = New SqlCommand("UPDATE Empresas SET DocContratos = @DocContratos WHERE RazaoSocial = @RazaoSocial", conexao)
+                comando.Parameters.Add("@DocContratos", SqlDbType.VarBinary).Value = Nothing
+                comando.Parameters.Add("@RazaoSocial", SqlDbType.VarChar).Value = RazaoSocialTextBox.Text
+                conexao.Open()
+                comando.ExecuteNonQuery()
+                conexao.Close()
+                MsgBox("Documento apagado com sucesso!")
+                BtnAbrirDoc.Enabled = False
+                BtnSalvarDoc.Enabled = False
+                PictureBox7.Image = My.Resources.off
+                PictureBox7.SizeMode = PictureBoxSizeMode.StretchImage
+            Catch ex As Exception
+                MsgBox("Erro! " & vbCrLf & ex.Message)
+            End Try
+        End If
 
     End Sub
 End Class
