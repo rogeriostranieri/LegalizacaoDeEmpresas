@@ -229,7 +229,8 @@ Partial Class Legalizacao
         Me.ArquivoContratoTextBox = New System.Windows.Forms.TextBox()
         Me.Button38 = New System.Windows.Forms.Button()
         Me.TabPage20 = New System.Windows.Forms.TabPage()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.ListViewDocContratos = New System.Windows.Forms.ListView()
+        Me.BtnApagaAnexo = New System.Windows.Forms.Button()
         Me.BtnAbrirDoc = New System.Windows.Forms.Button()
         Me.BtnSalvarDoc = New System.Windows.Forms.Button()
         Me.TabPage11 = New System.Windows.Forms.TabPage()
@@ -392,7 +393,6 @@ Partial Class Legalizacao
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.BtnLocalizar = New System.Windows.Forms.Button()
         Me.CADstatusTableAdapter = New PrinceSistemas.PrinceDBDataSetTableAdapters.CADstatusTableAdapter()
-        Me.BtnApagaAnexo = New System.Windows.Forms.Button()
         NomeFantasiaLabel = New System.Windows.Forms.Label()
         CNPJLabel = New System.Windows.Forms.Label()
         StatusLabel = New System.Windows.Forms.Label()
@@ -501,7 +501,6 @@ Partial Class Legalizacao
         Me.GroupBox5.SuspendLayout()
         Me.TabPage8.SuspendLayout()
         Me.TabPage20.SuspendLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage11.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
@@ -1271,7 +1270,7 @@ Partial Class Legalizacao
         'Label10
         '
         Label10.AutoSize = True
-        Label10.Location = New System.Drawing.Point(18, 31)
+        Label10.Location = New System.Drawing.Point(10, 30)
         Label10.Name = "Label10"
         Label10.Size = New System.Drawing.Size(95, 13)
         Label10.TabIndex = 47
@@ -2536,8 +2535,8 @@ Partial Class Legalizacao
         '
         'TabPage20
         '
+        Me.TabPage20.Controls.Add(Me.ListViewDocContratos)
         Me.TabPage20.Controls.Add(Me.BtnApagaAnexo)
-        Me.TabPage20.Controls.Add(Me.PictureBox7)
         Me.TabPage20.Controls.Add(Me.BtnAbrirDoc)
         Me.TabPage20.Controls.Add(Label10)
         Me.TabPage20.Controls.Add(Me.BtnSalvarDoc)
@@ -2548,13 +2547,24 @@ Partial Class Legalizacao
         Me.TabPage20.Text = "Docx"
         Me.TabPage20.UseVisualStyleBackColor = True
         '
-        'PictureBox7
+        'ListViewDocContratos
         '
-        Me.PictureBox7.Location = New System.Drawing.Point(25, 50)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(71, 47)
-        Me.PictureBox7.TabIndex = 54
-        Me.PictureBox7.TabStop = False
+        Me.ListViewDocContratos.HideSelection = False
+        Me.ListViewDocContratos.Location = New System.Drawing.Point(13, 47)
+        Me.ListViewDocContratos.Name = "ListViewDocContratos"
+        Me.ListViewDocContratos.Size = New System.Drawing.Size(127, 96)
+        Me.ListViewDocContratos.TabIndex = 56
+        Me.ListViewDocContratos.UseCompatibleStateImageBehavior = False
+        '
+        'BtnApagaAnexo
+        '
+        Me.BtnApagaAnexo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnApagaAnexo.Location = New System.Drawing.Point(150, 114)
+        Me.BtnApagaAnexo.Name = "BtnApagaAnexo"
+        Me.BtnApagaAnexo.Size = New System.Drawing.Size(62, 23)
+        Me.BtnApagaAnexo.TabIndex = 55
+        Me.BtnApagaAnexo.Text = "Limpar"
+        Me.BtnApagaAnexo.UseVisualStyleBackColor = True
         '
         'BtnAbrirDoc
         '
@@ -4290,16 +4300,6 @@ Partial Class Legalizacao
         '
         Me.CADstatusTableAdapter.ClearBeforeFill = True
         '
-        'BtnApagaAnexo
-        '
-        Me.BtnApagaAnexo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnApagaAnexo.Location = New System.Drawing.Point(150, 114)
-        Me.BtnApagaAnexo.Name = "BtnApagaAnexo"
-        Me.BtnApagaAnexo.Size = New System.Drawing.Size(62, 23)
-        Me.BtnApagaAnexo.TabIndex = 55
-        Me.BtnApagaAnexo.Text = "Limpar"
-        Me.BtnApagaAnexo.UseVisualStyleBackColor = True
-        '
         'Legalizacao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4364,7 +4364,6 @@ Partial Class Legalizacao
         Me.TabPage8.PerformLayout()
         Me.TabPage20.ResumeLayout(False)
         Me.TabPage20.PerformLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage11.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
@@ -4694,6 +4693,6 @@ Partial Class Legalizacao
     Friend WithEvents TabPage20 As TabPage
     Friend WithEvents BtnSalvarDoc As Button
     Friend WithEvents BtnAbrirDoc As Button
-    Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents BtnApagaAnexo As Button
+    Friend WithEvents ListViewDocContratos As ListView
 End Class

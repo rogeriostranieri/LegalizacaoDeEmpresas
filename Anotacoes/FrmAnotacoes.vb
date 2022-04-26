@@ -42,50 +42,12 @@ Public Class FrmAnotacoes
     End Sub
 
     Private Sub FrmAnotacoes_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Dim changedRecords As System.Data.DataTable
-        ' changedRecords = PrinceDBDataSet.Telefones.GetChanges()
-        Me.AnotacoesBindingSource.EndEdit()
-
-
-        changedRecords = PrinceDBDataSet.Anotacoes.GetChanges()
-
-
-        If Not (changedRecords Is Nothing) AndAlso (changedRecords.Rows.Count > 0) Then
-
-            Dim message As String
-
-            'message = String.Format("Você realizou = {0} alterações(s)." + vbCrLf + "Deseja Salvar estas alterações?", changedRecords.Rows.Count)
-            message = String.Format("Você realizou alguma(s) alterações(s)." + vbCrLf + "Deseja Salvar estas alterações?", changedRecords.Rows.Count)
-
-
-            Dim result As Integer = MessageBox.Show(message, "Prince Alerta", MessageBoxButtons.YesNoCancel)
-            If result = DialogResult.Cancel Then
-                e.Cancel = True
-            ElseIf result = DialogResult.No Then
-
-            ElseIf result = DialogResult.Yes Then
-                Try
-
-                    AnotacoesTableAdapter.Update(PrinceDBDataSet.Anotacoes)
-
-                Catch error_t As Exception
-                    MsgBox(error_t.ToString)
-                    '' Catch exc As Exception
-
-                    ' MessageBox.Show("Ocorreu um Erro ao atualizar" + vbCrLf + exc.Message + vbCrLf + vbCrLf + "Linha em vermelho com erro", "Prince Sistemas Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-                End Try
-
-            End If
-
-
-        End If
+        Salvar()
     End Sub
 
     Private Sub Salvar()
 
         Dim changedRecords As System.Data.DataTable
-        ' changedRecords = PrinceDBDataSet.Telefones.GetChanges()
         Me.AnotacoesBindingSource.EndEdit()
         changedRecords = PrinceDBDataSet.Anotacoes.GetChanges()
 
@@ -154,26 +116,16 @@ Public Class FrmAnotacoes
     '=================================================================================
 
     Private Sub MudarCorBotao_Click(sender As Object, e As EventArgs) Handles MudarCorBotao.Click
-        Dim MinhasCores As ColorDialog '= New ColorDialog
-        'selecionar uma cor customizada
-        MinhasCores.AllowFullOpen = False
-        'Permite o usuário obter ajuda 
-        MinhasCores.ShowHelp = True
-        'Define a cor inicial selecionada para a cor atual
-        MinhasCores.Color = RichTextBoxAnotacao.ForeColor
-        'pinta a seleção do texto
-
-        If (MinhasCores.ShowDialog() = DialogResult.OK) Then
-            If RichTextBoxAnotacao.SelectedText.Length > 0 Then
-                RichTextBoxAnotacao.SelectionColor = MinhasCores.Color
-            Else
-                RichTextBoxAnotacao.SelectionColor = MinhasCores.Color
-                'RichTextBoxAnotacao.ForeColor = MinhasCores.Color
-            End If
-
+        'usar colodialog para colorir texto selecionado
+        Dim cor As Color = Color.FromArgb(255, 255, 255)
+        If ColorDialog1.ShowDialog() = DialogResult.OK Then
+            cor = ColorDialog1.Color
         End If
-
+        RichTextBoxAnotacao.SelectionColor = cor
     End Sub
+
+
+
 
     Private Sub Mudafonte()
         Dim fonte As String = cbofonte.Text

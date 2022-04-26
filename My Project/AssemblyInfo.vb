@@ -9,10 +9,10 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Prince Sistemas")>
 <Assembly: AssemblyDescription("Controle do departamento de legalização de escritorio Contabil")>
-<Assembly: AssemblyCompany("-")>
+<Assembly: AssemblyCompany("Rogerio Stranieri - Software")>
 <Assembly: AssemblyProduct("Prince Sistemas de Software")>
 <Assembly: AssemblyCopyright("Rogerio Stranieri 06937031998")>
-<Assembly: AssemblyTrademark("-")>
+<Assembly: AssemblyTrademark("Rogerio Stranieri - Software")>
 
 <Assembly: ComVisible(False)>
 
