@@ -42,7 +42,7 @@
     End Sub
     Private Sub PrintDocument1_PrintPage(sender As System.Object, e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
         With EmpresasDataGridView
-            Dim fmt As StringFormat = New StringFormat(StringFormatFlags.LineLimit) With {
+            Dim fmt As New StringFormat(StringFormatFlags.LineLimit) With {
                 .LineAlignment = StringAlignment.Center,
                 .Trimming = StringTrimming.EllipsisCharacter
             }
@@ -52,7 +52,7 @@
                 Dim x As Single = e.MarginBounds.Left
                 Dim h As Single = 0
                 For Each cell As DataGridViewCell In row.Cells
-                    Dim rc As RectangleF = New RectangleF(x, y, cell.Size.Width, cell.Size.Height)
+                    Dim rc As New RectangleF(x, y, cell.Size.Width, cell.Size.Height)
                     e.Graphics.DrawRectangle(Pens.Black, rc.Left, rc.Top, rc.Width, rc.Height)
                     If (newpage) Then
                         e.Graphics.DrawString(EmpresasDataGridView.Columns(cell.ColumnIndex).HeaderText, .Font, Brushes.Black, rc, fmt)

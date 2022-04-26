@@ -98,6 +98,7 @@ Partial Class UserNovo
         '
         Me.SenhaTextBox.Location = New System.Drawing.Point(39, 70)
         Me.SenhaTextBox.Name = "SenhaTextBox"
+        Me.SenhaTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.SenhaTextBox.Size = New System.Drawing.Size(196, 20)
         Me.SenhaTextBox.TabIndex = 4
         '

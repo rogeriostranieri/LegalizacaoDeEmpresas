@@ -2119,9 +2119,10 @@ CPF =
                 Dim doc As Byte() = DirectCast(dr("DocContratos"), Byte())
                 'opendialog  para salvar o arquivo FileStream do banco de dados
                 'mudar local de salvamento do doc
-                Dim saveFileDialog1 As New SaveFileDialog()
-                saveFileDialog1.Filter = "Arquivos de Texto (*.doc, *.docx)|*.doc;*.docx"
-                saveFileDialog1.Title = "Salvar Arquivo de Texto"
+                Dim saveFileDialog1 As New SaveFileDialog With {
+                    .Filter = "Arquivos de Texto (*.doc, *.docx)|*.doc;*.docx",
+                    .Title = "Salvar Arquivo de Texto"
+                }
                 saveFileDialog1.ShowDialog()
                 Dim fs As New FileStream(saveFileDialog1.FileName, FileMode.Create)
 

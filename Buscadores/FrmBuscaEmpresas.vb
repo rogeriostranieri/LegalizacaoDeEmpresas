@@ -1,8 +1,6 @@
 ﻿
 
 Public Class FrmBuscaEmpresas
-
-    Private Ultimabusca As Integer = 0
     Private Sub Form_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Escape Then Me.Close()
     End Sub
@@ -13,7 +11,7 @@ Public Class FrmBuscaEmpresas
 
     End Sub
 
-    Private Sub txtPesquisa_TextChanged(sender As Object, e As EventArgs) Handles txtPesquisa.TextChanged
+    Private Sub TxtPesquisa_TextChanged(sender As Object, e As EventArgs) Handles txtPesquisa.TextChanged
 
         EmpresasBindingSource.Filter = "RazaoSocial like '%" & txtPesquisa.Text & "%'"
     End Sub

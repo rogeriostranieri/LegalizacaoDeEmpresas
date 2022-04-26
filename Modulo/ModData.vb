@@ -10,7 +10,7 @@
     ' Dim agora As Date = agoradll
     'Dim Data As String = Datadll
 
-    Private ReadOnly Data As String = "02/05/2022"
+    Private ReadOnly Data As String = "02/07/2022"
 
     Private ReadOnly agora As Date = Now
     Dim firstDate As String
@@ -21,7 +21,7 @@
     Sub Dados()
 
         Dim Programa As String = "Empresa: Prince Games"
-        Dim Versao As String = "Versâo: 2.0"
+        Dim Versao As String = "Versâo: 3.0"
         Dim Dono As String = "Produzido por Rogerio Stranieri"
         Dim Licenciado As String = "Licenciado: BETEL Contabilidade"
         Dim Descricao As String = "Novo sistema, duvidas (44) 9 8809-1766 ou rogeriostran@gmail.com"

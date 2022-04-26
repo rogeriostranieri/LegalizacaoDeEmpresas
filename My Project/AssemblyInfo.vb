@@ -7,11 +7,11 @@ Imports System.Runtime.InteropServices
 
 ' Revise os valores dos atributos do assembly
 
-<Assembly: AssemblyTitle("-")>
-<Assembly: AssemblyDescription("-")>
+<Assembly: AssemblyTitle("Prince Sistemas")>
+<Assembly: AssemblyDescription("Controle do departamento de legalização de escritorio Contabil")>
 <Assembly: AssemblyCompany("-")>
-<Assembly: AssemblyProduct("-")>
-<Assembly: AssemblyCopyright("-")>
+<Assembly: AssemblyProduct("Prince Sistemas de Software")>
+<Assembly: AssemblyCopyright("Rogerio Stranieri 06937031998")>
 <Assembly: AssemblyTrademark("-")>
 
 <Assembly: ComVisible(False)>
@@ -31,4 +31,4 @@ Imports System.Runtime.InteropServices
 ' <Assembly: AssemblyVersion("1.0.*")>
 
 <Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("2.0.0.0")>
+<Assembly: AssemblyFileVersion("3.0.0.0")>
