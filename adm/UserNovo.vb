@@ -20,27 +20,24 @@ Public Class UserNovo
         comando.Parameters.AddWithValue("@Tema", TemaComboBox.Text)
         conexao.Open()
 
-        'verifica campos vazios
+        'verifica campos vazios e se não existe usuario com mesmo nome no banco de dados
         If UsuarioTextBox.Text = "" Or SenhaTextBox.Text = "" Or NomeCompletoTextBox.Text = "" Or TemaComboBox.Text = "" Then
             MsgBox("Preencha todos os campos!")
         Else
-
-            'verificar se não existe usuario com mesmo nome
-            Dim verificar As New SqlCommand("SELECT * FROM Login WHERE Usuario = @Usuario", conexao)
-            verificar.Parameters.AddWithValue("@Usuario", UsuarioTextBox.Text)
-            Dim leitor As SqlDataReader = verificar.ExecuteReader()
+            'verifica se o usuario nao existe no banco de dados
+            Dim comando2 As New SqlCommand("SELECT * FROM Login WHERE Usuario = @Usuario", conexao)
+            comando2.Parameters.AddWithValue("@Usuario", UsuarioTextBox.Text)
+            Dim leitor As SqlDataReader
+            leitor = comando2.ExecuteReader()
             If leitor.HasRows Then
-                MsgBox("Usuario ja existe")
-                conexao.Close()
+                MsgBox("Usuario ja existe!")
             Else
+                leitor.Close()
                 comando.ExecuteNonQuery()
-                MsgBox("Usuario criado com sucesso")
-                conexao.Close()
-
+                MsgBox("Usuario criado com sucesso!")
             End If
 
         End If
-
 
     End Sub
 
