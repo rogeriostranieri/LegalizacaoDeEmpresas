@@ -229,6 +229,7 @@ Partial Class Legalizacao
         Me.ArquivoContratoTextBox = New System.Windows.Forms.TextBox()
         Me.Button38 = New System.Windows.Forms.Button()
         Me.TabPage20 = New System.Windows.Forms.TabPage()
+        Me.BtnAtualizarDoc = New System.Windows.Forms.Button()
         Me.ListViewDocContratos = New System.Windows.Forms.ListView()
         Me.BtnApagaAnexo = New System.Windows.Forms.Button()
         Me.BtnAbrirDoc = New System.Windows.Forms.Button()
@@ -2535,6 +2536,7 @@ Partial Class Legalizacao
         '
         'TabPage20
         '
+        Me.TabPage20.Controls.Add(Me.BtnAtualizarDoc)
         Me.TabPage20.Controls.Add(Me.ListViewDocContratos)
         Me.TabPage20.Controls.Add(Me.BtnApagaAnexo)
         Me.TabPage20.Controls.Add(Me.BtnAbrirDoc)
@@ -2544,11 +2546,22 @@ Partial Class Legalizacao
         Me.TabPage20.Name = "TabPage20"
         Me.TabPage20.Size = New System.Drawing.Size(284, 164)
         Me.TabPage20.TabIndex = 3
-        Me.TabPage20.Text = "Docx"
+        Me.TabPage20.Text = "Anexo"
         Me.TabPage20.UseVisualStyleBackColor = True
+        '
+        'BtnAtualizarDoc
+        '
+        Me.BtnAtualizarDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAtualizarDoc.Location = New System.Drawing.Point(215, 18)
+        Me.BtnAtualizarDoc.Name = "BtnAtualizarDoc"
+        Me.BtnAtualizarDoc.Size = New System.Drawing.Size(62, 23)
+        Me.BtnAtualizarDoc.TabIndex = 57
+        Me.BtnAtualizarDoc.Text = "Atualiza"
+        Me.BtnAtualizarDoc.UseVisualStyleBackColor = True
         '
         'ListViewDocContratos
         '
+        Me.ListViewDocContratos.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ListViewDocContratos.HideSelection = False
         Me.ListViewDocContratos.Location = New System.Drawing.Point(13, 47)
         Me.ListViewDocContratos.Name = "ListViewDocContratos"
@@ -2561,9 +2574,9 @@ Partial Class Legalizacao
         Me.BtnApagaAnexo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnApagaAnexo.Location = New System.Drawing.Point(150, 114)
         Me.BtnApagaAnexo.Name = "BtnApagaAnexo"
-        Me.BtnApagaAnexo.Size = New System.Drawing.Size(62, 23)
+        Me.BtnApagaAnexo.Size = New System.Drawing.Size(84, 23)
         Me.BtnApagaAnexo.TabIndex = 55
-        Me.BtnApagaAnexo.Text = "Limpar"
+        Me.BtnApagaAnexo.Text = "Apagar Anexo"
         Me.BtnApagaAnexo.UseVisualStyleBackColor = True
         '
         'BtnAbrirDoc
@@ -2571,9 +2584,9 @@ Partial Class Legalizacao
         Me.BtnAbrirDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAbrirDoc.Location = New System.Drawing.Point(150, 81)
         Me.BtnAbrirDoc.Name = "BtnAbrirDoc"
-        Me.BtnAbrirDoc.Size = New System.Drawing.Size(62, 23)
+        Me.BtnAbrirDoc.Size = New System.Drawing.Size(84, 23)
         Me.BtnAbrirDoc.TabIndex = 53
-        Me.BtnAbrirDoc.Text = "Salvar"
+        Me.BtnAbrirDoc.Text = "Abrir"
         Me.BtnAbrirDoc.UseVisualStyleBackColor = True
         '
         'BtnSalvarDoc
@@ -2581,7 +2594,7 @@ Partial Class Legalizacao
         Me.BtnSalvarDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSalvarDoc.Location = New System.Drawing.Point(150, 47)
         Me.BtnSalvarDoc.Name = "BtnSalvarDoc"
-        Me.BtnSalvarDoc.Size = New System.Drawing.Size(62, 23)
+        Me.BtnSalvarDoc.Size = New System.Drawing.Size(84, 23)
         Me.BtnSalvarDoc.TabIndex = 48
         Me.BtnSalvarDoc.Text = "Anexar"
         Me.BtnSalvarDoc.UseVisualStyleBackColor = True
@@ -4695,4 +4708,5 @@ Partial Class Legalizacao
     Friend WithEvents BtnAbrirDoc As Button
     Friend WithEvents BtnApagaAnexo As Button
     Friend WithEvents ListViewDocContratos As ListView
+    Friend WithEvents BtnAtualizarDoc As Button
 End Class

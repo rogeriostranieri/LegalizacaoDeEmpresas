@@ -153,6 +153,7 @@ Public Class Legalizacao
 
         End Try
 
+
     End Sub
 
 
@@ -2074,8 +2075,12 @@ CPF =
 
     Private conexao As SqlConnection
     Private comando As SqlCommand
-    Private ReadOnly da As SqlDataAdapter
+    Private da As SqlDataAdapter
     Private dr As SqlDataReader
+
+
+
+
     Private Sub BtnSalvarDoc_Click(sender As Object, e As EventArgs) Handles BtnSalvarDoc.Click
 
         'procurar e salvar no banco de dados DocContratos varbinary aray    
@@ -2104,6 +2109,8 @@ CPF =
             }
             'adiciona no listview
             ListViewDocContratos.Items.Add(item)
+            ListViewDocContratos.View = View.LargeIcon
+
 
 
         Catch ex As Exception
@@ -2114,41 +2121,51 @@ CPF =
 
     Private Sub BtnAbrirDoc_Click(sender As Object, e As EventArgs) Handles BtnAbrirDoc.Click
         'save a file in .docx format, which was saved as VarBinary, in the database table companies and column DocContratos for corporate reasons
-        Try
-            conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
-            comando = New SqlCommand("SELECT DocContratos FROM Empresas WHERE RazaoSocial = @RazaoSocial", conexao)
-            comando.Parameters.Add("@RazaoSocial", SqlDbType.VarChar).Value = RazaoSocialTextBox.Text
-            conexao.Open()
-            'SqlDataReader
+        If ListViewDocContratos.Items(0).Text = "Com Anexo" Then
 
-            dr = comando.ExecuteReader
-            If dr.Read Then
+            Try
+                conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
+                comando = New SqlCommand("SELECT DocContratos FROM Empresas WHERE RazaoSocial = @RazaoSocial", conexao)
+                comando.Parameters.Add("@RazaoSocial", SqlDbType.VarChar).Value = RazaoSocialTextBox.Text
+                conexao.Open()
+                'SqlDataReader
 
-                Dim doc As Byte() = DirectCast(dr("DocContratos"), Byte())
-                'opendialog  para salvar o arquivo FileStream do banco de dados
-                'mudar local de salvamento do doc
-                Dim saveFileDialog1 As New SaveFileDialog With {
+                dr = comando.ExecuteReader
+                If dr.Read Then
+
+                    Dim doc As Byte() = DirectCast(dr("DocContratos"), Byte())
+                    'opendialog  para salvar o arquivo FileStream do banco de dados
+                    'mudar local de salvamento do doc
+                    Dim saveFileDialog1 As New SaveFileDialog With {
                     .Filter = "Arquivos de Texto (*.doc, *.docx)|*.doc;*.docx",
                     .Title = "Salvar Arquivo de Texto"
                 }
-                saveFileDialog1.ShowDialog()
-                Dim fs As New FileStream(saveFileDialog1.FileName, FileMode.Create)
+                    saveFileDialog1.ShowDialog()
+                    Dim fs As New FileStream(saveFileDialog1.FileName, FileMode.Create)
+                    'escreve o arquivo no banco de dados
+                    fs.Write(doc, 0, doc.Length)
+                    'fecha o arquivo
+                    fs.Close()
+                    'adicionar o documento no list view
+                    Dim item As New ListViewItem With {
+                    .Text = saveFileDialog1.FileName,
+                    .ImageIndex = 0
+                }
+                    ListViewDocContratos.Items.Add(item)
 
-                ' Dim fs As New FileStream("D:\teste.docx", FileMode.Create)
-                'escreve o arquivo no banco de dados
-                fs.Write(doc, 0, doc.Length)
-                'fecha o arquivo
-                fs.Close()
-                'perguntas antes de abrir o arquivo
-                Dim result As DialogResult = MessageBox.Show("Deseja abrir o arquivo?", "Abrir Arquivo", MessageBoxButtons.YesNo)
-                If result = DialogResult.Yes Then
-                    Process.Start(saveFileDialog1.FileName)
+                    ListViewDocContratos.View = View.LargeIcon
+                    'perguntas antes de abrir o arquivo
+                    Dim result As DialogResult = MessageBox.Show("Deseja abrir o arquivo?", "Abrir Arquivo", MessageBoxButtons.YesNo)
+                    If result = DialogResult.Yes Then
+                        Process.Start(saveFileDialog1.FileName)
+                    End If
                 End If
-            End If
-            conexao.Close()
-        Catch ex As Exception
-            MsgBox("Erro! " & vbCrLf & ex.Message)
-        End Try
+                conexao.Close()
+            Catch ex As Exception
+                MsgBox("Erro! " & vbCrLf & ex.Message)
+            End Try
+        Else
+        End If
 
 
     End Sub
@@ -2158,88 +2175,140 @@ CPF =
 
     Private Sub BtnApagaAnexo_Click(sender As Object, e As EventArgs) Handles BtnApagaAnexo.Click
         'clear a file in .docx format, which was saved as VarBinary, in the database table companies and column DocContratos for corporate reasons
-        'perguntar se deseja apagar
-        Dim result As DialogResult = MessageBox.Show("Deseja apagar o arquivo?", "Apagar Arquivo", MessageBoxButtons.YesNo)
-        If result = DialogResult.Yes Then
-            Try
-                conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
-                comando = New SqlCommand("UPDATE Empresas SET DocContratos = @DocContratos WHERE RazaoSocial = @RazaoSocial", conexao)
-                comando.Parameters.Add("@DocContratos", SqlDbType.VarBinary).Value = Nothing
-                comando.Parameters.Add("@RazaoSocial", SqlDbType.VarChar).Value = RazaoSocialTextBox.Text
-                conexao.Open()
-                comando.ExecuteNonQuery()
-                conexao.Close()
-                MsgBox("Documento apagado com sucesso!")
-                BtnAbrirDoc.Enabled = False
-                BtnSalvarDoc.Enabled = False
-                PictureBox7.Image = My.Resources.off
-                PictureBox7.SizeMode = PictureBoxSizeMode.StretchImage
-            Catch ex As Exception
-                MsgBox("Erro! " & vbCrLf & ex.Message)
-            End Try
+        If ListViewDocContratos.Items(0).Text = "Com Anexo" Then
+
+            Dim result As DialogResult = MessageBox.Show("Deseja apagar o arquivo?", "Apagar Arquivo", MessageBoxButtons.YesNo)
+            If result = DialogResult.Yes Then
+                Try
+                    conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
+                    comando = New SqlCommand("UPDATE Empresas SET DocContratos = @DocContratos WHERE RazaoSocial = @RazaoSocial", conexao)
+                    comando.Parameters.Add("@DocContratos", SqlDbType.VarBinary).Value = Nothing
+                    comando.Parameters.Add("@RazaoSocial", SqlDbType.VarChar).Value = RazaoSocialTextBox.Text
+                    conexao.Open()
+                    comando.ExecuteNonQuery()
+                    conexao.Close()
+                    MsgBox("Documento apagado com sucesso!")
+                    BtnAbrirDoc.Enabled = False
+                    BtnSalvarDoc.Enabled = False
+
+                Catch ex As Exception
+                    MsgBox("Erro! " & vbCrLf & ex.Message)
+                End Try
+            End If
+        Else
         End If
+
 
     End Sub
 
     Private Sub ListViewDocContratos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListViewDocContratos.SelectedIndexChanged
         'abrir arquivo anexado no  banco de dados DocContratos conforme a razaosocial
-        Try
-            conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
-            comando = New SqlCommand("SELECT DocContratos FROM Empresas WHERE RazaoSocial = @RazaoSocial", conexao)
-            comando.Parameters.Add("@RazaoSocial", SqlDbType.VarChar).Value = RazaoSocialTextBox.Text
-            conexao.Open()
-            'SqlDataReader
+        If ListViewDocContratos.Items(0).Text = "Com Anexo" Then
 
-            dr = comando.ExecuteReader
-            If dr.Read Then
+            Try
+                conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
+                comando = New SqlCommand("SELECT DocContratos FROM Empresas WHERE RazaoSocial = @RazaoSocial", conexao)
+                comando.Parameters.Add("@RazaoSocial", SqlDbType.VarChar).Value = RazaoSocialTextBox.Text
+                conexao.Open()
+                'SqlDataReader
 
-                Dim doc As Byte() = DirectCast(dr("DocContratos"), Byte())
-                'opendialog  para salvar o arquivo FileStream do banco de dados
-                'mudar local de salvamento do doc
-                Dim saveFileDialog1 As New SaveFileDialog With {
+                dr = comando.ExecuteReader
+                If dr.Read Then
+
+                    Dim doc As Byte() = DirectCast(dr("DocContratos"), Byte())
+                    'opendialog  para salvar o arquivo FileStream do banco de dados
+                    'mudar local de salvamento do doc
+                    Dim saveFileDialog1 As New SaveFileDialog With {
                     .Filter = "Arquivos de Texto (*.doc, *.docx)|*.doc;*.docx",
                     .Title = "Salvar Arquivo de Texto"
                 }
-                saveFileDialog1.ShowDialog()
-                Dim fs As New FileStream(saveFileDialog1.FileName, FileMode.Create)
+                    saveFileDialog1.ShowDialog()
+                    Dim fs As New FileStream(saveFileDialog1.FileName, FileMode.Create)
 
-                ' Dim fs As New FileStream("D:\teste.docx", FileMode.Create)
-                'escreve o arquivo no banco de dados
-                fs.Write(doc, 0, doc.Length)
-                'fecha o arquivo
-                fs.Close()
-                'perguntas antes de abrir o arquivo
-                Dim result As DialogResult = MessageBox.Show("Deseja abrir o arquivo?", "Abrir Arquivo", MessageBoxButtons.YesNo)
-                If result = DialogResult.Yes Then
-                    Process.Start(saveFileDialog1.FileName)
+                    ' Dim fs As New FileStream("D:\teste.docx", FileMode.Create)
+                    'escreve o arquivo no banco de dados
+                    fs.Write(doc, 0, doc.Length)
+                    'fecha o arquivo
+                    fs.Close()
+                    'perguntas antes de abrir o arquivo
+                    Dim result As DialogResult = MessageBox.Show("Deseja abrir o arquivo?", "Abrir Arquivo", MessageBoxButtons.YesNo)
+                    If result = DialogResult.Yes Then
+                        Process.Start(saveFileDialog1.FileName)
+                    End If
                 End If
-            End If
+                conexao.Close()
+            Catch ex As Exception
+                MsgBox("Erro! " & vbCrLf & ex.Message)
+            End Try
+        Else
+        End If
+
+    End Sub
+
+
+    Private Sub AtualizarDoc()
+        'mostra DocContratos anexado no banco de dados DocContratos conforme a razaosocial não mostrando vazio  
+        Try
+            'cn
+            conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
+            conexao.Open()
+
+            'comando = New SqlCommand("select Empresas SET DocContratos where RazaoSocial = '" & RazaoSocialTextBox.Text & "'", conexao)
+            comando = New SqlCommand("select DocContratos from Empresas where RazaoSocial = '" & RazaoSocialTextBox.Text & "'", conexao)
+            da = New SqlDataAdapter(comando)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            'listviewDocContratos adicionar ou nao
+            ListViewDocContratos.Items.Clear()
+            For Each row As DataRow In dt.Rows
+                Dim lv As New ListViewItem(row("DocContratos").ToString)
+                ListViewDocContratos.Items.Add(lv)
+
+                ListViewDocContratos.View = View.LargeIcon
+                'alterar texto do docContratos
+                If row("DocContratos").ToString = "" Then
+                    'mudar nome do ListViewDocContratos ("DocContratos").Text para "Sem Anexo"
+                    ListViewDocContratos.Items(0).Text = "Sem Anexo"
+                    ' ListViewDocContratos subitem icone
+
+                    ListViewDocContratos.ForeColor = Color.Black
+                    BtnAbrirDoc.Enabled = False
+                    BtnSalvarDoc.Enabled = True
+                Else
+
+                    ListViewDocContratos.Items(0).Text = "Com Anexo"
+                    ListViewDocContratos.Items(0).ImageIndex = 1
+                    ListViewDocContratos.ForeColor = Color.Blue
+                    BtnAbrirDoc.Enabled = True
+                    BtnSalvarDoc.Enabled = True
+                End If
+
+
+            Next
+
             conexao.Close()
+
         Catch ex As Exception
             MsgBox("Erro! " & vbCrLf & ex.Message)
         End Try
     End Sub
 
-    Private Sub TabControl1_Enter(sender As Object, e As EventArgs) Handles TabControl1.Enter
-        'mostra na  listview o DocContratos de acordo com a a razão social
-        Try
-            conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
-            comando = New SqlCommand("SELECT DocContratos FROM Empresas WHERE RazaoSocial = @RazaoSocial", conexao)
-            comando.Parameters.Add("@RazaoSocial", SqlDbType.VarChar).Value = RazaoSocialTextBox.Text
-            conexao.Open()
-            'SqlDataReader
+    Private Sub RazaoSocialTextBox_TextChanged(sender As Object, e As EventArgs) Handles RazaoSocialTextBox.TextChanged
+        AtualizarDoc()
+    End Sub
 
-            dr = comando.ExecuteReader
-            'colocar na listview o doccontratos
+    Private Sub BtnAtualizarDoc_Click(sender As Object, e As EventArgs) Handles BtnAtualizarDoc.Click
+        AtualizarDoc()
+    End Sub
 
 
+    'ListViewDocContratos adicionar imagem _on de resources 
 
-
-            conexao.Close()
-        Catch ex As Exception
-            MsgBox("Erro! " & vbCrLf & ex.Message)
-        End Try
-
-
+    Private Sub ListViewDocContratos_DrawItem(sender As Object, e As DrawListViewItemEventArgs) Handles ListViewDocContratos.DrawItem
+        If e.Item.Text = "Com Anexo" Then
+            e.Item.ImageIndex = 1
+        Else
+            e.Item.ImageIndex = 0
+        End If
     End Sub
 End Class
