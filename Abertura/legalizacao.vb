@@ -2112,6 +2112,7 @@ CPF =
             ListViewDocContratos.View = View.LargeIcon
 
 
+            AtualizarDoc()
 
         Catch ex As Exception
             MsgBox("Erro! " & vbCrLf & ex.Message)
@@ -2161,6 +2162,8 @@ CPF =
                     End If
                 End If
                 conexao.Close()
+                AtualizarDoc()
+
             Catch ex As Exception
                 MsgBox("Erro! " & vbCrLf & ex.Message)
             End Try
@@ -2190,6 +2193,8 @@ CPF =
                     MsgBox("Documento apagado com sucesso!")
                     BtnAbrirDoc.Enabled = False
                     BtnSalvarDoc.Enabled = False
+
+                    AtualizarDoc()
 
                 Catch ex As Exception
                     MsgBox("Erro! " & vbCrLf & ex.Message)
@@ -2237,6 +2242,8 @@ CPF =
                     End If
                 End If
                 conexao.Close()
+                AtualizarDoc()
+
             Catch ex As Exception
                 MsgBox("Erro! " & vbCrLf & ex.Message)
             End Try
@@ -2285,8 +2292,9 @@ CPF =
 
 
             Next
-
             conexao.Close()
+            AtualizarDoc()
+
 
         Catch ex As Exception
             MsgBox("Erro! " & vbCrLf & ex.Message)
