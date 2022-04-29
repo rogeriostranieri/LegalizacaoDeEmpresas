@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class UserAltDados
     Inherits System.Windows.Forms.UserControl
 
     'O UserControl substitui o descarte para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class UserAltDados
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim TemaLabel As System.Windows.Forms.Label
         Dim NomeCompletoLabel As System.Windows.Forms.Label
         Me.TemaComboBox = New System.Windows.Forms.ComboBox()
@@ -33,8 +34,11 @@ Partial Class UserAltDados
         Me.UsernameTextBox = New System.Windows.Forms.TextBox()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
         Me.BtnMostrarDados = New System.Windows.Forms.Button()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.TemaPictureBox = New System.Windows.Forms.PictureBox()
         TemaLabel = New System.Windows.Forms.Label()
         NomeCompletoLabel = New System.Windows.Forms.Label()
+        CType(Me.TemaPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TemaLabel
@@ -152,12 +156,27 @@ Partial Class UserAltDados
         Me.BtnMostrarDados.TabIndex = 30
         Me.BtnMostrarDados.Text = "Mostrar &Dados"
         '
+        'ImageList1
+        '
+        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
+        Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        '
+        'TemaPictureBox
+        '
+        Me.TemaPictureBox.Location = New System.Drawing.Point(41, 326)
+        Me.TemaPictureBox.Name = "TemaPictureBox"
+        Me.TemaPictureBox.Size = New System.Drawing.Size(263, 105)
+        Me.TemaPictureBox.TabIndex = 31
+        Me.TemaPictureBox.TabStop = False
+        '
         'UserAltDados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Transparent
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.TemaPictureBox)
         Me.Controls.Add(Me.BtnMostrarDados)
         Me.Controls.Add(Me.UsernameLabel)
         Me.Controls.Add(Me.PasswordLabel)
@@ -170,7 +189,8 @@ Partial Class UserAltDados
         Me.Controls.Add(TemaLabel)
         Me.Controls.Add(NomeCompletoLabel)
         Me.Name = "UserAltDados"
-        Me.Size = New System.Drawing.Size(351, 340)
+        Me.Size = New System.Drawing.Size(351, 458)
+        CType(Me.TemaPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -185,4 +205,6 @@ Partial Class UserAltDados
     Friend WithEvents UsernameTextBox As TextBox
     Friend WithEvents PasswordTextBox As TextBox
     Friend WithEvents BtnMostrarDados As Button
+    Friend WithEvents ImageList1 As ImageList
+    Friend WithEvents TemaPictureBox As PictureBox
 End Class

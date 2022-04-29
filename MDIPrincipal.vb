@@ -8,7 +8,10 @@ Public Class MDIPrincipal
     ' Private da As SqlDataAdapter
     'Private dr As SqlDataReader
 
-
+    Private Sub teste()
+        'muda fundo ' BackgroundImage da pasta "\Imagens\Plano de Fundo\planodefundo (1).png"
+        BackgroundImage = Image.FromFile("\Imagens\Plano de Fundo\planodefundo (1).png")
+    End Sub
     Private Sub BuscaLogin()
         'ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755
         'conectar e modificar os label conforme o banco de dados, tabela LOGIN usuario do formulario LOGIN, pegando seu usuario logado e modifica os label tema e nome completo 
@@ -29,15 +32,16 @@ Public Class MDIPrincipal
             'mudar lblnomecompleto e lbtema para cor branca
             LblNomeCompleto.ForeColor = Color.White
             LbTema.ForeColor = Color.Black
-            'mudar tema do formulario conforme o lbTema         Me.BackgroundImage = My.Resources._1 ou Me.BackgroundImage = My.Resources.FundoNovo ou Me.BackgroundImage = My.Resources.Noite
-            If LbTema.Text = "Novo" Then
-                Me.BackgroundImage = My.Resources._1
-            ElseIf LbTema.Text = "Padrão" Then
-                Me.BackgroundImage = My.Resources.FundoNovo
-            ElseIf LbTema.Text = "Noite" Then
-                Me.BackgroundImage = My.Resources.noite
-            End If
 
+            Try
+                'pegar pnd da pasta \Imagens\Plano de Fundo\ e coloca como plano de fundo
+                BackgroundImage = Image.FromFile("\Imagens\Plano de Fundo\" & dr("Tema") & ".png")
+
+
+            Catch ex As Exception
+                MsgBox("Erro ao carregar imagem de fundo")
+                conexao.Close()
+            End Try
 
         End While
         conexao.Close()

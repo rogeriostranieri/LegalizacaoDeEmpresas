@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Globalization
+
 Public Class UserAltDados
     Private Sub BtnNomeFinal_Click(sender As Object, e As EventArgs) Handles BtnNomeFinal.Click
         Dim str As String = "Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755"
@@ -30,9 +32,20 @@ Public Class UserAltDados
     End Sub
 
     Private Sub UserAltDados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TemaComboBox.Items.Add("Novo")
-        TemaComboBox.Items.Add("Padrão")
-        TemaComboBox.Items.Add("Noite")
+        'adicionar no TemaComboBox, todas imagens com nome iniciando "planodefundo" da pasta "...\Imagens\Plano de Fundo"
+        'For Each img As String In IO.Directory.GetFiles(Application.StartupPath & "\Imagens\Plano de Fundo")
+        Try
+            For Each img As String In IO.Directory.GetFiles(Application.StartupPath & "\Imagens\Plano de Fundo")
+                Dim imgName As String = IO.Path.GetFileName(img)
+                If imgName.StartsWith("planodefundo") Then
+                    TemaComboBox.Items.Add(imgName)
+                End If
+
+            Next
+        Catch ex As Exception
+            MsgBox("Erro ao carregar imagens")
+        End Try
+
     End Sub
 
     Private Sub BtnLimpar_Click(sender As Object, e As EventArgs) Handles BtnLimpar.Click

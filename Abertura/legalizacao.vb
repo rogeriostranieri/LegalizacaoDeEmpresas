@@ -2254,55 +2254,41 @@ CPF =
 
 
     Private Sub AtualizarDoc()
-        'mostra DocContratos anexado no banco de dados DocContratos conforme a razaosocial não mostrando vazio  
+        'Consultar DocContratos conforme a razaosocial
         Try
-            'cn
             conexao = New SqlConnection("Data Source=ROGERIO\PRINCE;Initial Catalog=PrinceDB;Persist Security Info=True;User ID=sa;Password=rs755")
+            comando = New SqlCommand("SELECT DocContratos FROM Empresas WHERE RazaoSocial = @RazaoSocial", conexao)
+            comando.Parameters.Add("@RazaoSocial", SqlDbType.VarChar).Value = RazaoSocialTextBox.Text
             conexao.Open()
-
-            'comando = New SqlCommand("select Empresas SET DocContratos where RazaoSocial = '" & RazaoSocialTextBox.Text & "'", conexao)
-            comando = New SqlCommand("select DocContratos from Empresas where RazaoSocial = '" & RazaoSocialTextBox.Text & "'", conexao)
-            da = New SqlDataAdapter(comando)
-            Dim dt As New DataTable
-            da.Fill(dt)
-            'listviewDocContratos adicionar ou nao
+            'atualizar listview
             ListViewDocContratos.Items.Clear()
-            For Each row As DataRow In dt.Rows
-                Dim lv As New ListViewItem(row("DocContratos").ToString)
-                ListViewDocContratos.Items.Add(lv)
-
-                ListViewDocContratos.View = View.LargeIcon
-                'alterar texto do docContratos
-                If row("DocContratos").ToString = "" Then
-                    'mudar nome do ListViewDocContratos ("DocContratos").Text para "Sem Anexo"
-                    ListViewDocContratos.Items(0).Text = "Sem Anexo"
-                    ' ListViewDocContratos subitem icone
-
-                    ListViewDocContratos.ForeColor = Color.Black
-                    BtnAbrirDoc.Enabled = False
-                    BtnSalvarDoc.Enabled = True
+            dr = comando.ExecuteReader
+            If dr.Read Then
+                Dim doc As Byte() = DirectCast(dr("DocContratos"), Byte())
+                'not dbnull
+                If Not IsDBNull(dr("DocContratos")) Then
+                    Dim item As New ListViewItem With {
+                    .Text = "Com Anexo",
+                    .ImageIndex = 0
+                }
+                    ListViewDocContratos.Items.Add(item)
                 Else
-
-                    ListViewDocContratos.Items(0).Text = "Com Anexo"
-                    ListViewDocContratos.Items(0).ImageIndex = 1
-                    ListViewDocContratos.ForeColor = Color.Blue
-                    BtnAbrirDoc.Enabled = True
-                    BtnSalvarDoc.Enabled = True
+                    Dim item As New ListViewItem With {
+                    .Text = "Sem Anexo",
+                    .ImageIndex = 1
+                }
+                    ListViewDocContratos.Items.Add(item)
                 End If
-
-
-            Next
+            End If
             conexao.Close()
-            AtualizarDoc()
-
-
         Catch ex As Exception
             MsgBox("Erro! " & vbCrLf & ex.Message)
         End Try
+
     End Sub
 
     Private Sub RazaoSocialTextBox_TextChanged(sender As Object, e As EventArgs) Handles RazaoSocialTextBox.TextChanged
-        AtualizarDoc()
+        'AtualizarDoc()
     End Sub
 
     Private Sub BtnAtualizarDoc_Click(sender As Object, e As EventArgs) Handles BtnAtualizarDoc.Click
@@ -2310,13 +2296,5 @@ CPF =
     End Sub
 
 
-    'ListViewDocContratos adicionar imagem _on de resources 
 
-    Private Sub ListViewDocContratos_DrawItem(sender As Object, e As DrawListViewItemEventArgs) Handles ListViewDocContratos.DrawItem
-        If e.Item.Text = "Com Anexo" Then
-            e.Item.ImageIndex = 1
-        Else
-            e.Item.ImageIndex = 0
-        End If
-    End Sub
 End Class
